@@ -8,6 +8,12 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 
 public class ScrollingActivity extends AppCompatActivity {
 
@@ -17,6 +23,16 @@ public class ScrollingActivity extends AppCompatActivity {
         setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        TextView tv1 = (TextView)findViewById(R.id.textView24); //puts xml-ID'd textview24 in a box
+
+        // This block updates the header with updated real-time clock on startup.
+        Date c = Calendar.getInstance().getTime();
+        SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
+        String formattedDate = "Last Updated at " + sdf.format(c);
+        tv1.setText(formattedDate);
+
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
