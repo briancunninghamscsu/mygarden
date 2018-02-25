@@ -1,5 +1,7 @@
 package com.example.briancunningham.gardenbeta.feature;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -25,12 +27,28 @@ public class ScrollingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TextView tv1 = (TextView)findViewById(R.id.textView24); //puts xml-ID'd textview24 in a box
-
+        TextView tvA = (TextView)findViewById(R.id.textView2); //puts xml-ID'd textview2 in a box
         // This block updates the header with updated real-time clock on startup.
         Date c = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
         String formattedDate = "Last Updated at " + sdf.format(c);
         tv1.setText(formattedDate);
+
+
+        tvA.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Snackbar.make(view, "You pressed tvA", Snackbar.LENGTH_LONG)
+                  //      .setAction("Action", null).show();
+                Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
+                //myIntent.putExtra("key", value); //Optional parameters
+                ScrollingActivity.this.startActivity(myIntent);
+
+
+            }
+        });
+
+
 
 
 

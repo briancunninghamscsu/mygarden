@@ -83,6 +83,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
+                android:clickable="true"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Air Temperature"
