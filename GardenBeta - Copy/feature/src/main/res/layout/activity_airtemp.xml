@@ -47,12 +47,13 @@
                 android:layout_height="wrap_content"
                 android:text="Last Reading at 11:14:34 AM on 28 February 2018"
                 android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 tools:text="Last Reading at 11:14:34 AM on 28 February 2018" />
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:dividerPadding="10dp">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -62,25 +63,31 @@
                         android:id="@+id/textView26"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Date" />
+                        android:text="Date"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat" />
 
                     <TextView
                         android:id="@+id/textView27"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Time" />
+                        android:text="Time"
+                        android:textAlignment="center"
+                        android:textAppearance="@style/TextAppearance.AppCompat" />
 
                     <TextView
                         android:id="@+id/textView28"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Measurement" />
+                        android:text=" Measurement "
+                        android:textAppearance="@style/TextAppearance.AppCompat" />
 
                     <TextView
                         android:id="@+id/textView29"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Corrective Action" />
+                        android:text=" Corrective Action "
+                        android:textAppearance="@style/TextAppearance.AppCompat" />
                 </TableRow>
 
                 <TableRow
@@ -91,25 +98,28 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text=" 27 February 2018 "
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="11:40AM" />
+                        android:text=" 11:40AM " />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="None" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -120,7 +130,8 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
@@ -132,13 +143,15 @@
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="72°F" />
+                        android:text="72°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -149,7 +162,8 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
@@ -161,13 +175,15 @@
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -178,7 +194,8 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
@@ -190,13 +207,15 @@
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -207,25 +226,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="11:00AM" />
+                        android:text="11:00AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -236,25 +259,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10:50AM" />
+                        android:text="10:50AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -265,25 +292,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10:40AM" />
+                        android:text="10:40AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -294,25 +325,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10:30AM" />
+                        android:text="10:30AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -323,25 +358,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10:20AM" />
+                        android:text="10:20AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -352,7 +391,8 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
@@ -364,13 +404,15 @@
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -381,25 +423,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="10:00AM" />
+                        android:text="10:00AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:layout_height="match_parent"
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -410,25 +456,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="9:50AM" />
+                        android:text="9:50AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -439,25 +489,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="9:40AM" />
+                        android:text="9:40AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -468,25 +522,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="9:30AM" />
+                        android:text="9:30AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -497,25 +555,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="9:20AM" />
+                        android:text="9:20AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="73°F" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -526,25 +588,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="9:10AM" />
+                        android:text="9:10AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -555,25 +621,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="9:00AM" />
+                        android:text="9:00AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -584,25 +654,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="8:50AM" />
+                        android:text="8:50AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -613,25 +687,30 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="8:40AM" />
+                        android:text="8:40AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -642,25 +721,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="8:30AM" />
+                        android:text="8:30AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="73°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -671,25 +754,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="8:20AM" />
+                        android:text="8:20AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="72°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -700,25 +787,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="8:10AM" />
+                        android:text="8:10AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="72°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -729,25 +820,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="8:00AM" />
+                        android:text="8:00AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="72°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -758,25 +853,29 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="7:50AM" />
+                        android:text="7:50AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="72°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -787,25 +886,30 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="7:40AM" />
+                        android:text="7:40AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="72°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
@@ -816,7 +920,8 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
@@ -828,100 +933,114 @@
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="72°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/textView30"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView31"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="7:20AM" />
+                        android:text="7:20AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView32"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="72°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView33"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/textView34"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView35"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="7:10AM" />
+                        android:text="7:10AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView36"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="72°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView37"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
 
                 <TableRow
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
+                    android:layout_height="match_parent">
 
                     <TextView
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="27 February 2018" />
+                        android:text="27 February 2018"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView39"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="7:00AM" />
+                        android:text="7:00AM"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView40"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="72°F"
+                        android:textAlignment="center" />
 
                     <TextView
                         android:id="@+id/textView41"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="TextView" />
+                        android:text="None"
+                        android:textAlignment="center" />
                 </TableRow>
             </TableLayout>
         </LinearLayout>
