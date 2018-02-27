@@ -1,0 +1,233 @@
+CCS PCM C Compiler, Version 5.068, 5967               27-Feb-18 11:55
+
+               Filename:   C:\Users\Dylan\Documents\SeniorDesign\LED_Blink\LED_Blink_main.lst
+
+               ROM used:   119 words (0%)
+                           Largest free fragment is 2048
+               RAM used:   8 (0%) at main() level
+                           20 (0%) worst case
+               Stack used: 0 locations
+               Stack size: 16
+
+*
+0000:  MOVLP  00
+0001:  GOTO   018
+0002:  NOP
+.................... #include <LED_Blink_main.h> 
+.................... #include <16F18877.h> 
+.................... //////////// Standard Header file for the PIC16F18877 device //////////////// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... ////        (C) Copyright 1996, 2014 Custom Computer Services          //// 
+.................... //// This source code may only be used by licensed users of the CCS C  //// 
+.................... //// compiler.  This source code may only be distributed to other      //// 
+.................... //// licensed users of the CCS C compiler.  No other use, reproduction //// 
+.................... //// or distribution is permitted without written permission.          //// 
+.................... //// Derivative programs created using this software in object code    //// 
+.................... //// form are not restricted in any way.                               //// 
+.................... /////////////////////////////////////////////////////////////////////////// 
+.................... #device PIC16F18877 
+....................  
+.................... #list 
+....................  
+.................... #device ADC=10 
+.................... #device ICSP=1 
+.................... #use delay(internal=32000000) 
+0003:  MOVLW  20
+0004:  MOVWF  05
+0005:  MOVLW  04
+0006:  MOVWF  04
+0007:  MOVF   00,W
+0008:  BTFSC  03.2
+0009:  GOTO   017
+000A:  MOVLW  0A
+000B:  MOVWF  78
+000C:  CLRF   77
+000D:  DECFSZ 77,F
+000E:  GOTO   00D
+000F:  DECFSZ 78,F
+0010:  GOTO   00C
+0011:  MOVLW  5F
+0012:  MOVWF  77
+0013:  DECFSZ 77,F
+0014:  GOTO   013
+0015:  DECFSZ 00,F
+0016:  GOTO   00A
+0017:  RETURN
+....................  
+.................... //!#FUSES NOWDT                    //No Watch Dog Timer 
+.................... //!#FUSES CKSFSM                   //Clock Switching is enabled, fail Safe clock monitor is enabled 
+.................... //!#FUSES NOBROWNOUT               //No brownout reset 
+.................... //!#FUSES BORV_LOW                 //Brown-out Reset set to lowest voltage 
+....................  
+.................... #define LED1 PIN_B2 
+.................... #define DELAY1 200 
+.................... #define LED2 PIN_B1 
+....................  
+.................... #define LED3 PIN_C7 
+....................  
+.................... #define LED4 PIN_C6 
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+....................  
+.................... void main() 
+0018:  MOVLB  11
+0019:  CLRF   12
+001A:  CLRF   0F
+001B:  CLRF   11
+001C:  MOVLW  05
+001D:  MOVWF  13
+001E:  MOVLW  10
+001F:  MOVWF  0D
+0020:  MOVLB  3E
+0021:  CLRF   38
+0022:  CLRF   43
+0023:  CLRF   4E
+0024:  CLRF   59
+0025:  CLRF   64
+0026:  MOVLB  13
+0027:  CLRF   11
+0028:  CLRF   12
+0029:  CLRF   13
+002A:  CLRF   10
+002B:  CLRF   15
+002C:  CLRF   16
+002D:  CLRF   17
+002E:  CLRF   14
+002F:  MOVLB  00
+0030:  CLRF   21
+0031:  CLRF   22
+0032:  CLRF   23
+.................... { 
+....................  
+....................    int counter2 = 0; 
+....................    int counter3 = 0; 
+....................    int counter4 = 0; 
+....................    //Example blinking LED program 
+....................    while(true) 
+....................    { 
+....................        
+....................        
+....................        
+....................       output_low(LED1); 
+0033:  BCF    12.2
+0034:  BCF    17.2
+....................       delay_ms(DELAY1); 
+0035:  MOVLW  C8
+0036:  MOVWF  24
+0037:  CALL   003
+....................       counter2 = counter2 + 1; 
+0038:  MOVLW  01
+0039:  ADDWF  21,F
+....................       counter3 = counter3 + 1; 
+003A:  ADDWF  22,F
+....................       counter4 = counter4 + 1; 
+003B:  ADDWF  23,F
+....................       if(counter2 == 2) 
+003C:  MOVF   21,W
+003D:  SUBLW  02
+003E:  BTFSS  03.2
+003F:  GOTO   044
+....................       { 
+....................          output_toggle(LED2); 
+0040:  BCF    12.1
+0041:  MOVLW  02
+0042:  XORWF  17,F
+....................          counter2 = 0; 
+0043:  CLRF   21
+....................       } 
+....................       if(counter3 == 4) 
+0044:  MOVF   22,W
+0045:  SUBLW  04
+0046:  BTFSS  03.2
+0047:  GOTO   04C
+....................       { 
+....................          output_toggle(LED3); 
+0048:  BCF    13.7
+0049:  MOVLW  80
+004A:  XORWF  18,F
+....................          counter3 = 0; 
+004B:  CLRF   22
+....................       } 
+....................       if(counter4 == 8) 
+004C:  MOVF   23,W
+004D:  SUBLW  08
+004E:  BTFSS  03.2
+004F:  GOTO   054
+....................       { 
+....................          output_toggle(LED4); 
+0050:  BCF    13.6
+0051:  MOVLW  40
+0052:  XORWF  18,F
+....................          counter4 = 0; 
+0053:  CLRF   23
+....................       } 
+....................       output_high(LED1); 
+0054:  BCF    12.2
+0055:  BSF    17.2
+....................       delay_ms(DELAY1); 
+0056:  MOVLW  C8
+0057:  MOVWF  24
+0058:  CALL   003
+....................       counter2 = counter2 + 1; 
+0059:  MOVLW  01
+005A:  ADDWF  21,F
+....................       counter3 = counter3 + 1;  
+005B:  ADDWF  22,F
+....................       counter4 = counter4 + 1; 
+005C:  ADDWF  23,F
+....................       if(counter2 == 2) 
+005D:  MOVF   21,W
+005E:  SUBLW  02
+005F:  BTFSS  03.2
+0060:  GOTO   065
+....................       { 
+....................          output_toggle(LED2); 
+0061:  BCF    12.1
+0062:  MOVLW  02
+0063:  XORWF  17,F
+....................          counter2 = 0; 
+0064:  CLRF   21
+....................       } 
+....................       if(counter3 == 4) 
+0065:  MOVF   22,W
+0066:  SUBLW  04
+0067:  BTFSS  03.2
+0068:  GOTO   06D
+....................       { 
+....................          output_toggle(LED3); 
+0069:  BCF    13.7
+006A:  MOVLW  80
+006B:  XORWF  18,F
+....................          counter3 = 0; 
+006C:  CLRF   22
+....................       } 
+....................       if(counter4 == 8) 
+006D:  MOVF   23,W
+006E:  SUBLW  08
+006F:  BTFSS  03.2
+0070:  GOTO   075
+....................       { 
+....................          output_toggle(LED4); 
+0071:  BCF    13.6
+0072:  MOVLW  40
+0073:  XORWF  18,F
+....................          counter4 = 0; 
+0074:  CLRF   23
+....................       } 
+0075:  GOTO   033
+....................    } 
+.................... } 
+....................  
+0076:  SLEEP
+....................  
+
+Configuration Fuses:
+   Word  1: 3F9C   NOEXTOSC RSTOSC_HFINTRC_PLL NOCLKOUT CKS FCMEN
+   Word  2: 3FFD   MCLR PUT NOLPBOR BROWNOUT BORV24 ZCDDIS PPS1WAY STVREN NODEBUG
+   Word  3: 3F9F   WDTSW NOWDT WDTWIN_SW WDTCLK_SW
+   Word  4: 1FFF   NOWRT SCANE NOLVP
+   Word  5: 3FFF   NOPROTECT NOCPD

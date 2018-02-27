@@ -1,0 +1,62 @@
+[PROJECT]
+Target=LED_Blink_main.hex
+Processor_Text=PIC16F18877
+CCSVerions=5.068
+Compiler=PCM
+CCSVersion=5.068
+[Target Data]
+FileList=LED_Blink_main.c
+[Directories]
+Include=
+[C:\Users\Dylan\Documents\SeniorDesign\LED_Blink\LED_Blink_main]
+Type=4
+[mru-list]
+1=LED_Blink_main.c
+
+[ProjectLog]
+Days=2
+D1=26-02-2018
+D1_L=9
+D1_L1=[38001]Project Opened.
+D1_L2=[43453]Project Opened.
+D1_L3=[43482]Project Closed.
+D1_L4=[43547]Project Opened.
+D1_L5=[43553]Started Editing.
+D1_L6=[44107]Stopped Editing.
+TotalEdit=1246
+TotalDebug=0
+D1_E=5
+D1_D=0
+D1_L7=[45456]Project Closed.
+D1_L8=[45470]Project Opened.
+D1_L9=[45521]Started Editing.
+D2=27-02-2018
+D2_L=9
+D2_L1=[33633]Stopped Editing.
+D2_L2=[39654]Started Editing.
+D2_L3=[39870]Stopped Editing.
+D2_E=1241
+D2_D=0
+D2_L4=[39870]Project Closed.
+D2_L5=[39900]Project Opened.
+D2_L6=[39908]Started Editing.
+D2_L7=[40800]Stopped Editing.
+D2_L8=[42788]Started Editing.
+D2_L9=[43215]Stopped Editing.
+
+[Opened Files]
+1=LED_Blink_main.c
+t1=21
+Count=3
+2=LED_Blink_main.h
+t2=1
+3=..\..\..\..\..\Program Files (x86)\PICC\Devices\16F18877.h
+t3=1
+[LED_Blink_main.c]
+Type=4
+
+[defines]
+buildcount=14
+[Units]
+Count=1
+1=LED_Blink_main (main)

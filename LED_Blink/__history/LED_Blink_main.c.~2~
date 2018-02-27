@@ -1,0 +1,62 @@
+#include <LED_Blink_main.h>
+
+void main()
+{
+
+   //while(TRUE)
+   //{
+
+//!      //Example blinking LED program
+//!      output_low(LED);
+//!      delay_ms(DELAY);
+//!      output_high(LED);
+//!      delay_ms(DELAY);
+//!
+//!      //TODO: User Code
+   int counter2 = 0;
+   int counter3 = 0;
+   int LED2on = 0;
+   int LED3on = 0;
+   //Example blinking LED program
+   while(true)
+   {
+      output_low(LED1);
+      delay_ms(DELAY1);
+      
+      counter2 = counter2 + 1;
+      counter3 = counter3 + 1;
+      
+      if(counter2 == 5)
+      {
+         output_toggle(LED2);
+         counter2 = 0;
+      }
+      if(counter3 == 10)
+      {
+         output_toggle(LED3);
+         counter3 = 0;
+      }
+      
+      output_high(LED1);
+      delay_ms(DELAY1);
+      
+      counter2 = counter2 + 1;
+      counter3 = counter3 + 1;
+      
+      if(counter2 == 5)
+      {
+         output_toggle(LED2);
+         counter2 = 0;
+      }
+      
+      if(counter3 == 10)
+      {
+         output_toggle(LED3);
+         counter3 = 0;
+      }
+
+   }
+
+}
+
+

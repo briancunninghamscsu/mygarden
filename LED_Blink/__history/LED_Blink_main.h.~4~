@@ -1,0 +1,15 @@
+#include <16F18877.h>
+//#device ADC=10
+#device ICSP=1
+#use delay(internal=32000000)
+
+//!#FUSES NOWDT                    //No Watch Dog Timer
+//!#FUSES CKSFSM                   //Clock Switching is enabled, fail Safe clock monitor is enabled
+//!#FUSES NOBROWNOUT               //No brownout reset
+//!#FUSES BORV_LOW                 //Brown-out Reset set to lowest voltage
+
+#define LED PIN_B1
+#define DELAY 100
+
+
+
