@@ -40,8 +40,23 @@ public class ScrollingActivity extends AppCompatActivity {
             public void onClick(View view) {
                 //Snackbar.make(view, "You pressed tvA", Snackbar.LENGTH_LONG)
                   //      .setAction("Action", null).show();
-                Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
                 //myIntent.putExtra("key", value); //Optional parameters
+                Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
+                ScrollingActivity.this.startActivity(myIntent);
+
+
+            }
+        });
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //Snackbar.make(view, "You pressed tvA", Snackbar.LENGTH_LONG)
+                //      .setAction("Action", null).show();
+                //myIntent.putExtra("key", value); //Optional parameters
+                Intent myIntent = new Intent(ScrollingActivity.this, SettingsActivity.class);
                 ScrollingActivity.this.startActivity(myIntent);
 
 
@@ -50,16 +65,18 @@ public class ScrollingActivity extends AppCompatActivity {
 
 
 
+        //fab.setOnClickListener(new View.OnClickListener() {
+          //  @Override
+            //public void onClick(View view) {
+              //  Intent myIntent2 = new Intent(ScrollingActivity.this, AppCompatPreferenceActivity.class);
+                //ScrollingActivity.this.startActivity(myIntent2);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "This opens a new screen to test the actuators.", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
+                //Snackbar.make(view, "This opens a new screen to test the actuators.", Snackbar.LENGTH_LONG)
+                  //      .setAction("Action", null).show();
+           // }
+        //});
     }
 
     @Override
