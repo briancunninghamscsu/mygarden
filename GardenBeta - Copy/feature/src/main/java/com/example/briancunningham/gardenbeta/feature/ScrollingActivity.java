@@ -28,6 +28,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
         TextView tv1 = (TextView)findViewById(R.id.textView24); //puts xml-ID'd textview24 in a box
         TextView tvA = (TextView)findViewById(R.id.textView2); //puts xml-ID'd textview2 in a box
+
         // This block updates the header with updated real-time clock on startup.
         Date c = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
@@ -92,6 +93,10 @@ public class ScrollingActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
+
+        //Snackbar.make(view, "asdasdasdasd", Snackbar.LENGTH_LONG)
+        //    .setAction("Action", null).show();
+
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
