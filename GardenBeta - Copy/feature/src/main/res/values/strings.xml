@@ -165,4 +165,14 @@
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_ambienthumidity">ambienthumidity</string>
     <string name="title_activity_o2">o2</string>
+    <string name="title_activity_co2">co2</string>
+    <string name="title_activity_solution_temperature_measurements">
+        SolutionTemperatureMeasurements
+    </string>
+    <string name="title_activity_do">DO</string>
+    <string name="title_activity_orp">Oxidation Reduction Potential</string>
+    <string name="title_activity_p_h">pH Measurements</string>
+    <string name="title_activity_reservoirs">reservoirs</string>
+    <string name="title_activity_canopy_height">Canopy Height</string>
+    <string name="title_activity_light_height">Light Height</string>
 </resources>
