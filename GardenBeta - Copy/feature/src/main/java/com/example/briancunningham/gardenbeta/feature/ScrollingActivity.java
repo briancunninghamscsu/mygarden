@@ -94,10 +94,32 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
+        // for O2 activity
+        TextView tvE = (TextView)findViewById(R.id.textView5);
+        TextView tvF = (TextView)findViewById(R.id.textView6);
+        ImageView ivE = (ImageView)findViewById(R.id.imageView3);
 
-
-
-
+        tvE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, o2.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        tvF.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, o2.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        ivE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, o2.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
 
 
 
