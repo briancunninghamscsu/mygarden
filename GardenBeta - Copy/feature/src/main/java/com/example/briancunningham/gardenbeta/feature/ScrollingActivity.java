@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -27,7 +28,7 @@ public class ScrollingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         TextView tv1 = (TextView)findViewById(R.id.textView24); //puts xml-ID'd textview24 in a box
-        TextView tvA = (TextView)findViewById(R.id.textView2); //puts xml-ID'd textview2 in a box
+
 
         // This block updates the header with updated real-time clock on startup.
         Date c = Calendar.getInstance().getTime();
@@ -36,18 +37,36 @@ public class ScrollingActivity extends AppCompatActivity {
         tv1.setText(formattedDate);
 
 
-        tvA.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //Snackbar.make(view, "You pressed tvA", Snackbar.LENGTH_LONG)
-                  //      .setAction("Action", null).show();
-                //myIntent.putExtra("key", value); //Optional parameters
-                Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
-                ScrollingActivity.this.startActivity(myIntent);
 
 
-            }
-        });
+            // for air temp menu
+            TextView tvA = (TextView)findViewById(R.id.textView2); //puts xml-ID'd textview2 in a box
+            TextView tvB = (TextView)findViewById(R.id.textView); //puts xml-ID'd textview2 in a box
+            ImageView ivA = (ImageView)findViewById(R.id.imageView);
+
+
+            tvA.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
+                    ScrollingActivity.this.startActivity(myIntent);
+                    }
+                });
+            tvB.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
+                    ScrollingActivity.this.startActivity(myIntent);
+                }
+            });
+            ivA.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
+                    ScrollingActivity.this.startActivity(myIntent);
+                }
+            });
+
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
