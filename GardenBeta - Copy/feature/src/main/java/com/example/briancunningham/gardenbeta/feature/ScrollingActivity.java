@@ -150,7 +150,32 @@ public class ScrollingActivity extends AppCompatActivity {
         });
 
 
+        // for CO2 activity
+        TextView tvI = (TextView)findViewById(R.id.textView9);
+        TextView tvJ = (TextView)findViewById(R.id.textView10);
+        ImageView ivI = (ImageView)findViewById(R.id.imageView5);
 
+        tvI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, SolutionTemperatureMeasurements.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        tvJ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, SolutionTemperatureMeasurements.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        ivI.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, SolutionTemperatureMeasurements.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
 
 
 
