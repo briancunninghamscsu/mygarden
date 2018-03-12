@@ -12,7 +12,6 @@ public class airtempActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_airtemp);
         Intent intent = getIntent();
-        //String value = intent.getStringExtra("key"); //if it's a string you stored.
         setupActionBar();
     }
     private void setupActionBar() {

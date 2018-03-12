@@ -40,8 +40,8 @@ public class ScrollingActivity extends AppCompatActivity {
 
 
             // for air temp menu
-            TextView tvA = (TextView)findViewById(R.id.textView2); //puts xml-ID'd textview2 in a box
-            TextView tvB = (TextView)findViewById(R.id.textView); //puts xml-ID'd textview2 in a box
+            TextView tvA = (TextView)findViewById(R.id.textView2);
+            TextView tvB = (TextView)findViewById(R.id.textView);
             ImageView ivA = (ImageView)findViewById(R.id.imageView);
 
 
@@ -66,6 +66,49 @@ public class ScrollingActivity extends AppCompatActivity {
                     ScrollingActivity.this.startActivity(myIntent);
                 }
             });
+
+            //for ambient humidity menu
+            TextView tvC = (TextView)findViewById(R.id.textView3);
+            TextView tvD = (TextView)findViewById(R.id.textView4);
+            ImageView ivC = (ImageView)findViewById(R.id.imageView2);
+
+            tvC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, ambienthumidity.class);
+                ScrollingActivity.this.startActivity(myIntent);
+                    }
+            });
+        tvD.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, ambienthumidity.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        ivC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, ambienthumidity.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
