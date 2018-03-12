@@ -141,7 +141,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".tds">
+        <activity android:name=".tds"
+            android:label="title_activity_do"
+            android:parentActivityName=".ScrollingActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 

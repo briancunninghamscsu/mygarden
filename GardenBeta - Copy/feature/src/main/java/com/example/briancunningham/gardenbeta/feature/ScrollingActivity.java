@@ -150,7 +150,7 @@ public class ScrollingActivity extends AppCompatActivity {
         });
 
 
-        // for CO2 activity
+        // for sln temp activity
         TextView tvI = (TextView)findViewById(R.id.textView9);
         TextView tvJ = (TextView)findViewById(R.id.textView10);
         ImageView ivI = (ImageView)findViewById(R.id.imageView5);
@@ -177,6 +177,32 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
+        // for TDS activity
+        TextView tvK = (TextView)findViewById(R.id.textView11);
+        TextView tvL = (TextView)findViewById(R.id.textView12);
+        ImageView ivK = (ImageView)findViewById(R.id.imageView6);
+
+        tvK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, tds.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        tvL.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, tds.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        ivK.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, tds.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
 
 
 
