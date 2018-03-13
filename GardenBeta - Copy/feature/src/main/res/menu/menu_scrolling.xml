@@ -7,4 +7,19 @@
         android:orderInCategory="100"
         android:title="@string/action_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/aboutmeid"
+        android:orderInCategory="200"
+        android:title="Settings"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/firsttimesetupid"
+        android:orderInCategory="300"
+        android:title="First Time Setup"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/developerid"
+        android:orderInCategory="300"
+        android:title="Developer"
+        app:showAsAction="never" />
 </menu>
