@@ -203,6 +203,7 @@ public class ScrollingActivity extends AppCompatActivity {
                 ScrollingActivity.this.startActivity(myIntent);
             }
         });
+/*
 
         // for DO activity
         TextView tvM = (TextView)findViewById(R.id.textView13);
@@ -212,24 +213,169 @@ public class ScrollingActivity extends AppCompatActivity {
         tvM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, tds.class);
+                Intent myIntent = new Intent(ScrollingActivity.this, DO.class);
                 ScrollingActivity.this.startActivity(myIntent);
             }
         });
         tvN.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, tds.class);
+                Intent myIntent = new Intent(ScrollingActivity.this, DO.class);
                 ScrollingActivity.this.startActivity(myIntent);
             }
         });
         ivM.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, tds.class);
+                Intent myIntent = new Intent(ScrollingActivity.this, DO.class);
                 ScrollingActivity.this.startActivity(myIntent);
             }
         });
+*/
+
+
+/*
+        // for for Nutrient ORP activity
+        TextView tvO = (TextView)findViewById(R.id.textView15);
+        TextView tvP = (TextView)findViewById(R.id.textView16);
+        ImageView ivO = (ImageView)findViewById(R.id.imageView8);
+
+        tvO.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, orp.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        tvP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, orp.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        ivO.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, orp.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+
+        // for for pH activity
+        TextView tvQ = (TextView)findViewById(R.id.textView20);
+        TextView tvR = (TextView)findViewById(R.id.textView19);
+        ImageView ivQ = (ImageView)findViewById(R.id.imageView11);
+
+        tvQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, pH.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        tvR.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, pH.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        ivQ.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, pH.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+
+        // for for reservoirs activity
+        TextView tvS = (TextView)findViewById(R.id.textView22);
+        TextView tvT = (TextView)findViewById(R.id.textView21);
+        ImageView ivS = (ImageView)findViewById(R.id.imageView10);
+
+        tvS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, reservoirs.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        tvT.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, reservoirs.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        ivS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, reservoirs.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+
+        /// for canopy height activity
+        TextView tvU = (TextView)findViewById(R.id.textViewB);
+        TextView tvV = (TextView)findViewById(R.id.textViewC);
+        ImageView ivU = (ImageView)findViewById(R.id.imageViewA);
+
+        tvU.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, CanopyHeight.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        tvV.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, CanopyHeight.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        ivU.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, CanopyHeight.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+
+        // for for light height activity
+        TextView tvW = (TextView)findViewById(R.id.textViewE);
+        TextView tvX = (TextView)findViewById(R.id.textViewF);
+        ImageView ivW = (ImageView)findViewById(R.id.imageViewD);
+
+        tvW.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, LightHeight.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        tvX.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, LightHeight.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+        ivW.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(ScrollingActivity.this, LightHeight.class);
+                ScrollingActivity.this.startActivity(myIntent);
+            }
+        });
+
+
+
+*/
+
+
+
 
 
 
