@@ -203,7 +203,6 @@ public class ScrollingActivity extends AppCompatActivity {
                 ScrollingActivity.this.startActivity(myIntent);
             }
         });
-/*
 
         // for DO activity
         TextView tvM = (TextView)findViewById(R.id.textView13);
@@ -231,10 +230,8 @@ public class ScrollingActivity extends AppCompatActivity {
                 ScrollingActivity.this.startActivity(myIntent);
             }
         });
-*/
 
 
-/*
         // for for Nutrient ORP activity
         TextView tvO = (TextView)findViewById(R.id.textView15);
         TextView tvP = (TextView)findViewById(R.id.textView16);
@@ -372,7 +369,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
 
 
-*/
+
 
 
 
