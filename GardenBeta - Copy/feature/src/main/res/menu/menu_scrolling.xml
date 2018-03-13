@@ -17,9 +17,5 @@
         android:orderInCategory="300"
         android:title="First Time Setup"
         app:showAsAction="never" />
-    <item
-        android:id="@+id/developerid"
-        android:orderInCategory="300"
-        android:title="Developer"
-        app:showAsAction="never" />
+
 </menu>
