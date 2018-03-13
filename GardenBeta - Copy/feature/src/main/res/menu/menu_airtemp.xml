@@ -6,12 +6,12 @@
     <item
         android:id="@+id/airtemplearn"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Learn"
         app:showAsAction="never" />
     <item
         android:id="@+id/airtemptolerances"
         android:orderInCategory="200"
-        android:title="Tolerances"
+        android:title="Tolerances and Notifications"
         app:showAsAction="never" />
 
 </menu>
