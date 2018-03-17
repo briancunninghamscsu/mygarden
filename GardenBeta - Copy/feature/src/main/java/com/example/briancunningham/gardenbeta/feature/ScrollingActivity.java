@@ -10,6 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.ViewParent;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -422,12 +423,22 @@ public class ScrollingActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //Snackbar.make(view, "asdasdasdasd", Snackbar.LENGTH_LONG)
-        //    .setAction("Action", null).show();
-
-
-        //noinspection SimplifiableIfStatement
+        //Snackbar.make(, "asdasdasdasd", Snackbar.LENGTH_LONG)
+          //  .setAction("Action", null).show();
+        
         if (id == R.id.action_settings) {
+            Intent myIntent = new Intent(ScrollingActivity.this, SettingsActivity.class);
+            ScrollingActivity.this.startActivity(myIntent);
+            return true;
+        }
+        if (id == R.id.aboutmeid) {
+            Intent myIntent = new Intent(ScrollingActivity.this, AboutActivity.class);
+            ScrollingActivity.this.startActivity(myIntent);
+            return true;
+        }
+        if (id == R.id.firsttimesetupid) {
+            Intent myIntent = new Intent(ScrollingActivity.this, FirstTimeSetup.class);
+            ScrollingActivity.this.startActivity(myIntent);
             return true;
         }
         return super.onOptionsItemSelected(item);
