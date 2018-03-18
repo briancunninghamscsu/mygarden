@@ -6,4 +6,26 @@
     android:layout_height="match_parent"
     tools:context="com.example.briancunningham.gardenbeta.feature.AboutActivity">
 
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="395dp"
+        android:layout_height="587dp"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/aboutmetextbox"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="@string/aboutmetext"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:visibility="visible"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/aboutmetext" />
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

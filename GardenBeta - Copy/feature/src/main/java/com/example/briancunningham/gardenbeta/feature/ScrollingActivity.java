@@ -425,7 +425,7 @@ public class ScrollingActivity extends AppCompatActivity {
 
         //Snackbar.make(, "asdasdasdasd", Snackbar.LENGTH_LONG)
           //  .setAction("Action", null).show();
-        
+
         if (id == R.id.action_settings) {
             Intent myIntent = new Intent(ScrollingActivity.this, SettingsActivity.class);
             ScrollingActivity.this.startActivity(myIntent);

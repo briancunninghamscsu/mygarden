@@ -1,5 +1,13 @@
 <resources>
 
+    <string name="aboutmetext">
+        "Application and System created by Brian Cunningham and Dylan Kohl.\n\n"
+        "Created for ECE 461 &amp; 462 Senior Design 2018.\n\n"
+        "Not for public release.\n\n"
+        "Android Graphing Library by Arnoden Hond.\n
+        View License at \nhttp://android.arnodenhond.com/home\n\n"
+    </string>
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
