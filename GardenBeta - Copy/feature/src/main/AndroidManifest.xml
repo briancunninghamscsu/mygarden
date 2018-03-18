@@ -590,7 +590,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".DeveloperOptions">
+        <activity android:name=".DeveloperOptions"
+            android:label="Developer Controls"
+            android:parentActivityName=".ScrollingActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 

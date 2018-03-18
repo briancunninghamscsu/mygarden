@@ -386,10 +386,8 @@ public class ScrollingActivity extends AppCompatActivity {
                 //Snackbar.make(view, "You pressed tvA", Snackbar.LENGTH_LONG)
                 //      .setAction("Action", null).show();
                 //myIntent.putExtra("key", value); //Optional parameters
-                Intent myIntent = new Intent(ScrollingActivity.this, SettingsActivity.class);
+                Intent myIntent = new Intent(ScrollingActivity.this, DeveloperOptions.class);
                 ScrollingActivity.this.startActivity(myIntent);
-
-
             }
         });
 
