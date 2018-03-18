@@ -42,7 +42,7 @@
         </activity>
         <activity
             android:name=".SettingsActivity"
-            android:label="title_activity_settings"
+            android:label="User Settings"
             android:parentActivityName=".ScrollingActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -129,7 +129,7 @@
         </activity>
         <activity
             android:name=".SolutionTemperatureMeasurements"
-            android:label="title_activity_solution_temperature_measurements"
+            android:label="Solution Temperature"
             android:parentActivityName=".ScrollingActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
@@ -146,7 +146,7 @@
         </activity>
         <activity
             android:name=".tds"
-            android:label="title_activity_do"
+            android:label="Total Dissolved Solids"
             android:parentActivityName=".ScrollingActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -162,7 +162,7 @@
         </activity>
         <activity
             android:name=".DO"
-            android:label="title_activity_do"
+            android:label="Dissolved Oxygen"
             android:parentActivityName=".ScrollingActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
@@ -179,7 +179,7 @@
         </activity>
         <activity
             android:name=".orp"
-            android:label="title_activity_orp"
+            android:label="ORP"
             android:parentActivityName=".ScrollingActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
@@ -196,7 +196,7 @@
         </activity>
         <activity
             android:name=".pH"
-            android:label="title_activity_p_h"
+            android:label="pH"
             android:parentActivityName=".ScrollingActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
@@ -213,7 +213,7 @@
         </activity>
         <activity
             android:name=".reservoirs"
-            android:label="title_activity_reservoirs"
+            android:label="Reservoirs"
             android:parentActivityName=".ScrollingActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
@@ -230,7 +230,7 @@
         </activity>
         <activity
             android:name=".CanopyHeight"
-            android:label="title_activity_canopy_height"
+            android:label="Canopy Height"
             android:parentActivityName=".ScrollingActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
@@ -262,7 +262,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".airtemplearn"
+        <activity
+            android:name=".airtemplearn"
             android:label="Learning About Air Temperature"
             android:parentActivityName=".airtempActivity">
             <intent-filter android:order="1">
@@ -277,7 +278,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".airtemptolerances"
+        <activity
+            android:name=".airtemptolerances"
             android:label="Air Temperature Settings"
             android:parentActivityName=".airtempActivity">
             <intent-filter android:order="1">
@@ -292,7 +294,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".ambienthumiditytolerances"
+        <activity
+            android:name=".ambienthumiditytolerances"
             android:label="Ambient Humidity Settings"
             android:parentActivityName=".ambienthumidity">
             <intent-filter android:order="1">
@@ -307,7 +310,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".ambienthumiditylearn"
+        <activity
+            android:name=".ambienthumiditylearn"
             android:label="Learn About Ambient Humidity"
             android:parentActivityName=".ambienthumidity">
             <intent-filter android:order="1">
@@ -322,7 +326,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".canopyheighttolerances">
+        <activity android:name=".canopyheighttolerances"
+            android:label="Canopy Height Tolerances"
+            android:parentActivityName=".canopyheighttolerances">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -335,7 +341,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".canopyheightlearn">
+        <activity android:name=".canopyheightlearn"
+            android:label="Learn About Canopy Height"
+            android:parentActivityName=".canopyheightlearn">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -348,7 +356,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".co2learn"
+        <activity
+            android:name=".co2learn"
             android:label="Learn About Carbon Dioxide"
             android:parentActivityName=".co2">
             <intent-filter android:order="1">
@@ -363,7 +372,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".co2tolerances"
+        <activity
+            android:name=".co2tolerances"
             android:label="Carbon Dioxide Settings"
             android:parentActivityName=".co2">
             <intent-filter android:order="1">
@@ -378,7 +388,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".DOtolerances">
+        <activity android:name=".DOtolerances"
+            android:label="DO Settings"
+            android:parentActivityName=".DOtolerances">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -391,7 +403,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".DOlearn">
+        <activity android:name=".DOlearn"
+            android:label="Learn About Dissolved Oxygen"
+            android:parentActivityName=".DOlearn">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -404,7 +418,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".lightheightlearn"
+        <activity
+            android:name=".lightheightlearn"
             android:label="Learn About Light Height"
             android:parentActivityName=".LightHeight">
             <intent-filter android:order="1">
@@ -419,7 +434,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".lightheighttolerances"
+        <activity
+            android:name=".lightheighttolerances"
             android:label="Light Height Settings"
             android:parentActivityName=".LightHeight">
             <intent-filter android:order="1">
@@ -434,7 +450,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".o2tolerances"
+        <activity
+            android:name=".o2tolerances"
             android:label="Oxygen Settings"
             android:parentActivityName=".o2">
             <intent-filter android:order="1">
@@ -449,7 +466,8 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".o2learn"
+        <activity
+            android:name=".o2learn"
             android:label="Learn About Ambient Oxygen"
             android:parentActivityName=".o2">
             <intent-filter android:order="1">
@@ -464,7 +482,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".orplearn">
+        <activity android:name=".orplearn"
+            android:label="Learn About ORP"
+            android:parentActivityName=".orplearn">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -477,7 +497,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".orptolerances">
+        <activity android:name=".orptolerances"
+            android:label="ORP Settings"
+            android:parentActivityName=".orp">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -490,7 +512,10 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".pHlearn">
+        <activity
+            android:name=".pHlearn"
+            android:label="Learn About pH"
+            android:parentActivityName=".pH">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -503,7 +528,10 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".pHtolerances">
+        <activity
+            android:name=".pHtolerances"
+            android:label="pH Settings"
+            android:parentActivityName=".pH">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -516,7 +544,10 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".ReservoirslearnActivity">
+        <activity
+            android:name=".ReservoirslearnActivity"
+            android:label="Learn About Reservoirs"
+            android:parentActivityName=".reservoirs">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -529,7 +560,10 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".reservoirstolerances">
+        <activity
+            android:name=".reservoirstolerances"
+            android:label="Reservoir Settings"
+            android:parentActivityName=".reservoirs">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -542,7 +576,10 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".solutiontemplearn">
+        <activity
+            android:name=".solutiontemplearn"
+            android:label="Learn About Solution Temps"
+            android:parentActivityName=".SolutionTemperatureMeasurements">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -555,7 +592,10 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".solutiontemptolerances">
+        <activity
+            android:name=".solutiontemptolerances"
+            android:label="Solution Temperature Tolerances"
+            android:parentActivityName=".SolutionTemperatureMeasurements">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -568,20 +608,10 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".tdstolerances">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity android:name=".tdspH">
+        <activity
+            android:name=".tdstolerances"
+            android:label="TDS Settings"
+            android:parentActivityName=".tds">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -610,9 +640,25 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".DeveloperOptions"
+        <activity
+            android:name=".DeveloperOptions"
             android:label="Developer Controls"
             android:parentActivityName=".ScrollingActivity">
+            <intent-filter android:order="1">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="example.com"
+                    android:pathPattern="/.*"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".tdslearn"
+            android:label="Learn About TDS"
+            android:parentActivityName=".tds">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
