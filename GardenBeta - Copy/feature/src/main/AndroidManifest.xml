@@ -262,7 +262,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".airtemplearn">
+        <activity android:name=".airtemplearn"
+            android:label="Learning About Air Temperature"
+            android:parentActivityName=".airtempActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -275,7 +277,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".airtemptolerances">
+        <activity android:name=".airtemptolerances"
+            android:label="Air Temperature Tolerances and Settings"
+            android:parentActivityName=".airtempActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
