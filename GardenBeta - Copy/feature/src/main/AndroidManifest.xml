@@ -278,7 +278,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".airtemptolerances"
-            android:label="Air Temperature Tolerances and Settings"
+            android:label="Air Temperature Settings"
             android:parentActivityName=".airtempActivity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -292,7 +292,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".ambienthumiditytolerances">
+        <activity android:name=".ambienthumiditytolerances"
+            android:label="Ambient Humidity Settings"
+            android:parentActivityName=".ambienthumidity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -305,7 +307,9 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity android:name=".ambienthumiditylearn">
+        <activity android:name=".ambienthumiditylearn"
+            android:label="Learn About Ambient Humidity"
+            android:parentActivityName=".ambienthumidity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
