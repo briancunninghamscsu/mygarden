@@ -2,8 +2,27 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/devoptionscontlayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.briancunningham.gardenbeta.feature.DeveloperOptions">
 
+    <ScrollView
+        android:id="@+id/devscrollview"
+        android:layout_width="395dp"
+        android:layout_height="587dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button_send_string"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send a String"
+            android:visibility="visible"
+            tools:text="Send a String" />
+
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>
