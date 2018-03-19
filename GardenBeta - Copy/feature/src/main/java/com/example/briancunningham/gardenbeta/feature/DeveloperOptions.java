@@ -14,16 +14,16 @@ import java.net.Socket;
 
 public class DeveloperOptions extends AppCompatActivity {
 
-    //private CClient mClient;
+    private CClient mClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer_options);
 
-        //mClient = new CClient();
-        //Thread myThready = new Thread(mClient);
-        //myThready.start();
+        mClient = new CClient();
+        Thread myThready = new Thread(mClient);
+        myThready.start();
 
         Button sendastringbutton = (Button) findViewById(R.id.button_send_string);
         sendastringbutton.setOnClickListener(new View.OnClickListener() {
@@ -31,24 +31,30 @@ public class DeveloperOptions extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "You hopefully transmitted a string", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+                proc_Login(view);
+            }
+        });
+    }
 
-                //Socket socket = new Socket("10.0.78.75", 50505);
 
-                //OutputStream out = socket.getOutputStream();
-                //PrintWriter output = new PrintWriter(out);
+    public void proc_Login(View v) {
+        for (int i = 0; i < 5; i++)
+            mClient.Send("asaadsasdasd");
 
-/*
+
+
+                /*Socket socket = new Socket("10.0.78.75", 50505);
+
+                OutputStream out = socket.getOutputStream();
+                PrintWriter output = new PrintWriter(out);
+
                 mStatusText.setText("Sending Data to PC");
                 output.println("Hello from Android");
-                out.flush();out.close();
+                out.flush();
+                out.close();
                 mStatusText.setText("Data sent to PC");
 
                 socket.close();
-                mStatusText.setText("Socket closed");
-*/
-            }
-        });
-
-    }}
-
-
+                mStatusText.setText("Socket closed");*/
+    }
+}
