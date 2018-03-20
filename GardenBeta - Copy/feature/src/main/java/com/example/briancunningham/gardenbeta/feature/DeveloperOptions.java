@@ -25,7 +25,7 @@ public class DeveloperOptions extends AppCompatActivity {
         Thread myThready = new Thread(mClient);
         myThready.start();
 
-        Button sendastringbutton = (Button) findViewById(R.id.button_send_string);
+        Button sendastringbutton = (Button) findViewById(R.id.butt1);
         sendastringbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

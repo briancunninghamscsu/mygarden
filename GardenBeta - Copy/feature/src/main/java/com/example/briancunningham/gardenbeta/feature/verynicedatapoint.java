@@ -45,49 +45,66 @@ public class verynicedatapoint {
         }
 
         public verynicedatapoint(){
-            Log.e("Subtroutine","yougottotheconstructor");
             Random r = new Random();
+
+
             int i1 = (r.nextInt(80) + 65);
             this.airtemplevel=i1;
-            Log.e("Subtroutine","yougottothesecondthing");
+            Log.d("spoof","randomly generated Air Temp level is " + i1);
+
+
             i1 = (r.nextInt(40) + 60);
             this.ambienthumiditylevel=i1;
+            Log.d("spoof","randomly generated Ambient Humidity level is " + i1);
+
 
             i1 = (r.nextInt(1) + 20);
             this.canopyheightlevel=i1;
+            Log.d("spoof","randomly generated Canopy Height level is " + i1);
 
             i1 = (r.nextInt(900) + 1000);
             this.co2level=i1;
+            Log.d("spoof","randomly generated Co2 level is " + i1);
 
             i1 = (r.nextInt(600) + 1000);
             this.dolevel=i1;
+            Log.d("spoof","randomly generated DO level is " + i1);
 
             i1 = (r.nextInt(1) + 200);
             this.lightheight=i1;
+            Log.d("spoof","randomly generated light height level is " + i1);
 
             i1 = (r.nextInt(400) + 600);
             this.o2level=i1;
+            Log.d("spoof","randomly generated O2 level is " + i1);
 
             i1 = (r.nextInt(1) + 5);
             this.orplevel=i1;
+            Log.d("spoof","randomly generated ORP level is " + i1);
 
             i1 = (r.nextInt(500) + 1000);
             this.tdslevel=i1;
+            Log.d("spoof","randomly generated ORP level is " + i1);
 
             i1 = (r.nextInt(1) + 14);
             this.phlevel=i1;
+            Log.d("spoof","randomly generated pH level is " + i1);
 
             i1 = (r.nextInt(80) + 65);
             this.solutiontemplevel=i1;
-
-            this.reservoirs=false;
+            Log.d("spoof","randomly generated Solution Temp level is " + i1);
             Log.e("Subtroutine","yougottothe end");
-            /* i1 = (r.nextInt(0) + 1);
-             if (i1==1)
-                    this.reservoirs=false;
-             else
-                 this.reservoirs=true;*/
-        }
+
+
+             i1 = (r.nextInt(1) + 1);
+             if (i1==1) {
+                 this.reservoirs = false;
+                 Log.d("spoof", "reserviors are false (empty)");
+             }
+                 else{
+                 this.reservoirs=true;
+                 Log.d("spoof","reservoirs are true (full)");
+             }}
 
             public float getAirtemplevel() {
                 return airtemplevel;
