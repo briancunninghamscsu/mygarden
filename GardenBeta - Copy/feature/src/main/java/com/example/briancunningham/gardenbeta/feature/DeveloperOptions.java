@@ -43,7 +43,7 @@ public class DeveloperOptions extends AppCompatActivity {
 
 
 
-                /*Socket socket = new Socket("10.0.78.75", 50505);
+                /*Socket socket = new Socket("10.101.65.188", 50505);
 
                 OutputStream out = socket.getOutputStream();
                 PrintWriter output = new PrintWriter(out);

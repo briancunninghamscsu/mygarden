@@ -10,6 +10,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 public class co2 extends AppCompatActivity {
 
@@ -21,7 +24,9 @@ public class co2 extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setupActionBar();
 
-        verynicedatapoint lovelytestdata = new verynicedatapoint(1, 2,3,4,5,6,7,8,9,10,11,false);
+        verynicedatapoint lovelydata = new verynicedatapoint(1,2,3,4,6,7,8,9,10,9,12,false);
+        TextView tvDeelon = findViewById(R.id.textViewdeelon);
+        tvDeelon.setText(lovelydata.getDatapointdatetime());
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

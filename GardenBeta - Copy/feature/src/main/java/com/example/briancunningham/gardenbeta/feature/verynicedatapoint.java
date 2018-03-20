@@ -1,5 +1,11 @@
 package com.example.briancunningham.gardenbeta.feature;
 
+import java.sql.Time;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class verynicedatapoint {
 
         private float airtemplevel;
@@ -14,8 +20,9 @@ public class verynicedatapoint {
         private float phlevel;
         private float solutiontemplevel;
         private boolean reservoirs;
+        private String datapointdatetime;
 
-        private verynicedatapoint(float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoirs ) {
+        public verynicedatapoint(float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoirs) {
             this.airtemplevel = airtemplevel;
             this.ambienthumiditylevel = ambienthumiditylevel;
             this.canopyheightlevel = canopyheightlevel;
@@ -29,6 +36,11 @@ public class verynicedatapoint {
             this.phlevel = phlevel;
             this.solutiontemplevel = solutiontemplevel;
             this.reservoirs = reservoirs;
+            Date c = Calendar.getInstance().getTime();
+            SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
+            this.datapointdatetime = sdf.format(c);
+
+            ;
         }
             public float getAirtemplevel() {
                 return airtemplevel;
@@ -75,4 +87,6 @@ public class verynicedatapoint {
             public boolean getReservoirs(){
                 return reservoirs;
             }
+
+            public String getDatapointdatetime() {return datapointdatetime;}
 }
