@@ -1,10 +1,13 @@
 package com.example.briancunningham.gardenbeta.feature;
 
+import android.util.Log;
+
 import java.sql.Time;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Random;
 
 public class verynicedatapoint {
 
@@ -39,9 +42,53 @@ public class verynicedatapoint {
             Date c = Calendar.getInstance().getTime();
             SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
             this.datapointdatetime = sdf.format(c);
-
-            ;
         }
+
+        public verynicedatapoint(){
+            Log.e("Subtroutine","yougottotheconstructor");
+            Random r = new Random();
+            int i1 = (r.nextInt(80) + 65);
+            this.airtemplevel=i1;
+            Log.e("Subtroutine","yougottothesecondthing");
+            i1 = (r.nextInt(40) + 60);
+            this.ambienthumiditylevel=i1;
+
+            i1 = (r.nextInt(1) + 20);
+            this.canopyheightlevel=i1;
+
+            i1 = (r.nextInt(900) + 1000);
+            this.co2level=i1;
+
+            i1 = (r.nextInt(600) + 1000);
+            this.dolevel=i1;
+
+            i1 = (r.nextInt(1) + 200);
+            this.lightheight=i1;
+
+            i1 = (r.nextInt(400) + 600);
+            this.o2level=i1;
+
+            i1 = (r.nextInt(1) + 5);
+            this.orplevel=i1;
+
+            i1 = (r.nextInt(500) + 1000);
+            this.tdslevel=i1;
+
+            i1 = (r.nextInt(1) + 14);
+            this.phlevel=i1;
+
+            i1 = (r.nextInt(80) + 65);
+            this.solutiontemplevel=i1;
+
+            this.reservoirs=false;
+            Log.e("Subtroutine","yougottothe end");
+            /* i1 = (r.nextInt(0) + 1);
+             if (i1==1)
+                    this.reservoirs=false;
+             else
+                 this.reservoirs=true;*/
+        }
+
             public float getAirtemplevel() {
                 return airtemplevel;
             }

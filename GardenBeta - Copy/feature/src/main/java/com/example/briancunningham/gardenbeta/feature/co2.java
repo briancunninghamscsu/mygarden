@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,6 +26,14 @@ public class co2 extends AppCompatActivity {
         setupActionBar();
 
         verynicedatapoint lovelydata = new verynicedatapoint(1,2,3,4,6,7,8,9,10,9,12,false);
+        verynicedatapoint testranddata = new verynicedatapoint();
+            Log.d("randotest","randomly gend airtemp level is " + testranddata.getAirtemplevel());
+        Log.d("randotest","randomly gend amb humdty level is " + testranddata.getAmbienthumiditylevel());
+        Log.d("randotest","randomly gend canopyheight level is " + testranddata.getCanopyheightlevel());
+        Log.d("randotest","randomly gend co2 level is " + testranddata.getCo2level());
+        Log.d("randotest","randomly gend do level is " + testranddata.getDolevel());
+
+
         TextView tvDeelon = findViewById(R.id.textViewdeelon);
         tvDeelon.setText(lovelydata.getDatapointdatetime());
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
