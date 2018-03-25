@@ -7,6 +7,7 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -30,6 +32,14 @@ public class ScrollingActivity extends AppCompatActivity {
 
         TextView tv1 = (TextView)findViewById(R.id.textView24); //puts xml-ID'd textview24 in a box
 
+        //initializing the ArrayList
+        verynicedatapoint mrmeeseeks = new verynicedatapoint();
+        verynicedatapoint mrpoopybutthole = new verynicedatapoint();
+        ArrayList recordedData = new ArrayList();
+        recordedData.add(mrpoopybutthole);
+        Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
+        recordedData.add(mrmeeseeks);
+        Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
 
         // This block updates the header with updated real-time clock on startup.
         Date c = Calendar.getInstance().getTime();
