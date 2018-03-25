@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toolbar;
 
 import java.io.OutputStream;
 import java.io.PrintWriter;
@@ -16,19 +17,24 @@ import java.util.ArrayList;
 
 public class DeveloperOptions extends AppCompatActivity {
 
-    private CClient mClient;
+    //private CClient mClient;
+    private ArrayList<verynicedatapoint> recordedData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer_options);
+        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        //getSupportActionBar().setHomeButtonEnabled(true);
+
 
         Log.d("bootinup", "it got here");
-        ArrayList recordedData = getIntent().getParcelableArrayListExtra("passme");
-        Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
-        mClient = new CClient();
-        Thread myThready = new Thread(mClient);
-        myThready.start();
+
+
+        ArrayList<verynicedatapoint> recordedData = getIntent().getParcelableArrayListExtra("passme");
+        Log.d("bootinup","from the devoptions activity the listarray has " + recordedData.size());
+
+
 
         Button sendastringbutton = (Button) findViewById(R.id.butt1);
         sendastringbutton.setOnClickListener(new View.OnClickListener() {
@@ -36,30 +42,24 @@ public class DeveloperOptions extends AppCompatActivity {
             public void onClick(View view) {
                 Snackbar.make(view, "You hopefully transmitted a string", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-                proc_Login(view);
+
             }
         });
+
+
+
+    }
+
+    @Override
+    public void onBackPressed() {
+        // Write your code here
+
+        Intent myIntent = new Intent(DeveloperOptions.this, ScrollingActivity.class);
+        myIntent.putExtra("passme",recordedData);
+        DeveloperOptions.this.startActivity(myIntent);
+
+        super.onBackPressed();
     }
 
 
-    public void proc_Login(View v) {
-        for (int i = 0; i < 5; i++)
-            mClient.Send("asaadsasdasd");
-
-
-
-                /*Socket socket = new Socket("10.101.65.188", 50505);
-
-                OutputStream out = socket.getOutputStream();
-                PrintWriter output = new PrintWriter(out);
-
-                mStatusText.setText("Sending Data to PC");
-                output.println("Hello from Android");
-                out.flush();
-                out.close();
-                mStatusText.setText("Data sent to PC");
-
-                socket.close();
-                mStatusText.setText("Socket closed");*/
-    }
 }

@@ -90,7 +90,7 @@ public class verynicedatapoint implements Parcelable {
             out.writeFloat(tdslevel);
             out.writeFloat(phlevel);
             out.writeFloat(solutiontemplevel);
-            if (reservoirs == true) {
+            if (reservoirs) {
                 out.writeInt(1);
             } else {
                 out.writeInt(0);
