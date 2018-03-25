@@ -35,7 +35,7 @@ public class ScrollingActivity extends AppCompatActivity {
         //initializing the ArrayList
         verynicedatapoint mrmeeseeks = new verynicedatapoint();
         verynicedatapoint mrpoopybutthole = new verynicedatapoint();
-        ArrayList recordedData = new ArrayList();
+        final ArrayList recordedData = new ArrayList();
         recordedData.add(mrpoopybutthole);
         Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
         recordedData.add(mrmeeseeks);
@@ -397,6 +397,7 @@ public class ScrollingActivity extends AppCompatActivity {
                 //      .setAction("Action", null).show();
                 //myIntent.putExtra("key", value); //Optional parameters
                 Intent myIntent = new Intent(ScrollingActivity.this, DeveloperOptions.class);
+                //myIntent.putExtra("passme",recordedData);
                 ScrollingActivity.this.startActivity(myIntent);
             }
         });

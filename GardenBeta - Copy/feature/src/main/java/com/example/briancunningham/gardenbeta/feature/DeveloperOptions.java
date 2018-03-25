@@ -5,12 +5,14 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
+import java.util.ArrayList;
 
 public class DeveloperOptions extends AppCompatActivity {
 
@@ -21,6 +23,9 @@ public class DeveloperOptions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer_options);
 
+        Log.d("bootinup", "it got here");
+        //ArrayList recordedData = getIntent().getParcelableArrayListExtra("passme");
+        //Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
         mClient = new CClient();
         Thread myThready = new Thread(mClient);
         myThready.start();

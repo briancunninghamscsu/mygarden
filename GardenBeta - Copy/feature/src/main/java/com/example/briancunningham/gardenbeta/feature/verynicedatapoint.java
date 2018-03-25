@@ -1,5 +1,7 @@
 package com.example.briancunningham.gardenbeta.feature;
 
+import android.os.Parcel;
+import android.os.Parcelable;
 import android.util.Log;
 
 import java.sql.Time;
@@ -9,7 +11,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Random;
 
-public class verynicedatapoint {
+public class verynicedatapoint implements Parcelable {
 
         private float airtemplevel;
         private float ambienthumiditylevel;
@@ -24,6 +26,97 @@ public class verynicedatapoint {
         private float solutiontemplevel;
         private boolean reservoirs;
         private String datapointdatetime;
+
+
+        public verynicedatapoint(Parcel input){
+            airtemplevel = input.readFloat();
+            ambienthumiditylevel = input.readFloat();
+            canopyheightlevel = input.readFloat();;
+            co2level = input.readFloat();;
+            dolevel = input.readFloat();;
+            lightheight = input.readFloat();;
+            o2level = input.readFloat();;
+            orplevel = input.readFloat();;
+            tdslevel = input.readFloat();;
+            phlevel = input.readFloat();;
+            solutiontemplevel = input.readFloat();
+            int localtemp = input.readInt();
+            if (localtemp==1)
+            {reservoirs=true; }
+            else
+            {
+                reservoirs=false;
+            }
+
+            datapointdatetime=input.readString();
+
+        };
+
+
+
+        @Override
+        public int describeContents() {
+            return 0;
+        }
+
+        // write your object's data to the passed-in Parcel
+        @Override
+        public void writeToParcel(Parcel out, int flags) {
+            // for flattening the objects into a parcel, we need to use the writeInt method.
+            // Pay attention to order! There's no keys, so we need to use an ordered list.
+            // We'll use the same order as the attribution definitions list up top.
+            /*private float airtemplevel;
+            private float ambienthumiditylevel;
+            private float canopyheightlevel;
+            private float co2level;
+            private float dolevel;
+            private float lightheight;
+            private float o2level;
+            private float orplevel;
+            private float tdslevel;
+            private float phlevel;
+            private float solutiontemplevel;
+            private boolean reservoirs;
+            private String datapointdatetime;*/
+
+            out.writeFloat(airtemplevel);
+            out.writeFloat(ambienthumiditylevel);
+            out.writeFloat(canopyheightlevel);
+            out.writeFloat(co2level);
+            out.writeFloat(dolevel);
+            out.writeFloat(lightheight);
+            out.writeFloat(o2level);
+            out.writeFloat(orplevel);
+            out.writeFloat(tdslevel);
+            out.writeFloat(phlevel);
+            out.writeFloat(solutiontemplevel);
+            if (reservoirs == true) {
+                out.writeInt(1);
+            } else {
+                out.writeInt(0);
+            }
+            out.writeString(datapointdatetime);
+
+        }
+
+        // this is used to regenerate your object. All Parcelables must have a CREATOR that implements these two methods
+        public static final Parcelable.Creator<verynicedatapoint> CREATOR = new Parcelable.Creator<verynicedatapoint>() {
+            public verynicedatapoint createFromParcel(Parcel in) {
+            return new verynicedatapoint(in);
+            /*
+            Note that prior to making this, we didn't have a constructor for verynicedatapoint that took a single parcel-type argument.
+            Therefore, we need to make a new constructor which accepts that argument.
+            This constructor needs to read from memory the the primitives stored in it, IN THE SAME ORDER THEY WERE WRITTEN TO.
+            */
+        };
+
+
+
+         public verynicedatapoint[] newArray(int size) {
+            return new verynicedatapoint[size];
+        }
+        };
+
 
         public verynicedatapoint(float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoirs) {
             this.airtemplevel = airtemplevel;
