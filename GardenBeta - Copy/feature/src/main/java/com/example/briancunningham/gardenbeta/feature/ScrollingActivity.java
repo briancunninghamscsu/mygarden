@@ -23,6 +23,8 @@ import java.util.Date;
 
 public class ScrollingActivity extends AppCompatActivity {
 
+    ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,7 +38,7 @@ public class ScrollingActivity extends AppCompatActivity {
         verynicedatapoint mrmeeseeks = new verynicedatapoint();
         verynicedatapoint mrpoopybutthole = new verynicedatapoint();
         verynicedatapoint roy = new verynicedatapoint();
-        final ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
+
         recordedData.add(mrpoopybutthole);
         Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
         recordedData.add(mrmeeseeks);

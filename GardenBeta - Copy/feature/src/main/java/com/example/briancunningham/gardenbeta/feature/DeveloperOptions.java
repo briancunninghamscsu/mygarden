@@ -31,10 +31,21 @@ public class DeveloperOptions extends AppCompatActivity {
         Log.d("bootinup", "it got here");
 
 
-        ArrayList<verynicedatapoint> recordedData = getIntent().getParcelableArrayListExtra("passme");
+        final ArrayList<verynicedatapoint> recordedData = getIntent().getParcelableArrayListExtra("passme");
         Log.d("bootinup","from the devoptions activity the listarray has " + recordedData.size());
 
 
+
+        Button spoofbutton = (Button) findViewById(R.id.butt2);
+        spoofbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                recordedData.add(new verynicedatapoint());
+                Snackbar.make(view, "Spoofed Data. Quantity in ArrayList is " + recordedData.size() , Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+            }
+        });
 
         Button sendastringbutton = (Button) findViewById(R.id.butt1);
         sendastringbutton.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +57,16 @@ public class DeveloperOptions extends AppCompatActivity {
             }
         });
 
+        Button printbutton = (Button) findViewById(R.id.butt3);
+        printbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int loopcounter;
 
+                Snackbar.make(view, "Check LogCat for information.", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
 
     }
 
