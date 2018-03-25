@@ -24,8 +24,8 @@ public class DeveloperOptions extends AppCompatActivity {
         setContentView(R.layout.activity_developer_options);
 
         Log.d("bootinup", "it got here");
-        //ArrayList recordedData = getIntent().getParcelableArrayListExtra("passme");
-        //Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
+        ArrayList recordedData = getIntent().getParcelableArrayListExtra("passme");
+        Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
         mClient = new CClient();
         Thread myThready = new Thread(mClient);
         myThready.start();
