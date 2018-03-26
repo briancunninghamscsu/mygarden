@@ -61,9 +61,15 @@ public class DeveloperOptions extends AppCompatActivity {
         printbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int loopcounter;
+               // Log.d("stars","oh my that does sound convenient");
+                for (int i=0; i<recordedData.size(); i++)
+                {
+                    String jerry = recordedData.get(i).getDatapointdatetime();
+                    Log.d("stars","Array list item number " + i);
+                    Log.d("stars",jerry);
+                }
 
-                Snackbar.make(view, "Check LogCat for information.", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Check LogCat for the plug", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
