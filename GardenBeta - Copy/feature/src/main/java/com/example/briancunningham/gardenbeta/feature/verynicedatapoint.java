@@ -179,7 +179,7 @@ public class verynicedatapoint implements Parcelable {
             this.tdslevel=i1;
             Log.d("spoof","randomly generated ORP level is " + i1);
 
-            i1 = (r.nextInt(1) + 14);
+            i1 = (r.nextInt(14) + 1);
             this.phlevel=i1;
             Log.d("spoof","randomly generated pH level is " + i1);
 

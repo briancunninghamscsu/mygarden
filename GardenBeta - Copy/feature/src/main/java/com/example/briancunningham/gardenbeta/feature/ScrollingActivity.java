@@ -35,15 +35,15 @@ public class ScrollingActivity extends AppCompatActivity {
         TextView tv1 = (TextView)findViewById(R.id.textView24); //puts xml-ID'd textview24 in a box
 
         //initializing the ArrayList
-        verynicedatapoint mrmeeseeks = new verynicedatapoint();
+        /*verynicedatapoint mrmeeseeks = new verynicedatapoint();
         verynicedatapoint mrpoopybutthole = new verynicedatapoint();
         verynicedatapoint roy = new verynicedatapoint();
-
-        recordedData.add(mrpoopybutthole);
+*/
+  /*      recordedData.add(mrpoopybutthole);
         Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
         recordedData.add(mrmeeseeks);
         Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
-        recordedData.add(roy);
+        recordedData.add(roy);*/
         // This block updates the header with updated real-time clock on startup.
         Date c = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();

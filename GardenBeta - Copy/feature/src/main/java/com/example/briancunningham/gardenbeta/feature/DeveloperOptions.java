@@ -65,8 +65,19 @@ public class DeveloperOptions extends AppCompatActivity {
                 for (int i=0; i<recordedData.size(); i++)
                 {
                     String jerry = recordedData.get(i).getDatapointdatetime();
-                    Log.d("stars","Array list item number " + i);
-                    Log.d("stars",jerry);
+                    Log.d("consoleprinting","Array list item number " + i + " has an air temp of " + recordedData.get(i).getAirtemplevel());
+                    Log.d("consoleprinting","Array list item number " + i + " has an amb humidity of " + recordedData.get(i).getAmbienthumiditylevel());
+                    Log.d("consoleprinting","Array list item number " + i + " has an canopy height of " + recordedData.get(i).getCanopyheightlevel());
+                    Log.d("consoleprinting","Array list item number " + i + " has an co2 of " + recordedData.get(i).getCo2level());
+                    Log.d("consoleprinting","Array list item number " + i + " has an DO of " + recordedData.get(i).getDolevel());
+                    Log.d("consoleprinting","Array list item number " + i + " has an Light Height of " + recordedData.get(i).getLightheight());
+                    Log.d("consoleprinting","Array list item number " + i + " has an o2 of " + recordedData.get(i).getO2level());
+                    Log.d("consoleprinting","Array list item number " + i + " has an orp temp of " + recordedData.get(i).getOrplevel());
+                    Log.d("consoleprinting","Array list item number " + i + " has an pH of " + recordedData.get(i).getPhlevel());
+                    Log.d("consoleprinting","Array list item number " + i + " has an reservoir state of " + recordedData.get(i).getReservoirs());
+                    Log.d("consoleprinting","Array list item number " + i + " has an solution temp of " + recordedData.get(i).getSolutiontemplevel());
+                    Log.d("consoleprinting","Array list item number " + i + " has a TDS level of " + recordedData.get(i).getTdslevel());
+                    Log.d("consoleprinting","Array list item number " + i + " has a timestamp " + recordedData.get(i).getDatapointdatetime());
                 }
 
                 Snackbar.make(view, "Check LogCat for the plug", Snackbar.LENGTH_LONG)
