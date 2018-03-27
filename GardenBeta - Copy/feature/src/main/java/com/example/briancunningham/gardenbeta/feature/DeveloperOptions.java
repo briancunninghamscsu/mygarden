@@ -62,8 +62,24 @@ public class DeveloperOptions extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                // Log.d("stars","oh my that does sound convenient");
-               /* for (int i=0; i<recordedData.size(); i++)
+                for (int i=0; i<mApp.size(); i++)
                 {
+                    Log.d("consoleprinting","Array list item number " + i + " has an air temp of " + mApp.getAirtemplevel(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has an amb humidity of " + mApp.getAmbienthumiditylevel(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has an canopy height of " + mApp.getCanopyheightlevel(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has an co2 of " + mApp.getCanopyheightlevel(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has an DO of " + mApp.getDolevel(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has an Light Height of " + mApp.getLightheight(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has an o2 of " + mApp.getO2level(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has an orp temp of " + mApp.getOrplevel(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has an pH of " + mApp.getPhlevel(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has a TDS level of " +  mApp.getTdslevel(i));
+                    Log.d("consoleprinting","Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
+
+
+/*
                     String jerry = recordedData.get(i).getDatapointdatetime();
                     Log.d("consoleprinting","Array list item number " + i + " has an air temp of " + recordedData.get(i).getAirtemplevel());
                     Log.d("consoleprinting","Array list item number " + i + " has an amb humidity of " + recordedData.get(i).getAmbienthumiditylevel());
@@ -77,8 +93,8 @@ public class DeveloperOptions extends AppCompatActivity {
                     Log.d("consoleprinting","Array list item number " + i + " has an reservoir state of " + recordedData.get(i).getReservoirs());
                     Log.d("consoleprinting","Array list item number " + i + " has an solution temp of " + recordedData.get(i).getSolutiontemplevel());
                     Log.d("consoleprinting","Array list item number " + i + " has a TDS level of " + recordedData.get(i).getTdslevel());
-                    Log.d("consoleprinting","Array list item number " + i + " has a timestamp " + recordedData.get(i).getDatapointdatetime());
-                }*/
+                    Log.d("consoleprinting","Array list item number " + i + " has a timestamp " + recordedData.get(i).getDatapointdatetime());*/
+                }
 
                 Snackbar.make(view, "Check LogCat for the plug", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();

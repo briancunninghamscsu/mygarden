@@ -71,10 +71,10 @@ public class ScrollingActivity extends AppCompatActivity {
         }*/
 
         //verynicedatapoint roy = new verynicedatapoint();
-        Log.d("consoleprinting", "constructed new data point");
+        /*Log.d("consoleprinting", "constructed new data point");
         Log.d("consoleprinting", "number of array items is " + mApp.size());
         mApp.testingmessage();
-        mApp.addavalue();
+        mApp.addavalue();*/
         Log.d("consoleprinting", "number of array items is " + mApp.size());
         //Log.d("consoleprinting", "added new data point to local variable");
         //Log.d("consoleprinting", "from the main activity, the number of items in the array is " + recordedData.size());
