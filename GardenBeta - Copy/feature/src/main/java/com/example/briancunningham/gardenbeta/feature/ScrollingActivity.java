@@ -42,24 +42,27 @@ public class ScrollingActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        //these two are needed to make global variables
         MyAppApplication mApp = (MyAppApplication)getApplicationContext();
-        Log.d("consoleprinting", "made it past the my app application call");
-       // ArrayList<verynicedatapoint> recordedData = mApp.getRecordedData();
 
 
         Log.d("consoleprinting", "number of array items is " + mApp.size());
+
         TextView tv1 = (TextView)findViewById(R.id.textView24);
-        Date c = Calendar.getInstance().getTime();
+        /*Date c = Calendar.getInstance().getTime();
         SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
-        String formattedDate = "Last Updated at " + sdf.format(c);
-        tv1.setText(formattedDate);
+        String formattedDate = "Last Updated at " + sdf.format(c);*/
 
-
+        int mrtesty = mApp.size();
+        if (mrtesty==0) {
+            tv1.setText("No Data Found!");
+            }
+        else {
+            String stringybeans = "Last Updated at " + mApp.getDatapointdatetime(mrtesty-1);
+            tv1.setText(stringybeans);
+        }
 
 
             // for air temp menu

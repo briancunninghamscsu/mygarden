@@ -188,7 +188,10 @@ public class verynicedatapoint implements Parcelable {
             Log.d("spoof","randomly generated Solution Temp level is " + i1);
             Log.e("Subtroutine","yougottothe end");
 
-            datapointdatetime = "OwO what's this?";
+
+            Date c = Calendar.getInstance().getTime();
+            SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
+            this.datapointdatetime = sdf.format(c);
 
              i1 = (r.nextInt(1) + 1);
              if (i1==1) {
