@@ -28,12 +28,6 @@ public class DeveloperOptions extends AppCompatActivity {
         ArrayList<verynicedatapoint> recordedData = mApp.getRecordedData();
 
 
-        /*Log.d("bootinup", "it got here");
-
-
-        final ArrayList<verynicedatapoint> recordedData = getIntent().getParcelableArrayListExtra("passme");
-        Log.d("consoleprinting","from the devoptions activity the listarray has " + recordedData.size());
-*/
 
 
         Button spoofbutton = (Button) findViewById(R.id.butt2);
@@ -77,51 +71,13 @@ public class DeveloperOptions extends AppCompatActivity {
                     Log.d("consoleprinting","Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
                     Log.d("consoleprinting","Array list item number " + i + " has a TDS level of " +  mApp.getTdslevel(i));
                     Log.d("consoleprinting","Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
+                    }
 
-
-/*
-                    String jerry = recordedData.get(i).getDatapointdatetime();
-                    Log.d("consoleprinting","Array list item number " + i + " has an air temp of " + recordedData.get(i).getAirtemplevel());
-                    Log.d("consoleprinting","Array list item number " + i + " has an amb humidity of " + recordedData.get(i).getAmbienthumiditylevel());
-                    Log.d("consoleprinting","Array list item number " + i + " has an canopy height of " + recordedData.get(i).getCanopyheightlevel());
-                    Log.d("consoleprinting","Array list item number " + i + " has an co2 of " + recordedData.get(i).getCo2level());
-                    Log.d("consoleprinting","Array list item number " + i + " has an DO of " + recordedData.get(i).getDolevel());
-                    Log.d("consoleprinting","Array list item number " + i + " has an Light Height of " + recordedData.get(i).getLightheight());
-                    Log.d("consoleprinting","Array list item number " + i + " has an o2 of " + recordedData.get(i).getO2level());
-                    Log.d("consoleprinting","Array list item number " + i + " has an orp temp of " + recordedData.get(i).getOrplevel());
-                    Log.d("consoleprinting","Array list item number " + i + " has an pH of " + recordedData.get(i).getPhlevel());
-                    Log.d("consoleprinting","Array list item number " + i + " has an reservoir state of " + recordedData.get(i).getReservoirs());
-                    Log.d("consoleprinting","Array list item number " + i + " has an solution temp of " + recordedData.get(i).getSolutiontemplevel());
-                    Log.d("consoleprinting","Array list item number " + i + " has a TDS level of " + recordedData.get(i).getTdslevel());
-                    Log.d("consoleprinting","Array list item number " + i + " has a timestamp " + recordedData.get(i).getDatapointdatetime());*/
-                }
-
-                Snackbar.make(view, "Check LogCat for the plug", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Check LogCat for the Data Activity - tag 'consoleprinting'", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
 
     }
-
-    @Override
-    public void onBackPressed() {
-        // Write your code here
-        Log.d("consoleprinting", "WENT INTO onBackPressed()");
-       /* Intent intent = new Intent();
-        intent.putParcelableArrayListExtra("passme2",recordedData);*/
-        /*setResult(RESULT_OK, intent);*/
-        finish();
-
-
-
-        /*Intent returnIntent = new Intent();
-        setResult(RESULT_OK, returnIntent);
-        returnIntent.putExtra("Uniqid", "from DevOptions");
-        returnIntent.putParcelableArrayListExtra("passme",recordedData);
-        DeveloperOptions.this.startActivity(returnIntent);
-*/
-       // super.onBackPressed();
-    }
-
 
 }
