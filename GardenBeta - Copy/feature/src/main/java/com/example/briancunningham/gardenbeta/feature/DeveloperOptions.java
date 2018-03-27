@@ -18,30 +18,30 @@ import java.util.ArrayList;
 public class DeveloperOptions extends AppCompatActivity {
 
     //private CClient mClient;
-    private ArrayList<verynicedatapoint> recordedData;
+     //ArrayList<verynicedatapoint> recordedData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer_options);
-        //getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        //getSupportActionBar().setHomeButtonEnabled(true);
+        final MyAppApplication mApp = (MyAppApplication)getApplicationContext();
+        ArrayList<verynicedatapoint> recordedData = mApp.getRecordedData();
 
 
-        Log.d("bootinup", "it got here");
+        /*Log.d("bootinup", "it got here");
 
 
         final ArrayList<verynicedatapoint> recordedData = getIntent().getParcelableArrayListExtra("passme");
-        Log.d("bootinup","from the devoptions activity the listarray has " + recordedData.size());
-
+        Log.d("consoleprinting","from the devoptions activity the listarray has " + recordedData.size());
+*/
 
 
         Button spoofbutton = (Button) findViewById(R.id.butt2);
         spoofbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                recordedData.add(new verynicedatapoint());
-                Snackbar.make(view, "Spoofed Data. Quantity in ArrayList is " + recordedData.size() , Snackbar.LENGTH_LONG)
+                mApp.addavalue();
+                Snackbar.make(view, "Spoofed Data. Quantity in ArrayList is " + mApp.size() , Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
 
             }
@@ -62,7 +62,7 @@ public class DeveloperOptions extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                // Log.d("stars","oh my that does sound convenient");
-                for (int i=0; i<recordedData.size(); i++)
+               /* for (int i=0; i<recordedData.size(); i++)
                 {
                     String jerry = recordedData.get(i).getDatapointdatetime();
                     Log.d("consoleprinting","Array list item number " + i + " has an air temp of " + recordedData.get(i).getAirtemplevel());
@@ -78,7 +78,7 @@ public class DeveloperOptions extends AppCompatActivity {
                     Log.d("consoleprinting","Array list item number " + i + " has an solution temp of " + recordedData.get(i).getSolutiontemplevel());
                     Log.d("consoleprinting","Array list item number " + i + " has a TDS level of " + recordedData.get(i).getTdslevel());
                     Log.d("consoleprinting","Array list item number " + i + " has a timestamp " + recordedData.get(i).getDatapointdatetime());
-                }
+                }*/
 
                 Snackbar.make(view, "Check LogCat for the plug", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
@@ -90,12 +90,21 @@ public class DeveloperOptions extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         // Write your code here
+        Log.d("consoleprinting", "WENT INTO onBackPressed()");
+       /* Intent intent = new Intent();
+        intent.putParcelableArrayListExtra("passme2",recordedData);*/
+        /*setResult(RESULT_OK, intent);*/
+        finish();
 
-        Intent myIntent = new Intent(DeveloperOptions.this, ScrollingActivity.class);
-        myIntent.putExtra("passme",recordedData);
-        DeveloperOptions.this.startActivity(myIntent);
 
-        super.onBackPressed();
+
+        /*Intent returnIntent = new Intent();
+        setResult(RESULT_OK, returnIntent);
+        returnIntent.putExtra("Uniqid", "from DevOptions");
+        returnIntent.putParcelableArrayListExtra("passme",recordedData);
+        DeveloperOptions.this.startActivity(returnIntent);
+*/
+       // super.onBackPressed();
     }
 
 

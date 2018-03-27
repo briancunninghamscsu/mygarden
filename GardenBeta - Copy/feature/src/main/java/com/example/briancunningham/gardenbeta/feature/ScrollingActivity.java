@@ -23,26 +23,71 @@ import java.util.Date;
 
 public class ScrollingActivity extends AppCompatActivity {
 
-    ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                //String strEditText = data.getStringExtra("editTextValue");
+                //recordedData = getIntent().getParcelableArrayListExtra("passme2");
+                //int j = recordedData.size();
+                Log.d("consoleprinting", "BRUH THIS CAME FROM onActivityResult");
+                //Log.d("consoleprinting","the amount of objects in the listarray is " + recordedData.size());
+            }
+        }
+    }
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        Log.d("consoleprinting", "made it past startup");
+        //these two are needed to make global variables
+        MyAppApplication mApp = (MyAppApplication)getApplicationContext();
+        Log.d("consoleprinting", "made it past the my app application call");
+        ArrayList<verynicedatapoint> recordedData = mApp.getRecordedData();
+        Log.d("consoleprinting", "made it past the local assignment");
 
+        /*Intent intent = this.getIntent();
+        if(intent !=null) {
+            String strdata = intent.getExtras().getString("Uniqid");
+            if (strdata.equals("from DevOptions")) {
+                Log.d("consoleprinting", "main was launched from devoptions");
+            } else {
+                Log.d("consoleprinting", "dev came from somewhere else");
+            }
+        }*/
+
+        /*if (getIntent()!=null) {   //eh?? eh??!
+            final ArrayList<verynicedatapoint> recordedData = getIntent().getParcelableArrayListExtra("passme");
+            Log.d("consoleprinting", "went through the if-statement");
+            Log.d("consoleprinting", "from the main activity, the number of items in the array is " + recordedData.size());
+
+        }*/
+
+        //verynicedatapoint roy = new verynicedatapoint();
+        Log.d("consoleprinting", "constructed new data point");
+        Log.d("consoleprinting", "number of array items is " + mApp.size());
+        mApp.testingmessage();
+        mApp.addavalue();
+        Log.d("consoleprinting", "number of array items is " + mApp.size());
+        //Log.d("consoleprinting", "added new data point to local variable");
+        //Log.d("consoleprinting", "from the main activity, the number of items in the array is " + recordedData.size());
         TextView tv1 = (TextView)findViewById(R.id.textView24); //puts xml-ID'd textview24 in a box
 
         //initializing the ArrayList
         /*verynicedatapoint mrmeeseeks = new verynicedatapoint();
         verynicedatapoint mrpoopybutthole = new verynicedatapoint();
         verynicedatapoint roy = new verynicedatapoint();
-*/
-  /*      recordedData.add(mrpoopybutthole);
-        Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
+        recordedData.add(mrpoopybutthole);
+        Log.d("consoleprinting","the amount of objects in the listarray is " + recordedData.size());
         recordedData.add(mrmeeseeks);
-        Log.d("bootinup","the amount of objects in the listarray is " + recordedData.size());
+        Log.d("consoleprinting","the amount of objects in the listarray is " + recordedData.size());
         recordedData.add(roy);*/
         // This block updates the header with updated real-time clock on startup.
         Date c = Calendar.getInstance().getTime();
@@ -399,9 +444,18 @@ public class ScrollingActivity extends AppCompatActivity {
                 //Snackbar.make(view, "You pressed tvA", Snackbar.LENGTH_LONG)
                 //      .setAction("Action", null).show();
                 //myIntent.putExtra("key", value); //Optional parameters
-                Intent myIntent = new Intent(ScrollingActivity.this, DeveloperOptions.class);
+                /*Intent myIntent = new Intent(ScrollingActivity.this, DeveloperOptions.class);
                 myIntent.putExtra("passme",recordedData);
-                ScrollingActivity.this.startActivity(myIntent);
+                ScrollingActivity.this.startActivity(myIntent);*/
+                Log.d("consoleprinting", "got to the onclick listener, first line");
+                Intent i = new Intent(ScrollingActivity.this, DeveloperOptions.class);
+                //i.putExtra("passme",recordedData);
+                Log.d("consoleprinting", "got to the onclick listener and made the intent");
+                startActivityForResult(i, 1);
+
+
+
+
             }
         });
 
