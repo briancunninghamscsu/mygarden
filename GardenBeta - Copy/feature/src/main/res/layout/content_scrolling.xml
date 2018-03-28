@@ -133,9 +133,8 @@
         </TableRow>
 
 
-
-
         <TableRow
+            android:id="@+id/tblrow_ambhum"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -201,6 +200,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tblrow_o2"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -268,6 +268,7 @@
 
 
         <TableRow
+            android:id="@+id/tblrow_co2"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -335,6 +336,7 @@
 
 
         <TableRow
+            android:id="@+id/tblrow_slntemp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -401,6 +403,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tblrow_nuttds"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -467,6 +470,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tblrow_DO"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -533,6 +537,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tblrow_nutorp"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -599,6 +604,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tblrow_ph"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -665,6 +671,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tblrow_reservoirs"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -683,7 +690,7 @@
                 android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
-                android:text="Resevoirs"
+                android:text="Reservoirs"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
             <TextView
@@ -731,6 +738,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tblrow_canhei"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -797,6 +805,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tblrow_lighei"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
@@ -863,6 +872,7 @@
         </TableRow>
 
         <TableRow
+            android:id="@+id/tblrow_grolig"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 

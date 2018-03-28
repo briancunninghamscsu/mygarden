@@ -52,9 +52,6 @@ public class ScrollingActivity extends AppCompatActivity {
         Log.d("consoleprinting", "number of array items is " + mApp.size());
 
         TextView tv1 = (TextView)findViewById(R.id.textView24); // for the timestamp entry
-        //TextView tvA = (TextView)findViewById(R.id.textView2);  // these are the air temp buttons
-        //TextView tvB = (TextView)findViewById(R.id.textView);
-        //ImageView ivA = (ImageView)findViewById(R.id.imageView);
         TextView tvC = (TextView)findViewById(R.id.textView3); //for ambient humidity menu
         TextView tvD = (TextView)findViewById(R.id.textView4);
         ImageView ivC = (ImageView)findViewById(R.id.imageView2);
