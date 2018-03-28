@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewParent;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import java.text.DateFormat;
@@ -50,10 +51,19 @@ public class ScrollingActivity extends AppCompatActivity {
 
         Log.d("consoleprinting", "number of array items is " + mApp.size());
 
-        TextView tv1 = (TextView)findViewById(R.id.textView24);
-        /*Date c = Calendar.getInstance().getTime();
-        SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
-        String formattedDate = "Last Updated at " + sdf.format(c);*/
+        TextView tv1 = (TextView)findViewById(R.id.textView24); // for the timestamp entry
+        //TextView tvA = (TextView)findViewById(R.id.textView2);  // these are the air temp buttons
+        //TextView tvB = (TextView)findViewById(R.id.textView);
+        //ImageView ivA = (ImageView)findViewById(R.id.imageView);
+        TextView tvC = (TextView)findViewById(R.id.textView3); //for ambient humidity menu
+        TextView tvD = (TextView)findViewById(R.id.textView4);
+        ImageView ivC = (ImageView)findViewById(R.id.imageView2);
+        TextView tvE = (TextView)findViewById(R.id.textView5); // for O2 activity
+        TextView tvF = (TextView)findViewById(R.id.textView6);
+        ImageView ivE = (ImageView)findViewById(R.id.imageView3);
+        TableRow tblrowairtemp = (TableRow) findViewById(R.id.tblrow_airtemp);
+
+
 
         int mrtesty = mApp.size();
         if (mrtesty==0) {
@@ -65,20 +75,24 @@ public class ScrollingActivity extends AppCompatActivity {
         }
 
 
-            // for air temp menu
-            TextView tvA = (TextView)findViewById(R.id.textView2);
-            TextView tvB = (TextView)findViewById(R.id.textView);
-            ImageView ivA = (ImageView)findViewById(R.id.imageView);
 
 
-            tvA.setOnClickListener(new View.OnClickListener() {
+
+
+
+
+        // for air temp menu
+
+
+
+            tblrowairtemp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
                     ScrollingActivity.this.startActivity(myIntent);
                     }
                 });
-            tvB.setOnClickListener(new View.OnClickListener() {
+            /*tvB.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
@@ -91,12 +105,9 @@ public class ScrollingActivity extends AppCompatActivity {
                     Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
                     ScrollingActivity.this.startActivity(myIntent);
                 }
-            });
+            });*/
 
-            //for ambient humidity menu
-            TextView tvC = (TextView)findViewById(R.id.textView3);
-            TextView tvD = (TextView)findViewById(R.id.textView4);
-            ImageView ivC = (ImageView)findViewById(R.id.imageView2);
+
 
             tvC.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,10 +131,7 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-        // for O2 activity
-        TextView tvE = (TextView)findViewById(R.id.textView5);
-        TextView tvF = (TextView)findViewById(R.id.textView6);
-        ImageView ivE = (ImageView)findViewById(R.id.imageView3);
+
 
         tvE.setOnClickListener(new View.OnClickListener() {
             @Override
