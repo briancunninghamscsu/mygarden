@@ -2,6 +2,7 @@ package com.example.briancunningham.gardenbeta.feature;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,6 +16,8 @@ import android.view.ViewParent;
 import android.widget.ImageView;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -48,14 +51,22 @@ public class ScrollingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         MyAppApplication mApp = (MyAppApplication)getApplicationContext();
 
-        // assigning java to the xml assignments
-        TextView tv1 = (TextView)findViewById(R.id.textView24); // for the timestamp entry
-        TextView tvC = (TextView)findViewById(R.id.textView3); //for ambient humidity menu
-        TextView tvD = (TextView)findViewById(R.id.textView4);
-        ImageView ivC = (ImageView)findViewById(R.id.imageView2);
-        TextView tvE = (TextView)findViewById(R.id.textView5); // for O2 activity
-        TextView tvF = (TextView)findViewById(R.id.textView6);
-        ImageView ivE = (ImageView)findViewById(R.id.imageView3);
+        // assigning java to the xml assignments - textboxes for updates
+        TextView tvtimestamp = (TextView)findViewById(R.id.textView_timestamp);
+        TextView tvairtemp = (TextView)findViewById(R.id.textView_airtemp);
+        TextView tvambhum = (TextView) findViewById(R.id.textView_ambhum);
+        TextView tvco2 = (TextView) findViewById(R.id.textView_co2);
+        TextView tvcanhop = (TextView) findViewById(R.id.textView_canhei);
+        TextView tvdo = (TextView) findViewById(R.id.textView_do);
+        TextView tvLH = (TextView) findViewById(R.id.textView_LH);
+        TextView tvo2 = (TextView) findViewById(R.id.textView_o2);
+        TextView tvorp = (TextView) findViewById(R.id.textView_orp);
+        TextView tvph = (TextView) findViewById(R.id.textView_ph);
+        TextView tvtds = (TextView) findViewById(R.id.textView_nuttds);
+        TextView tvres = (TextView) findViewById(R.id.textView_res);
+        TextView tvslntemp = (TextView) findViewById(R.id.textView_soltemp);
+
+        // assigning java to xml assignments - tablerows for activity linking
         TableRow tblrowairtemp = (TableRow) findViewById(R.id.tblrow_airtemp);
         TableRow tblrowambhum = (TableRow) findViewById(R.id.tblrow_ambhum);
         TableRow tblrowco2 = (TableRow) findViewById(R.id.tblrow_co2);
@@ -72,11 +83,35 @@ public class ScrollingActivity extends AppCompatActivity {
         // updating the main activity with the most recently-indexed array list
         int mrtesty = mApp.size();
         if (mrtesty==0) {
-            tv1.setText("No Data Found!");
-            }
+            tvtimestamp.setText("No Data Found!");
+            tvairtemp.setText("NDF");
+            tvairtemp.setTextColor(Color.RED);
+            tvambhum.setText("NDF");
+            tvambhum.setTextColor(Color.RED);
+            tvcanhop.setText("NDF");
+            tvcanhop.setTextColor(Color.RED);
+            tvco2.setText("NDF");
+            tvco2.setTextColor(Color.RED);
+            tvdo.setText("NDF");
+            tvdo.setTextColor(Color.RED);
+            tvLH.setText("NDF");
+            tvLH.setTextColor(Color.RED);
+            tvo2.setText("NDF");
+            tvo2.setTextColor(Color.RED);
+            tvorp.setText("NDF");
+            tvorp.setTextColor(Color.RED);
+            tvph.setText("NDF");
+            tvph.setTextColor(Color.RED);
+            tvslntemp.setText("NDF");
+            tvslntemp.setTextColor(Color.RED);
+            tvtds.setText("NDF");
+            tvtds.setTextColor(Color.RED);
+            tvres.setText("NDF");
+            tvres.setTextColor(Color.RED);
+        }
         else {
             String stringybeans = "Last Updated at " + mApp.getDatapointdatetime(mrtesty-1);
-            tv1.setText(stringybeans);
+            tvtimestamp.setText(stringybeans);
         }
 
 
