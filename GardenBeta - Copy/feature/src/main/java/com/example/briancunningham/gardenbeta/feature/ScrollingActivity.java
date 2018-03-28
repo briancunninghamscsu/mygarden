@@ -110,8 +110,23 @@ public class ScrollingActivity extends AppCompatActivity {
             tvres.setTextColor(Color.RED);
         }
         else {
-            String stringybeans = "Last Updated at " + mApp.getDatapointdatetime(mrtesty-1);
+            String stringybeans = mApp.getDatapointdatetime(mrtesty-1);
             tvtimestamp.setText(stringybeans);
+
+
+            tvairtemp.setText(String.valueOf(mApp.getAirtemplevel(mrtesty-1)));
+            tvambhum.setText(String.valueOf(mApp.getAmbienthumiditylevel(mrtesty-1)));
+            tvcanhop.setText(String.valueOf(mApp.getCanopyheightlevel(mrtesty-1)));
+            tvco2.setText(String.valueOf(mApp.getCo2level(mrtesty-1)));
+            tvdo.setText(String.valueOf(mApp.getDolevel(mrtesty-1)));
+            tvLH.setText(String.valueOf(mApp.getLightheight(mrtesty-1)));
+            tvo2.setText(String.valueOf(mApp.getO2level(mrtesty-1)));
+            tvorp.setText(String.valueOf(mApp.getOrplevel(mrtesty-1)));
+            tvph.setText(String.valueOf(mApp.getPhlevel(mrtesty-1)));
+            tvslntemp.setText(String.valueOf(mApp.getSolutiontemplevel(mrtesty-1)));
+            tvtds.setText(String.valueOf(mApp.getTdslevel(mrtesty-1)));
+            tvres.setText(String.valueOf(mApp.getReservoirs(mrtesty-1)));
+
         }
 
 

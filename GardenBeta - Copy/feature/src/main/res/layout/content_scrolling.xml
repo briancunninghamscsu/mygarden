@@ -11,16 +11,34 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="52dp"
-        >
-
-
+        android:layout_margin="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="4dp"
+        android:gravity="left"
+        android:orientation="horizontal">
 
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/textView_timestamp2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last Updated at"
+                android:textAlignment="center"
+                android:textAppearance="@style/TextAppearance.AppCompat.Button" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <Space
                 android:layout_width="wrap_content"
@@ -30,21 +48,14 @@
                 android:id="@+id/textView_timestamp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NNN"
+                android:text="NNNNNNNNNNNNN"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
@@ -54,7 +65,14 @@
                 android:background="@android:color/darker_gray" />
 
             <View
-                android:layout_width="95dp"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
+            <View
+                android:layout_width="154dp"
                 android:layout_height="1dp"
                 android:layout_marginBottom="2dp"
                 android:layout_marginTop="2dp"
@@ -73,62 +91,63 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ravel_ransportation01" />
 
             <TextView
                 android:id="@+id/textView2"
-                android:layout_width="wrap_content"
+                android:layout_width="147dp"
                 android:layout_height="match_parent"
-                android:layout_weight="2"
                 android:clickable="true"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Air Temperature"
-                android:textAlignment="viewStart"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_airtemp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:text="74°F"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_green_dark" />
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp" />
 
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -142,7 +161,6 @@
                 android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:adjustViewBounds="false"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ecology13" />
@@ -151,51 +169,55 @@
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Ambient Humidity"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_ambhum"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:text="61%"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_green_dark" />
+                android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -208,7 +230,6 @@
                 android:id="@+id/imageView3"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ecology18" />
 
@@ -216,53 +237,57 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="O₂ ppm"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_o2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:fontFamily="monospace"
                 android:text="8.5"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_orange_dark"
+                android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -276,7 +301,6 @@
                 android:id="@+id/imageView4"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ecology08" />
 
@@ -284,53 +308,57 @@
                 android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="CO₂ ppm"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_co2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:fontFamily="monospace"
                 android:text="1.2"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_red_dark"
+                android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -344,7 +372,6 @@
                 android:id="@+id/imageView5"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ecology19" />
 
@@ -352,53 +379,57 @@
                 android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Solution Temp"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAlignment="textStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_soltemp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:fontFamily="monospace"
                 android:text="73°F"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -411,7 +442,6 @@
                 android:id="@+id/imageView6"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ravel_ransportation28" />
 
@@ -419,53 +449,56 @@
                 android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Nutrient TDS ppm"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_nuttds"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:fontFamily="monospace"
                 android:text="4.2"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -478,7 +511,6 @@
                 android:id="@+id/imageView7"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ecology03" />
 
@@ -486,53 +518,56 @@
                 android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="DO ppm"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_do"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:fontFamily="monospace"
                 android:text="2.1"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_orange_dark"
+                android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -545,7 +580,6 @@
                 android:id="@+id/imageView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ecology15" />
 
@@ -553,53 +587,56 @@
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Nutrient ORP mV"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_orp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:fontFamily="monospace"
                 android:text="412"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -612,7 +649,6 @@
                 android:id="@+id/imageView11"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ecology14" />
 
@@ -620,53 +656,56 @@
                 android:id="@+id/textView19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="pH"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_ph"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:fontFamily="monospace"
                 android:text="6.2"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -679,7 +718,6 @@
                 android:id="@+id/imageView10"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ecology09" />
 
@@ -687,53 +725,56 @@
                 android:id="@+id/textView21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Reservoirs"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_res"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:fontFamily="monospace"
                 android:text="Full"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -746,7 +787,6 @@
                 android:id="@+id/imageViewA"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ecology05" />
 
@@ -754,53 +794,56 @@
                 android:id="@+id/textViewB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Canopy Height"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_canhei"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:fontFamily="monospace"
                 android:text="39cm"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -813,7 +856,6 @@
                 android:id="@+id/imageViewD"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:contentDescription="placeholder_airtemp"
                 app:srcCompat="@drawable/ravel_ransportation18" />
 
@@ -821,53 +863,56 @@
                 android:id="@+id/textViewE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="2"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Light Height"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/textView_LH"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="5"
                 android:fontFamily="monospace"
                 android:text="59cm"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
+                android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
 
         <TableRow
             android:layout_width="match_parent"
-            android:layout_height="match_parent" >
+            android:layout_height="match_parent">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="2dp"
                 android:layout_marginBottom="2dp"
-                android:background="@android:color/darker_gray"/>
+                android:layout_marginTop="2dp"
+                android:background="@android:color/darker_gray" />
 
         </TableRow>
 
@@ -896,6 +941,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
                 android:text="59cm"
+                android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
                 android:typeface="monospace" />
