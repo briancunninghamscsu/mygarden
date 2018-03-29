@@ -72,7 +72,7 @@
                 android:background="@android:color/darker_gray" />
 
             <View
-                android:layout_width="154dp"
+                android:layout_width="181dp"
                 android:layout_height="1dp"
                 android:layout_marginBottom="2dp"
                 android:layout_marginTop="2dp"
@@ -101,7 +101,8 @@
                 android:clickable="true"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
-                android:text="Air Temperature"
+                android:text="Air Temp"
+                android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp" />
 
@@ -109,8 +110,8 @@
                 android:id="@+id/textView_airtemp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="74°F"
-                android:textAlignment="center"
+                android:text="74 °F"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp" />
@@ -171,7 +172,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
-                android:text="Ambient Humidity"
+                android:text="Humidity"
                 android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp" />
@@ -181,7 +182,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="61%"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp" />
@@ -239,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
-                android:text="O₂ ppm"
+                android:text="O₂ Levels"
                 android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp" />
@@ -249,8 +250,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
-                android:text="8.5"
-                android:textAlignment="center"
+                android:text="8.5 ppm"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_orange_dark"
                 android:textSize="24sp"
@@ -310,7 +311,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
-                android:text="CO₂ ppm"
+                android:text="CO₂ Levels"
                 android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp" />
@@ -320,8 +321,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
-                android:text="1.2"
-                android:textAlignment="center"
+                android:text="1.2 ppm"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="24sp"
@@ -391,8 +392,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
-                android:text="73°F"
-                android:textAlignment="center"
+                android:text="73 °F"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
@@ -451,7 +452,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
-                android:text="Nutrient TDS ppm"
+                android:text="TDS"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp" />
 
@@ -460,8 +461,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
-                android:text="4.2"
-                android:textAlignment="center"
+                android:text="4.2 ppm"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
@@ -520,7 +521,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
-                android:text="DO ppm"
+                android:text="Dissolved O₂"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp" />
 
@@ -529,8 +530,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
-                android:text="2.1"
-                android:textAlignment="center"
+                android:text="2.1 ppm"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_orange_dark"
                 android:textSize="24sp"
@@ -589,7 +590,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
-                android:text="Nutrient ORP mV"
+                android:text="ORP"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp" />
 
@@ -598,8 +599,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
-                android:text="412"
-                android:textAlignment="center"
+                android:text="412 ppm"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
@@ -668,7 +669,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
                 android:text="6.2"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
@@ -737,7 +738,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
                 android:text="Full"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
@@ -796,7 +797,8 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
-                android:text="Canopy Height"
+                android:text="Canopy"
+                android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp" />
 
@@ -805,8 +807,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
-                android:text="39cm"
-                android:textAlignment="center"
+                android:text="39 cm"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
@@ -866,6 +868,7 @@
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Light Height"
+                android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp" />
 
@@ -875,7 +878,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
                 android:text="59cm"
-                android:textAlignment="center"
+                android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
@@ -914,37 +917,6 @@
                 android:layout_marginTop="2dp"
                 android:background="@android:color/darker_gray" />
 
-        </TableRow>
-
-        <TableRow
-            android:id="@+id/tblrow_grolig"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/imageViewG"
-                android:layout_width="46dp"
-                android:layout_height="wrap_content"
-                android:contentDescription="placeholder_airtemp"
-                app:srcCompat="@drawable/ecology16" />
-
-            <TextView
-                android:id="@+id/textViewH"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Grow Light Behavior"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
-
-            <TextView
-                android:id="@+id/textViewI"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="monospace"
-                android:text="59cm"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_green_dark"
-                android:typeface="monospace" />
         </TableRow>
 
 
