@@ -30,6 +30,46 @@ public class DeveloperOptions extends AppCompatActivity {
         ArrayList<verynicedatapoint> recordedData = mApp.getRecordedData();
 
 
+        Button makethirty = (Button) findViewById(R.id.butt4);
+        makethirty.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                mApp.addavalue();
+                Snackbar.make(view, " Quantity in ArrayList is " + mApp.size() , Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+            }
+        });
+
 
 
         Button spoofbutton = (Button) findViewById(R.id.butt2);
