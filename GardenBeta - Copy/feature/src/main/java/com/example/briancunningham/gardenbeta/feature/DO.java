@@ -29,25 +29,28 @@ public class DO extends AppCompatActivity {
         ScrollView sv = (ScrollView) findViewById(R.id.scrviewdo) ;
         LinearLayout ll = (LinearLayout) findViewById(R.id.linlaydo);
         ll.setOrientation(LinearLayout.VERTICAL);
-        //sv.addView(ll);
+
 
         // This is where and how the view is used
-        TextView tv = new TextView(this);
-        tv.setText("Dynamic layouts ftw!");
-        ll.addView(tv);
 
-
-
-//        GraphView graph = (GraphView) findViewById(R.id.graph);
-//        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
-//                new DataPoint(0, 1),
-//                new DataPoint(1, 5),
-//                new DataPoint(2, 3),
-//                new DataPoint(3, 2),
-//                new DataPoint(4, 6)
-//        });
-//        graph.addSeries(series);
-
+        MyAppApplication mApp = (MyAppApplication)getApplicationContext();
+        int mrtesty = mApp.size();
+        if (mrtesty!=0) {
+            GraphView graph = (GraphView) findViewById(R.id.graph);
+            LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[]{
+                    new DataPoint(0, 1),
+                    new DataPoint(1, 5),
+                    new DataPoint(2, 3),
+                    new DataPoint(3, 2),
+                    new DataPoint(4, 6)
+            });
+            graph.addSeries(series);
+        }
+        else {
+            TextView tv = new TextView(this);
+            tv.setText("No Data Found!");
+            ll.addView(tv);
+        }
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
