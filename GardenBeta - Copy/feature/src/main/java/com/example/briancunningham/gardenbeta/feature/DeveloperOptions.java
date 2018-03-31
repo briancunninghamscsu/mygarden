@@ -29,7 +29,6 @@ public class DeveloperOptions extends AppCompatActivity {
         final MyAppApplication mApp = (MyAppApplication)getApplicationContext();
         ArrayList<verynicedatapoint> recordedData = mApp.getRecordedData();
 
-
         Button makethirty = (Button) findViewById(R.id.butt4);
         makethirty.setOnClickListener(new View.OnClickListener() {
             @Override
