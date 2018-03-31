@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.View;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
@@ -23,15 +26,27 @@ public class DO extends AppCompatActivity {
         setSupportActionBar(toolbar);
         setupActionBar();
 
-        GraphView graph = (GraphView) findViewById(R.id.graph);
-        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
-                new DataPoint(0, 1),
-                new DataPoint(1, 5),
-                new DataPoint(2, 3),
-                new DataPoint(3, 2),
-                new DataPoint(4, 6)
-        });
-        graph.addSeries(series);
+        ScrollView sv = (ScrollView) findViewById(R.id.scrviewdo) ;
+        LinearLayout ll = (LinearLayout) findViewById(R.id.linlaydo);
+        ll.setOrientation(LinearLayout.VERTICAL);
+        //sv.addView(ll);
+
+        // This is where and how the view is used
+        TextView tv = new TextView(this);
+        tv.setText("Dynamic layouts ftw!");
+        ll.addView(tv);
+
+
+
+//        GraphView graph = (GraphView) findViewById(R.id.graph);
+//        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[] {
+//                new DataPoint(0, 1),
+//                new DataPoint(1, 5),
+//                new DataPoint(2, 3),
+//                new DataPoint(3, 2),
+//                new DataPoint(4, 6)
+//        });
+//        graph.addSeries(series);
 
 
 
