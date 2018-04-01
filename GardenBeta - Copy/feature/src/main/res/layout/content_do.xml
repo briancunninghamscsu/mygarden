@@ -24,8 +24,16 @@
                 android:layout_height="200dip"
                 android:id="@+id/graph" />
 
+            <TableLayout
+                android:id="@+id/tbllaydo"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-
+                <TableRow
+                    android:id="@+id/tblrowdoheader"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </TableLayout>
 
 
         </LinearLayout>
