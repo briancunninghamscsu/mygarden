@@ -6,6 +6,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.LinearLayout;
@@ -37,14 +38,28 @@ public class DO extends AppCompatActivity {
         int mrtesty = mApp.size();
         if (mrtesty!=0) {
             GraphView graph = (GraphView) findViewById(R.id.graph);
-            LineGraphSeries<DataPoint> series = new LineGraphSeries<>(new DataPoint[]{
-                    new DataPoint(0, 1),
-                    new DataPoint(1, 5),
-                    new DataPoint(2, 3),
-                    new DataPoint(3, 2),
-                    new DataPoint(4, 6)
-            });
+
+            int a=1;
+            int b = mApp.size();
+            DataPoint[] values = new DataPoint[b];
+            for (a=0;a<b;a++)
+            {
+                    /*DataPoint graphbuff[a]  new DataPoint(a,mApp.getDolevel(a));
+                    //series.appendData(graphbuff[a]);
+                    series.appendData(graphbuff[a]);*/
+                Log.d("consoleprinting", "DO LEVEL FROM ITEM " + a + " is " + mApp.getDolevel(a));
+
+                Integer xi = (a);
+                    float yi = mApp.getDolevel(a);
+                    DataPoint v = new DataPoint(xi, yi);
+                    values[a] = v;
+
+            }
+            Log.d("consoleprinting", "exited the for loop");
+            LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(values);
+            Log.d("consoleprinting", "made new series");
             graph.addSeries(series);
+
         }
         else {
             TextView tv = new TextView(this);

@@ -40,9 +40,6 @@ public class ScrollingActivity extends AppCompatActivity {
         }
     }
 
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) { //startup block
         super.onCreate(savedInstanceState);
