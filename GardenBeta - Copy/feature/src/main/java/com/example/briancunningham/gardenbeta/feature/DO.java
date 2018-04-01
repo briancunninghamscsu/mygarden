@@ -17,6 +17,8 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
+import java.util.Date;
+
 public class DO extends AppCompatActivity {
 
     @Override
@@ -50,16 +52,30 @@ public class DO extends AppCompatActivity {
                 Log.d("consoleprinting", "DO LEVEL FROM ITEM " + a + " is " + mApp.getDolevel(a));
 
                 Integer xi = (a);
-                    float yi = mApp.getDolevel(a);
-                    DataPoint v = new DataPoint(xi, yi);
-                    values[a] = v;
+                //String datestring = mApp.getDatapointdatetime(a);
+                //Date xi = String.
+                //Date xi = mApp.getDatapointdatetime(a);
+                float yi = mApp.getDolevel(a);
+                DataPoint v = new DataPoint(xi, yi);
+                values[a] = v;
 
             }
             Log.d("consoleprinting", "exited the for loop");
             LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(values);
             Log.d("consoleprinting", "made new series");
             graph.addSeries(series);
-
+            graph.getViewport().setScalable(true);
+            graph.getViewport().setScrollable(true);
+            graph.getViewport().setScalableY(true);
+            graph.getViewport().setScrollableY(true);
+            graph.getViewport().setXAxisBoundsManual(true);
+            graph.getViewport().setMinX(19);
+            graph.getViewport().setMaxX(29);
+            graph.getViewport().setYAxisBoundsManual(true);
+            graph.getViewport().setMinY(900);
+            graph.getViewport().setMaxY(1200);
+            //graph.getGridLabelRenderer().setNumVerticalLabels(1);
+            graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen");
         }
         else {
             TextView tv = new TextView(this);
