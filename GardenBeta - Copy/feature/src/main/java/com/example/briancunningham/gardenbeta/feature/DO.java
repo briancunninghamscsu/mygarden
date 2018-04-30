@@ -75,7 +75,22 @@ public class DO extends AppCompatActivity {
             graph.getViewport().setMinY(900);
             graph.getViewport().setMaxY(1200);
             //graph.getGridLabelRenderer().setNumVerticalLabels(1);
-            graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen");
+            graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
+            graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
+
+
+            // Graphing the Data Points
+            // first, we need to make an array, as big as there are data points.
+            String d;
+            int c = mApp.size();
+            TextView makeanicetable[] = new TextView[c];
+
+            for (a=0;a<c;a++) {
+                Log.d("consoleprinting", "got into the for loop, iteration " + a);
+                d = mApp.getDatapointdatetime(a);
+               // makeanicetable[1].setText("hehehe"); // this crashes the program??
+
+            }
         }
         else {
             TextView tv = new TextView(this);
