@@ -9,20 +9,45 @@
 
     <ScrollView
         android:id="@+id/devscrollview"
-        android:layout_width="395dp"
-        android:layout_height="587dp"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <Button
-            android:id="@+id/button_send_string"
+        <LinearLayout
+            android:id="@+id/devlinlay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Send a String"
-            android:visibility="visible"
-            tools:text="Send a String" />
+            android:orientation="vertical">
 
+            <Button
+                android:id="@+id/butt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="send a string"
+                tools:text="send a string" />
+
+            <Button
+                android:id="@+id/butt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SpoofData"
+                tools:text="SpoofData" />
+
+            <Button
+                android:id="@+id/butt3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="PrintData"
+                tools:text="PrintData" />
+
+            <Button
+                android:id="@+id/butt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Make 30 Data Points" />
+        </LinearLayout>
     </ScrollView>
+
 </android.support.constraint.ConstraintLayout>

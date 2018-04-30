@@ -2,147 +2,163 @@ package com.example.briancunningham.gardenbeta.feature;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.ViewParent;
 import android.widget.ImageView;
+import android.widget.TableRow;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
 public class ScrollingActivity extends AppCompatActivity {
 
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                //String strEditText = data.getStringExtra("editTextValue");
+                //recordedData = getIntent().getParcelableArrayListExtra("passme2");
+                //int j = recordedData.size();
+                Log.d("consoleprinting", "BRUH THIS CAME FROM onActivityResult");
+                //Log.d("consoleprinting","the amount of objects in the listarray is " + recordedData.size());
+            }
+        }
+    }
+
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) { //startup block
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scrolling);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        MyAppApplication mApp = (MyAppApplication)getApplicationContext();
 
-        TextView tv1 = (TextView)findViewById(R.id.textView24); //puts xml-ID'd textview24 in a box
+        // assigning java to the xml assignments - textboxes for updates
+        TextView tvtimestamp = (TextView)findViewById(R.id.textView_timestamp);
+        TextView tvairtemp = (TextView)findViewById(R.id.textView_airtemp);
+        TextView tvambhum = (TextView) findViewById(R.id.textView_ambhum);
+        TextView tvco2 = (TextView) findViewById(R.id.textView_co2);
+        TextView tvcanhop = (TextView) findViewById(R.id.textView_canhei);
+        TextView tvdo = (TextView) findViewById(R.id.textView_do);
+        TextView tvLH = (TextView) findViewById(R.id.textView_LH);
+        TextView tvo2 = (TextView) findViewById(R.id.textView_o2);
+        TextView tvorp = (TextView) findViewById(R.id.textView_orp);
+        TextView tvph = (TextView) findViewById(R.id.textView_ph);
+        TextView tvtds = (TextView) findViewById(R.id.textView_nuttds);
+        TextView tvres = (TextView) findViewById(R.id.textView_res);
+        TextView tvslntemp = (TextView) findViewById(R.id.textView_soltemp);
+
+        // assigning java to xml assignments - tablerows for activity linking
+        TableRow tblrowairtemp = (TableRow) findViewById(R.id.tblrow_airtemp);
+        TableRow tblrowambhum = (TableRow) findViewById(R.id.tblrow_ambhum);
+        TableRow tblrowco2 = (TableRow) findViewById(R.id.tblrow_co2);
+        TableRow tblrowDO = (TableRow) findViewById(R.id.tblrow_DO);
+        TableRow tblrowLH = (TableRow) findViewById(R.id.tblrow_lighei);
+        TableRow tblrowo2 = (TableRow) findViewById(R.id.tblrow_o2);
+        TableRow tblroworp = (TableRow) findViewById(R.id.tblrow_nutorp);
+        TableRow tblrowph = (TableRow) findViewById(R.id.tblrow_ph);
+        TableRow tblrowslntemp = (TableRow) findViewById(R.id.tblrow_slntemp);
+        TableRow tblrowres = (TableRow) findViewById(R.id.tblrow_reservoirs);
+        TableRow tblrowtds = (TableRow) findViewById(R.id.tblrow_nuttds);
+        TableRow tblrowcanhei = (TableRow) findViewById(R.id.tblrow_canhei);
+
+        // updating the main activity with the most recently-indexed array list
+        int mrtesty = mApp.size();
+        if (mrtesty==0) {
+            tvtimestamp.setText("No Data Found!");
+            tvairtemp.setText("NDF");
+            tvairtemp.setTextColor(Color.RED);
+            tvambhum.setText("NDF");
+            tvambhum.setTextColor(Color.RED);
+            tvcanhop.setText("NDF");
+            tvcanhop.setTextColor(Color.RED);
+            tvco2.setText("NDF");
+            tvco2.setTextColor(Color.RED);
+            tvdo.setText("NDF");
+            tvdo.setTextColor(Color.RED);
+            tvLH.setText("NDF");
+            tvLH.setTextColor(Color.RED);
+            tvo2.setText("NDF");
+            tvo2.setTextColor(Color.RED);
+            tvorp.setText("NDF");
+            tvorp.setTextColor(Color.RED);
+            tvph.setText("NDF");
+            tvph.setTextColor(Color.RED);
+            tvslntemp.setText("NDF");
+            tvslntemp.setTextColor(Color.RED);
+            tvtds.setText("NDF");
+            tvtds.setTextColor(Color.RED);
+            tvres.setText("NDF");
+            tvres.setTextColor(Color.RED);
+        }
+        else {
+            String stringybeans = mApp.getDatapointdatetime(mrtesty-1);
+            tvtimestamp.setText(stringybeans);
 
 
-        // This block updates the header with updated real-time clock on startup.
-        Date c = Calendar.getInstance().getTime();
-        SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
-        String formattedDate = "Last Updated at " + sdf.format(c);
-        tv1.setText(formattedDate);
+            tvairtemp.setText(String.valueOf(mApp.getAirtemplevel(mrtesty-1)) + " °F");
+            tvambhum.setText(String.valueOf(mApp.getAmbienthumiditylevel(mrtesty-1)) + "%");
+            tvcanhop.setText(String.valueOf(mApp.getCanopyheightlevel(mrtesty-1)) + " cm");
+            tvco2.setText(String.valueOf(mApp.getCo2level(mrtesty-1)) + " ppm");
+            tvdo.setText(String.valueOf(mApp.getDolevel(mrtesty-1)) + " ppm");
+            tvLH.setText(String.valueOf(mApp.getLightheight(mrtesty-1)) + " cm");
+            tvo2.setText(String.valueOf(mApp.getO2level(mrtesty-1)) + " ppm");
+            tvorp.setText(String.valueOf(mApp.getOrplevel(mrtesty-1)) + " mV");
+            tvph.setText(String.valueOf(mApp.getPhlevel(mrtesty-1)));
+            tvslntemp.setText(String.valueOf(mApp.getSolutiontemplevel(mrtesty-1)) + " °F");
+            tvtds.setText(String.valueOf(mApp.getTdslevel(mrtesty-1)) + " ppm");
+            tvres.setText(String.valueOf(mApp.getReservoirs(mrtesty-1)));
+
+        }
 
 
 
 
-            // for air temp menu
-            TextView tvA = (TextView)findViewById(R.id.textView2);
-            TextView tvB = (TextView)findViewById(R.id.textView);
-            ImageView ivA = (ImageView)findViewById(R.id.imageView);
 
 
-            tvA.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
-                    ScrollingActivity.this.startActivity(myIntent);
-                    }
-                });
-            tvB.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
-                    ScrollingActivity.this.startActivity(myIntent);
-                }
-            });
-            ivA.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
-                    ScrollingActivity.this.startActivity(myIntent);
-                }
-            });
 
-            //for ambient humidity menu
-            TextView tvC = (TextView)findViewById(R.id.textView3);
-            TextView tvD = (TextView)findViewById(R.id.textView4);
-            ImageView ivC = (ImageView)findViewById(R.id.imageView2);
 
-            tvC.setOnClickListener(new View.OnClickListener() {
+        // assigning listeners that link activities
+        tblrowairtemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, ambienthumidity.class);
-                ScrollingActivity.this.startActivity(myIntent);
-                    }
+               Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
+               ScrollingActivity.this.startActivity(myIntent);
+               }
             });
-        tvD.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, ambienthumidity.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivC.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, ambienthumidity.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
 
-        // for O2 activity
-        TextView tvE = (TextView)findViewById(R.id.textView5);
-        TextView tvF = (TextView)findViewById(R.id.textView6);
-        ImageView ivE = (ImageView)findViewById(R.id.imageView3);
+        tblrowambhum.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View view) {
+               Intent myIntent = new Intent(ScrollingActivity.this, ambienthumidity.class);
+               ScrollingActivity.this.startActivity(myIntent);
+               }
+           });
 
-        tvE.setOnClickListener(new View.OnClickListener() {
+        tblrowo2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ScrollingActivity.this, o2.class);
                 ScrollingActivity.this.startActivity(myIntent);
             }
         });
-        tvF.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, o2.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivE.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, o2.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
 
-
-        // for CO2 activity
-        TextView tvG = (TextView)findViewById(R.id.textView7);
-        TextView tvH = (TextView)findViewById(R.id.textView8);
-        ImageView ivG = (ImageView)findViewById(R.id.imageView4);
-
-        tvG.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, co2.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        tvH.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, co2.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivG.setOnClickListener(new View.OnClickListener() {
+        tblrowco2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ScrollingActivity.this, co2.class);
@@ -150,27 +166,7 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-
-        // for sln temp activity
-        TextView tvI = (TextView)findViewById(R.id.textView9);
-        TextView tvJ = (TextView)findViewById(R.id.textView10);
-        ImageView ivI = (ImageView)findViewById(R.id.imageView5);
-
-        tvI.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, SolutionTemperatureMeasurements.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        tvJ.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, SolutionTemperatureMeasurements.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivI.setOnClickListener(new View.OnClickListener() {
+        tblrowslntemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ScrollingActivity.this, SolutionTemperatureMeasurements.class);
@@ -178,26 +174,7 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-        // for TDS activity
-        TextView tvK = (TextView)findViewById(R.id.textView11);
-        TextView tvL = (TextView)findViewById(R.id.textView12);
-        ImageView ivK = (ImageView)findViewById(R.id.imageView6);
-
-        tvK.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, tds.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        tvL.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, tds.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivK.setOnClickListener(new View.OnClickListener() {
+        tblrowtds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ScrollingActivity.this, tds.class);
@@ -205,26 +182,7 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-        // for DO activity
-        TextView tvM = (TextView)findViewById(R.id.textView13);
-        TextView tvN = (TextView)findViewById(R.id.textView14);
-        ImageView ivM = (ImageView)findViewById(R.id.imageView7);
-
-        tvM.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, DO.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        tvN.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, DO.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivM.setOnClickListener(new View.OnClickListener() {
+        tblrowDO.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ScrollingActivity.this, DO.class);
@@ -233,26 +191,7 @@ public class ScrollingActivity extends AppCompatActivity {
         });
 
 
-        // for for Nutrient ORP activity
-        TextView tvO = (TextView)findViewById(R.id.textView15);
-        TextView tvP = (TextView)findViewById(R.id.textView16);
-        ImageView ivO = (ImageView)findViewById(R.id.imageView8);
-
-        tvO.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, orp.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        tvP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, orp.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivO.setOnClickListener(new View.OnClickListener() {
+        tblroworp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ScrollingActivity.this, orp.class);
@@ -260,26 +199,7 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-        // for for pH activity
-        TextView tvQ = (TextView)findViewById(R.id.textView20);
-        TextView tvR = (TextView)findViewById(R.id.textView19);
-        ImageView ivQ = (ImageView)findViewById(R.id.imageView11);
-
-        tvQ.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, pH.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        tvR.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, pH.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivQ.setOnClickListener(new View.OnClickListener() {
+        tblrowph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ScrollingActivity.this, pH.class);
@@ -287,26 +207,8 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-        // for for reservoirs activity
-        TextView tvS = (TextView)findViewById(R.id.textView22);
-        TextView tvT = (TextView)findViewById(R.id.textView21);
-        ImageView ivS = (ImageView)findViewById(R.id.imageView10);
 
-        tvS.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, reservoirs.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        tvT.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, reservoirs.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivS.setOnClickListener(new View.OnClickListener() {
+        tblrowres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ScrollingActivity.this, reservoirs.class);
@@ -314,26 +216,7 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-        /// for canopy height activity
-        TextView tvU = (TextView)findViewById(R.id.textViewB);
-        TextView tvV = (TextView)findViewById(R.id.textViewC);
-        ImageView ivU = (ImageView)findViewById(R.id.imageViewA);
-
-        tvU.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, CanopyHeight.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        tvV.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, CanopyHeight.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivU.setOnClickListener(new View.OnClickListener() {
+        tblrowcanhei.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ScrollingActivity.this, CanopyHeight.class);
@@ -341,70 +224,23 @@ public class ScrollingActivity extends AppCompatActivity {
             }
         });
 
-        // for for light height activity
-        TextView tvW = (TextView)findViewById(R.id.textViewE);
-        TextView tvX = (TextView)findViewById(R.id.textViewF);
-        ImageView ivW = (ImageView)findViewById(R.id.imageViewD);
-
-        tvW.setOnClickListener(new View.OnClickListener() {
+        tblrowLH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(ScrollingActivity.this, LightHeight.class);
                 ScrollingActivity.this.startActivity(myIntent);
             }
         });
-        tvX.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, LightHeight.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-        ivW.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, LightHeight.class);
-                ScrollingActivity.this.startActivity(myIntent);
-            }
-        });
-
-
-
-
-
-
-
-
-
-
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Snackbar.make(view, "You pressed tvA", Snackbar.LENGTH_LONG)
-                //      .setAction("Action", null).show();
-                //myIntent.putExtra("key", value); //Optional parameters
-                Intent myIntent = new Intent(ScrollingActivity.this, DeveloperOptions.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent i = new Intent(ScrollingActivity.this, DeveloperOptions.class);
+                startActivityForResult(i, 1);
             }
         });
-
-
-
-        //fab.setOnClickListener(new View.OnClickListener() {
-          //  @Override
-            //public void onClick(View view) {
-              //  Intent myIntent2 = new Intent(ScrollingActivity.this, AppCompatPreferenceActivity.class);
-                //ScrollingActivity.this.startActivity(myIntent2);
-
-
-
-                //Snackbar.make(view, "This opens a new screen to test the actuators.", Snackbar.LENGTH_LONG)
-                  //      .setAction("Action", null).show();
-           // }
-        //});
     }
 
     @Override
