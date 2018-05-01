@@ -28,6 +28,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/learnabouthumidity2" />
+
+            <TextView
+                android:id="@+id/textView16"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/learnabouthumidity3" />
         </LinearLayout>
     </ScrollView>
 </android.support.constraint.ConstraintLayout>

@@ -118,11 +118,11 @@
     </string>
 
     <string name="learnabouthumidity2">
-        "It's important to note that the amount of water vapor that air can hold is directly proportional to the temperature of the air. That is, the hotter the air, the more water it can hold. If all else is equal, one can decrease the relative humidity of a body of air simply by heating it up.\n\nThe relative humidity of the air that your plants are growing in will make an impact on their health.\n\nLow humidity (less than 50%) can cause problems in one's garden, particularly in regards to pollination. MyGarden has a fogging reservoir that emits water vapour when low humidities are detected.\n\nHowever, it's more common and more destructive to have high-humidity related problems."
+        "It's important to note that the amount of water vapor that air can hold is directly proportional to the temperature of the air. That is, the hotter the air, the more water it can hold. If all else is equal, one can decrease the relative humidity of a body of air simply by heating it up.\n\nThe relative humidity of the air that your plants are growing in will make an impact on their health.\n\nLow humidity (less than 50%) can cause problems in one's garden, particularly in regards to pollination. MyGarden has a fogging reservoir that emits water vapour when low humidities are detected.\n\nHowever, it's more common and more destructive to have high-humidity related problems.\n"
     </string>
 
     <string name="learnabouthumidity3">
-        "
+        "While plants are alive and healthy, they emit water through their leaves through a process called <i>transpiration</i>. This process is what circulates nutrients throughout the plant. But, when the humidity is too high (over 90%), the plants lose their ability to release this water from their systems. So, they stop circulating nutrients entirely.\n\n Also, in high-humidity conditions, the growing environment and the plant become susceptible to fungal diseases.\n\n"
     </string>
 
 
