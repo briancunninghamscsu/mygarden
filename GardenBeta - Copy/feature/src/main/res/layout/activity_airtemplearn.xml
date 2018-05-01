@@ -6,4 +6,24 @@
     android:layout_height="match_parent"
     tools:context="com.example.briancunningham.gardenbeta.feature.airtemplearn">
 
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="385dp"
+        android:layout_height="570dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginTop="8dp"
+        android:allowUndo="false"
+        android:autoText="false"
+        android:clickable="false"
+        android:contextClickable="false"
+        android:editable="false"
+        android:elegantTextHeight="false"
+        android:linksClickable="true"
+        android:singleLine="false"
+        android:text="@string/learnaboutairtemp"
+        android:textAllCaps="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/learnaboutairtemp" />
 </android.support.constraint.ConstraintLayout>
