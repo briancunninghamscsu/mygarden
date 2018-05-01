@@ -14,7 +14,7 @@ public class airtemplearn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_airtemplearn);
         setupActionBar();
-        TextView t2 = (TextView) findViewById(R.id.textView8);
+        TextView t2 = (TextView) findViewById(R.id.textView10);
         t2.setMovementMethod(LinkMovementMethod.getInstance());
     }
 

@@ -7,28 +7,49 @@
     android:autoLink="web"
     tools:context="com.example.briancunningham.gardenbeta.feature.airtemplearn">
 
-    <TextView
-        android:id="@+id/textView8"
-        android:layout_width="385dp"
-        android:layout_height="570dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:allowUndo="false"
-        android:autoText="false"
-        android:contextClickable="false"
-        android:editable="false"
-        android:elegantTextHeight="false"
-        android:linksClickable="true"
-        android:singleLine="false"
-        
-        android:focusable="true"
-        android:text="@string/learnaboutairtemp"
-        android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/learnaboutairtemp" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:allowUndo="false"
+                android:autoText="false"
+                android:contextClickable="false"
+                android:editable="false"
+                android:elegantTextHeight="false"
+                android:focusable="true"
+                android:linksClickable="true"
+
+                android:singleLine="false"
+                android:text="@string/learnaboutairtemp"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/learnaboutairtemp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/learnaboutairtemp2"
+                tools:layout_marginEnd="8dp" />
+        </LinearLayout>
+    </ScrollView>
+
 </android.support.constraint.ConstraintLayout>
