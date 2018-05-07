@@ -28,6 +28,7 @@ public class DO extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setupActionBar();
+        //Log.d("consoleprinting", "got to line 31");
 
         ScrollView sv = (ScrollView) findViewById(R.id.scrviewdo) ;
         LinearLayout ll = (LinearLayout) findViewById(R.id.linlaydo);
@@ -46,9 +47,9 @@ public class DO extends AppCompatActivity {
             DataPoint[] values = new DataPoint[b];
             for (a=0;a<b;a++)
             {
-                    /*DataPoint graphbuff[a]  new DataPoint(a,mApp.getDolevel(a));
+                   // DataPoint graphbuff[] = new DataPoint(a,mApp.getDolevel(a));
                     //series.appendData(graphbuff[a]);
-                    series.appendData(graphbuff[a]);*/
+                    //series.appendData(graphbuff[a]);
                 Log.d("consoleprinting", "DO LEVEL FROM ITEM " + a + " is " + mApp.getDolevel(a));
 
                 Integer xi = (a);
