@@ -69,12 +69,12 @@ public class DO extends AppCompatActivity {
             graph.getViewport().setScrollable(true);
             graph.getViewport().setScalableY(true);
             graph.getViewport().setScrollableY(true);
-            graph.getViewport().setXAxisBoundsManual(true);
+            /*graph.getViewport().setXAxisBoundsManual(true);
             graph.getViewport().setMinX(19);
             graph.getViewport().setMaxX(29);
             graph.getViewport().setYAxisBoundsManual(true);
             graph.getViewport().setMinY(900);
-            graph.getViewport().setMaxY(1200);
+            graph.getViewport().setMaxY(1200);*/
             //graph.getGridLabelRenderer().setNumVerticalLabels(1);
             graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
             graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
