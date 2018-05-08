@@ -44,14 +44,10 @@ public class DO extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setupActionBar();
-        //Log.d("consoleprinting", "got to line 31");
 
         ScrollView sv = (ScrollView) findViewById(R.id.scrviewdo) ;
         LinearLayout ll = (LinearLayout) findViewById(R.id.linlaydo);
         ll.setOrientation(LinearLayout.VERTICAL);
-
-
-        // This is where and how the view is used
 
         MyAppApplication mApp = (MyAppApplication)getApplicationContext();
         int mrtesty = mApp.size();
@@ -62,23 +58,10 @@ public class DO extends AppCompatActivity {
             int b = mApp.size();
             DataPoint[] values = new DataPoint[b];
             for (a = 0; a < b; a++) {
-                // DataPoint graphbuff[] = new DataPoint(a,mApp.getDolevel(a));
-                //series.appendData(graphbuff[a]);
-                //series.appendData(graphbuff[a]);
-                Log.d("consoleprinting", "DO LEVEL FROM ITEM " + a + " is " + mApp.getDolevel(a));
-
-                //Integer xi = (a);
-                //String datestring = mApp.getDatapointdatetime(a);
-
                 Date xi = mApp.getDatapointinDateFormat(a);
-                //convert from unix time into human time
-
-
-
                 float yi = mApp.getDolevel(a);
                 DataPoint v = new DataPoint(xi, yi);
                 values[a] = v;
-
             }
             Log.d("consoleprinting", "exited the for loop");
             LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(values);
@@ -88,50 +71,27 @@ public class DO extends AppCompatActivity {
             graph.getViewport().setScrollable(true);
             graph.getViewport().setScalableY(true);
             graph.getViewport().setScrollableY(true);
-            /*graph.getViewport().setXAxisBoundsManual(true);
-            graph.getViewport().setMinX(19);
-            graph.getViewport().setMaxX(29);
-            graph.getViewport().setYAxisBoundsManual(true);
-            graph.getViewport().setMinY(900);
-            graph.getViewport().setMaxY(1200);*/
-            //graph.getGridLabelRenderer().setNumVerticalLabels(1);
             graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
             graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
+
             // set date label formatter
-            int c = mApp.size();
             graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));
-            //graph.getGridLabelRenderer().setHumanRounding(false);
-            //graph.getGridLabelRenderer().setNumHorizontalLabels(c/5);
 
-            // Graphing the Data Points
-            // first, we need to make an array, as big as there are data points.
+            TableLayout tbllay = (TableLayout) findViewById(R.id.tbllaydo); // declaring the table-layout from the XML
 
-            /*TextView makeanicetable[] = new TextView[c];
-            TableLayout tbles = findViewById(R.id.tbllaydo);
-            TableRow tblerowA = new TableRow;
-            tbles.add  */
+            final TextView[] datepoints = new TextView[b]; // create an empty array;
+            final TextView[] measurepoints = new TextView[b]; // create an empty array;
+            final TextView[] actionpoints = new TextView[b]; // create an empty array;
 
-            TableLayout tbllay = (TableLayout) findViewById(R.id.tbllaydo);
+            for (int i = b-1; i >= 0; i--) {    // decrementing loop, so that it goes from most recent to oldest
 
-            final int N = 3; // total number of textviews to add
-
-            final TextView[] datepoints = new TextView[c]; // create an empty array;
-            final TextView[] measurepoints = new TextView[c]; // create an empty array;
-            final TextView[] actionpoints = new TextView[c]; // create an empty array;
-
-            for (int i = c-1; i >= 0; i--) {
-
+                // creating new instances for each row and row-element
                 final TableRow aNewTableRow = new TableRow(this);
-
-                // create a new textview
                 final TextView rowTextViewA = new TextView(this);
                 final TextView rowTextViewB = new TextView(this);
                 final TextView rowTextViewC = new TextView(this);
 
-
-
                 // set some properties of rowTextView or something
-
                 rowTextViewA.setText(mApp.getDatapointdatetime(i));
                 rowTextViewA.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 rowTextViewA.setPadding(20,0,0,0);
@@ -153,19 +113,13 @@ public class DO extends AppCompatActivity {
                 aNewTableRow.addView(rowTextViewC); // adding the third column element to the new row
                 tbllay.addView(aNewTableRow);   // adding the new row to the table layout
 
-                // save a reference to the textview for later
-                //datepoints[i] = rowTextViewA;
-                //measurepoints[i] = rowTextViewB;
-                //actionpoints[i] = rowTextViewC;
-
             }
-            String hamzilla = String.valueOf(mApp.getDolevel(c-1));
+            String hamzilla = String.valueOf(mApp.getDolevel(b-1));
             hamzilla = hamzilla + " ppm";
             TextView nowtemp = findViewById(R.id.do_current_measurement);
             nowtemp.setText(hamzilla);
             TextView nowtime = findViewById(R.id.do_current_time);
-            nowtime.setText(mApp.getDatapointdatetime(c-1));
-
+            nowtime.setText(mApp.getDatapointdatetime(b-1));
 
         }
         else {

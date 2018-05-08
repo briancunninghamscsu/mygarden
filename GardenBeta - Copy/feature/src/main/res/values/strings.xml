@@ -1,16 +1,15 @@
 <resources>
-
+    <string name="title_activity_humiditysettings2">Humidity Settings</string>
     <string name="aboutmetext">
         "Application and System created by Brian Cunningham and Dylan Kohl.\n\n"
         "Created for ECE 461 &amp; 462 Senior Design 2018.\n\n"
         "Not for public release.\n\n"
-        "Android Graphing Library by Arnoden Hond.\n
-        View License at \nhttp://android.arnodenhond.com/home\n\n"
+        "Android Graphing Library by Jonas Gehring.\n
+        View License at \nhttps://github.com/jjoe64/GraphView\n\n"
     </string>
 
     <string name="large_text">
         "Material is the metaphor.\n\n"
-
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."
         "The material is grounded in tactile reality, inspired by the study of paper and ink, yet "
         "technologically advanced and open to imagination and magic.\n"
@@ -105,7 +104,7 @@
         "<b>Daytime</b>: 60-70°F\n <b>Nighttime</b>: 50-60 °F\n <b>Absolute minimum temp</b>: 40°F\n"
     </string>
 
-    <string name ="learnaboutairtemp2">
+    <string name="learnaboutairtemp2">
         "Regardless of the crop grown, it never advised to allow the temperature of the garden reach temperatures of 86°F or above. This will induce a process called <i>photorespiration</i>, where the plant's internal sugar supplies are needlessly depleted, retarding growth.\n\nIt's also important to keep daytime temperatures above 70°F; temperatures below that will suppress the vegetative processes of <i>photosynthesis</i> and <i>respiration</i>.\n\nPlants don't photosynthesize at night. So, the respiration rate ought to be reduced because plants cannot store the product of this process. Respiration rates are reduced by cooling the temperature below 70°F.\n\n"
         <b>References\n\n</b>
         <a href="https://www.hydroponics-simplified.com/how-to-grow-hydroponics.html">Hydroponics-Simplified\n\n</a>
@@ -124,11 +123,6 @@
     <string name="learnabouthumidity3">
         "While plants are alive and healthy, they emit water through their leaves through a process called <i>transpiration</i>. This process is what circulates nutrients throughout the plant. But, when the humidity is too high (over 90%), the plants lose their ability to release this water from their systems. So, they stop circulating nutrients entirely.\n\n Also, in high-humidity conditions, the growing environment and the plant become susceptible to fungal diseases.\n\n"
     </string>
-
-
-
-
-
 
 
     <string name="action_settings">About</string>

@@ -64,7 +64,7 @@ public class ambienthumidity extends AppCompatActivity {
             return true;
         }
         if (id == R.id.airtemptolerances) {
-            Intent myIntent = new Intent(ambienthumidity.this, ambienthumiditytolerances.class);
+            Intent myIntent = new Intent(ambienthumidity.this, humiditysettings2.class);
             ambienthumidity.this.startActivity(myIntent);
             return true;
         }
