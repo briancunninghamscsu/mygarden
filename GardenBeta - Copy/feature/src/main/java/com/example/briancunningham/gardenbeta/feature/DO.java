@@ -1,12 +1,15 @@
 package com.example.briancunningham.gardenbeta.feature;
 
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
@@ -30,6 +33,7 @@ import static java.lang.String.valueOf;
 
 public class DO extends AppCompatActivity {
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -101,11 +105,11 @@ public class DO extends AppCompatActivity {
 
             final int N = 3; // total number of textviews to add
 
-            final TextView[] datepoints = new TextView[N]; // create an empty array;
-            final TextView[] measurepoints = new TextView[N]; // create an empty array;
-            final TextView[] actionpoints = new TextView[N]; // create an empty array;
+            final TextView[] datepoints = new TextView[c]; // create an empty array;
+            final TextView[] measurepoints = new TextView[c]; // create an empty array;
+            final TextView[] actionpoints = new TextView[c]; // create an empty array;
 
-            for (int i = 0; i < N; i++) {
+            for (int i = 0; i < c; i++) {
 
                 final TableRow aNewTableRow = new TableRow(this);
 
@@ -114,11 +118,16 @@ public class DO extends AppCompatActivity {
                 final TextView rowTextViewB = new TextView(this);
                 final TextView rowTextViewC = new TextView(this);
 
+
+
                 // set some properties of rowTextView or something
-                rowTextViewA.setText(mApp.getDatapointdatetime(N));
-                String hamzilla = String.valueOf(mApp.getDolevel(N));
+                rowTextViewA.setText(mApp.getDatapointdatetime(i));
+                rowTextViewA.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
+                String hamzilla = String.valueOf(mApp.getDolevel(i));
+                hamzilla = hamzilla + " ppm";
                 Log.d("dabug","it's setting hamzilla correctly");
                 rowTextViewB.setText(hamzilla);
+                rowTextViewB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 Log.d("dabug","it's setting rowTextViewB correctly");
                 // rowTextViewB.setText(hamzilla);
                 //rowTextViewC.setText(N);
@@ -135,32 +144,7 @@ public class DO extends AppCompatActivity {
                 //actionpoints[i] = rowTextViewC;
 
             }
-
-            /*for (int i = 0; i <2; i++) {
-
-                TableRow row = new TableRow(this);
-                TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
-                row.setLayoutParams(lp);
-                TextView tv = new TextView(this);
-                tv.setText("doo hoo hoo");
-                row.addView(tv);
-                tbllay.addView(row);
-                Log.d("dabug","howards an ass");
-                TextView bobo[a] = new TextView(this);
-                bobo[a].setText("tee hee hee this is number " + a);*/
-                /*addBtn = new ImageButton(this);
-                addBtn.setImageResource(R.drawable.add);
-                minusBtn = new ImageButton(this);
-                minusBtn.setImageResource(R.drawable.minus);
-                qty = new TextView(this);
-                checkBox.setText("hello");
-                qty.setText("10");
-                row.addView(checkBox);
-                row.addView(minusBtn);
-                row.addView(qty);
-                row.addView(addBtn);
-                ll.addView(row, i);*/
-            }
+        }
         else {
             TextView tv = new TextView(this);
             tv.setText("No Data Found!");

@@ -60,10 +60,10 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Time"
+                        android:text="Date and Time"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        tools:text="Time" />
+                        tools:text="Date and Time" />
 
                     <TextView
                         android:id="@+id/textView4"
