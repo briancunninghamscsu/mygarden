@@ -4,6 +4,8 @@ import android.app.Application;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.Date;
+
 // this is what I've been using as a global variable!
 public class MyAppApplication extends Application {
 
@@ -74,6 +76,7 @@ public class MyAppApplication extends Application {
 
     public String getDatapointdatetime(int z) {return recordedData.get(z).getDatapointdatetime();}
 
+    public Date getDatapointinDateFormat(int z) {return recordedData.get(z).getDatapointinDateFormat();}
 
 
 

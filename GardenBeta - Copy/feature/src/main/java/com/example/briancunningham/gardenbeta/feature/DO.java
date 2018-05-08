@@ -22,6 +22,7 @@ import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
 
@@ -64,10 +65,14 @@ public class DO extends AppCompatActivity {
                 //series.appendData(graphbuff[a]);
                 Log.d("consoleprinting", "DO LEVEL FROM ITEM " + a + " is " + mApp.getDolevel(a));
 
-                Integer xi = (a);
+                //Integer xi = (a);
                 //String datestring = mApp.getDatapointdatetime(a);
-                //Date xi = String.
-                //Date xi = mApp.getDatapointdatetime(a);
+
+                Date xi = mApp.getDatapointinDateFormat(a);
+                //convert from unix time into human time
+
+
+
                 float yi = mApp.getDolevel(a);
                 DataPoint v = new DataPoint(xi, yi);
                 values[a] = v;
@@ -90,12 +95,15 @@ public class DO extends AppCompatActivity {
             //graph.getGridLabelRenderer().setNumVerticalLabels(1);
             graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
             graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
-
+            // set date label formatter
+            int c = mApp.size();
+            graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));
+            //graph.getGridLabelRenderer().setHumanRounding(false);
+            //graph.getGridLabelRenderer().setNumHorizontalLabels(c/5);
 
             // Graphing the Data Points
             // first, we need to make an array, as big as there are data points.
-            String d;
-            int c = mApp.size();
+
             /*TextView makeanicetable[] = new TextView[c];
             TableLayout tbles = findViewById(R.id.tbllaydo);
             TableRow tblerowA = new TableRow;
@@ -123,11 +131,13 @@ public class DO extends AppCompatActivity {
                 // set some properties of rowTextView or something
                 rowTextViewA.setText(mApp.getDatapointdatetime(i));
                 rowTextViewA.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
+                rowTextViewA.setPadding(20,0,0,0);
                 String hamzilla = String.valueOf(mApp.getDolevel(i));
                 hamzilla = hamzilla + " ppm";
                 Log.d("dabug","it's setting hamzilla correctly");
                 rowTextViewB.setText(hamzilla);
                 rowTextViewB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                rowTextViewB.setPadding(0,0,0,0);
                 Log.d("dabug","it's setting rowTextViewB correctly");
                 // rowTextViewB.setText(hamzilla);
                 //rowTextViewC.setText(N);

@@ -26,6 +26,7 @@ public class verynicedatapoint implements Parcelable {
         private float solutiontemplevel;
         private boolean reservoirs;
         private String datapointdatetime;
+        private Date datapointinDateFormat;
 
 
         public verynicedatapoint(Parcel input){
@@ -133,6 +134,7 @@ public class verynicedatapoint implements Parcelable {
             this.solutiontemplevel = solutiontemplevel;
             this.reservoirs = reservoirs;
             Date c = Calendar.getInstance().getTime();
+            this.datapointinDateFormat = c;
             SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
             this.datapointdatetime = sdf.format(c);
         }
@@ -190,6 +192,7 @@ public class verynicedatapoint implements Parcelable {
 
 
             Date c = Calendar.getInstance().getTime();
+            this.datapointinDateFormat = c;
             SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
             this.datapointdatetime = sdf.format(c);
 
@@ -248,6 +251,6 @@ public class verynicedatapoint implements Parcelable {
             public boolean getReservoirs(){
                 return reservoirs;
             }
-
+            public Date getDatapointinDateFormat(){ return datapointinDateFormat;}
             public String getDatapointdatetime() {return datapointdatetime;}
 }
