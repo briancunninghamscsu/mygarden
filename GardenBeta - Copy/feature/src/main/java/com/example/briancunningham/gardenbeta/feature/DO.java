@@ -109,7 +109,7 @@ public class DO extends AppCompatActivity {
             final TextView[] measurepoints = new TextView[c]; // create an empty array;
             final TextView[] actionpoints = new TextView[c]; // create an empty array;
 
-            for (int i = 0; i < c; i++) {
+            for (int i = c-1; i >= 0; i--) {
 
                 final TableRow aNewTableRow = new TableRow(this);
 
@@ -144,6 +144,14 @@ public class DO extends AppCompatActivity {
                 //actionpoints[i] = rowTextViewC;
 
             }
+            String hamzilla = String.valueOf(mApp.getDolevel(c-1));
+            hamzilla = hamzilla + " ppm";
+            TextView nowtemp = findViewById(R.id.do_current_measurement);
+            nowtemp.setText(hamzilla);
+            TextView nowtime = findViewById(R.id.do_current_time);
+            nowtime.setText(mApp.getDatapointdatetime(c-1));
+
+
         }
         else {
             TextView tv = new TextView(this);
