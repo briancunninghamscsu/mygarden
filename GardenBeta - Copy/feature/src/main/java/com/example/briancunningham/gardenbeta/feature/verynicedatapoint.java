@@ -27,6 +27,7 @@ public class verynicedatapoint implements Parcelable {
         private boolean reservoirs;
         private String datapointdatetime;
         private Date datapointinDateFormat;
+        private String action;
 
 
         public verynicedatapoint(Parcel input){
@@ -196,6 +197,21 @@ public class verynicedatapoint implements Parcelable {
             SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
             this.datapointdatetime = sdf.format(c);
 
+            i1 = (r.nextInt(10) + 1);
+            if (i1==5){
+                this.action="Added 5mL";
+            }
+            else if(i1==6){
+                    this.action="Turned on Fans";
+            }
+            else if(i1==4){
+                this.action="Injected Base";
+            }
+            else{
+                this.action="";
+            }
+
+
              i1 = (r.nextInt(1) + 1);
              if (i1==1) {
                  this.reservoirs = false;
@@ -205,6 +221,8 @@ public class verynicedatapoint implements Parcelable {
                  this.reservoirs=true;
                  Log.d("spoof","reservoirs are true (full)");
              }}
+
+
 
             public float getAirtemplevel() {
                 return airtemplevel;
@@ -253,4 +271,5 @@ public class verynicedatapoint implements Parcelable {
             }
             public Date getDatapointinDateFormat(){ return datapointinDateFormat;}
             public String getDatapointdatetime() {return datapointdatetime;}
+            public String getAction() {return action;}
 }

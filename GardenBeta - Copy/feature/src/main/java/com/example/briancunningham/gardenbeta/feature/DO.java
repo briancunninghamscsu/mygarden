@@ -13,6 +13,7 @@ import android.text.Layout;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -30,6 +31,7 @@ import org.w3c.dom.Text;
 
 import java.util.Date;
 
+import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static java.lang.String.valueOf;
 
 public class DO extends AppCompatActivity {
@@ -129,8 +131,9 @@ public class DO extends AppCompatActivity {
 
 
                 // set some properties of rowTextView or something
+
                 rowTextViewA.setText(mApp.getDatapointdatetime(i));
-                rowTextViewA.setJustificationMode(Layout.JUSTIFICATION_MODE_INTER_WORD);
+                rowTextViewA.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 rowTextViewA.setPadding(20,0,0,0);
                 String hamzilla = String.valueOf(mApp.getDolevel(i));
                 hamzilla = hamzilla + " ppm";
@@ -139,8 +142,10 @@ public class DO extends AppCompatActivity {
                 rowTextViewB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 rowTextViewB.setPadding(0,0,0,0);
                 Log.d("dabug","it's setting rowTextViewB correctly");
-                // rowTextViewB.setText(hamzilla);
-                //rowTextViewC.setText(N);
+                rowTextViewC.setText(mApp.getAction(i));
+                rowTextViewC.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                rowTextViewC.setPadding(0,0,20,0);
+                rowTextViewC.setHeight(60);
 
                 // add the textview to the linearlayout
                 aNewTableRow.addView(rowTextViewA); // adding first column element to the new row
@@ -181,8 +186,7 @@ public class DO extends AppCompatActivity {
         if (actionBar != null) {
             // Show the Up button in the action bar.
             actionBar.setDisplayHomeAsUpEnabled(true);
+            }
         }
-
-
-    }}
+    }
 

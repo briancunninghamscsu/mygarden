@@ -77,9 +77,5 @@ public class MyAppApplication extends Application {
     public String getDatapointdatetime(int z) {return recordedData.get(z).getDatapointdatetime();}
 
     public Date getDatapointinDateFormat(int z) {return recordedData.get(z).getDatapointinDateFormat();}
-
-
-
-
-
+    public String getAction(int z) {return recordedData.get(z).getAction();}
 }

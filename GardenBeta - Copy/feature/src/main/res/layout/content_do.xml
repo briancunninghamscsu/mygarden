@@ -20,9 +20,10 @@
             android:orientation="vertical">
 
             <com.jjoe64.graphview.GraphView
+                android:id="@+id/graph"
                 android:layout_width="match_parent"
                 android:layout_height="200dip"
-                android:id="@+id/graph" />
+                android:padding="20dp" />
 
             <TextView
                 android:id="@+id/do_current_measurement"
@@ -60,10 +61,11 @@
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
-                        android:text="Date and Time"
+                        android:text="Time"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        tools:text="Date and Time" />
+                        android:textSize="18sp"
+                        tools:text="Time" />
 
                     <TextView
                         android:id="@+id/textView4"
@@ -74,17 +76,19 @@
                         android:text="Measurement"
                         android:textAlignment="center"
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textSize="18sp"
                         tools:text="Measurement" />
 
                     <TextView
                         android:id="@+id/textView6"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingLeft="10dp"
                         android:paddingRight="10dp"
                         android:text="Action"
                         android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                        android:textSize="18sp" />
                 </TableRow>
             </TableLayout>
 
