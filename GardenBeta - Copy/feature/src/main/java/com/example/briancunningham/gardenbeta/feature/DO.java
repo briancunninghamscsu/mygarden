@@ -26,6 +26,8 @@ import org.w3c.dom.Text;
 
 import java.util.Date;
 
+import static java.lang.String.valueOf;
+
 public class DO extends AppCompatActivity {
 
     @Override
@@ -99,20 +101,35 @@ public class DO extends AppCompatActivity {
 
             final int N = 10; // total number of textviews to add
 
-            final TextView[] myTextViews = new TextView[N]; // create an empty array;
+            final TextView[] datepoints = new TextView[N]; // create an empty array;
+            final TextView[] measurepoints = new TextView[N]; // create an empty array;
+            final TextView[] actionpoints = new TextView[N]; // create an empty array;
 
             for (int i = 0; i < N; i++) {
                 // create a new textview
-                final TextView rowTextView = new TextView(this);
+                final TextView rowTextViewA = new TextView(this);
+                final TextView rowTextViewB = new TextView(this);
+                final TextView rowTextViewC = new TextView(this);
 
                 // set some properties of rowTextView or something
-                rowTextView.setText("This is row #" + i);
+                rowTextViewA.setText(mApp.getDatapointdatetime(N));
+                String hamzilla = String.valueOf(mApp.getDolevel(N));
+                Log.d("dabug","it's setting hamzilla correctly");
+                rowTextViewB.setText(hamzilla);
+                Log.d("dabug","it's setting rowTextViewB correctly");
+                // rowTextViewB.setText(hamzilla);
+                //rowTextViewC.setText(N);
 
                 // add the textview to the linearlayout
-                tbllay.addView(rowTextView);
+                tbllay.addView(rowTextViewA);
+                tbllay.addView(rowTextViewB);
+                tbllay.addView(rowTextViewC);
 
                 // save a reference to the textview for later
-                myTextViews[i] = rowTextView;
+                //datepoints[i] = rowTextViewA;
+                //measurepoints[i] = rowTextViewB;
+                //actionpoints[i] = rowTextViewC;
+
             }
 
             /*for (int i = 0; i <2; i++) {
