@@ -1,5 +1,6 @@
 package com.example.briancunningham.gardenbeta.feature;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,13 +10,19 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
+import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ScrollView;
+import android.widget.TableLayout;
+import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
+
+import org.w3c.dom.Text;
 
 import java.util.Date;
 
@@ -42,14 +49,13 @@ public class DO extends AppCompatActivity {
         if (mrtesty!=0) {
             GraphView graph = (GraphView) findViewById(R.id.graph);
 
-            int a=1;
+            int a = 1;
             int b = mApp.size();
             DataPoint[] values = new DataPoint[b];
-            for (a=0;a<b;a++)
-            {
-                   // DataPoint graphbuff[] = new DataPoint(a,mApp.getDolevel(a));
-                    //series.appendData(graphbuff[a]);
-                    //series.appendData(graphbuff[a]);
+            for (a = 0; a < b; a++) {
+                // DataPoint graphbuff[] = new DataPoint(a,mApp.getDolevel(a));
+                //series.appendData(graphbuff[a]);
+                //series.appendData(graphbuff[a]);
                 Log.d("consoleprinting", "DO LEVEL FROM ITEM " + a + " is " + mApp.getDolevel(a));
 
                 Integer xi = (a);
@@ -84,30 +90,61 @@ public class DO extends AppCompatActivity {
             // first, we need to make an array, as big as there are data points.
             String d;
             int c = mApp.size();
-            TextView makeanicetable[] = new TextView[c];
+            /*TextView makeanicetable[] = new TextView[c];
+            TableLayout tbles = findViewById(R.id.tbllaydo);
+            TableRow tblerowA = new TableRow;
+            tbles.add  */
 
-            for (a=0;a<c;a++) {
-                Log.d("consoleprinting", "got into the for loop, iteration " + a);
-                d = mApp.getDatapointdatetime(a);
-               // makeanicetable[1].setText("hehehe"); // this crashes the program??
+            TableLayout tbllay = (TableLayout) findViewById(R.id.tbllaydo);
 
+            final int N = 10; // total number of textviews to add
+
+            final TextView[] myTextViews = new TextView[N]; // create an empty array;
+
+            for (int i = 0; i < N; i++) {
+                // create a new textview
+                final TextView rowTextView = new TextView(this);
+
+                // set some properties of rowTextView or something
+                rowTextView.setText("This is row #" + i);
+
+                // add the textview to the linearlayout
+                tbllay.addView(rowTextView);
+
+                // save a reference to the textview for later
+                myTextViews[i] = rowTextView;
             }
-        }
+
+            /*for (int i = 0; i <2; i++) {
+
+                TableRow row = new TableRow(this);
+                TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
+                row.setLayoutParams(lp);
+                TextView tv = new TextView(this);
+                tv.setText("doo hoo hoo");
+                row.addView(tv);
+                tbllay.addView(row);
+                Log.d("dabug","howards an ass");
+                TextView bobo[a] = new TextView(this);
+                bobo[a].setText("tee hee hee this is number " + a);*/
+                /*addBtn = new ImageButton(this);
+                addBtn.setImageResource(R.drawable.add);
+                minusBtn = new ImageButton(this);
+                minusBtn.setImageResource(R.drawable.minus);
+                qty = new TextView(this);
+                checkBox.setText("hello");
+                qty.setText("10");
+                row.addView(checkBox);
+                row.addView(minusBtn);
+                row.addView(qty);
+                row.addView(addBtn);
+                ll.addView(row, i);*/
+            }
         else {
             TextView tv = new TextView(this);
             tv.setText("No Data Found!");
             ll.addView(tv);
         }
-
-
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
     }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
