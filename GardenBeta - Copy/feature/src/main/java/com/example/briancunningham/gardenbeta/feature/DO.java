@@ -99,13 +99,16 @@ public class DO extends AppCompatActivity {
 
             TableLayout tbllay = (TableLayout) findViewById(R.id.tbllaydo);
 
-            final int N = 10; // total number of textviews to add
+            final int N = 3; // total number of textviews to add
 
             final TextView[] datepoints = new TextView[N]; // create an empty array;
             final TextView[] measurepoints = new TextView[N]; // create an empty array;
             final TextView[] actionpoints = new TextView[N]; // create an empty array;
 
             for (int i = 0; i < N; i++) {
+
+                final TableRow aNewTableRow = new TableRow(this);
+
                 // create a new textview
                 final TextView rowTextViewA = new TextView(this);
                 final TextView rowTextViewB = new TextView(this);
@@ -121,9 +124,10 @@ public class DO extends AppCompatActivity {
                 //rowTextViewC.setText(N);
 
                 // add the textview to the linearlayout
-                tbllay.addView(rowTextViewA);
-                tbllay.addView(rowTextViewB);
-                tbllay.addView(rowTextViewC);
+                aNewTableRow.addView(rowTextViewA); // adding first column element to the new row
+                aNewTableRow.addView(rowTextViewB); // adding the second column element to the new row
+                aNewTableRow.addView(rowTextViewC); // adding the third column element to the new row
+                tbllay.addView(aNewTableRow);   // adding the new row to the table layout
 
                 // save a reference to the textview for later
                 //datepoints[i] = rowTextViewA;
