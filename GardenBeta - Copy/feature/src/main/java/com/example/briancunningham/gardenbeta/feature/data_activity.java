@@ -1,5 +1,6 @@
 package com.example.briancunningham.gardenbeta.feature;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -44,6 +45,11 @@ public class data_activity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setupActionBar();
+        Intent mIntent = getIntent();
+        String par_names = mIntent.getStringExtra("parameter_name");
+        Log.d("consoleprinting",par_names);
+        setTitle(par_names);
+
 
         ScrollView sv = (ScrollView) findViewById(R.id.scrviewdo) ;
         LinearLayout ll = (LinearLayout) findViewById(R.id.linlaydo);

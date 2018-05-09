@@ -117,15 +117,17 @@ public class home_activity extends AppCompatActivity {
         tblrowairtemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent myIntent = new Intent(home_activity.this, airtempActivity.class);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "Air Temperature");
                 home_activity.this.startActivity(myIntent);
-               }
+                }
             });
 
         tblrowambhum.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent myIntent = new Intent(home_activity.this, ambienthumidity.class);
+               Intent myIntent = new Intent(home_activity.this, data_activity.class);
+               myIntent.putExtra("parameter_name", "Humidity");
                home_activity.this.startActivity(myIntent);
                }
            });
@@ -133,7 +135,8 @@ public class home_activity extends AppCompatActivity {
         tblrowo2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(home_activity.this, o2.class);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "TVOC");
                 home_activity.this.startActivity(myIntent);
             }
         });
@@ -141,7 +144,8 @@ public class home_activity extends AppCompatActivity {
         tblrowco2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(home_activity.this, co2.class);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "CO2");
                 home_activity.this.startActivity(myIntent);
             }
         });
@@ -149,7 +153,8 @@ public class home_activity extends AppCompatActivity {
         tblrowslntemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(home_activity.this, SolutionTemperatureMeasurements.class);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "Solution Temperature");
                 home_activity.this.startActivity(myIntent);
             }
         });
@@ -157,7 +162,8 @@ public class home_activity extends AppCompatActivity {
         tblrowtds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(home_activity.this, tds.class);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "Total Dissolved Solids");
                 home_activity.this.startActivity(myIntent);
             }
         });
@@ -166,15 +172,16 @@ public class home_activity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "Dissolved Oxygen");
                 home_activity.this.startActivity(myIntent);
             }
         });
 
-
         tblroworp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(home_activity.this, orp.class);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "Oxidation-Reduction Potential");
                 home_activity.this.startActivity(myIntent);
             }
         });
@@ -182,7 +189,8 @@ public class home_activity extends AppCompatActivity {
         tblrowph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(home_activity.this, pH.class);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "pH");
                 home_activity.this.startActivity(myIntent);
             }
         });
@@ -191,7 +199,8 @@ public class home_activity extends AppCompatActivity {
         tblrowres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(home_activity.this, reservoirs.class);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "Reservoirs");
                 home_activity.this.startActivity(myIntent);
             }
         });
@@ -199,7 +208,8 @@ public class home_activity extends AppCompatActivity {
         tblrowcanhei.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(home_activity.this, CanopyHeight.class);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "Canopy Height");
                 home_activity.this.startActivity(myIntent);
             }
         });
@@ -207,7 +217,8 @@ public class home_activity extends AppCompatActivity {
         tblrowLH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(home_activity.this, LightHeight.class);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                myIntent.putExtra("parameter_name", "Light Height");
                 home_activity.this.startActivity(myIntent);
             }
         });
