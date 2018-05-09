@@ -240,7 +240,7 @@
                 android:layout_height="wrap_content"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
-                android:text="O₂ Levels"
+                android:text="TVOC"
                 android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp" />

@@ -127,7 +127,7 @@ public class airtempActivity extends AppCompatActivity {
         //  .setAction("Action", null).show();
 
         if (id == R.id.airtemplearn) {
-            Intent myIntent = new Intent(airtempActivity.this, airtemplearn.class);
+            Intent myIntent = new Intent(airtempActivity.this, learning_activity.class);
             airtempActivity.this.startActivity(myIntent);
             return true;
         }
@@ -138,8 +138,5 @@ public class airtempActivity extends AppCompatActivity {
         }
         return super.onOptionsItemSelected(item);
     }
-
-
-
 }
 
