@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.briancunningham.gardenbeta.feature.airtempActivity">
     <item
-        android:id="@+id/airtemplearn"
+        android:id="@+id/learning_activity"
         android:orderInCategory="100"
         android:title="Learn"
         app:showAsAction="never" />
     <item
-        android:id="@+id/airtemptolerances"
+        android:id="@+id/tolerances_activity"
         android:orderInCategory="200"
         android:title="Tolerances and Notifications"
         app:showAsAction="never" />

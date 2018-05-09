@@ -29,22 +29,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".airtempActivity"
-            android:label="Air Temperature"
-            android:parentActivityName="home_activity">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".SettingsActivity"
             android:label="User Settings"
             android:parentActivityName=".home_activity">
@@ -81,42 +65,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ambienthumidity"
-            android:label="Ambient Humidity"
-            android:parentActivityName=".home_activity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".o2"
             android:label="O₂ Measurements"
-            android:parentActivityName=".home_activity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".co2"
-            android:label="CO₂ Measurements"
             android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
@@ -233,23 +183,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CanopyHeight"
-            android:label="Canopy Height"
-            android:parentActivityName=".home_activity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".LightHeight"
             android:label="Light Height"
             android:parentActivityName=".home_activity"
@@ -267,9 +200,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".airtemplearn"
-            android:label="Learning About Air Temperature"
-            android:parentActivityName=".airtempActivity">
+            android:name=".learning_activity"
+            android:label="Learning About"
+            android:parentActivityName=".data_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -283,105 +216,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".airtemptolerances"
-            android:label="Air Temperature Settings"
-            android:parentActivityName=".airtempActivity">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ambienthumiditytolerances"
-            android:label="Ambient Humidity Settings"
-            android:parentActivityName=".ambienthumidity">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ambienthumiditylearn"
-            android:label="Learn About Ambient Humidity"
-            android:parentActivityName=".ambienthumidity">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".canopyheighttolerances"
-            android:label="Canopy Height Tolerances"
-            android:parentActivityName=".canopyheighttolerances">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".canopyheightlearn"
-            android:label="Learn About Canopy Height"
-            android:parentActivityName=".canopyheightlearn">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".co2learn"
-            android:label="Learn About Carbon Dioxide"
-            android:parentActivityName=".co2">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".co2tolerances"
-            android:label="Carbon Dioxide Settings"
-            android:parentActivityName=".co2">
+            android:name=".tolerances_activity"
+            android:label="Tolerances"
+            android:parentActivityName=".data_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
