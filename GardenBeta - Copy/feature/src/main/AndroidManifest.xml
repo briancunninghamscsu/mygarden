@@ -8,7 +8,7 @@
         android:name=".MyAppApplication"
         android:label="@string/app_name">
         <activity
-            android:name=".ScrollingActivity"
+            android:name=".home_activity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
@@ -31,7 +31,7 @@
         <activity
             android:name=".airtempActivity"
             android:label="Air Temperature"
-            android:parentActivityName=".ScrollingActivity">
+            android:parentActivityName="home_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -47,10 +47,10 @@
         <activity
             android:name=".SettingsActivity"
             android:label="User Settings"
-            android:parentActivityName=".ScrollingActivity">
+            android:parentActivityName=".home_activity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.briancunningham.gardenbeta.feature.ScrollingActivity" />
+                android:value="com.example.briancunningham.gardenbeta.feature.home_activity" />
 
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -67,7 +67,7 @@
         <activity
             android:name=".AboutActivity"
             android:label="About This Application"
-            android:parentActivityName=".ScrollingActivity">
+            android:parentActivityName=".home_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -83,7 +83,7 @@
         <activity
             android:name=".ambienthumidity"
             android:label="Ambient Humidity"
-            android:parentActivityName=".ScrollingActivity"
+            android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -100,7 +100,7 @@
         <activity
             android:name=".o2"
             android:label="O₂ Measurements"
-            android:parentActivityName=".ScrollingActivity"
+            android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -117,7 +117,7 @@
         <activity
             android:name=".co2"
             android:label="CO₂ Measurements"
-            android:parentActivityName=".ScrollingActivity"
+            android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -134,7 +134,7 @@
         <activity
             android:name=".SolutionTemperatureMeasurements"
             android:label="Solution Temperature"
-            android:parentActivityName=".ScrollingActivity"
+            android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -151,7 +151,7 @@
         <activity
             android:name=".tds"
             android:label="Total Dissolved Solids"
-            android:parentActivityName=".ScrollingActivity">
+            android:parentActivityName=".home_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -165,9 +165,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DO"
-            android:label="Dissolved Oxygen"
-            android:parentActivityName=".ScrollingActivity"
+            android:name=".data_activity"
+            android:label="Data Visualization"
+            android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -184,7 +184,7 @@
         <activity
             android:name=".orp"
             android:label="ORP"
-            android:parentActivityName=".ScrollingActivity"
+            android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -201,7 +201,7 @@
         <activity
             android:name=".pH"
             android:label="pH"
-            android:parentActivityName=".ScrollingActivity"
+            android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -218,7 +218,7 @@
         <activity
             android:name=".reservoirs"
             android:label="Reservoirs"
-            android:parentActivityName=".ScrollingActivity"
+            android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -235,7 +235,7 @@
         <activity
             android:name=".CanopyHeight"
             android:label="Canopy Height"
-            android:parentActivityName=".ScrollingActivity"
+            android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -252,7 +252,7 @@
         <activity
             android:name=".LightHeight"
             android:label="Light Height"
-            android:parentActivityName=".ScrollingActivity"
+            android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -637,7 +637,7 @@
         <activity
             android:name=".FirstTimeSetup"
             android:label="First Time Setup"
-            android:parentActivityName=".ScrollingActivity">
+            android:parentActivityName="home_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -653,7 +653,7 @@
         <activity
             android:name=".DeveloperOptions"
             android:label="Developer Controls"
-            android:parentActivityName=".ScrollingActivity">
+            android:parentActivityName=".home_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 

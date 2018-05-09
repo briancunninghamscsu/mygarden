@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
-public class ScrollingActivity extends AppCompatActivity {
+public class home_activity extends AppCompatActivity {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -82,29 +82,17 @@ public class ScrollingActivity extends AppCompatActivity {
         if (mrtesty==0) {
             tvtimestamp.setText("No Data Found!");
             tvairtemp.setText("NDF");
-            tvairtemp.setTextColor(Color.RED);
             tvambhum.setText("NDF");
-            tvambhum.setTextColor(Color.RED);
             tvcanhop.setText("NDF");
-            tvcanhop.setTextColor(Color.RED);
             tvco2.setText("NDF");
-            tvco2.setTextColor(Color.RED);
             tvdo.setText("NDF");
-            tvdo.setTextColor(Color.RED);
             tvLH.setText("NDF");
-            tvLH.setTextColor(Color.RED);
             tvo2.setText("NDF");
-            tvo2.setTextColor(Color.RED);
             tvorp.setText("NDF");
-            tvorp.setTextColor(Color.RED);
             tvph.setText("NDF");
-            tvph.setTextColor(Color.RED);
             tvslntemp.setText("NDF");
-            tvslntemp.setTextColor(Color.RED);
             tvtds.setText("NDF");
-            tvtds.setTextColor(Color.RED);
             tvres.setText("NDF");
-            tvres.setTextColor(Color.RED);
         }
         else {
             String stringybeans = mApp.getDatapointdatetime(mrtesty-1);
@@ -123,70 +111,62 @@ public class ScrollingActivity extends AppCompatActivity {
             tvslntemp.setText(String.valueOf(mApp.getSolutiontemplevel(mrtesty-1)) + " °F");
             tvtds.setText(String.valueOf(mApp.getTdslevel(mrtesty-1)) + " ppm");
             tvres.setText(String.valueOf(mApp.getReservoirs(mrtesty-1)));
-
         }
-
-
-
-
-
-
-
 
         // assigning listeners that link activities
         tblrowairtemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               Intent myIntent = new Intent(ScrollingActivity.this, airtempActivity.class);
-               ScrollingActivity.this.startActivity(myIntent);
+               Intent myIntent = new Intent(home_activity.this, airtempActivity.class);
+                home_activity.this.startActivity(myIntent);
                }
             });
 
         tblrowambhum.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View view) {
-               Intent myIntent = new Intent(ScrollingActivity.this, ambienthumidity.class);
-               ScrollingActivity.this.startActivity(myIntent);
+               Intent myIntent = new Intent(home_activity.this, ambienthumidity.class);
+               home_activity.this.startActivity(myIntent);
                }
            });
 
         tblrowo2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, o2.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(home_activity.this, o2.class);
+                home_activity.this.startActivity(myIntent);
             }
         });
 
         tblrowco2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, co2.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(home_activity.this, co2.class);
+                home_activity.this.startActivity(myIntent);
             }
         });
 
         tblrowslntemp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, SolutionTemperatureMeasurements.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(home_activity.this, SolutionTemperatureMeasurements.class);
+                home_activity.this.startActivity(myIntent);
             }
         });
 
         tblrowtds.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, tds.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(home_activity.this, tds.class);
+                home_activity.this.startActivity(myIntent);
             }
         });
 
         tblrowDO.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, DO.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(home_activity.this, data_activity.class);
+                home_activity.this.startActivity(myIntent);
             }
         });
 
@@ -194,16 +174,16 @@ public class ScrollingActivity extends AppCompatActivity {
         tblroworp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, orp.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(home_activity.this, orp.class);
+                home_activity.this.startActivity(myIntent);
             }
         });
 
         tblrowph.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, pH.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(home_activity.this, pH.class);
+                home_activity.this.startActivity(myIntent);
             }
         });
 
@@ -211,24 +191,24 @@ public class ScrollingActivity extends AppCompatActivity {
         tblrowres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, reservoirs.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(home_activity.this, reservoirs.class);
+                home_activity.this.startActivity(myIntent);
             }
         });
 
         tblrowcanhei.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, CanopyHeight.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(home_activity.this, CanopyHeight.class);
+                home_activity.this.startActivity(myIntent);
             }
         });
 
         tblrowLH.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent myIntent = new Intent(ScrollingActivity.this, LightHeight.class);
-                ScrollingActivity.this.startActivity(myIntent);
+                Intent myIntent = new Intent(home_activity.this, LightHeight.class);
+                home_activity.this.startActivity(myIntent);
             }
         });
 
@@ -237,7 +217,7 @@ public class ScrollingActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(ScrollingActivity.this, DeveloperOptions.class);
+                Intent i = new Intent(home_activity.this, DeveloperOptions.class);
                 startActivityForResult(i, 1);
             }
         });
@@ -261,18 +241,18 @@ public class ScrollingActivity extends AppCompatActivity {
           //  .setAction("Action", null).show();
 
         if (id == R.id.action_settings) {
-            Intent myIntent = new Intent(ScrollingActivity.this, SettingsActivity.class);
-            ScrollingActivity.this.startActivity(myIntent);
+            Intent myIntent = new Intent(home_activity.this, SettingsActivity.class);
+            home_activity.this.startActivity(myIntent);
             return true;
         }
         if (id == R.id.aboutmeid) {
-            Intent myIntent = new Intent(ScrollingActivity.this, AboutActivity.class);
-            ScrollingActivity.this.startActivity(myIntent);
+            Intent myIntent = new Intent(home_activity.this, AboutActivity.class);
+            home_activity.this.startActivity(myIntent);
             return true;
         }
         if (id == R.id.firsttimesetupid) {
-            Intent myIntent = new Intent(ScrollingActivity.this, FirstTimeSetup.class);
-            ScrollingActivity.this.startActivity(myIntent);
+            Intent myIntent = new Intent(home_activity.this, FirstTimeSetup.class);
+            home_activity.this.startActivity(myIntent);
             return true;
         }
         return super.onOptionsItemSelected(item);

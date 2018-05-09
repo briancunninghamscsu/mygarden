@@ -19,9 +19,6 @@ import java.util.ArrayList;
 
 public class DeveloperOptions extends AppCompatActivity {
 
-    //private CClient mClient;
-     //ArrayList<verynicedatapoint> recordedData;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

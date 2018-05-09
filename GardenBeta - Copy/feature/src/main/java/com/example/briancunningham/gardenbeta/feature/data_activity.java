@@ -34,7 +34,7 @@ import java.util.Date;
 import static android.view.ViewGroup.LayoutParams.WRAP_CONTENT;
 import static java.lang.String.valueOf;
 
-public class DO extends AppCompatActivity {
+public class data_activity extends AppCompatActivity {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
