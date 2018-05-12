@@ -4,7 +4,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
-import android.view.View;
 import android.widget.TextView;
 
 public class learning_activity extends AppCompatActivity {
@@ -12,7 +11,7 @@ public class learning_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_airtemplearn);
+        setContentView(R.layout.learning_activity);
         setupActionBar();
         TextView t2 = (TextView) findViewById(R.id.textView10);
         t2.setMovementMethod(LinkMovementMethod.getInstance());

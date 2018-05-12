@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:autoLink="web"
-    tools:context="com.example.briancunningham.gardenbeta.feature.airtemplearn">
+    tools:context="com.example.briancunningham.gardenbeta.feature.learning_activity">
 
     <ScrollView
         android:layout_width="match_parent"

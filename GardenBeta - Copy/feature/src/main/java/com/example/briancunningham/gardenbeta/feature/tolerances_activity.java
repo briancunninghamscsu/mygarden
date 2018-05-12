@@ -9,7 +9,7 @@ public class tolerances_activity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_airtemptolerances);
+        setContentView(R.layout.learning_activity);
         setupActionBar();
     }
 

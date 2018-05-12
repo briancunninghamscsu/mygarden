@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.briancunningham.gardenbeta.feature">
 
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".MyAppApplication"
@@ -13,10 +13,8 @@
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
-
                 <data
                     android:host="example.com"
                     android:pathPattern="/.*"
@@ -65,126 +63,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".o2"
-            android:label="O₂ Measurements"
-            android:parentActivityName=".home_activity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".SolutionTemperatureMeasurements"
-            android:label="Solution Temperature"
-            android:parentActivityName=".home_activity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".tds"
-            android:label="Total Dissolved Solids"
-            android:parentActivityName=".home_activity">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".data_activity"
             android:label="Data Visualization"
-            android:parentActivityName=".home_activity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".orp"
-            android:label="ORP"
-            android:parentActivityName=".home_activity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".pH"
-            android:label="pH"
-            android:parentActivityName=".home_activity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".reservoirs"
-            android:label="Reservoirs"
-            android:parentActivityName=".home_activity"
-            android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".LightHeight"
-            android:label="Light Height"
             android:parentActivityName=".home_activity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
@@ -232,249 +112,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DOtolerances"
-            android:label="DO Settings"
-            android:parentActivityName=".DOtolerances">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".DOlearn"
-            android:label="Learn About Dissolved Oxygen"
-            android:parentActivityName=".DOlearn">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".lightheightlearn"
-            android:label="Learn About Light Height"
-            android:parentActivityName=".LightHeight">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".lightheighttolerances"
-            android:label="Light Height Settings"
-            android:parentActivityName=".LightHeight">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".o2tolerances"
-            android:label="Oxygen Settings"
-            android:parentActivityName=".o2">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".o2learn"
-            android:label="Learn About Ambient Oxygen"
-            android:parentActivityName=".o2">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".orplearn"
-            android:label="Learn About ORP"
-            android:parentActivityName=".orplearn">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".orptolerances"
-            android:label="ORP Settings"
-            android:parentActivityName=".orp">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".pHlearn"
-            android:label="Learn About pH"
-            android:parentActivityName=".pH">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".pHtolerances"
-            android:label="pH Settings"
-            android:parentActivityName=".pH">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".ReservoirslearnActivity"
-            android:label="Learn About Reservoirs"
-            android:parentActivityName=".reservoirs">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".reservoirstolerances"
-            android:label="Reservoir Settings"
-            android:parentActivityName=".reservoirs">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".solutiontemplearn"
-            android:label="Learn About Solution Temps"
-            android:parentActivityName=".SolutionTemperatureMeasurements">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".solutiontemptolerances"
-            android:label="Solution Temperature Tolerances"
-            android:parentActivityName=".SolutionTemperatureMeasurements">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".tdstolerances"
-            android:label="TDS Settings"
-            android:parentActivityName=".tds">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".FirstTimeSetup"
             android:label="First Time Setup"
-            android:parentActivityName="home_activity">
+            android:parentActivityName=".home_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -493,7 +133,6 @@
             android:parentActivityName=".home_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
 
@@ -503,36 +142,7 @@
                     android:scheme="https" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".tdslearn"
-            android:label="Learn About TDS"
-            android:parentActivityName=".tds">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".humiditysettings2"
-            android:label="Humidity Settings">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
+       
     </application>
 
 </manifest>

@@ -211,4 +211,5 @@
     <string name="title_activity_reservoirs">reservoirs</string>
     <string name="title_activity_canopy_height">Canopy Height</string>
     <string name="title_activity_light_height">Light Height</string>
+    <string name="title_activity_teaching">teaching</string>
 </resources>
