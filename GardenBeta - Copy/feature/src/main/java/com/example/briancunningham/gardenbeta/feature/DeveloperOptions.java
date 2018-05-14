@@ -26,7 +26,7 @@ public class DeveloperOptions extends AppCompatActivity {
         final MyAppApplication mApp = (MyAppApplication)getApplicationContext();
         ArrayList<verynicedatapoint> recordedData = mApp.getRecordedData();
 
-        Button makethirty = (Button) findViewById(R.id.butt4);
+        Button makethirty = findViewById(R.id.butt4);
         makethirty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -68,7 +68,7 @@ public class DeveloperOptions extends AppCompatActivity {
 
 
 
-        Button spoofbutton = (Button) findViewById(R.id.butt2);
+        Button spoofbutton = findViewById(R.id.butt2);
         spoofbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,7 +79,7 @@ public class DeveloperOptions extends AppCompatActivity {
             }
         });
 
-        Button sendastringbutton = (Button) findViewById(R.id.butt1);
+        Button sendastringbutton = findViewById(R.id.butt1);
         sendastringbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -89,7 +89,7 @@ public class DeveloperOptions extends AppCompatActivity {
             }
         });
 
-        Button printbutton = (Button) findViewById(R.id.butt3);
+        Button printbutton = findViewById(R.id.butt3);
         printbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

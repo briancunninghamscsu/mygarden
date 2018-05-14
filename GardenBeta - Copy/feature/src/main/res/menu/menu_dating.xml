@@ -6,12 +6,12 @@
     <item
         android:id="@+id/teaching"
         android:orderInCategory="100"
-        android:title="Learn"
+        android:title="@string/learn"
         app:showAsAction="never" />
     <item
         android:id="@+id/tolerances_activity"
         android:orderInCategory="200"
-        android:title="Tolerances and Notifications"
+        android:title="@string/tolerances"
         app:showAsAction="never" />
 
 </menu>

@@ -32,7 +32,7 @@ public class data_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_do);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setupActionBar();
         Intent mIntent = getIntent();
@@ -41,14 +41,14 @@ public class data_activity extends AppCompatActivity {
         setTitle(par_names);
 
 
-        ScrollView sv = (ScrollView) findViewById(R.id.scrviewdo) ;
-        LinearLayout ll = (LinearLayout) findViewById(R.id.linlaydo);
+        ScrollView sv = findViewById(R.id.scrviewdo);
+        LinearLayout ll = findViewById(R.id.linlaydo);
         ll.setOrientation(LinearLayout.VERTICAL);
 
         MyAppApplication mApp = (MyAppApplication)getApplicationContext();
         int mrtesty = mApp.size();
         if (mrtesty!=0) {
-            GraphView graph = (GraphView) findViewById(R.id.graph);
+            GraphView graph = findViewById(R.id.graph);
 
             int a = 1;
             int b = mApp.size();
@@ -60,7 +60,7 @@ public class data_activity extends AppCompatActivity {
                 values[a] = v;
             }
             Log.d("consoleprinting", "exited the for loop");
-            LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(values);
+            LineGraphSeries<DataPoint> series = new LineGraphSeries<>(values);
             Log.d("consoleprinting", "made new series");
             graph.addSeries(series);
             graph.getViewport().setScalable(true);
@@ -73,7 +73,7 @@ public class data_activity extends AppCompatActivity {
             // set date label formatter
             graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));
 
-            TableLayout tbllay = (TableLayout) findViewById(R.id.tbllaydo); // declaring the table-layout from the XML
+            TableLayout tbllay = findViewById(R.id.tbllaydo); // declaring the table-layout from the XML
 
             final TextView[] datepoints = new TextView[b]; // create an empty array;
             final TextView[] measurepoints = new TextView[b]; // create an empty array;

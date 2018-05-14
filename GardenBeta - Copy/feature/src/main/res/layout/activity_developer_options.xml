@@ -25,28 +25,29 @@
                 android:id="@+id/butt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="send a string"
-                tools:text="send a string" />
+                android:text="@string/send_a_string"
+                tools:text="@string/send_a_string" />
 
             <Button
                 android:id="@+id/butt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SpoofData"
-                tools:text="SpoofData" />
+                android:text="@string/Spoof_Data"
+                tools:text="@string/Spoof_Data" />
 
             <Button
                 android:id="@+id/butt3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="PrintData"
-                tools:text="PrintData" />
+                android:text="@string/Print_Data"
+                tools:text="@string/Print_Data"/>
 
             <Button
                 android:id="@+id/butt4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Make 30 Data Points" />
+                android:text="@string/Make_30_Data_Points"
+                tools:text="@string/Make_30_Data_Points"/>
         </LinearLayout>
     </ScrollView>
 

@@ -13,7 +13,7 @@ public class learning_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.learning_activity);
         setupActionBar();
-        TextView t2 = (TextView) findViewById(R.id.textView10);
+        TextView t2 = findViewById(R.id.textView10);
         t2.setMovementMethod(LinkMovementMethod.getInstance());
     }
 

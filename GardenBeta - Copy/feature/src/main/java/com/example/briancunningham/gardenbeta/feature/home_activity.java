@@ -31,38 +31,38 @@ public class home_activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) { //startup block
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         MyAppApplication mApp = (MyAppApplication)getApplicationContext();
 
         // assigning java to the xml assignments - textboxes for updates
-        TextView tvtimestamp = (TextView)findViewById(R.id.textView_timestamp);
-        TextView tvairtemp = (TextView)findViewById(R.id.textView_airtemp);
-        TextView tvambhum = (TextView) findViewById(R.id.textView_ambhum);
-        TextView tvco2 = (TextView) findViewById(R.id.textView_co2);
-        TextView tvcanhop = (TextView) findViewById(R.id.textView_canhei);
-        TextView tvdo = (TextView) findViewById(R.id.textView_do);
-        TextView tvLH = (TextView) findViewById(R.id.textView_LH);
-        TextView tvo2 = (TextView) findViewById(R.id.textView_o2);
-        TextView tvorp = (TextView) findViewById(R.id.textView_orp);
-        TextView tvph = (TextView) findViewById(R.id.textView_ph);
-        TextView tvtds = (TextView) findViewById(R.id.textView_nuttds);
-        TextView tvres = (TextView) findViewById(R.id.textView_res);
-        TextView tvslntemp = (TextView) findViewById(R.id.textView_soltemp);
+        TextView tvtimestamp = findViewById(R.id.textView_timestamp);
+        TextView tvairtemp = findViewById(R.id.textView_airtemp);
+        TextView tvambhum = findViewById(R.id.textView_ambhum);
+        TextView tvco2 = findViewById(R.id.textView_co2);
+        TextView tvcanhop = findViewById(R.id.textView_canhei);
+        TextView tvdo = findViewById(R.id.textView_do);
+        TextView tvLH = findViewById(R.id.textView_LH);
+        TextView tvo2 = findViewById(R.id.textView_o2);
+        TextView tvorp = findViewById(R.id.textView_orp);
+        TextView tvph = findViewById(R.id.textView_ph);
+        TextView tvtds = findViewById(R.id.textView_nuttds);
+        TextView tvres = findViewById(R.id.textView_res);
+        TextView tvslntemp = findViewById(R.id.textView_soltemp);
 
         // assigning java to xml assignments - tablerows for activity linking
-        TableRow tblrowairtemp = (TableRow) findViewById(R.id.tblrow_airtemp);
-        TableRow tblrowambhum = (TableRow) findViewById(R.id.tblrow_ambhum);
-        TableRow tblrowco2 = (TableRow) findViewById(R.id.tblrow_co2);
-        TableRow tblrowDO = (TableRow) findViewById(R.id.tblrow_DO);
-        TableRow tblrowLH = (TableRow) findViewById(R.id.tblrow_lighei);
-        TableRow tblrowo2 = (TableRow) findViewById(R.id.tblrow_o2);
-        TableRow tblroworp = (TableRow) findViewById(R.id.tblrow_nutorp);
-        TableRow tblrowph = (TableRow) findViewById(R.id.tblrow_ph);
-        TableRow tblrowslntemp = (TableRow) findViewById(R.id.tblrow_slntemp);
-        TableRow tblrowres = (TableRow) findViewById(R.id.tblrow_reservoirs);
-        TableRow tblrowtds = (TableRow) findViewById(R.id.tblrow_nuttds);
-        TableRow tblrowcanhei = (TableRow) findViewById(R.id.tblrow_canhei);
+        TableRow tblrowairtemp = findViewById(R.id.tblrow_airtemp);
+        TableRow tblrowambhum = findViewById(R.id.tblrow_ambhum);
+        TableRow tblrowco2 = findViewById(R.id.tblrow_co2);
+        TableRow tblrowDO = findViewById(R.id.tblrow_DO);
+        TableRow tblrowLH = findViewById(R.id.tblrow_lighei);
+        TableRow tblrowo2 = findViewById(R.id.tblrow_o2);
+        TableRow tblroworp = findViewById(R.id.tblrow_nutorp);
+        TableRow tblrowph = findViewById(R.id.tblrow_ph);
+        TableRow tblrowslntemp = findViewById(R.id.tblrow_slntemp);
+        TableRow tblrowres = findViewById(R.id.tblrow_reservoirs);
+        TableRow tblrowtds = findViewById(R.id.tblrow_nuttds);
+        TableRow tblrowcanhei = findViewById(R.id.tblrow_canhei);
 
         // updating the main activity with the most recently-indexed array list
         int mrtesty = mApp.size();
@@ -210,7 +210,7 @@ public class home_activity extends AppCompatActivity {
             }
         });
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
 
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

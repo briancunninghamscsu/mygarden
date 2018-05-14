@@ -7,7 +7,14 @@
         "Android Graphing Library by Jonas Gehring.\n
         View License at \nhttps://github.com/jjoe64/GraphView\n\n"
     </string>
-
+    <string name="learn">Learn</string>
+    <string name="tolerances">Tolerances and Settings</string>
+    <string name="settings">Settings</string>
+    <string name="first_time_setup">First Time Setup</string>
+    <string name="send_a_string">Send a String</string>
+    <string name="Spoof_Data">Spoof Data</string>
+    <string name="Print_Data">Print Data</string>
+    <string name="Make_30_Data_Points">Make 30 Data Points</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
         "A material metaphor is the unifying theory of a rationalized space and a system of motion."

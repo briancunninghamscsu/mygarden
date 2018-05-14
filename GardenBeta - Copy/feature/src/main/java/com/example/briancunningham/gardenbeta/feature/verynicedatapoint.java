@@ -33,25 +33,24 @@ public class verynicedatapoint implements Parcelable {
         public verynicedatapoint(Parcel input){
             airtemplevel = input.readFloat();
             ambienthumiditylevel = input.readFloat();
-            canopyheightlevel = input.readFloat();;
-            co2level = input.readFloat();;
-            dolevel = input.readFloat();;
-            lightheight = input.readFloat();;
-            o2level = input.readFloat();;
-            orplevel = input.readFloat();;
-            tdslevel = input.readFloat();;
-            phlevel = input.readFloat();;
+            canopyheightlevel = input.readFloat();
+            co2level = input.readFloat();
+            dolevel = input.readFloat();
+            lightheight = input.readFloat();
+            o2level = input.readFloat();
+            orplevel = input.readFloat();
+            tdslevel = input.readFloat();
+            phlevel = input.readFloat();
             solutiontemplevel = input.readFloat();
             int localtemp = input.readInt();
             reservoirs = localtemp == 1;
 
             datapointdatetime=input.readString();
 
-        };
+        }
 
 
-
-        @Override
+    @Override
         public int describeContents() {
             return 0;
         }
@@ -105,11 +104,10 @@ public class verynicedatapoint implements Parcelable {
             Therefore, we need to make a new constructor which accepts that argument.
             This constructor needs to read from memory the the primitives stored in it, IN THE SAME ORDER THEY WERE WRITTEN TO.
             */
-        };
+        }
 
 
-
-         public verynicedatapoint[] newArray(int size) {
+            public verynicedatapoint[] newArray(int size) {
             return new verynicedatapoint[size];
         }
         };
