@@ -120,7 +120,7 @@ public class data_activity extends AppCompatActivity {
         }
         else {
             TextView tv = new TextView(this);
-            tv.setText("No Data Found!");
+            tv.setText(getResources().getString(R.string.no_data_found));
             ll.addView(tv);
         }
     }

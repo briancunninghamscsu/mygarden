@@ -25,7 +25,7 @@
     <string name="pH">pH</string>
     <string name="reservoirs">Reservoirs</string>
     <string name="Canopy">Canopy</string>
-
+    <string name="no_data_found">No Data Found!</string>
     <string name="tolerances">Tolerances and Settings</string>
     <string name="settings">Settings</string>
     <string name="first_time_setup">First Time Setup</string>

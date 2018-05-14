@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="84dp"
         android:layout_marginTop="24dp"
-        android:text="Hello There!"
+        android:text="@string/Hello_There"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"

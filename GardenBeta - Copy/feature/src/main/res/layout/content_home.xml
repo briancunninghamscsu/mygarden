@@ -97,8 +97,6 @@
                 android:id="@+id/textView2"
                 android:layout_width="147dp"
                 android:layout_height="match_parent"
-                android:paddingHorizontal="8dp"
-                android:paddingVertical="8dp"
                 android:text="@string/Air_Temp"
                 android:textAlignment="textStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -242,10 +240,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
-                android:text="8.5 ppm"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_orange_dark"
                 android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>

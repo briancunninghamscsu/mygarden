@@ -67,8 +67,8 @@ public class home_activity extends AppCompatActivity {
         // updating the main activity with the most recently-indexed array list
         int mrtesty = mApp.size();
         if (mrtesty==0) {
-            tvtimestamp.setText("No Data Found!");
-            tvairtemp.setText("NDF");
+            tvtimestamp.setText(getResources().getString(R.string.no_data_found));
+            /*tvairtemp.setText("NDF");
             tvambhum.setText("NDF");
             tvcanhop.setText("NDF");
             tvco2.setText("NDF");
@@ -79,24 +79,24 @@ public class home_activity extends AppCompatActivity {
             tvph.setText("NDF");
             tvslntemp.setText("NDF");
             tvtds.setText("NDF");
-            tvres.setText("NDF");
+            tvres.setText("NDF");*/
         }
         else {
             String stringybeans = mApp.getDatapointdatetime(mrtesty-1);
             tvtimestamp.setText(stringybeans);
 
 
-            tvairtemp.setText(String.valueOf(mApp.getAirtemplevel(mrtesty-1)) + " °F");
-            tvambhum.setText(String.valueOf(mApp.getAmbienthumiditylevel(mrtesty-1)) + "%");
-            tvcanhop.setText(String.valueOf(mApp.getCanopyheightlevel(mrtesty-1)) + " cm");
-            tvco2.setText(String.valueOf(mApp.getCo2level(mrtesty-1)) + " ppm");
-            tvdo.setText(String.valueOf(mApp.getDolevel(mrtesty-1)) + " ppm");
-            tvLH.setText(String.valueOf(mApp.getLightheight(mrtesty-1)) + " cm");
-            tvo2.setText(String.valueOf(mApp.getO2level(mrtesty-1)) + " ppm");
-            tvorp.setText(String.valueOf(mApp.getOrplevel(mrtesty-1)) + " mV");
+            tvairtemp.setText(String.valueOf(mApp.getAirtemplevel(mrtesty-1)));
+            tvambhum.setText(String.valueOf(mApp.getAmbienthumiditylevel(mrtesty-1)));
+            tvcanhop.setText(String.valueOf(mApp.getCanopyheightlevel(mrtesty-1)));
+            tvco2.setText(String.valueOf(mApp.getCo2level(mrtesty-1)));
+            tvdo.setText(String.valueOf(mApp.getDolevel(mrtesty-1)));
+            tvLH.setText(String.valueOf(mApp.getLightheight(mrtesty-1)));
+            tvo2.setText(String.valueOf(mApp.getO2level(mrtesty-1)));
+            tvorp.setText(String.valueOf(mApp.getOrplevel(mrtesty-1)));
             tvph.setText(String.valueOf(mApp.getPhlevel(mrtesty-1)));
-            tvslntemp.setText(String.valueOf(mApp.getSolutiontemplevel(mrtesty-1)) + " °F");
-            tvtds.setText(String.valueOf(mApp.getTdslevel(mrtesty-1)) + " ppm");
+            tvslntemp.setText(String.valueOf(mApp.getSolutiontemplevel(mrtesty-1)));
+            tvtds.setText(String.valueOf(mApp.getTdslevel(mrtesty-1)));
             tvres.setText(String.valueOf(mApp.getReservoirs(mrtesty-1)));
         }
 
