@@ -8,6 +8,24 @@
         View License at \nhttps://github.com/jjoe64/GraphView\n\n"
     </string>
     <string name="learn">Learn</string>
+    <string name="ppm">ppm</string>
+    <string name="last_updated_at_July_6_1989">Last Updated at July 6, 1989</string>
+    <string name="time">time</string>
+    <string name="Measurement">Measurement</string>
+    <string name="Action">Action</string>
+    <string name="Hello_There">Hello There!</string>
+    <string name="Air_Temp">Air Temp</string>
+    <string name="humidity">Humidity</string>
+    <string name="TVOC">TVOC</string>
+    <string name="CO2_Levels">CO2 Levels</string>
+    <string name="Solution_Temp">Solution Temp</string>
+    <string name="TDS">TDS</string>
+    <string name="Dissolved_O2">Dissolved O2</string>
+    <string name="ORP">ORP</string>
+    <string name="pH">pH</string>
+    <string name="reservoirs">Reservoirs</string>
+    <string name="Canopy">Canopy</string>
+
     <string name="tolerances">Tolerances and Settings</string>
     <string name="settings">Settings</string>
     <string name="first_time_setup">First Time Setup</string>
