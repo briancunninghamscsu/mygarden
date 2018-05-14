@@ -212,4 +212,7 @@
     <string name="title_activity_canopy_height">Canopy Height</string>
     <string name="title_activity_light_height">Light Height</string>
     <string name="title_activity_teaching">teaching</string>
+    <string name="last_updated_at">Last Updated at</string>
+    <string name="filler">NNNNNNNNNNNNN</string>
+    <string name="placeholder_airtemp">placeholder_airtemp</string>
 </resources>

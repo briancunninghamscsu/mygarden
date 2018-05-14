@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.briancunningham.gardenbeta.feature.ScrollingActivity"
-    tools:showIn="@layout/activity_scrolling">
+    tools:context="com.example.briancunningham.gardenbeta.feature.home_activity"
+    tools:showIn="@layout/activity_home">
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="4dp"
         android:layout_marginTop="4dp"
-        android:gravity="left"
+        android:gravity="start"
         android:orientation="horizontal">
 
 
@@ -31,7 +30,7 @@
                 android:id="@+id/textView_timestamp2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Last Updated at"
+                android:text="@string/last_updated_at"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button" />
         </TableRow>
@@ -48,7 +47,7 @@
                 android:id="@+id/textView_timestamp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NNNNNNNNNNNNN"
+                android:text="@string/filler"
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.AppCompat.Button" />
         </TableRow>
@@ -91,14 +90,13 @@
                 android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:contentDescription="placeholder_airtemp"
+                android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ravel_ransportation01" />
 
             <TextView
                 android:id="@+id/textView2"
                 android:layout_width="147dp"
                 android:layout_height="match_parent"
-                android:clickable="true"
                 android:paddingHorizontal="8dp"
                 android:paddingVertical="8dp"
                 android:text="Air Temp"
