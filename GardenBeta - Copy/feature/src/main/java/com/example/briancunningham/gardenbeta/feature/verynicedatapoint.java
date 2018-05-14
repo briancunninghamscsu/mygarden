@@ -43,12 +43,7 @@ public class verynicedatapoint implements Parcelable {
             phlevel = input.readFloat();;
             solutiontemplevel = input.readFloat();
             int localtemp = input.readInt();
-            if (localtemp==1)
-            {reservoirs=true; }
-            else
-            {
-                reservoirs=false;
-            }
+            reservoirs = localtemp == 1;
 
             datapointdatetime=input.readString();
 
