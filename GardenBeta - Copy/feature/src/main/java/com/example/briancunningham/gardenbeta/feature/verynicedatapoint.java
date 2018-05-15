@@ -30,7 +30,7 @@ public class verynicedatapoint implements Parcelable {
         private String action;
 
 
-        public verynicedatapoint(Parcel input){
+        private verynicedatapoint(Parcel input){
             airtemplevel = input.readFloat();
             ambienthumiditylevel = input.readFloat();
             canopyheightlevel = input.readFloat();

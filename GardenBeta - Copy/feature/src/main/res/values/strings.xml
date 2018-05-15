@@ -123,10 +123,10 @@
     </string>
 
     <string name="learnaboutairtemp">
-        "Maintaining the proper ambient air temperature is critical for the well-being of a hydroponic garden.\n\nPlant metabolism requires a cooldown at night; it is thought that a difference of about 10°F down is ideal. Turning off the grow-lights during this colder period will produce optimal plant growth.\n\nIf you're growing this indoors, we recommend that you set your thermostat to be cooler at night to accommodate. Air Temperatures are traditionally controlled by ventilation and artificial heating, which is what My Garden implements.\n\nFor warm-season crops and herbs [tomatoes, peppers, eggplants, cucumbers, beans, squash, melons, herbs]\n\n"
-        <b>"Daytime: </b>70-80°F;\n <b>Nighttime</b>: 60-70°F\n <b>Absolute Max Temp</b>: 86°F\n\n""For cool-season crops [broccoli, cabbage, lettuces, endive, peas, spinach, green onions]\n\n"
+        "Maintaining the proper ambient air temperature is critical for the well–being of a hydroponic garden.\n\nPlant metabolism requires a cooldown at night; it is thought that a difference of about 10°F down is ideal. Turning off the grow–lights during this colder period will produce optimal plant growth.\n\nIf you're growing this indoors, we recommend that you set your thermostat to be cooler at night to accommodate. Air Temperatures are traditionally controlled by ventilation and artificial heating, which is what My Garden implements.\n\nFor warm–season crops and herbs [tomatoes, peppers, eggplants, cucumbers, beans, squash, melons, herbs]\n\n"
+        <b>"Daytime: </b>70–80°F;\n <b>Nighttime</b>: 60–70°F\n <b>Absolute Max Temp</b>: 86°F\n\n""For cool–season crops [broccoli, cabbage, lettuces, endive, peas, spinach, green onions]\n\n"
 
-        "<b>Daytime</b>: 60-70°F\n <b>Nighttime</b>: 50-60 °F\n <b>Absolute minimum temp</b>: 40°F\n"
+        "<b>Daytime</b>: 60–70°F\n <b>Nighttime</b>: 50–60 °F\n <b>Absolute minimum temp</b>: 40°F\n"
     </string>
 
     <string name="learnaboutairtemp2">
