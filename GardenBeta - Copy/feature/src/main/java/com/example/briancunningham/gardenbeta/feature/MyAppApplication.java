@@ -9,7 +9,7 @@ import java.util.Date;
 // this is what I've been using as a global variable!
 public class MyAppApplication extends Application {
 
-    private ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
+    private final ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
 
         public void testingmessage(){
             Log.d("consoleprinting","scroopy doopers");

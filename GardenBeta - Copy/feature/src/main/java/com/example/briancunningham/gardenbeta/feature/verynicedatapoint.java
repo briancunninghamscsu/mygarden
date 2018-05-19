@@ -13,19 +13,19 @@ import java.util.Random;
 
 public class verynicedatapoint implements Parcelable {
 
-        private float airtemplevel;
-        private float ambienthumiditylevel;
+        private final float airtemplevel;
+        private final float ambienthumiditylevel;
         private float canopyheightlevel;
-        private float co2level;
-        private float dolevel;
-        private float lightheight;
-        private float o2level;
-        private float orplevel;
-        private float tdslevel;
-        private float phlevel;
-        private float solutiontemplevel;
-        private boolean reservoirs;
-        private String datapointdatetime;
+        private final float co2level;
+        private final float dolevel;
+        private final float lightheight;
+        private final float o2level;
+        private final float orplevel;
+        private final float tdslevel;
+        private final float phlevel;
+        private final float solutiontemplevel;
+        private final boolean reservoirs;
+        private final String datapointdatetime;
         private Date datapointinDateFormat;
         private String action;
 
@@ -191,17 +191,19 @@ public class verynicedatapoint implements Parcelable {
             this.datapointdatetime = sdf.format(c);
 
             i1 = (r.nextInt(10) + 1);
-            if (i1==5){
-                this.action="Added 5mL";
-            }
-            else if(i1==6){
-                    this.action="Turned on Fans";
-            }
-            else if(i1==4){
-                this.action="Injected Base";
-            }
-            else{
-                this.action="";
+            switch (i1) {
+                case 5:
+                    this.action = "Added 5mL";
+                    break;
+                case 6:
+                    this.action = "Turned on Fans";
+                    break;
+                case 4:
+                    this.action = "Injected Base";
+                    break;
+                default:
+                    this.action = "";
+                    break;
             }
 
 
