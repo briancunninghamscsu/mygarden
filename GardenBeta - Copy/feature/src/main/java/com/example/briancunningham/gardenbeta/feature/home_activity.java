@@ -36,7 +36,7 @@ public class home_activity extends AppCompatActivity {
         MyAppApplication mApp = (MyAppApplication)getApplicationContext();
 
         // assigning java to the xml assignments - textboxes for updates
-        TextView tvtimestamp = findViewById(R.id.textView_timestamp);
+        //TextView tvtimestamp = findViewById(R.id.textView_timestamp);
         TextView tvairtemp = findViewById(R.id.textView_airtemp);
         TextView tvambhum = findViewById(R.id.textView_ambhum);
         TextView tvco2 = findViewById(R.id.textView_co2);
@@ -67,7 +67,7 @@ public class home_activity extends AppCompatActivity {
         // updating the main activity with the most recently-indexed array list
         int mrtesty = mApp.size();
         if (mrtesty==0) {
-            tvtimestamp.setText(getResources().getString(R.string.no_data_found));
+            //tvtimestamp.setText(getResources().getString(R.string.no_data_found));
             /*tvairtemp.setText("NDF");
             tvambhum.setText("NDF");
             tvcanhop.setText("NDF");
@@ -83,7 +83,7 @@ public class home_activity extends AppCompatActivity {
         }
         else {
             String stringybeans = mApp.getDatapointdatetime(mrtesty-1);
-            tvtimestamp.setText(stringybeans);
+            //tvtimestamp.setText(stringybeans);
 
 
             tvairtemp.setText(String.valueOf(mApp.getAirtemplevel(mrtesty-1)));
