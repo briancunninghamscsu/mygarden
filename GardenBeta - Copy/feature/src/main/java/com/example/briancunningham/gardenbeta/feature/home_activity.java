@@ -103,12 +103,26 @@ public class home_activity extends AppCompatActivity {
             unit_adder = String.valueOf(mApp.getLightheight(mrtesty-1)) + getString(R.string.centimeters);
             tvLH.setText(unit_adder);
 
-            tvo2.setText(String.valueOf(mApp.getO2level(mrtesty-1)));
-            tvorp.setText(String.valueOf(mApp.getOrplevel(mrtesty-1)));
+            unit_adder = String.valueOf(mApp.getO2level(mrtesty-1)) + getString(R.string.ppm);
+            tvo2.setText(unit_adder);
+
+            unit_adder = String.valueOf(mApp.getO2level(mrtesty-1)) + getString(R.string.mv);
+            tvorp.setText(unit_adder);
+
             tvph.setText(String.valueOf(mApp.getPhlevel(mrtesty-1)));
-            tvslntemp.setText(String.valueOf(mApp.getSolutiontemplevel(mrtesty-1)));
-            tvtds.setText(String.valueOf(mApp.getTdslevel(mrtesty-1)));
-            tvres.setText(String.valueOf(mApp.getReservoirs(mrtesty-1)));
+
+            unit_adder = String.valueOf(mApp.getSolutiontemplevel(mrtesty-1)) + getString(R.string.degreef);
+            tvslntemp.setText(unit_adder);
+
+            unit_adder = String.valueOf(mApp.getTdslevel(mrtesty-1)) + getString(R.string.ppm);
+            tvtds.setText(unit_adder);
+
+            if (String.valueOf(mApp.getReservoirs(mrtesty-1))=="1") {
+                tvres.setText(getString(R.string.full));
+            }
+            else {
+                tvres.setText(getString(R.string.notfull));
+            }
         }
 
         // assigning listeners that link activities

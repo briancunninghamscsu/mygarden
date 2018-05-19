@@ -25,7 +25,9 @@
     <string name="degreef"> °F</string>
     <string name="percentsign">%</string>
     <string name="centimeters"> cm</string>
-
+    <string name="mv"> mV</string>
+    <string name="full">Full</string>
+    <string name="notfull">Not Full</string>
     <string name="reservoirs">Reservoirs</string>
     <string name="Canopy">Canopy</string>
     <string name="no_data_found">No Data Found!</string>
