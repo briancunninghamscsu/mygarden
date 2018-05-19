@@ -33,8 +33,9 @@
                 app:srcCompat="@drawable/ravel_ransportation01" />
 
             <TextView
-                android:layout_width="171dp"
+                android:layout_width="220dp"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/Air_Temp"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -44,10 +45,12 @@
                 android:id="@+id/textView_airtemp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_green_dark"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:typeface="monospace" />
 
         </TableRow>
 
@@ -68,6 +71,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/humidity"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -77,10 +81,12 @@
                 android:id="@+id/textView_ambhum"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_green_dark"
-                android:textSize="24sp" />
+                android:textSize="24sp"
+                android:typeface="monospace" />
         </TableRow>
 
         <TableRow
@@ -99,6 +105,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/TVOC"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -108,6 +115,7 @@
                 android:id="@+id/textView_o2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
@@ -132,6 +140,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/CO2_Levels"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -141,10 +150,10 @@
                 android:id="@+id/textView_co2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_red_dark"
                 android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
@@ -166,6 +175,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/Solution_Temp"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -175,10 +185,10 @@
                 android:id="@+id/textView_soltemp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
@@ -199,6 +209,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/TDS"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -208,10 +219,10 @@
                 android:id="@+id/textView_nuttds"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
@@ -232,6 +243,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/Dissolved_O2"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -241,10 +253,10 @@
                 android:id="@+id/textView_do"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_orange_dark"
                 android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
@@ -265,6 +277,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/ORP"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -274,10 +287,10 @@
                 android:id="@+id/textView_orp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
@@ -298,6 +311,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/pH"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -307,10 +321,10 @@
                 android:id="@+id/textView_ph"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
@@ -331,6 +345,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/reservoirs"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -340,6 +355,7 @@
                 android:id="@+id/textView_res"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
@@ -363,6 +379,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/Canopy"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -372,10 +389,10 @@
                 android:id="@+id/textView_canhei"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
-                android:textColor="@android:color/holo_green_dark"
                 android:textSize="24sp"
                 android:typeface="monospace" />
         </TableRow>
@@ -396,6 +413,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:text="@string/title_activity_light_height"
                 android:textAlignment="viewStart"
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
@@ -405,6 +423,7 @@
                 android:id="@+id/textView_LH"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:layout_margin="10dp"
                 android:fontFamily="monospace"
                 android:textAlignment="textEnd"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
