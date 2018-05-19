@@ -82,7 +82,7 @@ public class home_activity extends AppCompatActivity {
             tvres.setText("NDF");*/
         }
         else {
-            String stringybeans = mApp.getDatapointdatetime(mrtesty-1);
+            //String stringybeans = mApp.getDatapointdatetime(mrtesty-1);
             //tvtimestamp.setText(stringybeans);
 
             String unit_adder = String.valueOf(mApp.getAirtemplevel(mrtesty-1) + getString(R.string.degreef));
@@ -91,11 +91,18 @@ public class home_activity extends AppCompatActivity {
             unit_adder = String.valueOf(mApp.getAmbienthumiditylevel(mrtesty-1) + getString(R.string.percentsign));
             tvambhum.setText(String.valueOf(unit_adder));
 
-            
-            tvcanhop.setText(String.valueOf(mApp.getCanopyheightlevel(mrtesty-1)));
-            tvco2.setText(String.valueOf(mApp.getCo2level(mrtesty-1)));
-            tvdo.setText(String.valueOf(mApp.getDolevel(mrtesty-1)));
-            tvLH.setText(String.valueOf(mApp.getLightheight(mrtesty-1)));
+            unit_adder = String.valueOf(mApp.getCanopyheightlevel(mrtesty-1)) + getString(R.string.centimeters);
+            tvcanhop.setText(unit_adder);
+
+            unit_adder = String.valueOf(mApp.getCo2level(mrtesty-1) + getString(R.string.ppm));
+            tvco2.setText(unit_adder);
+
+            unit_adder = String.valueOf(mApp.getDolevel(mrtesty-1) + getString(R.string.ppm));
+            tvdo.setText(unit_adder);
+
+            unit_adder = String.valueOf(mApp.getLightheight(mrtesty-1)) + getString(R.string.centimeters);
+            tvLH.setText(unit_adder);
+
             tvo2.setText(String.valueOf(mApp.getO2level(mrtesty-1)));
             tvorp.setText(String.valueOf(mApp.getOrplevel(mrtesty-1)));
             tvph.setText(String.valueOf(mApp.getPhlevel(mrtesty-1)));
