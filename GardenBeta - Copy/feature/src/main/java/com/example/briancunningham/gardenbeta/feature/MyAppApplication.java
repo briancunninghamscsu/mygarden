@@ -7,13 +7,16 @@ import java.util.ArrayList;
 import java.util.Date;
 
 // this is what I've been using as a global variable!
+@SuppressWarnings("WeakerAccess")
 public class MyAppApplication extends Application {
 
     private final ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
 
-        public void testingmessage(){
-            Log.d("consoleprinting","scroopy doopers");
-        }
+// --Commented out by Inspection START (5/19/2018 11:17 AM):
+//        public void testingmessage(){
+//            Log.d("consoleprinting","scroopy doopers");
+//        }
+// --Commented out by Inspection STOP (5/19/2018 11:17 AM)
 
     public ArrayList<verynicedatapoint> getRecordedData() {
         return this.recordedData;

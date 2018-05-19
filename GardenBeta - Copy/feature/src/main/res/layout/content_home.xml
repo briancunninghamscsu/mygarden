@@ -27,7 +27,6 @@
                 android:layout_height="wrap_content" />
 
             <TextView
-                android:id="@+id/textView_timestamp2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/last_updated_at"
@@ -87,14 +86,12 @@
             android:orientation="horizontal">
 
             <ImageView
-                android:id="@+id/imageView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ravel_ransportation01" />
 
             <TextView
-                android:id="@+id/textView2"
                 android:layout_width="147dp"
                 android:layout_height="match_parent"
                 android:text="@string/Air_Temp"
@@ -154,7 +151,6 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:adjustViewBounds="false"
@@ -162,7 +158,6 @@
                 app:srcCompat="@drawable/ecology13" />
 
             <TextView
-                android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/humidity"
@@ -220,14 +215,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView3"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ecology18" />
 
             <TextView
-                android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/TVOC"
@@ -287,14 +280,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView4"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ecology08" />
 
             <TextView
-                android:id="@+id/textView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/CO2_Levels"
@@ -354,14 +345,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView5"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ecology19" />
 
             <TextView
-                android:id="@+id/textView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Solution_Temp"
@@ -421,14 +410,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView6"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ravel_ransportation28" />
 
             <TextView
-                android:id="@+id/textView11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/TDS"
@@ -487,14 +474,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView7"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ecology03" />
 
             <TextView
-                android:id="@+id/textView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Dissolved_O2"
@@ -553,14 +538,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView8"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ecology15" />
 
             <TextView
-                android:id="@+id/textView15"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/ORP"
@@ -619,14 +602,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView11"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ecology14" />
 
             <TextView
-                android:id="@+id/textView19"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/pH"
@@ -685,14 +666,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageView10"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ecology09" />
 
             <TextView
-                android:id="@+id/textView21"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/reservoirs"
@@ -750,14 +729,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageViewA"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ecology05" />
 
             <TextView
-                android:id="@+id/textViewB"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/Canopy"
@@ -817,14 +794,12 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:id="@+id/imageViewD"
                 android:layout_width="46dp"
                 android:layout_height="wrap_content"
                 android:contentDescription="@string/placeholder_airtemp"
                 app:srcCompat="@drawable/ravel_ransportation18" />
 
             <TextView
-                android:id="@+id/textViewE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/title_activity_light_height"

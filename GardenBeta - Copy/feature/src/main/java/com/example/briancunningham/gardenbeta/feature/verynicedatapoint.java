@@ -113,25 +113,27 @@ public class verynicedatapoint implements Parcelable {
         };
 
 
-        public verynicedatapoint(float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoirs) {
-            this.airtemplevel = airtemplevel;
-            this.ambienthumiditylevel = ambienthumiditylevel;
-            this.canopyheightlevel = canopyheightlevel;
-            this.co2level = co2level;
-            this.canopyheightlevel = canopyheightlevel;
-            this.dolevel = dolevel;
-            this.lightheight = lightheight;
-            this.o2level = o2level;
-            this.orplevel = orplevel;
-            this.tdslevel = tdslevel;
-            this.phlevel = phlevel;
-            this.solutiontemplevel = solutiontemplevel;
-            this.reservoirs = reservoirs;
-            Date c = Calendar.getInstance().getTime();
-            this.datapointinDateFormat = c;
-            SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
-            this.datapointdatetime = sdf.format(c);
-        }
+// --Commented out by Inspection START (5/19/2018 11:17 AM):
+//        public verynicedatapoint(float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoirs) {
+//            this.airtemplevel = airtemplevel;
+//            this.ambienthumiditylevel = ambienthumiditylevel;
+//            this.canopyheightlevel = canopyheightlevel;
+//            this.co2level = co2level;
+//            this.canopyheightlevel = canopyheightlevel;
+//            this.dolevel = dolevel;
+//            this.lightheight = lightheight;
+//            this.o2level = o2level;
+//            this.orplevel = orplevel;
+//            this.tdslevel = tdslevel;
+//            this.phlevel = phlevel;
+//            this.solutiontemplevel = solutiontemplevel;
+//            this.reservoirs = reservoirs;
+//            Date c = Calendar.getInstance().getTime();
+//            this.datapointinDateFormat = c;
+//            SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
+//            this.datapointdatetime = sdf.format(c);
+//        }
+// --Commented out by Inspection STOP (5/19/2018 11:17 AM)
 
         public verynicedatapoint(){
             Random r = new Random();
@@ -223,9 +225,11 @@ public class verynicedatapoint implements Parcelable {
                 return airtemplevel;
             }
 
-            public float getAmbienthumiditylevel() {
-                return ambienthumiditylevel;
-            }
+// --Commented out by Inspection START (5/19/2018 11:17 AM):
+//            public float getAmbienthumiditylevel() {
+//                return ambienthumiditylevel;
+//            }
+// --Commented out by Inspection STOP (5/19/2018 11:17 AM)
 
             public float getCanopyheightlevel() {
                 return canopyheightlevel;

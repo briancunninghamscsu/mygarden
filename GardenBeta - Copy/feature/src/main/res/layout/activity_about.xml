@@ -7,7 +7,6 @@
     tools:context="com.example.briancunningham.gardenbeta.feature.AboutActivity">
 
     <ScrollView
-        android:id="@+id/scrollView2"
         android:layout_width="395dp"
         android:layout_height="587dp"
         android:layout_marginStart="8dp"
@@ -17,7 +16,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/aboutmetextbox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
