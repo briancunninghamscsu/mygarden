@@ -15,7 +15,7 @@ public class verynicedatapoint implements Parcelable {
 
         private final float airtemplevel;
         private final float ambienthumiditylevel;
-        private float canopyheightlevel;
+        private final float canopyheightlevel;
         private final float co2level;
         private final float dolevel;
         private final float lightheight;
