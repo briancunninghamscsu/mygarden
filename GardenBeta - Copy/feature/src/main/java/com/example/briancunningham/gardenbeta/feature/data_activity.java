@@ -49,8 +49,7 @@ public class data_activity extends AppCompatActivity {
         int mrtesty = mApp.size();
         if (mrtesty!=0) {
             GraphView graph = findViewById(R.id.graph);
-
-            int a = 1;
+            int a;
             int b = mApp.size();
             DataPoint[] values = new DataPoint[b];
             for (a = 0; a < b; a++) {
