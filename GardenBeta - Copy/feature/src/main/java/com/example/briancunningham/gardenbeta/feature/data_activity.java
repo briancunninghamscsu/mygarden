@@ -72,7 +72,7 @@ public class data_activity extends AppCompatActivity {
             // set date label formatter
             graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));
 
-            TableLayout tbllay = findViewById(R.id.tbllaydo); // declaring the table-layout from the XML
+            //TableLayout tbllay = findViewById(R.id.tbllaydo); // declaring the table-layout from the XML
 
             final TextView[] datepoints = new TextView[b]; // create an empty array;
             final TextView[] measurepoints = new TextView[b]; // create an empty array;
@@ -106,7 +106,7 @@ public class data_activity extends AppCompatActivity {
                 aNewTableRow.addView(rowTextViewA); // adding first column element to the new row
                 aNewTableRow.addView(rowTextViewB); // adding the second column element to the new row
                 aNewTableRow.addView(rowTextViewC); // adding the third column element to the new row
-                tbllay.addView(aNewTableRow);   // adding the new row to the table layout
+               // tbllay.addView(aNewTableRow);   // adding the new row to the table layout
 
             }
             String hamzilla = String.valueOf(mApp.getDolevel(b-1));
