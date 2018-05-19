@@ -1,7 +1,6 @@
 package com.example.briancunningham.gardenbeta.feature;
 
 import android.app.Application;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Date;

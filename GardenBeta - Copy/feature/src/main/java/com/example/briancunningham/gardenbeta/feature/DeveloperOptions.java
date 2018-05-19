@@ -1,20 +1,12 @@
 package com.example.briancunningham.gardenbeta.feature;
 
-import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TabHost;
-import android.widget.TableRow;
-import android.widget.Toolbar;
 
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.net.Socket;
 import java.util.ArrayList;
 
 public class DeveloperOptions extends AppCompatActivity {
