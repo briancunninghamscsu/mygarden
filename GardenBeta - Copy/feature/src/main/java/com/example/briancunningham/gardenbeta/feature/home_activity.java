@@ -85,9 +85,13 @@ public class home_activity extends AppCompatActivity {
             String stringybeans = mApp.getDatapointdatetime(mrtesty-1);
             //tvtimestamp.setText(stringybeans);
 
+            String unit_adder = String.valueOf(mApp.getAirtemplevel(mrtesty-1) + getString(R.string.degreef));
+            tvairtemp.setText(unit_adder);
 
-            tvairtemp.setText(String.valueOf(mApp.getAirtemplevel(mrtesty-1)));
-            tvambhum.setText(String.valueOf(mApp.getAmbienthumiditylevel(mrtesty-1)));
+            unit_adder = String.valueOf(mApp.getAmbienthumiditylevel(mrtesty-1) + getString(R.string.percentsign));
+            tvambhum.setText(String.valueOf(unit_adder));
+
+            
             tvcanhop.setText(String.valueOf(mApp.getCanopyheightlevel(mrtesty-1)));
             tvco2.setText(String.valueOf(mApp.getCo2level(mrtesty-1)));
             tvdo.setText(String.valueOf(mApp.getDolevel(mrtesty-1)));

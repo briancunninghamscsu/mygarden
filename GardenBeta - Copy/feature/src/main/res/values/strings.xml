@@ -22,6 +22,8 @@
     <string name="Dissolved_O2">Dissolved O2</string>
     <string name="ORP">ORP</string>
     <string name="pH">pH</string>
+    <string name="degreef"> °F</string>
+    <string name="percentsign">%</string>
     <string name="reservoirs">Reservoirs</string>
     <string name="Canopy">Canopy</string>
     <string name="no_data_found">No Data Found!</string>
