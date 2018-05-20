@@ -73,54 +73,51 @@ public class data_activity extends AppCompatActivity {
             for (int i = mApp.size() - 1; i >= 0; i--) {    // decrementing loop, so that it goes from most recent to oldest
 
             // creating new instances for each row and row-element
-                            final TableRow aNewTableRow = new TableRow(this);
-                            final TextView rowTextViewA = new TextView(this);
-                            final TextView rowTextViewB = new TextView(this);
-                            final TextView rowTextViewC = new TextView(this);
+            final TableRow aNewTableRow = new TableRow(this);
+            final TextView rowTextViewA = new TextView(this);
+            final TextView rowTextViewB = new TextView(this);
+            final TextView rowTextViewC = new TextView(this);
 
-                            // set some properties of rowTextView or something
-                            rowTextViewA.setText(mApp.getDatapointdatetime(i));
-                            rowTextViewA.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                            rowTextViewA.setPadding(20, 0, 0, 0);
-                            String hamzilla = String.valueOf(mApp.getDolevel(i));
-                            hamzilla = hamzilla + " ppm";
-                            Log.d("dabug", "it's setting hamzilla correctly");
-                            rowTextViewB.setText(hamzilla);
-                            rowTextViewB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                            rowTextViewB.setPadding(0, 0, 0, 0);
-                            Log.d("dabug", "it's setting rowTextViewB correctly");
-                            rowTextViewC.setText(mApp.getAction(i));
-                            rowTextViewC.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                            rowTextViewC.setPadding(0, 0, 20, 0);
-                            rowTextViewC.setHeight(60);
+            // setting some properties of new TextViews
+            rowTextViewA.setText(mApp.getDatapointdatetime(i));
+            rowTextViewA.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            rowTextViewA.setPadding(20, 0, 0, 0);
+            String unit_suffix_adder = String.valueOf(mApp.getDolevel(i));
 
-                            // add the textview to the linearlayout
-                            aNewTableRow.addView(rowTextViewA); // adding first column element to the new row
-                            aNewTableRow.addView(rowTextViewB); // adding the second column element to the new row
-                            aNewTableRow.addView(rowTextViewC); // adding the third column element to the new row
-                            tbllay.addView(aNewTableRow);   // adding the new row to the table layout
+            unit_suffix_adder = unit_suffix_adder + " ppm";
+            rowTextViewB.setText(unit_suffix_adder);
+            rowTextViewB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            rowTextViewB.setPadding(0, 0, 0, 0);
 
-                        }
-                        String hamzilla = String.valueOf(mApp.getDolevel(mApp.size() - 1));
-                        hamzilla = hamzilla + " ppm";
-                        TextView nowtemp = findViewById(R.id.do_current_measurement);
-                        nowtemp.setText(hamzilla);
-                        TextView nowtime = findViewById(R.id.do_current_time);
-                        nowtime.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+            rowTextViewC.setText(mApp.getAction(i));
+            rowTextViewC.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            rowTextViewC.setPadding(0, 0, 20, 0);
+            rowTextViewC.setHeight(60);
 
-                    } else {
-                        TextView tv = new TextView(this);
-                        tv.setText(getResources().getString(R.string.no_data_found));
-                        ll.addView(tv);
-                    }
-                }
+            // add the textview to the linearlayout
+            aNewTableRow.addView(rowTextViewA); // adding first column element to the new row
+            aNewTableRow.addView(rowTextViewB); // adding the second column element to the new row
+            aNewTableRow.addView(rowTextViewC); // adding the third column element to the new row
+            tbllay.addView(aNewTableRow);   // adding the new row to the table layout
 
+            }
 
+            String unit_suffix_adder = String.valueOf(mApp.getDolevel(mApp.size() - 1));
+            unit_suffix_adder = unit_suffix_adder + " ppm";
+            TextView nowtemp = findViewById(R.id.do_current_measurement);
+            nowtemp.setText(unit_suffix_adder);
+            TextView nowtime = findViewById(R.id.do_current_time);
+            nowtime.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+        }
 
+        else {  // if there's no data to be found
+            TextView tv = new TextView(this);
+            tv.setText(getResources().getString(R.string.no_data_found));
+            ll.addView(tv);
+            }
+    }
 
-
-
-
+    
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
