@@ -1,10 +1,8 @@
 package com.example.briancunningham.gardenbeta.feature;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +12,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -35,30 +32,25 @@ public class data_activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setupActionBar();
-        Intent mIntent = getIntent();
-        Bundle extras = getIntent().getExtras();
-        String extraStr = "";
 
-
-        String titlechanger = mIntent.getStringExtra("parameter_name");
-        setTitle(titlechanger);
+        setTitle(getIntent().getStringExtra("parameter_name")); //set the correct title
 
         LinearLayout ll = findViewById(R.id.linlaydo);
         ll.setOrientation(LinearLayout.VERTICAL);
 
-                    MyAppApplication mApp = (MyAppApplication) getApplicationContext();
-                    int mrtesty = mApp.size();
-                    if (mrtesty != 0) {
-                        GraphView graph = findViewById(R.id.graph);
-                        int a;
-                        int b = mApp.size();
-                        DataPoint[] values = new DataPoint[b];
-                        for (a = 0; a < b; a++) {
-                            Date xi = mApp.getDatapointinDateFormat(a);
-                            float yi = mApp.getDolevel(a);
-                            DataPoint v = new DataPoint(xi, yi);
-                            values[a] = v;
-                        }
+        MyAppApplication mApp = (MyAppApplication) getApplicationContext(); //get global variables
+
+        if (mApp.size() != 0) {
+            GraphView graph = findViewById(R.id.graph);
+            int a;
+
+            DataPoint[] values = new DataPoint[mApp.size()]; //make an array of DataPoints, used for graphing
+
+            for (a = 0; a < mApp.size(); a++) { //setting up the x and y values for the graph.
+                DataPoint v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getDolevel(a));
+                values[a] = v; //saving the datapoints into an array for graphing later.
+            }
+
                         Log.d("consoleprinting", "exited the for loop");
                         LineGraphSeries<DataPoint> series = new LineGraphSeries<>(values);
                         Log.d("consoleprinting", "made new series");
@@ -75,11 +67,11 @@ public class data_activity extends AppCompatActivity {
 
                         //TableLayout tbllay = findViewById(R.id.tbllaydo); // declaring the table-layout from the XML
 
-                        final TextView[] datepoints = new TextView[b]; // create an empty array;
-                        final TextView[] measurepoints = new TextView[b]; // create an empty array;
-                        final TextView[] actionpoints = new TextView[b]; // create an empty array;
+                        final TextView[] datepoints = new TextView[mApp.size()]; // create an empty array;
+                        final TextView[] measurepoints = new TextView[mApp.size()]; // create an empty array;
+                        final TextView[] actionpoints = new TextView[mApp.size()]; // create an empty array;
 
-                        for (int i = b - 1; i >= 0; i--) {    // decrementing loop, so that it goes from most recent to oldest
+                        for (int i = mApp.size() - 1; i >= 0; i--) {    // decrementing loop, so that it goes from most recent to oldest
 
                             // creating new instances for each row and row-element
                             final TableRow aNewTableRow = new TableRow(this);
@@ -110,12 +102,12 @@ public class data_activity extends AppCompatActivity {
                             // tbllay.addView(aNewTableRow);   // adding the new row to the table layout
 
                         }
-                        String hamzilla = String.valueOf(mApp.getDolevel(b - 1));
+                        String hamzilla = String.valueOf(mApp.getDolevel(mApp.size() - 1));
                         hamzilla = hamzilla + " ppm";
                         TextView nowtemp = findViewById(R.id.do_current_measurement);
                         nowtemp.setText(hamzilla);
                         TextView nowtime = findViewById(R.id.do_current_time);
-                        nowtime.setText(mApp.getDatapointdatetime(b - 1));
+                        nowtime.setText(mApp.getDatapointdatetime(mApp.size() - 1));
 
                     } else {
                         TextView tv = new TextView(this);
