@@ -6,16 +6,18 @@
 
     <application
         android:name=".MyAppApplication"
-        android:label="@string/app_name"
-        android:fullBackupContent="@xml/backup_descriptor">
+        android:fullBackupContent="@xml/backup_descriptor"
+        android:label="@string/app_name">
         <activity
             android:name=".home_activity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data
                     android:host="example.com"
                     android:pathPattern="/.*"
@@ -97,22 +99,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".tolerances_activity"
-            android:label="Tolerances"
-            android:parentActivityName=".data_activity">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
             android:name=".FirstTimeSetup"
             android:label="First Time Setup"
             android:parentActivityName=".home_activity">
@@ -134,6 +120,7 @@
             android:parentActivityName=".home_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
 
@@ -146,9 +133,24 @@
         <activity
             android:name=".teaching"
             android:label="teachy"
-            android:parentActivityName=".home_activity">
+            android:parentActivityName=".data_activity">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data
+                    android:host="example.com"
+                    android:pathPattern="/.*"
+                    android:scheme="https" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".tolerances"
+            android:parentActivityName=".data_activity">
+            <intent-filter android:order="1">
+                <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.BROWSABLE" />
                 <category android:name="android.intent.category.DEFAULT" />
 

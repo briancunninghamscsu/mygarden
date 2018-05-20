@@ -5,10 +5,12 @@
     tools:context="com.example.briancunningham.gardenbeta.feature.airtempActivity">
     <item
         android:orderInCategory="100"
+        android:id="@+id/learn"
         android:title="@string/learn"
         app:showAsAction="never" />
     <item
         android:orderInCategory="200"
+        android:id="@+id/tolerances_and_settings"
         android:title="@string/tolerances"
         app:showAsAction="never" />
 

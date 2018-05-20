@@ -4,15 +4,13 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class tolerances_activity extends AppCompatActivity {
+public class tolerances extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.learning_activity);
-        setupActionBar();
+        setContentView(R.layout.activity_tolerances);
     }
-
     private void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -20,5 +18,4 @@ public class tolerances_activity extends AppCompatActivity {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
     }
-
 }
