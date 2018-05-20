@@ -20,11 +20,7 @@ public class home_activity extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 1) {
             if(resultCode == RESULT_OK) {
-                //String strEditText = data.getStringExtra("editTextValue");
-                //recordedData = getIntent().getParcelableArrayListExtra("passme2");
-                //int j = recordedData.size();
                 Log.d("consoleprinting", "BRUH THIS CAME FROM onActivityResult");
-                //Log.d("consoleprinting","the amount of objects in the listarray is " + recordedData.size());
             }
         }
     }
@@ -37,8 +33,6 @@ public class home_activity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         MyAppApplication mApp = (MyAppApplication)getApplicationContext();
 
-        // assigning java to the xml assignments - textboxes for updates
-        //TextView tvtimestamp = findViewById(R.id.textView_timestamp);
         TextView tvairtemp = findViewById(R.id.textView_airtemp);
         TextView tvambhum = findViewById(R.id.textView_ambhum);
         TextView tvco2 = findViewById(R.id.textView_co2);

@@ -35,30 +35,16 @@ public class data_activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setupActionBar();
-        Log.i("consoleprinting", "got to right before intent");
         Intent mIntent = getIntent();
-        Log.i("consoleprinting", "got to intent");
-        Log.i("consoleprinting", "the intent is " + mIntent.toString());
-
         Bundle extras = getIntent().getExtras();
-        Log.i("consoleprinting", "got to bundle extras");
         String extraStr = "";
 
-        if (extras != null) {
-            if (extras.containsKey("parameter_name")) {
-                boolean isNew = extras.getBoolean("isNewItem", false);
 
-                if (isNew) {
+        String titlechanger = mIntent.getStringExtra("parameter_name");
+        setTitle(titlechanger);
 
-                    Log.i("consoleprinting", extraStr);
-                    Log.i("consoleprinting", "the extra is " + mIntent.toString());
-
-
-                } else {
-                    Log.d("consoleprinting", extraStr);
-                    ScrollView sv = findViewById(R.id.scrviewdo);
-                    LinearLayout ll = findViewById(R.id.linlaydo);
-                    ll.setOrientation(LinearLayout.VERTICAL);
+        LinearLayout ll = findViewById(R.id.linlaydo);
+        ll.setOrientation(LinearLayout.VERTICAL);
 
                     MyAppApplication mApp = (MyAppApplication) getApplicationContext();
                     int mrtesty = mApp.size();
@@ -137,9 +123,9 @@ public class data_activity extends AppCompatActivity {
                         ll.addView(tv);
                     }
                 }
-            }
-        }
-    }
+
+
+
 
 
 
