@@ -101,7 +101,7 @@ public class data_activity extends AppCompatActivity {
             tbllay.addView(aNewTableRow);   // adding the new row to the table layout
 
             }
-
+            // this block updates the header measurements
             String unit_suffix_adder = String.valueOf(mApp.getDolevel(mApp.size() - 1));
             unit_suffix_adder = unit_suffix_adder + " ppm";
             TextView nowtemp = findViewById(R.id.do_current_measurement);
@@ -117,7 +117,7 @@ public class data_activity extends AppCompatActivity {
             }
     }
 
-    
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
