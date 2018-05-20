@@ -160,7 +160,7 @@ public class verynicedatapoint implements Parcelable {
             this.dolevel=i1;
             Log.d("spoof","randomly generated DO level is " + i1);
 
-            i1 = (r.nextInt(1) + 200);
+            i1 = (r.nextInt(10) + 60);
             this.lightheight=i1;
             Log.d("spoof","randomly generated light height level is " + i1);
 
@@ -224,11 +224,11 @@ public class verynicedatapoint implements Parcelable {
                 return airtemplevel;
             }
 
-// --Commented out by Inspection START (5/19/2018 11:17 AM):
+
             public float getAmbienthumiditylevel() {
                 return ambienthumiditylevel;
             }
-// --Commented out by Inspection STOP (5/19/2018 11:17 AM)
+
 
             public float getCanopyheightlevel() {
                 return canopyheightlevel;

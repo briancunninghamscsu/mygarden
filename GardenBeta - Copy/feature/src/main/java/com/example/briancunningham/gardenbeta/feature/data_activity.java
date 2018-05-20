@@ -102,8 +102,6 @@ public class data_activity extends AppCompatActivity {
                 values[a] = v; //saving the datapoints into an array for graphing later.
             }
 
-
-
             GraphView graph = findViewById(R.id.graph); //tying the graph from XML into the java
             LineGraphSeries<DataPoint> series = new LineGraphSeries<>(values); //put the datapoints into the array used for graphing
             graph.addSeries(series);
@@ -151,8 +149,8 @@ public class data_activity extends AppCompatActivity {
             aNewTableRow.addView(rowTextViewB); // adding the second column element to the new row
             aNewTableRow.addView(rowTextViewC); // adding the third column element to the new row
             tbllay.addView(aNewTableRow);   // adding the new row to the table layout
-
             }
+
             // this block updates the header measurements
             String unit_suffix_adder = String.valueOf(mApp.getDolevel(mApp.size() - 1));
             unit_suffix_adder = unit_suffix_adder + unit_placeholder;
@@ -166,7 +164,7 @@ public class data_activity extends AppCompatActivity {
             TextView tv = new TextView(this);
             tv.setText(getResources().getString(R.string.no_data_found));
             ll.addView(tv);
-            }
+        }
     }
 
 
@@ -195,11 +193,13 @@ public class data_activity extends AppCompatActivity {
 
         if (id == R.id.learn) {
             Intent myIntent = new Intent(data_activity.this, learning_activity.class);
+            myIntent.putExtra("parameter_name", getIntent().getStringExtra("parameter_name"));
             data_activity.this.startActivity(myIntent);
             return true;
         }
         if (id == R.id.tolerances_and_settings) {
             Intent myIntent = new Intent(data_activity.this, tolerances.class);
+            myIntent.putExtra("parameter_name", getIntent().getStringExtra("parameter_name"));
             data_activity.this.startActivity(myIntent);
             return true;
         }

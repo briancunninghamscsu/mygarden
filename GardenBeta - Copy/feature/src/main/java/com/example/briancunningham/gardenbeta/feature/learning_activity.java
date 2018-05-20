@@ -15,6 +15,8 @@ public class learning_activity extends AppCompatActivity {
         setupActionBar();
         TextView t2 = findViewById(R.id.textView10);
         t2.setMovementMethod(LinkMovementMethod.getInstance());
+
+
     }
 
     private void setupActionBar() {
