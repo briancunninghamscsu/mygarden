@@ -1,6 +1,7 @@
 package com.example.briancunningham.gardenbeta.feature;
 
 import android.content.Intent;
+import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -44,13 +45,64 @@ public class data_activity extends AppCompatActivity {
 
         if (mApp.size() != 0) {     // we don't want to do anything if there is no data to crash
             int a;
-
+            String unit_placeholder = "";
             DataPoint[] values = new DataPoint[mApp.size()]; //make an array of DataPoints, used for graphing
 
             for (a = 0; a < mApp.size(); a++) { //setting up the x and y values for the graph.
-                DataPoint v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getDolevel(a));
+                //implementing a case statement to do get the right graph, and to get the right units
+                DataPoint v = new DataPoint(0,0);
+                switch (getIntent().getStringExtra("parameter_name")){
+                    case "Air Temperature":
+                        v = new DataPoint (mApp.getDatapointinDateFormat(a), mApp.getAirtemplevel(a));
+                        unit_placeholder=getString(R.string.degreef);
+                        break;
+                    case "Humidity":
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getAmbienthumiditylevel(a));
+                        unit_placeholder=getString(R.string.percentsign);
+                        break;
+                    case "TVOC":    //TODO:co2 change
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
+                        unit_placeholder=getString(R.string.ppm);
+                        break;
+                    case "Solution Temperature":;
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
+                        unit_placeholder=getString(R.string.degreef);
+                        break;
+                    case "Total Dissolved Solids":;
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getTdslevel(a));
+                        unit_placeholder=getString(R.string.ppm);
+                        break;
+                    case "Dissolved Oxygen":;
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getDolevel(a));
+                        unit_placeholder=getString(R.string.ppm);
+                        break;
+                    case "Oxidation-Reduction Potential":;
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getOrplevel(a));
+                        unit_placeholder=getString(R.string.mv);
+                        break;
+                    case "pH":;
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getPhlevel(a));
+                        unit_placeholder=getString(R.string.blank);
+                        break;
+                    case "Reservoirs":;
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), 0);
+                        unit_placeholder=getString(R.string.blank);
+                        break;
+                    case "Canopy Height":;
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCanopyheightlevel(a));
+                        unit_placeholder=getString(R.string.centimeters);
+                        break;
+                    case "Light Height":;
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getLightheight(a));
+                        unit_placeholder=getString(R.string.centimeters);
+                        break;
+                    default:
+                }
+
                 values[a] = v; //saving the datapoints into an array for graphing later.
             }
+
+
 
             GraphView graph = findViewById(R.id.graph); //tying the graph from XML into the java
             LineGraphSeries<DataPoint> series = new LineGraphSeries<>(values); //put the datapoints into the array used for graphing
@@ -84,7 +136,7 @@ public class data_activity extends AppCompatActivity {
             rowTextViewA.setPadding(20, 0, 0, 0);
             String unit_suffix_adder = String.valueOf(mApp.getDolevel(i));
 
-            unit_suffix_adder = unit_suffix_adder + " ppm";
+            unit_suffix_adder = unit_suffix_adder + unit_placeholder;
             rowTextViewB.setText(unit_suffix_adder);
             rowTextViewB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             rowTextViewB.setPadding(0, 0, 0, 0);
@@ -103,7 +155,7 @@ public class data_activity extends AppCompatActivity {
             }
             // this block updates the header measurements
             String unit_suffix_adder = String.valueOf(mApp.getDolevel(mApp.size() - 1));
-            unit_suffix_adder = unit_suffix_adder + " ppm";
+            unit_suffix_adder = unit_suffix_adder + unit_placeholder;
             TextView nowtemp = findViewById(R.id.do_current_measurement);
             nowtemp.setText(unit_suffix_adder);
             TextView nowtime = findViewById(R.id.do_current_time);
