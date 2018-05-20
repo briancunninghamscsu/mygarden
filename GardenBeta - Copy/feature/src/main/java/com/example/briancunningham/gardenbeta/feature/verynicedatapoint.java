@@ -225,9 +225,9 @@ public class verynicedatapoint implements Parcelable {
             }
 
 // --Commented out by Inspection START (5/19/2018 11:17 AM):
-//            public float getAmbienthumiditylevel() {
-//                return ambienthumiditylevel;
-//            }
+            public float getAmbienthumiditylevel() {
+                return ambienthumiditylevel;
+            }
 // --Commented out by Inspection STOP (5/19/2018 11:17 AM)
 
             public float getCanopyheightlevel() {

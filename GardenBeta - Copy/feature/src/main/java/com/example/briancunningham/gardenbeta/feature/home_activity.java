@@ -12,6 +12,8 @@ import android.view.MenuItem;
 import android.widget.TableRow;
 import android.widget.TextView;
 
+import java.util.Objects;
+
 public class home_activity extends AppCompatActivity {
 
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -66,61 +68,43 @@ public class home_activity extends AppCompatActivity {
 
         // updating the main activity with the most recently-indexed array list
         int mrtesty = mApp.size();
-        if (mrtesty==0) {
-            //tvtimestamp.setText(getResources().getString(R.string.no_data_found));
-            /*tvairtemp.setText("NDF");
-            tvambhum.setText("NDF");
-            tvcanhop.setText("NDF");
-            tvco2.setText("NDF");
-            tvdo.setText("NDF");
-            tvLH.setText("NDF");
-            tvo2.setText("NDF");
-            tvorp.setText("NDF");
-            tvph.setText("NDF");
-            tvslntemp.setText("NDF");
-            tvtds.setText("NDF");
-            tvres.setText("NDF");*/
-        }
-        else {
-            //String stringybeans = mApp.getDatapointdatetime(mrtesty-1);
-            //tvtimestamp.setText(stringybeans);
+        if (mApp.size()!=0) {
 
-            String unit_adder = String.valueOf(mApp.getAirtemplevel(mrtesty-1) + getString(R.string.degreef));
+            String unit_adder = String.valueOf(mApp.getAirtemplevel(mrtesty - 1) + getString(R.string.degreef));
             tvairtemp.setText(unit_adder);
 
-            unit_adder = String.valueOf(mApp.getAmbienthumiditylevel(mrtesty-1) + getString(R.string.percentsign));
+            unit_adder = String.valueOf(mApp.getAmbienthumiditylevel(mrtesty - 1) + getString(R.string.percentsign));
             tvambhum.setText(String.valueOf(unit_adder));
 
-            unit_adder = String.valueOf(mApp.getCanopyheightlevel(mrtesty-1)) + getString(R.string.centimeters);
+            unit_adder = String.valueOf(mApp.getCanopyheightlevel(mrtesty - 1)) + getString(R.string.centimeters);
             tvcanhop.setText(unit_adder);
 
-            unit_adder = String.valueOf(mApp.getCo2level(mrtesty-1) + getString(R.string.ppm));
+            unit_adder = String.valueOf(mApp.getCo2level(mrtesty - 1) + getString(R.string.ppm));
             tvco2.setText(unit_adder);
 
-            unit_adder = String.valueOf(mApp.getDolevel(mrtesty-1) + getString(R.string.ppm));
+            unit_adder = String.valueOf(mApp.getDolevel(mrtesty - 1) + getString(R.string.ppm));
             tvdo.setText(unit_adder);
 
-            unit_adder = String.valueOf(mApp.getLightheight(mrtesty-1)) + getString(R.string.centimeters);
+            unit_adder = String.valueOf(mApp.getLightheight(mrtesty - 1)) + getString(R.string.centimeters);
             tvLH.setText(unit_adder);
 
-            unit_adder = String.valueOf(mApp.getO2level(mrtesty-1)) + getString(R.string.ppm);
+            unit_adder = String.valueOf(mApp.getO2level(mrtesty - 1)) + getString(R.string.ppm);
             tvo2.setText(unit_adder);
 
-            unit_adder = String.valueOf(mApp.getO2level(mrtesty-1)) + getString(R.string.mv);
+            unit_adder = String.valueOf(mApp.getO2level(mrtesty - 1)) + getString(R.string.mv);
             tvorp.setText(unit_adder);
 
-            tvph.setText(String.valueOf(mApp.getPhlevel(mrtesty-1)));
+            tvph.setText(String.valueOf(mApp.getPhlevel(mrtesty - 1)));
 
-            unit_adder = String.valueOf(mApp.getSolutiontemplevel(mrtesty-1)) + getString(R.string.degreef);
+            unit_adder = String.valueOf(mApp.getSolutiontemplevel(mrtesty - 1)) + getString(R.string.degreef);
             tvslntemp.setText(unit_adder);
 
-            unit_adder = String.valueOf(mApp.getTdslevel(mrtesty-1)) + getString(R.string.ppm);
+            unit_adder = String.valueOf(mApp.getTdslevel(mrtesty - 1)) + getString(R.string.ppm);
             tvtds.setText(unit_adder);
 
-            if (String.valueOf(mApp.getReservoirs(mrtesty-1))=="1") {
+            if (Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "1")) {
                 tvres.setText(getString(R.string.full));
-            }
-            else {
+            } else {
                 tvres.setText(getString(R.string.notfull));
             }
         }

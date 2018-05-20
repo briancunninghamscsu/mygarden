@@ -35,7 +35,7 @@ public class MyAppApplication extends Application {
     }
 
     public float getAmbienthumiditylevel(int z) {
-        return recordedData.get(z).getAirtemplevel();
+        return recordedData.get(z).getAmbienthumiditylevel();
     }
 
     public float getCanopyheightlevel(int z) {
