@@ -12,6 +12,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
+import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
 
@@ -34,14 +36,13 @@ public class data_activity extends AppCompatActivity {
         setupActionBar();
 
         setTitle(getIntent().getStringExtra("parameter_name")); //set the correct title
-
+        TableLayout tbllay = findViewById(R.id.tbllay);
         LinearLayout ll = findViewById(R.id.linlaydo);
         ll.setOrientation(LinearLayout.VERTICAL);
 
         MyAppApplication mApp = (MyAppApplication) getApplicationContext(); //get global variables
 
-        if (mApp.size() != 0) {
-            GraphView graph = findViewById(R.id.graph);
+        if (mApp.size() != 0) {     // we don't want to do anything if there is no data to crash
             int a;
 
             DataPoint[] values = new DataPoint[mApp.size()]; //make an array of DataPoints, used for graphing
@@ -51,29 +52,27 @@ public class data_activity extends AppCompatActivity {
                 values[a] = v; //saving the datapoints into an array for graphing later.
             }
 
-                        Log.d("consoleprinting", "exited the for loop");
-                        LineGraphSeries<DataPoint> series = new LineGraphSeries<>(values);
-                        Log.d("consoleprinting", "made new series");
-                        graph.addSeries(series);
-                        graph.getViewport().setScalable(true);
-                        graph.getViewport().setScrollable(true);
-                        graph.getViewport().setScalableY(true);
-                        graph.getViewport().setScrollableY(true);
-                        graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
-                        graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
+            GraphView graph = findViewById(R.id.graph); //tying the graph from XML into the java
+            LineGraphSeries<DataPoint> series = new LineGraphSeries<>(values); //put the datapoints into the array used for graphing
+            graph.addSeries(series);
 
-                        // set date label formatter
-                        graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));
+            //setting graph parameters
+            graph.getViewport().setScalable(true);
+            graph.getViewport().setScrollable(true);
+            graph.getViewport().setScalableY(true);
+            graph.getViewport().setScrollableY(true);
+            graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
+            graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
+            graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext())); // this line makes it display dates instead of numbers.
 
-                        //TableLayout tbllay = findViewById(R.id.tbllaydo); // declaring the table-layout from the XML
+            //making objects to display on the graph
+            final TextView[] datepoints = new TextView[mApp.size()]; // create an empty array;
+            final TextView[] measurepoints = new TextView[mApp.size()]; // create an empty array;
+            final TextView[] actionpoints = new TextView[mApp.size()]; // create an empty array;
 
-                        final TextView[] datepoints = new TextView[mApp.size()]; // create an empty array;
-                        final TextView[] measurepoints = new TextView[mApp.size()]; // create an empty array;
-                        final TextView[] actionpoints = new TextView[mApp.size()]; // create an empty array;
+            for (int i = mApp.size() - 1; i >= 0; i--) {    // decrementing loop, so that it goes from most recent to oldest
 
-                        for (int i = mApp.size() - 1; i >= 0; i--) {    // decrementing loop, so that it goes from most recent to oldest
-
-                            // creating new instances for each row and row-element
+            // creating new instances for each row and row-element
                             final TableRow aNewTableRow = new TableRow(this);
                             final TextView rowTextViewA = new TextView(this);
                             final TextView rowTextViewB = new TextView(this);
@@ -99,7 +98,7 @@ public class data_activity extends AppCompatActivity {
                             aNewTableRow.addView(rowTextViewA); // adding first column element to the new row
                             aNewTableRow.addView(rowTextViewB); // adding the second column element to the new row
                             aNewTableRow.addView(rowTextViewC); // adding the third column element to the new row
-                            // tbllay.addView(aNewTableRow);   // adding the new row to the table layout
+                            tbllay.addView(aNewTableRow);   // adding the new row to the table layout
 
                         }
                         String hamzilla = String.valueOf(mApp.getDolevel(mApp.size() - 1));

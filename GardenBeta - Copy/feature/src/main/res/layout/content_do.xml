@@ -46,6 +46,10 @@
                 android:textStyle="bold" />
 
 
+            <TableLayout
+                android:id="@+id/tbllay"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
                 <TableRow
                     android:layout_width="match_parent"
@@ -83,7 +87,7 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Large"
                         android:textSize="18sp" />
                 </TableRow>
-
+            </TableLayout>
 
 
         </LinearLayout>
