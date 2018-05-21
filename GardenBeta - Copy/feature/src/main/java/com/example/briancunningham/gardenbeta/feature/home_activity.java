@@ -328,8 +328,6 @@ public class home_activity extends AppCompatActivity {
                     } else {
                         tvres.setText(getString(R.string.notfull));
                     }
-
-
                 }
             }
         }

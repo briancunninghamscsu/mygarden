@@ -39,15 +39,27 @@
     <string name="Spoof_Data">Spoof Data</string>
     <string name="Print_Data">Print Data</string>
     <string name="Make_30_Data_Points">Make 30 Data Points</string>
+    <string name="learn_about_TVOC">tee hee hee TVOCs are great</string>
+    <string name="learn_about_humidity">doo hoo hoo humidity is alright</string>
+    <string name="learn_about_co2">co2 is swaggin</string>
+    <string name="learn_about_solution_temp">solution temp should be close to ambient temp</string>
+    <string name="learn_about_tds">TDS is total dissolved solution</string>
+    <string name="learn_about_dissolved_oxygen">do dissolved oxygen</string>
+    <string name="learn_about_orp">oxidation doohoo potential</string>
+    <string name="learn_about_pH">something about acids and bases</string>
+    <string name="learn_about_reservoirs">there are six reservoirs</string>
+    <string name="learn_about_canopy">canopy is plant top</string>
+    <string name="learn_about_light_height">what are you stupid or something</string>
 
-    <string name="learnaboutairtemp">
+
+
+
+    <string name="learn_about_air_temp">
         "Maintaining the proper ambient air temperature is critical for the well–being of a hydroponic garden.\n\nPlant metabolism requires a cooldown at night; it is thought that a difference of about 10°F down is ideal. Turning off the grow–lights during this colder period will produce optimal plant growth.\n\nIf you're growing this indoors, we recommend that you set your thermostat to be cooler at night to accommodate. Air Temperatures are traditionally controlled by ventilation and artificial heating, which is what My Garden implements.\n\nFor warm–season crops and herbs [tomatoes, peppers, eggplants, cucumbers, beans, squash, melons, herbs]\n\n"
         <b>"Daytime: </b>70–80°F;\n <b>Nighttime</b>: 60–70°F\n <b>Absolute Max Temp</b>: 86°F\n\n""For cool–season crops [broccoli, cabbage, lettuces, endive, peas, spinach, green onions]\n\n"
 
         "<b>Daytime</b>: 60–70°F\n <b>Nighttime</b>: 50–60 °F\n <b>Absolute minimum temp</b>: 40°F\n"
-    </string>
 
-    <string name="learnaboutairtemp2">
         "Regardless of the crop grown, it never advised to allow the temperature of the garden reach temperatures of 86°F or above. This will induce a process called <i>photorespiration</i>, where the plant's internal sugar supplies are needlessly depleted, retarding growth.\n\nIt's also important to keep daytime temperatures above 70°F; temperatures below that will suppress the vegetative processes of <i>photosynthesis</i> and <i>respiration</i>.\n\nPlants don't photosynthesize at night. So, the respiration rate ought to be reduced because plants cannot store the product of this process. Respiration rates are reduced by cooling the temperature below 70°F.\n\n"
         <b>References\n\n</b>
         <a href="https://www.hydroponics-simplified.com/how-to-grow-hydroponics.html">Hydroponics-Simplified\n\n</a>

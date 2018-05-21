@@ -17,6 +17,7 @@
             android:orientation="vertical" >
 
             <TextView
+                android:id="@+id/textView10"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
@@ -26,10 +27,10 @@
                 android:contextClickable="false"
                 android:elegantTextHeight="false"
                 android:focusable="true"
-                android:linksClickable="true"
 
+                android:linksClickable="true"
                 android:singleLine="false"
-                android:text="@string/learnaboutairtemp"
+                android:text="@string/learn_about_air_temp"
                 android:textAllCaps="false"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -38,14 +39,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="@string/learnaboutairtemp" />
 
-            <TextView
-                android:id="@+id/textView10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginTop="8dp"
-                android:text="@string/learnaboutairtemp2"
-                tools:layout_marginEnd="8dp" />
         </LinearLayout>
     </ScrollView>
 
