@@ -1,5 +1,7 @@
 package com.example.briancunningham.gardenbeta.feature;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -108,6 +110,15 @@ public class DeveloperOptions extends AppCompatActivity {
             }
         });
 
+    }
+    @Override
+    public void onBackPressed() {   //this only triggers for the phone back-button!
+        Intent data = new Intent();
+        //data.putExtra("parameter_name", getIntent().getStringExtra("parameter_name"));
+        setResult(Activity.RESULT_OK, data);
+        //super.onBackPressed();
+        Log.d("doohoohoo","got to the onbackpressed in the develoepr options function");
+        finish();
     }
 
 }

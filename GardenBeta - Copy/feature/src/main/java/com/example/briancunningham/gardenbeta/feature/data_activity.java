@@ -27,6 +27,19 @@ import java.util.Date;
 
 public class data_activity extends AppCompatActivity {
 
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK) {
+                Log.d("consoleprinting", "BRUH THIS CAME FROM onActivityResult");
+                setTitle(getIntent().getStringExtra("parameter_name")); //set the correct title
+
+            }
+        }
+    }
+
+
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,35 +77,35 @@ public class data_activity extends AppCompatActivity {
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
                         unit_placeholder=getString(R.string.ppm);
                         break;
-                    case "Solution Temperature":;
+                    case "Solution Temperature":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
                         unit_placeholder=getString(R.string.degreef);
                         break;
-                    case "Total Dissolved Solids":;
+                    case "Total Dissolved Solids":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getTdslevel(a));
                         unit_placeholder=getString(R.string.ppm);
                         break;
-                    case "Dissolved Oxygen":;
+                    case "Dissolved Oxygen":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getDolevel(a));
                         unit_placeholder=getString(R.string.ppm);
                         break;
-                    case "Oxidation-Reduction Potential":;
+                    case "Oxidation-Reduction Potential":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getOrplevel(a));
                         unit_placeholder=getString(R.string.mv);
                         break;
-                    case "pH":;
+                    case "pH":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getPhlevel(a));
                         unit_placeholder=getString(R.string.blank);
                         break;
-                    case "Reservoirs":;
+                    case "Reservoirs":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), 0);
                         unit_placeholder=getString(R.string.blank);
                         break;
-                    case "Canopy Height":;
+                    case "Canopy Height":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCanopyheightlevel(a));
                         unit_placeholder=getString(R.string.centimeters);
                         break;
-                    case "Light Height":;
+                    case "Light Height":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getLightheight(a));
                         unit_placeholder=getString(R.string.centimeters);
                         break;
@@ -179,7 +192,7 @@ public class data_activity extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             // Show the Up button in the action bar.
-            actionBar.setDisplayHomeAsUpEnabled(true);
+            //actionBar.setDisplayHomeAsUpEnabled(true);
             }
         }
 
@@ -194,13 +207,13 @@ public class data_activity extends AppCompatActivity {
         if (id == R.id.learn) {
             Intent myIntent = new Intent(data_activity.this, learning_activity.class);
             myIntent.putExtra("parameter_name", getIntent().getStringExtra("parameter_name"));
-            data_activity.this.startActivity(myIntent);
+            data_activity.this.startActivityForResult(myIntent,1);
             return true;
         }
         if (id == R.id.tolerances_and_settings) {
             Intent myIntent = new Intent(data_activity.this, tolerances.class);
             myIntent.putExtra("parameter_name", getIntent().getStringExtra("parameter_name"));
-            data_activity.this.startActivity(myIntent);
+            data_activity.this.startActivityForResult(myIntent,1);
             return true;
         }
         return super.onOptionsItemSelected(item);

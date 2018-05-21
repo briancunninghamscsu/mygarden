@@ -57,22 +57,6 @@ public class verynicedatapoint implements Parcelable {
         // write your object's data to the passed-in Parcel
         @Override
         public void writeToParcel(Parcel out, int flags) {
-            // for flattening the objects into a parcel, we need to use the writeInt method.
-            // Pay attention to order! There's no keys, so we need to use an ordered list.
-            // We'll use the same order as the attribution definitions list up top.
-            /*private float airtemplevel;
-            private float ambienthumiditylevel;
-            private float canopyheightlevel;
-            private float co2level;
-            private float dolevel;
-            private float lightheight;
-            private float o2level;
-            private float orplevel;
-            private float tdslevel;
-            private float phlevel;
-            private float solutiontemplevel;
-            private boolean reservoirs;
-            private String datapointdatetime;*/
 
             out.writeFloat(airtemplevel);
             out.writeFloat(ambienthumiditylevel);
@@ -98,11 +82,6 @@ public class verynicedatapoint implements Parcelable {
         public static final Parcelable.Creator<verynicedatapoint> CREATOR = new Parcelable.Creator<verynicedatapoint>() {
             public verynicedatapoint createFromParcel(Parcel in) {
             return new verynicedatapoint(in);
-            /*
-            Note that prior to making this, we didn't have a constructor for verynicedatapoint that took a single parcel-type argument.
-            Therefore, we need to make a new constructor which accepts that argument.
-            This constructor needs to read from memory the the primitives stored in it, IN THE SAME ORDER THEY WERE WRITTEN TO.
-            */
         }
 
 

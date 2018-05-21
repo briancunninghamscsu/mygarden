@@ -68,7 +68,7 @@
         <activity
             android:name=".data_activity"
             android:label="Data Visualization"
-            android:parentActivityName=".home_activity"
+
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
@@ -85,7 +85,7 @@
         <activity
             android:name=".learning_activity"
             android:label="Learning About"
-            android:parentActivityName=".data_activity">
+            >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -101,7 +101,7 @@
         <activity
             android:name=".FirstTimeSetup"
             android:label="First Time Setup"
-            android:parentActivityName=".home_activity">
+            >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -117,23 +117,7 @@
         <activity
             android:name=".DeveloperOptions"
             android:label="Developer Controls"
-            android:parentActivityName=".home_activity">
-            <intent-filter android:order="1">
-                <action android:name="android.intent.action.VIEW" />
-
-                <category android:name="android.intent.category.BROWSABLE" />
-                <category android:name="android.intent.category.DEFAULT" />
-
-                <data
-                    android:host="example.com"
-                    android:pathPattern="/.*"
-                    android:scheme="https" />
-            </intent-filter>
-        </activity>
-        <activity
-            android:name=".teaching"
-            android:label="teachy"
-            android:parentActivityName=".data_activity">
+            >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -147,7 +131,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".tolerances"
-            android:parentActivityName=".data_activity">
+            >
             <intent-filter android:order="1">
                 <action android:name="android.intent.action.VIEW" />
 
