@@ -8,8 +8,8 @@ gradle.taskGraph.whenReady { taskGraph ->
         // Use Java 6's console to read from the console (no good for
         // a CI environment)
         Console console = System.console()
-        console.printf "\n\nWe have to sign some things in this build." +
-                "\n\nPlease enter your signing details.\n\n"
+        console.printf "<br><br>We have to sign some things in this build." +
+                "<br><br>Please enter your signing details.<br><br>"
 
         def id = "D8C3B041"
         def file = "/Users/jonas/.gnupg/secring.gpg"
@@ -19,7 +19,7 @@ gradle.taskGraph.whenReady { taskGraph ->
         allprojects { ext."signing.secretKeyRingFile" = file }
         allprojects { ext."signing.password" = password }
 
-        console.printf "\nThanks.\n\n" + file
+        console.printf "<br>Thanks.<br><br>" + file
     }
 }
 

@@ -971,7 +971,7 @@ public class GridLabelRenderer {
         // multiline
         int lines = 1;
         for (byte c : testLabel.getBytes()) {
-            if (c == '\n') lines++;
+            if (c == '<br>') lines++;
         }
         mLabelVerticalHeight *= lines;
     }
@@ -999,7 +999,7 @@ public class GridLabelRenderer {
         // multiline
         int lines = 1;
         for (byte c : testLabel.getBytes()) {
-            if (c == '\n') lines++;
+            if (c == '<br>') lines++;
         }
         mLabelVerticalSecondScaleHeight *= lines;
     }
@@ -1025,7 +1025,7 @@ public class GridLabelRenderer {
             // multiline
             int lines = 1;
             for (byte c : testLabel.getBytes()) {
-                if (c == '\n') lines++;
+                if (c == '<br>') lines++;
             }
             mLabelHorizontalHeight *= lines;
 
@@ -1197,7 +1197,7 @@ public class GridLabelRenderer {
                 if (label == null) {
                     label = "";
                 }
-                String[] lines = label.split("\n");
+                String[] lines = label.split("<br>");
                 
                 // If labels are angled, calculate adjustment to line them up with the grid
                 int labelWidthAdj = 0;
@@ -1258,7 +1258,7 @@ public class GridLabelRenderer {
 
             float y = posY;
 
-            String[] lines = mGraphView.mSecondScale.mLabelFormatter.formatLabel(e.getValue(), false).split("\n");
+            String[] lines = mGraphView.mSecondScale.mLabelFormatter.formatLabel(e.getValue(), false).split("<br>");
             y += (lines.length * getTextSize() * 1.1f) / 2; // center text vertically
             for (int li = 0; li < lines.length; li++) {
                 // for the last line y = height
@@ -1323,7 +1323,7 @@ public class GridLabelRenderer {
                 if (label == null) {
                     label = "";
                 }
-                String[] lines = label.split("\n");
+                String[] lines = label.split("<br>");
                 switch (mStyles.verticalLabelsVAlign){
                     case MID:
                         y += (lines.length * getTextSize() * 1.1f) / 2; // center text vertically

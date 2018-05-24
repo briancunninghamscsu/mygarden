@@ -5,7 +5,10 @@ import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Html;
 import android.text.method.LinkMovementMethod;
+import android.view.View;
+import android.webkit.WebView;
 import android.widget.TextView;
 
 import com.jjoe64.graphview.series.DataPoint;
@@ -23,7 +26,8 @@ public class learning_activity extends AppCompatActivity {
 
         switch (getIntent().getStringExtra("parameter_name")) {
             case "Air Temperature":
-                t2.setText(getString(R.string.learn_about_air_temp));
+                t2.setText(Html.fromHtml(getResources().getString(R.string.learn_about_air_temp)));
+                //t2.setText(getString(R.string.learn_about_air_temp));
                 break;
             case "Humidity":
                 t2.setText(getString(R.string.learn_about_humidity));
