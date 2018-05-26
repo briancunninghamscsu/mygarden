@@ -30,7 +30,7 @@ public class learning_activity extends AppCompatActivity {
                 //t2.setText(getString(R.string.learn_about_air_temp));
                 break;
             case "Humidity":
-                t2.setText(getString(R.string.learn_about_humidity));
+                t2.setText(Html.fromHtml(getString(R.string.learn_about_humidity)));
                 break;
             case "TVOC":    //TODO:co2 change
                 t2.setText(getString(R.string.learn_about_TVOC));

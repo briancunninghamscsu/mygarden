@@ -3,7 +3,7 @@
         "Application and System created by Brian Cunningham and Dylan Kohl.\n\n"
         "Created for ECE 461 &amp; 462 Senior Design 2018.\n\n"
         "Not for public release.\n\n"
-        "Android Graphing Library by Jonas Gehring.\n\n
+        "Android Graphing Library by Jonas Gehring.\n\n"
         View License at \nhttps://github.com/jjoe64/GraphView"
     </string>
     <string name="learn">Learn</string>
@@ -40,7 +40,6 @@
     <string name="Print_Data">Print Data</string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
     <string name="learn_about_TVOC">tee hee hee TVOCs are great</string>
-    <string name="learn_about_humidity">doo hoo hoo humidity is alright</string>
     <string name="learn_about_co2">co2 is swaggin</string>
     <string name="learn_about_solution_temp">solution temp should be close to ambient temp</string>
     <string name="learn_about_tds">TDS is total dissolved solution</string>
@@ -52,6 +51,20 @@
     <string name="learn_about_light_height">what are you stupid or something</string>
 
 
+    <string name="learn_about_humidity"><![CDATA[
+    "Humidity is the measure of water vapor in the air.<br><br>
+    It can be measured in a few different ways, but the most common form in this context is called <i>Relative Humidity</i>.
+    Relative Humidity is a measure of the water content in the air, relative to a maximum amount physically allowed at the measured temperature. This is traditionally expressed as a percentage; it's the same measurement shown on local weather readings.
+    <br><br>It's worth noting that one can decrease the relative humidity of a body of air by increasing the temperature of the air. The air can host more water vapor at higher temperatures.<br><br>
+
+    <br><br><b>References</b><br>
+    <a href="https://en.wikipedia.org/wiki/Humidity">Wikipedia - Humidity</a><br><br>
+    <a href="http://flairform.com/hints/humidity.htm">Flair-Form Hydroponics<br><br>
+
+
+
+    "
+    ]]></string>
 
 
     <string name="learn_about_air_temp"><![CDATA[
@@ -64,7 +77,7 @@
         "Regardless of the crop grown, it never advised to allow the temperature of the garden reach temperatures of 86°F or above. This will induce a process called <i>photorespiration</i>,
         where the plant's internal sugar supplies are needlessly depleted, retarding growth.<br><br>It's also important to keep daytime temperatures above 70°F; temperatures below that will suppress the vegetative processes of <i>photosynthesis</i> and <i>respiration</i>.<br><br>Plants don't photosynthesize at night. So, the respiration rate ought to be reduced because plants cannot store the product of this process. Respiration rates are reduced by cooling the temperature below 70°F.<br><br>"
         <br><b>References<br><br></b>
-        <a href="https://www.hydroponics-simplified.com/how-to-grow-hydroponics.html">Hydroponics-Simplifiedaa<br><br></a>
+        <a href="https://www.hydroponics-simplified.com/how-to-grow-hydroponics.html">Hydroponics-Simplified<br><br></a>
         <a href="http://flairform.com/hints/temperature_air.htm">Flair-Form Hydroponics<br><br></a>
         <a href="https://en.wikipedia.org/wiki/Photorespiration#Increased_temperature">Wikipedia - Photorespiration<br><br></a>
      ]]>
@@ -123,7 +136,6 @@
 
     <!-- Example settings for Notifications -->
     <string name="pref_header_notifications">Notifications</string>
-
     <string name="pref_title_new_message_notifications">New message notifications</string>
 
     <string name="pref_title_ringtone">Ringtone</string>
