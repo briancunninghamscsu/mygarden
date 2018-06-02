@@ -53,13 +53,27 @@
 
     <string name="learn_about_humidity"><![CDATA[
     "Humidity is the measure of water vapor in the air.<br><br>
-    It can be measured in a few different ways, but the most common form in this context is called <i>Relative Humidity</i>.
+    It can be measured in a few different ways, but the most common form in this context is called <i>Relative Humidity</i>.<br>
     Relative Humidity is a measure of the water content in the air, relative to a maximum amount physically allowed at the measured temperature. This is traditionally expressed as a percentage; it's the same measurement shown on local weather readings.
     <br><br>It's worth noting that one can decrease the relative humidity of a body of air by increasing the temperature of the air. The air can host more water vapor at higher temperatures.<br><br>
 
-    <br><br><b>References</b><br>
+    Humidity that is too low can cause problems with pollination and transpiration. Low Relative Humidities are often identified by plants curling their leaves upwards, like a straw. This occurs so that the plants minimize the contact area with the dry air, mitigating water losses in the plant. <br><br>
+
+    Humidity that is too high is also problematic. At high humidities, that plants lose their ability to expel water vapor from their leaves during the process of transpiration. When this occurs, it is easy to identify water droplets on the leaves.
+    Plants that lose ability to transpire will suffer nutrient deficiency problems quickly.
+<br><br>
+    In the MyGarden System, low humidities can be addressed by turning on the fogger and decreasing the temperature (if tolerances allow). <br>
+    <br>High Humidities can be addressed with increasing air temperatures and turning on auxiliary fans. <br><br>
+
+    If high humidities continue to be a problem, it's recommend to decrease the amount of plants in the grow tent.
+
+
+
+    <br><br><b>References</b><br><br>
     <a href="https://en.wikipedia.org/wiki/Humidity">Wikipedia - Humidity</a><br><br>
     <a href="http://flairform.com/hints/humidity.htm">Flair-Form Hydroponics<br><br>
+    <a href="http://www.ecogrow.com/learning-center-understanding-relative-humidity-c-283_295.html">EcoGrow Enterprises<br><br>
+    <a href="https://www.hydroponics-simplified.com/how-to-grow-hydroponics.html">Hydroponics Simplified<br><br>
 
 
 
