@@ -2,19 +2,15 @@ package com.example.briancunningham.gardenbeta.feature;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
-import android.view.View;
-import android.webkit.WebView;
 import android.widget.TextView;
-
-import com.jjoe64.graphview.series.DataPoint;
 
 public class learning_activity extends AppCompatActivity {
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

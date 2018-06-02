@@ -39,7 +39,7 @@
     <string name="Spoof_Data">Spoof Data</string>
     <string name="Print_Data">Print Data</string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
-    <string name="learn_about_co2">co2 is swaggin</string>
+
     <string name="learn_about_solution_temp">solution temp should be close to ambient temp</string>
     <string name="learn_about_tds">TDS is total dissolved solution</string>
     <string name="learn_about_dissolved_oxygen">do dissolved oxygen</string>
@@ -170,7 +170,5 @@
 
     <string name="pref_title_vibrate">Vibrate</string>
     <string name="title_activity_light_height">Light Height</string>
-    <string name="last_updated_at">Last Updated at</string>
-    <string name="filler">NNNNNNNNNNNNN</string>
     <string name="placeholder_airtemp">placeholder_airtemp</string>
 </resources>

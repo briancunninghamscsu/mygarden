@@ -273,7 +273,7 @@ public class home_activity extends AppCompatActivity {
                 TextView tvslntemp = findViewById(R.id.textView_soltemp);
 
                 // assigning java to xml assignments - tablerows for activity linking
-                TableRow tblrowairtemp = findViewById(R.id.tblrow_airtemp);
+                /*TableRow tblrowairtemp = findViewById(R.id.tblrow_airtemp);
                 TableRow tblrowambhum = findViewById(R.id.tblrow_ambhum);
                 TableRow tblrowco2 = findViewById(R.id.tblrow_co2);
                 TableRow tblrowDO = findViewById(R.id.tblrow_DO);
@@ -284,7 +284,7 @@ public class home_activity extends AppCompatActivity {
                 TableRow tblrowslntemp = findViewById(R.id.tblrow_slntemp);
                 TableRow tblrowres = findViewById(R.id.tblrow_reservoirs);
                 TableRow tblrowtds = findViewById(R.id.tblrow_nuttds);
-                TableRow tblrowcanhei = findViewById(R.id.tblrow_canhei);
+                TableRow tblrowcanhei = findViewById(R.id.tblrow_canhei);*/
 
 
                 // updating the main activity with the most recently-indexed array list

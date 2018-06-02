@@ -1,11 +1,9 @@
 package com.example.briancunningham.gardenbeta.feature;
 
 import android.content.Intent;
-import android.graphics.Point;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -13,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -22,8 +19,6 @@ import com.jjoe64.graphview.GraphView;
 import com.jjoe64.graphview.helper.DateAsXAxisLabelFormatter;
 import com.jjoe64.graphview.series.DataPoint;
 import com.jjoe64.graphview.series.LineGraphSeries;
-
-import java.util.Date;
 
 public class data_activity extends AppCompatActivity {
 
@@ -129,10 +124,10 @@ public class data_activity extends AppCompatActivity {
             graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext())); // this line makes it display dates instead of numbers.
 
             //making objects to display on the graph
-            final TextView[] datepoints = new TextView[mApp.size()]; // create an empty array;
+            /*final TextView[] datepoints = new TextView[mApp.size()]; // create an empty array;
             final TextView[] measurepoints = new TextView[mApp.size()]; // create an empty array;
             final TextView[] actionpoints = new TextView[mApp.size()]; // create an empty array;
-
+*/
             for (int i = mApp.size() - 1; i >= 0; i--) {    // decrementing loop, so that it goes from most recent to oldest
 
             // creating new instances for each row and row-element

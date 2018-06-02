@@ -9,8 +9,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.ArrayList;
-
 public class DeveloperOptions extends AppCompatActivity {
 
     @Override
@@ -18,7 +16,7 @@ public class DeveloperOptions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer_options);
         final MyAppApplication mApp = (MyAppApplication)getApplicationContext();
-        ArrayList<verynicedatapoint> recordedData = mApp.getRecordedData();
+
 
         Button makethirty = findViewById(R.id.butt4);
         makethirty.setOnClickListener(new View.OnClickListener() {

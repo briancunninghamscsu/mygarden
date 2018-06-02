@@ -17,10 +17,6 @@ public class MyAppApplication extends Application {
 //        }
 // --Commented out by Inspection STOP (5/19/2018 11:17 AM)
 
-    public ArrayList<verynicedatapoint> getRecordedData() {
-        return this.recordedData;
-    }
-
     public int size(){
             return recordedData.size();
     }
