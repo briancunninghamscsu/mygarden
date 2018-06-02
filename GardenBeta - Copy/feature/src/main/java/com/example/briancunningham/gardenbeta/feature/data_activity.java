@@ -47,7 +47,7 @@ public class data_activity extends AppCompatActivity {
         setContentView(R.layout.activity_do);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        setupActionBar();
+        //setupActionBar();
 
         setTitle(getIntent().getStringExtra("parameter_name")); //set the correct title
         TableLayout tbllay = findViewById(R.id.tbllay);
@@ -188,13 +188,13 @@ public class data_activity extends AppCompatActivity {
         return true;
     }
 
-    private void setupActionBar() {
+    /*private void setupActionBar() {
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             // Show the Up button in the action bar.
             //actionBar.setDisplayHomeAsUpEnabled(true);
             }
-        }
+        }*/
 
 
     @Override

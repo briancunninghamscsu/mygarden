@@ -33,31 +33,31 @@ public class learning_activity extends AppCompatActivity {
                 t2.setText(Html.fromHtml(getString(R.string.learn_about_humidity)));
                 break;
             case "TVOC":    //TODO:co2 change
-                t2.setText(getString(R.string.learn_about_TVOC));
+                t2.setText(Html.fromHtml(getString(R.string.learn_about_TVOC)));
                 break;
             case "Solution Temperature":
-                t2.setText(getString(R.string.learn_about_solution_temp));
+                t2.setText(Html.fromHtml(getString(R.string.learn_about_solution_temp)));
                 break;
             case "Total Dissolved Solids":
-                t2.setText(getString(R.string.learn_about_tds));
+                t2.setText(Html.fromHtml(getString(R.string.learn_about_tds)));
                 break;
             case "Dissolved Oxygen":
-                t2.setText(getString(R.string.learn_about_dissolved_oxygen));
+                t2.setText(Html.fromHtml(getString(R.string.learn_about_dissolved_oxygen)));
                 break;
             case "Oxidation-Reduction Potential":
-                t2.setText(getString(R.string.learn_about_orp));
+                t2.setText(Html.fromHtml(getString(R.string.learn_about_orp)));
                 break;
             case "pH":
-                t2.setText(getString(R.string.learn_about_pH));
+                t2.setText(Html.fromHtml(getString(R.string.learn_about_pH)));
                 break;
             case "Reservoirs":
-                t2.setText(getString(R.string.learn_about_reservoirs));
+                t2.setText(Html.fromHtml(getString(R.string.learn_about_reservoirs)));
                 break;
             case "Canopy Height":
-                t2.setText(getString(R.string.learn_about_canopy));
+                t2.setText(Html.fromHtml(getString(R.string.learn_about_canopy)));
                 break;
             case "Light Height":
-                t2.setText(getString(R.string.learn_about_light_height));
+                t2.setText(Html.fromHtml(getString(R.string.learn_about_light_height)));
                 break;
 
             default:

@@ -39,7 +39,6 @@
     <string name="Spoof_Data">Spoof Data</string>
     <string name="Print_Data">Print Data</string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
-    <string name="learn_about_TVOC">tee hee hee TVOCs are great</string>
     <string name="learn_about_co2">co2 is swaggin</string>
     <string name="learn_about_solution_temp">solution temp should be close to ambient temp</string>
     <string name="learn_about_tds">TDS is total dissolved solution</string>
@@ -80,6 +79,20 @@
     "
     ]]></string>
 
+
+    <string name="learn_about_TVOC"><![CDATA[
+    A <i> Volatile Organic Compound </i> is a particular type of chemical that turns into a gas at a very low temperature. <br><br>
+    VOCs are both naturally-occurring (most scents are VOCs), and man-made. <br><br>
+    Some VOCs are thought to be harmful to human health over long exposure periods. <br><br>
+    Broadly, VOCs are a measure of air quality, where a smaller concentration is thought to be better. It can also be a measure of smell.<br><br>
+
+    MyGarden does not include actuators to manipulate the VOC concentration. However, the data collected can be useful for research and troubleshooting.
+    <br><br><b>References<br><br></b>
+    <a href="https://en.wikipedia.org/wiki/Volatile_organic_compound">Wikipedia - Volatile Organic Compound </a><br><br>
+    <a href="http://npi.gov.au/resource/total-volatile-organic-compounds">Australian National Pollutant Registry</a>
+
+
+    ]]></string>
 
     <string name="learn_about_air_temp"><![CDATA[
         "Maintaining the proper ambient air temperature is critical for the well–being of a hydroponic garden.<br><br>Plant metabolism requires a cooldown at night;
