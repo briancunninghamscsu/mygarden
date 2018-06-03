@@ -17,10 +17,10 @@
     <string name="Air_Temp">Air Temp</string>
     <string name="humidity">Humidity</string>
     <string name="TVOC">TVOC</string>
-    <string name="CO2_Levels">CO2 Levels</string>
+    <string name="CO2_Levels">CO₂ Levels</string>
     <string name="Solution_Temp">Solution Temp</string>
     <string name="TDS">TDS</string>
-    <string name="Dissolved_O2">Dissolved O2</string>
+    <string name="Dissolved_O2">Dissolved O₂</string>
     <string name="ORP">ORP</string>
     <string name="pH">pH</string>
     <string name="degreef"> °F</string>
@@ -66,13 +66,33 @@
 
     If high humidities continue to be a problem, it's recommend to decrease the amount of plants in the grow tent.
 
-
-
     <br><br><b>References</b><br><br>
     <a href="https://en.wikipedia.org/wiki/Humidity">Wikipedia - Humidity</a><br><br>
     <a href="http://flairform.com/hints/humidity.htm">Flair-Form Hydroponics<br><br>
     <a href="http://www.ecogrow.com/learning-center-understanding-relative-humidity-c-283_295.html">EcoGrow Enterprises<br><br>
     <a href="https://www.hydroponics-simplified.com/how-to-grow-hydroponics.html">Hydroponics Simplified<br><br>
+
+
+
+    "
+    ]]></string>
+
+    <string name="learn_about_co2"><![CDATA[
+    "Carbon Dioxide (CO₂) is used by plants to convert light energy into chemical energy in a process called <i>photosynthesis</i>.<br><br>
+
+    Inadequate supply of CO₂ can be a limiting factor in the growth plants, so it's an important quantity to monitor.<br><br>
+
+    It is thought that some plants can benefit from additional CO₂ supplementation during particular phases of their lifecycles; we recommend consulting some of the references below if you'd like to consider augmenting your MyGarden with a CO₂ supply.
+    <br><br>
+    The earth naturally has a CO₂ concentration of about 400ppm. CO₂ concentrations below 200ppm are thought to halt photosynthesis.
+    <br><br>
+    In this release of the MyGarden System, there are no actuators that can manipulate the CO₂ content of the garden's air.
+
+    <br><br><b>References</b><br><br>
+    <a href="http://www.simplyhydro.com/effective_co2_use.htm">Simply Hydro - Effective CO₂ Use</a><br><br>
+    <a href="https://www.hydroponics.net/learn/co2_calculator.php">CO₂ Calculator - Greentrees Hydroponics<br><br>
+    <a href="https://en.wikipedia.org/wiki/Photosynthesis">Wikipedia - Photosynthesis</a><br><br>
+    <a href="https://en.wikipedia.org/wiki/Carbon_dioxide_in_Earth%27s_atmosphere">Wikipedia - Carbon Dioxide in Earth's Atmosphere</a><br><br>
 
 
 
