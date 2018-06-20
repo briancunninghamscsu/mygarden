@@ -40,7 +40,7 @@
     <string name="Print_Data">Print Data</string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
 
-    <string name="learn_about_solution_temp">solution temp should be close to ambient temp</string>
+
     <string name="learn_about_tds">TDS is total dissolved solution</string>
     <string name="learn_about_dissolved_oxygen">do dissolved oxygen</string>
     <string name="learn_about_orp">oxidation doohoo potential</string>
@@ -129,6 +129,23 @@
         <a href="https://en.wikipedia.org/wiki/Photorespiration#Increased_temperature">Wikipedia - Photorespiration<br><br></a>
      ]]>
     </string>
+
+    <string name="learn_about_solution_temp"><![CDATA[
+        "The solution temperature is simply the temperature of the liquid that sits below the growing chamber. <br><br>
+        The solution temperature should follow the ambient temperature in the garden; it should be warmer during the day, and colder at night.
+        If the solution temperature is too high, the plant may suffer from heat stress and wilt.<br><br>
+
+        As solution temperatures increase, the amount of Dissolved Oxygen the solution can host decreases. So, it's also possible that one might see symptoms of Oxygen Deficiency as well.<br><br>
+
+        Low Solution Temperatures will slow plant respiration, which in turn slows growth.
+
+        <br><br><b>References<br><br></b>
+        <a href="http://www.homehydrosystems.com/articles/Nutrient%20Solution%20Temperature/Nutrient%20Solution%20Temperature%20is%20Important.html">Home Hydro Systems - Nutrient Solution Temperature<br><br></a>
+        <a href="http://simplyhydro.com/nutrient_temp.ht
+        m">Simply Hydro - Nutrient Temp<br><br></a>
+        ]]>
+    </string>
+
 
 
     <string name="action_settings">About</string>
