@@ -41,7 +41,7 @@
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
 
 
-    <string name="learn_about_tds">TDS is total dissolved solution</string>
+
     <string name="learn_about_dissolved_oxygen">do dissolved oxygen</string>
     <string name="learn_about_orp">oxidation doohoo potential</string>
     <string name="learn_about_pH">something about acids and bases</string>
@@ -129,6 +129,25 @@
         <a href="https://en.wikipedia.org/wiki/Photorespiration#Increased_temperature">Wikipedia - Photorespiration<br><br></a>
      ]]>
     </string>
+
+    <string name="learn_about_tds"><![CDATA[
+        "There are a few methods to describe the concentration of nutrients in a hydroponic growing solution.<br><br>
+
+        The MyGarden system comes with a parts-per-million sensor, which detects one part by weight of the mineral in one million parts of solution. <br><br>
+
+        While the 3-2-1 nutrient is being used, we recommend a TDS of 1350-1450 ppm. <br><br>
+        While the 2-2-2 nutrient is being used, we recommend a TDS of 1300-1400 ppm. <br><br>
+        While the 1-2-3 nutrient is being used, we recommend a TDS of 1250-1350 ppm. <br><br>
+
+        If the concentration is nutrients is too high, your plants may experience fertilizer burn. If the concentration is too low, plants may not grow optimally, or at all. <br><br>
+        Different plants require different strengths of nutrient solution, so it is important to research the specific needs of the plant in question. <br>
+
+        <br><br><b>References<br><br></b>
+        <a href="https://generalhydroponics.com/tds-ec-ppm">General Hydroponics<br><br></a>
+        <a href="http://www.homehydrosystems.com/ph_tds_ppm/ph_vegetables_page.html">Home Hydro Systems - List of Vegetable Parameters<br><br></a>
+        ]]>
+    </string>
+
 
     <string name="learn_about_solution_temp"><![CDATA[
         "The solution temperature is simply the temperature of the liquid that sits below the growing chamber. <br><br>
