@@ -42,7 +42,7 @@
 
 
 
-    <string name="learn_about_dissolved_oxygen">do dissolved oxygen</string>
+
     <string name="learn_about_orp">oxidation doohoo potential</string>
     <string name="learn_about_pH">something about acids and bases</string>
     <string name="learn_about_reservoirs">there are six reservoirs</string>
@@ -76,6 +76,8 @@
 
     "
     ]]></string>
+
+
 
     <string name="learn_about_co2"><![CDATA[
     "Carbon Dioxide (CO₂) is used by plants to convert light energy into chemical energy in a process called <i>photosynthesis</i>.<br><br>
@@ -147,6 +149,26 @@
         <a href="http://www.homehydrosystems.com/ph_tds_ppm/ph_vegetables_page.html">Home Hydro Systems - List of Vegetable Parameters<br><br></a>
         ]]>
     </string>
+    <string name="learn_about_dissolved_oxygen"><![CDATA[
+        "Although plants don't have lungs, they can still die from a lack of oxygen.
+        If roots are not exposed to enough oxygen, the plant will become ill and perish.<br><br>
+
+        If there is not enough oxygen available to the roots, the plants will wilt. This is often the first sign of this syndrome, commonly called <i>Root Rot</i>.<br><br>
+
+        Most crops prefer a Dissolved Oxygen level of about 9ppm. There is often fairly wide tolerance, though. A study of lettuce crops (Albright et al, 1996) showed no discernable difference between crops grown in the range of 2.1 ppm to 16.8 ppm.<br><br>
+
+        The Dissolved Oxygen content of tap water is typically around 5 to 7 ppm. Thus, it's necessary to increase the oxygen content of the water to meet the recommended 9ppm. MyGarden includes an air pump which will be enabled whenever low DO levels are detected.<br><br>
+
+        Additionally, a reservoir containing Hydrogen Peroxide is included. Hydrogen Peroxide can be used to increase the dissolved oxygen content of the solution, but it also has the effect of increasing the Oxidation-Reduction Potential and raising the pH. <br><br>So, the use of Hydrogen Peroxide is limited.
+
+
+
+        <br><br><b>References<br><br></b>
+        <a href="http://www.just4growers.com/stream/hydroponic-growing-techniques/airing-out-the-truth-on-dissolved-oxygen-in-hydroponics.aspx">Just 4 Growers - Dissolved Oxygen<br><br></a>
+        <a href="http://www.homehydrosystems.com/nutrients/oxygen_page.html">Home Hydro Systems - Oxygen<br><br></a>
+        ]]>
+    </string>
+
 
 
     <string name="learn_about_solution_temp"><![CDATA[
