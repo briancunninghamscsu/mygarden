@@ -40,11 +40,6 @@
     <string name="Print_Data">Print Data</string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
 
-
-
-
-    <string name="learn_about_orp">oxidation doohoo potential</string>
-    <string name="learn_about_pH">something about acids and bases</string>
     <string name="learn_about_reservoirs">there are six reservoirs</string>
     <string name="learn_about_canopy">canopy is plant top</string>
     <string name="learn_about_light_height">what are you stupid or something</string>
@@ -101,20 +96,55 @@
     "
     ]]></string>
 
+    <string name="learn_about_orp"><![CDATA[
+    In the context of hydroponic gardening, <i>Oxidation-Reduction Potential</i> can be thought of as a measure of how sterile a solution is. Sometimes ORP is referred to as "killing power", referring to the tendency to kill microorganisms inside of the nutrient solution.<br><br>
 
-    <string name="learn_about_TVOC"><![CDATA[
-    A <i> Volatile Organic Compound </i> is a particular type of chemical that turns into a gas at a very low temperature. <br><br>
-    VOCs are both naturally-occurring (most scents are VOCs), and man-made. <br><br>
-    Some VOCs are thought to be harmful to human health over long exposure periods. <br><br>
-    Broadly, VOCs are a measure of air quality, where a smaller concentration is thought to be better. It can also be a measure of smell.<br><br>
+    ORP is typically measured in milliVolts, and can be positive or negative. A more positive mV measurement means the solution is more sterile, and a lower (more negative) mV measurement means that the solution is more hospitable to microorganisms. <br><br>
 
-    MyGarden does not include actuators to manipulate the VOC concentration. However, the data collected can be useful for research and troubleshooting.
+    Too low of an ORP can mean that the system is susceptible to pathogens such as <i>Pythium</i> and <i>E. Coli</i>. Too high of an ORP means that the plant itself will suffer from the oxidation effect of the nutrient solution.<br><br>
+    The MyGarden system is designed to grow in sterile environment. Not all hydroponic systems are designed this way; some utilize beneficial bacteria or aquatic wildlife to maintain system functionality.<br><br>
+
+    Hydrogen Peroxide, contained in reservoir 5, can be used to increase the ORP. It will also increase the Dissolved Oxygen and pH, so the system will only add this to the nutrient solution if all three parameters need adjustment.
+
+    Hypochlorous Acid, contained in reservoir 4, is used to increase the ORP most often because it has fewer effects on other system parameters. <br><br>
+
+    Diluting the nutrient solution with water (reservoir 6), increasing the temperature, and decreasing the Dissolved Oxygen will decrease the ORP. <br><br>
+
+    We recommend maintaining MyGarden in the range of +400 to +500 mV to ensure safety.
+
+
+
+
+
     <br><br><b>References<br><br></b>
-    <a href="https://en.wikipedia.org/wiki/Volatile_organic_compound">Wikipedia - Volatile Organic Compound </a><br><br>
-    <a href="http://npi.gov.au/resource/total-volatile-organic-compounds">Australian National Pollutant Registry</a>
+    <a href="https://www.maximumyield.com/the-power-of-orp-how-to-get-the-most-out-of-oxidation-reduction-potentials-in-your-hydroponic-system/2/1316">Maximum Yield - The Power of ORP </a><br><br>
+    <a href="http://scienceinhydroponics.com/2017/03/what-is-an-orp-meter-and-why-is-it-useful-in-hydroponics.html">Science in Hydroponics - ORP</a>
 
 
     ]]></string>
+
+    <string name="learn_about_pH"><![CDATA[
+    pH is a unitless number used to describe the amount of Hydrogen Ions and Hydroxide Ions there are in a solution. This is measured on a logarithmic scale from 1 to 14. <br><br>
+    Solutions with a pH from 1 to 7 are called acids, which means they have an excess amount of Hydrogen Ions. Solutions with a pH from 7 to 14 are called bases, defined by having an excess of Hydroxide ions.<br><br>
+    For the purposes of a soilless hydroponic garden, pH can be thought of as a chemical property of the nutrient solution that needs to be maintained so that the plant can grow.
+
+    Most plants thrive in a slightly acidic pH of 5.5-6.0, but can survive in environments of pH 5.0 to 7.5.<br><br>
+
+    If the pH is too high or too low, nutrients will precipitate out of the solution can causes deficiencies in the plant.
+
+    Low pH is adjusted by MyGarden by pumping base (Reservoir 7) into the system.<br>
+    High pH is adjusted by MyGarden by adding acid (Reservoir 8) into the system. <br>
+
+    Each type of plant has a particular pH that it grows best in; it is recommended that you research your crop and adjust the app settings to accommodate.<br><br>
+
+    <b>References<br><br></b>
+    <a href="http://www.simplyhydro.com/ph.htm">Simply Hydroponics - Maximum pH</a><br><br>
+    <a href="http://www.simplyhydro.com/ph.htm">Manic Botanix - pH in Hydroponics</a>
+
+
+    ]]></string>
+
+
 
     <string name="learn_about_air_temp"><![CDATA[
         "Maintaining the proper ambient air temperature is critical for the well–being of a hydroponic garden.<br><br>Plant metabolism requires a cooldown at night;
@@ -169,6 +199,16 @@
         ]]>
     </string>
 
+    <string name="learn_about_TVOC"><![CDATA[
+    A <i> Volatile Organic Compound </i> is a particular type of chemical that turns into a gas at a very low temperature. <br><br>
+    VOCs are both naturally-occurring (most scents are VOCs), and man-made. <br><br>
+    Some VOCs are thought to be harmful to human health over long exposure periods. <br><br>
+    Broadly, VOCs are a measure of air quality, where a smaller concentration is thought to be better. It can also be a measure of smell.<br><br>
+    MyGarden does not include actuators to manipulate the VOC concentration. However, the data collected can be useful for research and troubleshooting.
+    <br><br><b>References<br><br></b>
+    <a href="https://en.wikipedia.org/wiki/Volatile_organic_compound">Wikipedia - Volatile Organic Compound </a><br><br>
+    <a href="http://npi.gov.au/resource/total-volatile-organic-compounds">Australian National Pollutant Registry</a>
+    ]]></string>
 
 
     <string name="learn_about_solution_temp"><![CDATA[
