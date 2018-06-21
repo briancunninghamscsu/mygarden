@@ -40,9 +40,34 @@
     <string name="Print_Data">Print Data</string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
 
-    <string name="learn_about_reservoirs">there are six reservoirs</string>
-    <string name="learn_about_canopy">canopy is plant top</string>
-    <string name="learn_about_light_height">what are you stupid or something</string>
+
+    <string name="learn_about_canopy"><![CDATA[
+    The canopy height is simply how high the top of the plant is, measured from the surface of the growing container.<br><br>
+    MyGarden calculates this height based on the current position of the grow light and the relative distance from the grow light to the detected plant.<br>
+
+    "
+    ]]></string>
+    <string name="learn_about_light_height"><![CDATA[
+    The light height is the relative distance of the grow light to the top of the growing chamber.<br><br>
+
+    We recommend keeping the grow light about 15 cm from the top of the canopy, but you can change this setting if you wish.
+    "
+    ]]></string>
+
+    <string name="learn_about_reservoirs"><![CDATA[
+    The MyGarden system has nine reservoirs. <br><br>
+    The sensors attached to the reservoirs only detect whether the tanks need to be refilled or not.<br><br>
+    The first reservoir is filled with the FloraGro 2-1-6 Nutrient. <br><br>
+    The second reservoir is filled with the FloreMicro 5-0-1 Nutrient. <br><br>
+    The third reservoir is filled with the FloraBloom 0-5-4 Nutrient. <br><br>
+    The fourth reservoir is filled with Hypochlorous Acid.<br><br>
+    The fifth reservoir is filled with Hydrogen Peroxide.<br><br>
+    The sixth reservoir is filled with tap water.<br><br>
+    The seventh reservoir is filled with Base. <br><br>
+    The eighth reservoir is filled with Acid.<br><br>
+    "
+    ]]></string>
+
 
 
     <string name="learn_about_humidity"><![CDATA[
@@ -55,7 +80,7 @@
 
     Humidity that is too high is also problematic. At high humidities, that plants lose their ability to expel water vapor from their leaves during the process of transpiration. When this occurs, it is easy to identify water droplets on the leaves.
     Plants that lose ability to transpire will suffer nutrient deficiency problems quickly.
-<br><br>
+    <br><br>
     In the MyGarden System, low humidities can be addressed by turning on the fogger and decreasing the temperature (if tolerances allow). <br>
     <br>High Humidities can be addressed with increasing air temperatures and turning on auxiliary fans. <br><br>
 
