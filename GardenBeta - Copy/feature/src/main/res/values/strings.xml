@@ -81,6 +81,8 @@
     <string name="add_base">Add Base</string>
     <string name="turn_off_air_pump">Turn Off Air Pump</string>
     <string name="turn_on_heating_element">Turn on Heating Element</string>
+    <string name="turn_off_heating_element">Turn off Heating Element</string>
+    <string name="turn_off_space_heater">Turn off Space Heater</string>
 
 
 
