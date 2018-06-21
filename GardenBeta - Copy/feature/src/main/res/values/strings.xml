@@ -38,7 +38,34 @@
     <string name="send_a_string">Send a String</string>
     <string name="Spoof_Data">Spoof Data</string>
     <string name="Print_Data">Print Data</string>
+    <string name="When_the">When the</string>
+    <string name="is_below">is below</string>
+    <string name="i_want_to">I want to </string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
+
+
+    <string name="air_temp_below">When the Air Temperature is below</string>
+    <string name="air_temp_above">When the Air Temperature is above</string>
+    <string name="hum_below">When the humidity is below</string>
+    <string name="hum_above">When the humidity is above</string>
+    <string name="TVOC_below">When the TVOCs are measured below</string>
+    <string name="TVOC_above">When the TVOCS are measured above</string>
+    <string name="CO2_below">When the CO2 content is below</string>
+    <string name="CO2_above">When the CO2 content is above</string>
+    <string name="Sol_temp">When the solution temp is below</string>
+    <string name="Sol_above">When the solution temp is above</string>
+    <string name="tds_below">When the TDS are below</string>
+    <string name="tds_above">When the TDS are above</string>
+    <string name="do_above">When the DO is below</string>
+    <string name="do_below">When the DO is above</string>
+    <string name="orp_below">When the ORP is below</string>
+    <string name="orp_above">When the ORP is above</string>
+    <string name="pH_below">When the pH is below</string>
+    <string name="pH_above">When the pH is above</string>
+    <string name="reservoirs_low">When one of the reservoirs needs refilling</string>
+    <string name="light_height">The grow light should be above the canopy</string>
+
+
 
 
     <string name="learn_about_canopy"><![CDATA[
