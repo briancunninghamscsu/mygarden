@@ -66,6 +66,29 @@
     <string name="light_height">The grow light should be above the canopy</string>
 
 
+    <string name="send_push">Send a Push Notification</string>
+    <string name="turn_on_fans">Turn on Extra Fans</string>
+    <string name="turn_on_space_heater">Turn on Space Heater</string>
+    <string name="turn_on_extra_air_pump">Turn on Extra Air Pump</string>
+    <string name="turn_on_fogger">Turn on Fogger</string>
+    <string name="add_floragro">Add 5mL FloraGro</string>
+    <string name="add_florabloom">Add 5mL FloraBloom</string>
+    <string name="add_floramicro">Add 5mL FloraMicro</string>
+    <string name="add_hypochloric">Add 5mL Hypochloric Acid</string>
+    <string name="add_peroxide">Add 5mL Hydrogen Peroxide</string>
+    <string name="add_water">Add water</string>
+    <string name="add_acid">Add Acid</string>
+    <string name="add_base">Add Base</string>
+    <string name="turn_off_air_pump">Turn Off Air Pump</string>
+    <string name="turn_on_heating_element">Turn on Heating Element</string>
+
+
+
+
+
+
+
+
 
 
     <string name="learn_about_canopy"><![CDATA[
