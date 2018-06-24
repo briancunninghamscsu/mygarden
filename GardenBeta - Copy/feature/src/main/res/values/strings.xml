@@ -68,6 +68,7 @@
 
     <string name="send_push">Send a Push Notification</string>
     <string name="turn_on_fans">Turn on Extra Fans</string>
+    <string name="turn_off_fans">Turn off Extra Fans</string>
     <string name="turn_on_space_heater">Turn on Space Heater</string>
     <string name="turn_on_extra_air_pump">Turn on Extra Air Pump</string>
     <string name="turn_on_fogger">Turn on Fogger</string>
@@ -83,6 +84,7 @@
     <string name="turn_on_heating_element">Turn on Heating Element</string>
     <string name="turn_off_heating_element">Turn off Heating Element</string>
     <string name="turn_off_space_heater">Turn off Space Heater</string>
+    <string name="save_changes">Save Changes</string>
 
 
 
