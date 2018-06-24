@@ -30,8 +30,6 @@ public class tolerances extends AppCompatActivity {
         LinearLayout ll = findViewById(R.id.linlaytolerances);
         ll.setOrientation(LinearLayout.VERTICAL);
 
-
-
         switch (getIntent().getStringExtra("parameter_name")) {
             case "Air Temperature":
 
@@ -80,31 +78,98 @@ public class tolerances extends AppCompatActivity {
                 lowerbound.setTextSize(24);
                 ll.addView(lowerbound);
 
+                final CheckBox mschecky = new CheckBox(this);
+                mschecky.setText(getString(R.string.send_push));
+                ll.addView(mschecky);
 
-            final CheckBox mschecky = new CheckBox(this);
-            mschecky.setText(getString(R.string.send_push));
-            ll.addView(mschecky);
+                final CheckBox mscheckyA = new CheckBox(this);
+                ll.addView(mscheckyA);
+                mscheckyA.setText(getString(R.string.turn_off_fans));
 
-            final CheckBox mscheckyA = new CheckBox(this);
-            ll.addView(mscheckyA);
-            mscheckyA.setText(getString(R.string.turn_off_fans));
+                final CheckBox mscheckyB = new CheckBox(this);
+                ll.addView(mscheckyB);
+                mscheckyB.setText(getString(R.string.turn_on_heating_element));
 
-            final CheckBox mscheckyB = new CheckBox(this);
-            ll.addView(mscheckyB);
-            mscheckyB.setText(getString(R.string.turn_on_heating_element));
+                final CheckBox mscheckyC = new CheckBox(this);
+                ll.addView(mscheckyC);
+                mscheckyC.setText(getString(R.string.turn_on_space_heater));
 
-            final CheckBox mscheckyC = new CheckBox(this);
-            ll.addView(mscheckyC);
-            mscheckyC.setText(getString(R.string.turn_on_space_heater));
-
-            final Button buttsoup = new Button(this);
-            buttsoup.setText(getString(R.string.save_changes));
-            ll.addView(buttsoup);
-
+                final Button buttsoup = new Button(this);
+                buttsoup.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup);
 
                 break;
+
             case "Humidity":
-                //t2.setText(getString(R.string.hum_above));
+
+                final TextView uppertext1 = new TextView(this);
+                uppertext1.setText(getString(R.string.hum_above));
+                uppertext1.setTextSize(24);
+                uppertext1.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext1.setPadding(8,8,8,8);
+                ll.addView(uppertext1);
+
+                final EditText upperbound1 = new EditText(this);
+                upperbound1.setHint(getString(R.string.percentsign));
+                upperbound1.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound1.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound1.setTextSize(24);
+                ll.addView(upperbound1);
+
+
+                final CheckBox mrchecky1 = new CheckBox(this);
+                mrchecky1.setText(getString(R.string.send_push));
+                ll.addView(mrchecky1);
+
+                final CheckBox mrcheckyA1 = new CheckBox(this);
+                ll.addView(mrcheckyA1);
+                mrcheckyA1.setText(getString(R.string.turn_on_fans));
+
+                final CheckBox mrcheckyB1 = new CheckBox(this);
+                ll.addView(mrcheckyB1);
+                mrcheckyB1.setText(getString(R.string.turn_off_fogger));
+
+                final CheckBox mscheckyC1 = new CheckBox(this);
+                ll.addView(mscheckyC1);
+                mscheckyC1.setText(getString(R.string.turn_on_space_heater));
+
+                final TextView belowtext1 = new TextView(this);
+                belowtext1.setText(getString(R.string.hum_below));
+                belowtext1.setTextSize(24);
+                belowtext1.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                belowtext1.setPadding(8,8,8,8);
+                ll.addView(belowtext1);
+
+                final EditText lowerbound1 = new EditText(this);
+                lowerbound1.setHint(getString(R.string.percentsign));
+                lowerbound1.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound1.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound1.setTextSize(24);
+                ll.addView(lowerbound1);
+
+                final CheckBox mschecky1 = new CheckBox(this);
+                mschecky1.setText(getString(R.string.send_push));
+                ll.addView(mschecky1);
+
+                final CheckBox mscheckyA1 = new CheckBox(this);
+                ll.addView(mscheckyA1);
+                mscheckyA1.setText(getString(R.string.turn_off_fans));
+
+                final CheckBox mscheckyB1 = new CheckBox(this);
+                ll.addView(mscheckyB1);
+                mscheckyB1.setText(getString(R.string.turn_off_space_heater));
+
+
+
+                final Button buttsoup1 = new Button(this);
+                buttsoup1.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup1);
+
+
+
+
+
+
                 break;
             case "TVOC":
                 //t2.setText(getString(R.string.TVOC_above));
