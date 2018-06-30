@@ -52,7 +52,7 @@
     <string name="TVOC_above">When the TVOCS are measured above</string>
     <string name="CO2_below">When the CO2 content is below</string>
     <string name="CO2_above">When the CO2 content is above</string>
-    <string name="Sol_temp">When the solution temp is below</string>
+    <string name="Sol_below">When the solution temp is below</string>
     <string name="Sol_above">When the solution temp is above</string>
     <string name="tds_below">When the TDS are below</string>
     <string name="tds_above">When the TDS are above</string>
@@ -66,6 +66,7 @@
     <string name="light_height">The grow light should be above the canopy</string>
 
 
+
     <string name="send_push">Send a Push Notification</string>
     <string name="turn_on_fans">Turn on Extra Fans</string>
     <string name="turn_off_fans">Turn off Extra Fans</string>
@@ -77,7 +78,7 @@
     <string name="add_floramicro">Add 5mL FloraMicro</string>
     <string name="add_hypochloric">Add 5mL Hypochloric Acid</string>
     <string name="add_peroxide">Add 5mL Hydrogen Peroxide</string>
-    <string name="add_water">Add water</string>
+    <string name="add_water">Add Water (if there\'s room)</string>
     <string name="add_acid">Add Acid</string>
     <string name="add_base">Add Base</string>
     <string name="turn_off_air_pump">Turn Off Air Pump</string>
@@ -86,6 +87,7 @@
     <string name="turn_off_space_heater">Turn off Space Heater</string>
     <string name="save_changes">Save Changes</string>
     <string name="turn_off_fogger">Turn off Fogger</string>
+
 
 
 

@@ -159,39 +159,380 @@ public class tolerances extends AppCompatActivity {
                 ll.addView(mscheckyB1);
                 mscheckyB1.setText(getString(R.string.turn_off_space_heater));
 
-
-
                 final Button buttsoup1 = new Button(this);
                 buttsoup1.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup1);
 
-
-
-
-
-
                 break;
             case "TVOC":
-                //t2.setText(getString(R.string.TVOC_above));
+                final TextView uppertext2 = new TextView(this);
+                uppertext2.setText(getString(R.string.TVOC_above));
+                uppertext2.setTextSize(24);
+                uppertext2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext2.setPadding(8,8,8,8);
+                ll.addView(uppertext2);
+
+                final EditText upperbound2 = new EditText(this);
+                upperbound2.setHint(getString(R.string.ppm));
+                upperbound2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound2.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound2.setTextSize(24);
+                ll.addView(upperbound2);
+
+                final CheckBox mrchecky2 = new CheckBox(this);
+                mrchecky2.setText(getString(R.string.send_push));
+                ll.addView(mrchecky2);
+
+                final TextView belowtext2 = new TextView(this);
+                belowtext2.setText(getString(R.string.TVOC_below));
+                belowtext2.setTextSize(24);
+                belowtext2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                belowtext2.setPadding(8,8,8,8);
+                ll.addView(belowtext2);
+
+                final EditText lowerbound2 = new EditText(this);
+                lowerbound2.setHint(getString(R.string.ppm));
+                lowerbound2.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound2.setTextSize(24);
+                ll.addView(lowerbound2);
+
+                final CheckBox mschecky2 = new CheckBox(this);
+                mschecky2.setText(getString(R.string.send_push));
+                ll.addView(mschecky2);
+
+                final Button buttsoup2 = new Button(this);
+                buttsoup2.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup2);
+
                 break;
             case "CO2":
-                //t2.setText(getString(R.string.CO2_above));
+                final TextView uppertext3 = new TextView(this);
+                uppertext3.setText(getString(R.string.CO2_above));
+                uppertext3.setTextSize(24);
+                uppertext3.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext3.setPadding(8,8,8,8);
+                ll.addView(uppertext3);
+
+                final EditText upperbound3 = new EditText(this);
+                upperbound3.setHint(getString(R.string.ppm));
+                upperbound3.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound3.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound3.setTextSize(24);
+                ll.addView(upperbound3);
+
+                final CheckBox mrchecky3 = new CheckBox(this);
+                mrchecky3.setText(getString(R.string.send_push));
+                ll.addView(mrchecky3);
+
+                final TextView belowtext3 = new TextView(this);
+                belowtext3.setText(getString(R.string.CO2_below));
+                belowtext3.setTextSize(24);
+                belowtext3.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                belowtext3.setPadding(8,8,8,8);
+                ll.addView(belowtext3);
+
+                final EditText lowerbound3 = new EditText(this);
+                lowerbound3.setHint(getString(R.string.ppm));
+                lowerbound3.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound3.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound3.setTextSize(24);
+                ll.addView(lowerbound3);
+
+                final CheckBox mschecky3 = new CheckBox(this);
+                mschecky3.setText(getString(R.string.send_push));
+                ll.addView(mschecky3);
+
+                final Button buttsoup3 = new Button(this);
+                buttsoup3.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup3);
+
                 break;
             case "Solution Temperature":
-                //t2.setText(getString(R.string.Sol_above));
+                final TextView uppertext4 = new TextView(this);
+                uppertext4.setText(getString(R.string.Sol_above));
+                uppertext4.setTextSize(24);
+                uppertext4.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext4.setPadding(8,8,8,8);
+                ll.addView(uppertext4);
+
+                final EditText upperbound4 = new EditText(this);
+                upperbound4.setHint(getString(R.string.degreef));
+                upperbound4.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound4.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound4.setTextSize(24);
+                ll.addView(upperbound4);
+
+                final CheckBox mrchecky4 = new CheckBox(this);
+                mrchecky4.setText(getString(R.string.send_push));
+                ll.addView(mrchecky4);
+
+                final CheckBox mrchecky4b = new CheckBox(this);
+                mrchecky4b.setText(getString(R.string.turn_on_space_heater));
+                ll.addView(mrchecky4b);
+
+                final CheckBox mrchecky4c = new CheckBox(this);
+                mrchecky4c.setText(getString(R.string.turn_on_heating_element));
+                ll.addView(mrchecky4c);
+
+                final TextView belowtext4 = new TextView(this);
+                belowtext4.setText(getString(R.string.Sol_below));
+                belowtext4.setTextSize(24);
+                belowtext4.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                belowtext4.setPadding(8,8,8,8);
+                ll.addView(belowtext4);
+
+                final EditText lowerbound4 = new EditText(this);
+                lowerbound4.setHint(getString(R.string.degreef));
+                lowerbound4.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound4.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound4.setTextSize(24);
+                ll.addView(lowerbound4);
+
+                final CheckBox mschecky4 = new CheckBox(this);
+                mschecky4.setText(getString(R.string.send_push));
+                ll.addView(mschecky4);
+
+                final CheckBox mrchecky4d = new CheckBox(this);
+                mrchecky4d.setText(getString(R.string.turn_off_space_heater));
+                ll.addView(mrchecky4d);
+
+                final CheckBox mrchecky4e = new CheckBox(this);
+                mrchecky4e.setText(getString(R.string.turn_off_heating_element));
+                ll.addView(mrchecky4e);
+
+                final Button buttsoup4 = new Button(this);
+                buttsoup4.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup4);
                 break;
             case "Total Dissolved Solids":
-                //t2.setText(getString(R.string.tds_above));
+                final TextView uppertext5 = new TextView(this);
+                uppertext5.setText(getString(R.string.tds_above));
+                uppertext5.setTextSize(24);
+                uppertext5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext5.setPadding(8,8,8,8);
+                ll.addView(uppertext5);
+
+                final EditText upperbound5 = new EditText(this);
+                upperbound5.setHint(getString(R.string.ppm));
+                upperbound5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound5.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound5.setTextSize(24);
+                ll.addView(upperbound5);
+
+                final CheckBox mrchecky5 = new CheckBox(this);
+                mrchecky5.setText(getString(R.string.send_push));
+                ll.addView(mrchecky5);
+
+                final CheckBox mrchecky5b = new CheckBox(this);
+                mrchecky5b.setText(getString(R.string.add_water));
+                ll.addView(mrchecky5b);
+
+
+                final TextView belowtext5 = new TextView(this);
+                belowtext5.setText(getString(R.string.tds_below));
+                belowtext5.setTextSize(24);
+                belowtext5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                belowtext5.setPadding(8,8,8,8);
+                ll.addView(belowtext5);
+
+                final EditText lowerbound5 = new EditText(this);
+                lowerbound5.setHint(getString(R.string.ppm));
+                lowerbound5.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound5.setTextSize(24);
+                ll.addView(lowerbound5);
+
+                final CheckBox mschecky5 = new CheckBox(this);
+                mschecky5.setText(getString(R.string.send_push));
+                ll.addView(mschecky5);
+
+                final CheckBox mrchecky5d = new CheckBox(this);
+                mrchecky5d.setText(getString(R.string.add_florabloom));
+                ll.addView(mrchecky5d);
+
+                final CheckBox mrchecky5e = new CheckBox(this);
+                mrchecky5e.setText(getString(R.string.add_floragro));
+                ll.addView(mrchecky5e);
+
+                final CheckBox mrchecky5f = new CheckBox(this);
+                mrchecky5f.setText(getString(R.string.add_floramicro));
+                ll.addView(mrchecky5f);
+
+                final Button buttsoup5 = new Button(this);
+                buttsoup5.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup5);
                 break;
+
             case "Dissolved Oxygen":
-                //t2.setText(getString(R.string.do_above));
+                final TextView uppertext6 = new TextView(this);
+                uppertext6.setText(getString(R.string.do_above));
+                uppertext6.setTextSize(24);
+                uppertext6.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext6.setPadding(8,8,8,8);
+                ll.addView(uppertext6);
+
+                final EditText upperbound6 = new EditText(this);
+                upperbound6.setHint(getString(R.string.ppm));
+                upperbound6.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound6.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound6.setTextSize(24);
+                ll.addView(upperbound6);
+
+                final CheckBox mrchecky6 = new CheckBox(this);
+                mrchecky6.setText(getString(R.string.send_push));
+                ll.addView(mrchecky6);
+
+                final CheckBox mrchecky6b = new CheckBox(this);
+                mrchecky6b.setText(getString(R.string.add_water));
+                ll.addView(mrchecky6b);
+
+
+                final TextView belowtext6 = new TextView(this);
+                belowtext6.setText(getString(R.string.do_below));
+                belowtext6.setTextSize(24);
+                belowtext6.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                belowtext6.setPadding(8,8,8,8);
+                ll.addView(belowtext6);
+
+                final EditText lowerbound6 = new EditText(this);
+                lowerbound6.setHint(getString(R.string.ppm));
+                lowerbound6.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound6.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound6.setTextSize(24);
+                ll.addView(lowerbound6);
+
+                final CheckBox mschecky6 = new CheckBox(this);
+                mschecky6.setText(getString(R.string.send_push));
+                ll.addView(mschecky6);
+
+                final CheckBox mrchecky6d = new CheckBox(this);
+                mrchecky6d.setText(getString(R.string.add_florabloom));
+                ll.addView(mrchecky6d);
+
+                final CheckBox mrchecky6e = new CheckBox(this);
+                mrchecky6e.setText(getString(R.string.add_floragro));
+                ll.addView(mrchecky6e);
+
+                final CheckBox mrchecky6f = new CheckBox(this);
+                mrchecky6f.setText(getString(R.string.add_floramicro));
+                ll.addView(mrchecky6f);
+
+                final Button buttsoup6 = new Button(this);
+                buttsoup6.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup6);
                 break;
+
             case "Oxidation-Reduction Potential":
-                //t2.setText(getString(R.string.orp_above));
+                final TextView uppertext7 = new TextView(this);
+                uppertext7.setText(getString(R.string.orp_above));
+                uppertext7.setTextSize(24);
+                uppertext7.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext7.setPadding(8,8,8,8);
+                ll.addView(uppertext7);
+
+                final EditText upperbound7 = new EditText(this);
+                upperbound7.setHint(getString(R.string.ppm));
+                upperbound7.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound7.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound7.setTextSize(24);
+                ll.addView(upperbound7);
+
+                final CheckBox mrchecky7 = new CheckBox(this);
+                mrchecky7.setText(getString(R.string.send_push));
+                ll.addView(mrchecky7);
+
+                final CheckBox mrchecky7b = new CheckBox(this);
+                mrchecky7b.setText(getString(R.string.add_water));
+                ll.addView(mrchecky7b);
+
+
+                final TextView belowtext7 = new TextView(this);
+                belowtext7.setText(getString(R.string.orp_below));
+                belowtext7.setTextSize(24);
+                belowtext7.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                belowtext7.setPadding(8,8,8,8);
+                ll.addView(belowtext7);
+
+                final EditText lowerbound7 = new EditText(this);
+                lowerbound7.setHint(getString(R.string.ppm));
+                lowerbound7.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound7.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound7.setTextSize(24);
+                ll.addView(lowerbound7);
+
+                final CheckBox mschecky7 = new CheckBox(this);
+                mschecky7.setText(getString(R.string.send_push));
+                ll.addView(mschecky7);
+
+                final CheckBox mrchecky7d = new CheckBox(this);
+                mrchecky7d.setText(getString(R.string.add_peroxide));
+                ll.addView(mrchecky7d);
+
+                final CheckBox mrchecky7e = new CheckBox(this);
+                mrchecky7e.setText(getString(R.string.add_hypochloric));
+                ll.addView(mrchecky7e);
+
+                final CheckBox mrchecky7f = new CheckBox(this);
+                mrchecky7f.setText(getString(R.string.add_base));
+                ll.addView(mrchecky7f);
+
+                final Button buttsoup7 = new Button(this);
+                buttsoup7.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup7);
                 break;
+
             case "pH":
-                //t2.setText(getString(R.string.air_temp_above));
+                final TextView uppertext8 = new TextView(this);
+                uppertext8.setText(getString(R.string.pH_above));
+                uppertext8.setTextSize(24);
+                uppertext8.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext8.setPadding(8,8,8,8);
+                ll.addView(uppertext8);
+
+                final EditText upperbound8 = new EditText(this);
+                upperbound8.setHint(getString(R.string.ppm));
+                upperbound8.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound8.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound8.setTextSize(24);
+                ll.addView(upperbound8);
+
+                final CheckBox mrchecky8 = new CheckBox(this);
+                mrchecky8.setText(getString(R.string.send_push));
+                ll.addView(mrchecky8);
+
+                final CheckBox mrchecky8b = new CheckBox(this);
+                mrchecky8b.setText(getString(R.string.add_acid));
+                ll.addView(mrchecky8b);
+
+
+                final TextView belowtext8 = new TextView(this);
+                belowtext8.setText(getString(R.string.pH_below));
+                belowtext8.setTextSize(24);
+                belowtext8.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                belowtext8.setPadding(8,8,8,8);
+                ll.addView(belowtext8);
+
+                final EditText lowerbound8 = new EditText(this);
+                lowerbound8.setHint(getString(R.string.ppm));
+                lowerbound8.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound8.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound8.setTextSize(24);
+                ll.addView(lowerbound8);
+
+                final CheckBox mschecky8 = new CheckBox(this);
+                mschecky8.setText(getString(R.string.send_push));
+                ll.addView(mschecky8);
+
+                final CheckBox mrchecky8d = new CheckBox(this);
+                mrchecky8d.setText(getString(R.string.add_base));
+                ll.addView(mrchecky8d);
+
+                final Button buttsoup8 = new Button(this);
+                buttsoup8.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup8);
                 break;
+
             case "Reservoirs":
                 //t2.setText(getString(R.string.air_temp_above));
                 break;
