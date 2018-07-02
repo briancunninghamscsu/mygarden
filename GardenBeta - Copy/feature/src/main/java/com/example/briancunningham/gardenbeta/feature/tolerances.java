@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 import android.widget.TextView;
 
 import org.w3c.dom.Text;
@@ -534,13 +535,70 @@ public class tolerances extends AppCompatActivity {
                 break;
 
             case "Reservoirs":
-                //t2.setText(getString(R.string.air_temp_above));
+                final TextView uppertext9 = new TextView(this);
+                uppertext9.setText(getString(R.string.reservoirs_low));
+                uppertext9.setTextSize(24);
+                uppertext9.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext9.setPadding(8,8,8,8);
+                ll.addView(uppertext9);
+
+
+                final CheckBox mrchecky10 = new CheckBox(this);
+                mrchecky10.setText(getString(R.string.send_push));
+                ll.addView(mrchecky10);
+
+                final Button buttsoup9 = new Button(this);
+                buttsoup9.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup9);
                 break;
+
             case "Canopy Height":
-                //t2.setText(getString(R.string.air_temp_above));
+                final TextView uppertext10 = new TextView(this);
+                uppertext10.setText(getString(R.string.canopy_height_trigger));
+                uppertext10.setTextSize(24);
+                uppertext10.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext10.setPadding(8,8,8,8);
+                ll.addView(uppertext10);
+
+                final EditText lowerbound10 = new EditText(this);
+                lowerbound10.setHint(getString(R.string.centimeters));
+                lowerbound10.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound10.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound10.setTextSize(24);
+                ll.addView(lowerbound10);
+
+                final CheckBox mrchecky11 = new CheckBox(this);
+                mrchecky11.setText(getString(R.string.send_push_once));
+                ll.addView(mrchecky11);
+
+                final Button buttsoup10 = new Button(this);
+                buttsoup10.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup10);
                 break;
+
             case "Light Height":
-                //t2.setText(getString(R.string.air_temp_above));
+                final TextView uppertext12 = new TextView(this);
+                uppertext12.setText(getString(R.string.light_height));
+                uppertext12.setTextSize(24);
+                uppertext12.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext12.setPadding(8,8,8,8);
+                ll.addView(uppertext12);
+
+                final EditText lowerbound11 = new EditText(this);
+                lowerbound11.setHint(getString(R.string.centimeters));
+                lowerbound11.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound11.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound11.setTextSize(24);
+                ll.addView(lowerbound11);
+
+
+                final CheckBox mrchecky12 = new CheckBox(this);
+                mrchecky12.setText(getString(R.string.send_push_lights));
+                ll.addView(mrchecky12);
+
+                final Button buttsoup12 = new Button(this);
+                buttsoup12.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup12);
                 break;
             default:
         }

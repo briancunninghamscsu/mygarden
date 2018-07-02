@@ -64,9 +64,9 @@
     <string name="pH_above">When the pH is above</string>
     <string name="reservoirs_low">When one of the reservoirs needs refilling</string>
     <string name="light_height">The grow light should be above the canopy</string>
-
-
-
+    <string name="canopy_height_trigger">When the canopy reaches a height of</string>
+    <string name="send_push_lights">Send a Push Notification when the grow light is adjusted</string>
+    <string name="send_push_once">Send a Push Notification, but only once</string>
     <string name="send_push">Send a Push Notification</string>
     <string name="turn_on_fans">Turn on Extra Fans</string>
     <string name="turn_off_fans">Turn off Extra Fans</string>
