@@ -61,6 +61,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/read_files_in_app_mem"
                 tools:text="@string/read_files_in_app_mem" />
+
+            <Button
+                android:id="@+id/button3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/send_hello_to_server"
+                tools:text="@string/send_hello_to_server" />
         </LinearLayout>
     </ScrollView>
 
