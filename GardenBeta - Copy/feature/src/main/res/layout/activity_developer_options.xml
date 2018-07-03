@@ -45,6 +45,22 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Make_30_Data_Points"
                 tools:text="@string/Make_30_Data_Points"/>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/make_a_txt_file"
+                tools:layout_editor_absoluteX="1dp"
+                tools:layout_editor_absoluteY="192dp"
+                tools:text="@string/make_a_txt_file" />
+
+            <Button
+                android:id="@+id/button2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/read_files_in_app_mem"
+                tools:text="@string/read_files_in_app_mem" />
         </LinearLayout>
     </ScrollView>
 
