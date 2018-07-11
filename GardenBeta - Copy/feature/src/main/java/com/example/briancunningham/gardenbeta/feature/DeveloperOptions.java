@@ -3,12 +3,19 @@ package com.example.briancunningham.gardenbeta.feature;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.preference.PreferenceActivity;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TabHost;
+
+import com.loopj.android.http.*;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -17,9 +24,12 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.io.UnsupportedEncodingException;
+
+import cz.msebera.android.httpclient.entity.mime.Header;
 
 public class DeveloperOptions extends AppCompatActivity {
 
@@ -28,6 +38,23 @@ public class DeveloperOptions extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_developer_options);
         final MyAppApplication mApp = (MyAppApplication) getApplicationContext();
+        MyLoopjTask myLoopjTask = new MyLoopjTask();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         Button makethirty = findViewById(R.id.butt4);
@@ -146,32 +173,82 @@ public class DeveloperOptions extends AppCompatActivity {
             }
         });
 
-        Button printbutton = findViewById(R.id.butt3);
-        printbutton.setOnClickListener(new View.OnClickListener() {
+        Button uploadbutton = findViewById(R.id.button3);
+        uploadbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Log.d("stars","oh my that does sound convenient");
-                for (int i = 0; i < mApp.size(); i++) {
-                    Log.d("consoleprinting", "Array list item number " + i + " has an air temp of " + mApp.getAirtemplevel(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has an amb humidity of " + mApp.getAmbienthumiditylevel(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has an canopy height of " + mApp.getCanopyheightlevel(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has an co2 of " + mApp.getCanopyheightlevel(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has an DO of " + mApp.getDolevel(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has an Light Height of " + mApp.getLightheight(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has an o2 of " + mApp.getO2level(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has an orp temp of " + mApp.getOrplevel(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has an pH of " + mApp.getPhlevel(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has a TDS level of " + mApp.getTdslevel(i));
-                    Log.d("consoleprinting", "Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
-                }
+                // MyLoopjTask myLoopjTask = new MyLoopjTask();
+                //myLoopjTask.executeLoopjCall("dogs");
+                InputStream myInputStream = new InputStream() {
+                    @Override
+                    public int read() throws IOException {
+                        return 0;
+                    }
+                };
+                RequestParams params = new RequestParams();
+                params.put("secret_passwords", myInputStream, "hello.txt");
 
-                Snackbar.make(view, "Check LogCat for the Data Activity - tag 'consoleprinting'", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                /*File myFile = new File("hello.txt");
+                try {
+                    params.put("secondattempt", myFile);
+                } catch(FileNotFoundException e) {}*/
+
+                params.put("name","pen");
+                AsyncHttpClient client = new AsyncHttpClient();
+                client.get("http://24.197.216.190/api.php", params, new JsonHttpResponseHandler() {
+
+                    @Override
+                    public void onStart() {
+                        Log.d("july", "got to onStart()");
+                    }
+
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
+                        Log.d("july", "got to onSuccess()");
+                        String test1 = response.toString();
+                        Log.d("july", test1);
+
+                    }
+
+
+
+                    @Override
+                    public void onRetry(int retryNo) {
+                        Log.d("july", "got to onRetry()");
+                    }
+                });
+
+
+                Button printbutton = findViewById(R.id.butt3);
+                printbutton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // Log.d("stars","oh my that does sound convenient");
+                        for (int i = 0; i < mApp.size(); i++) {
+                            Log.d("consoleprinting", "Array list item number " + i + " has an air temp of " + mApp.getAirtemplevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an amb humidity of " + mApp.getAmbienthumiditylevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an canopy height of " + mApp.getCanopyheightlevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an co2 of " + mApp.getCanopyheightlevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an DO of " + mApp.getDolevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an Light Height of " + mApp.getLightheight(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an o2 of " + mApp.getO2level(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an orp temp of " + mApp.getOrplevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an pH of " + mApp.getPhlevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has a TDS level of " + mApp.getTdslevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
+                        }
+
+                        Snackbar.make(view, "Check LogCat for the Data Activity - tag 'consoleprinting'", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                    }
+                });
+
             }
-        });
 
+
+        });
     }
 
     @Override
@@ -223,5 +300,10 @@ public class DeveloperOptions extends AppCompatActivity {
             return "";
         }
     }
+
+
+
+
+
 
 }
