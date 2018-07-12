@@ -41,22 +41,6 @@ public class DeveloperOptions extends AppCompatActivity {
         MyLoopjTask myLoopjTask = new MyLoopjTask();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         Button makethirty = findViewById(R.id.butt4);
         makethirty.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,66 +120,17 @@ public class DeveloperOptions extends AppCompatActivity {
         readbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("july",read_file(mApp,"hello.txt"));
+                //Log.d("july", read_file(mApp, "hello.txt"));
+            }});
 
-
-
-               /* try {
-                    FileInputStream fis = openFileInput("hello.txt");
-                    InputStreamReader isr = new InputStreamReader(fis);
-                    BufferedReader bufferedReader = new BufferedReader(isr);
-                    StringBuilder sb = new StringBuilder();
-                    String line;
-                    while ((line = bufferedReader.readLine()) != null) {
-                        sb.append(line);
-                    }
-                    Snackbar.make(view, line, Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                    Log.d("july", line + " is the contents of line");
-                } catch (Exception e) {
-                    Log.d("july", "went into catch block");
-                }*/
-
-                //Snackbar.make(view, line, Snackbar.LENGTH_LONG)
-                //      .setAction("Action", null).show();
-
-            }
-        });
-
-
-        Button sendastringbutton = findViewById(R.id.butt1);
-        sendastringbutton.setOnClickListener(new View.OnClickListener() {
+        Button getdatafromserverbutton = findViewById(R.id.button4);
+        getdatafromserverbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "You hopefully transmitted a string", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-            }
-        });
-
-        Button uploadbutton = findViewById(R.id.button3);
-        uploadbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // MyLoopjTask myLoopjTask = new MyLoopjTask();
-                //myLoopjTask.executeLoopjCall("dogs");
-                InputStream myInputStream = new InputStream() {
-                    @Override
-                    public int read() throws IOException {
-                        return 0;
-                    }
-                };
                 RequestParams params = new RequestParams();
-                params.put("secret_passwords", myInputStream, "hello.txt");
-
-                /*File myFile = new File("hello.txt");
-                try {
-                    params.put("secondattempt", myFile);
-                } catch(FileNotFoundException e) {}*/
-
-                params.put("name","pen");
+                params.put("whatiwant", "testdata");
                 AsyncHttpClient client = new AsyncHttpClient();
-                client.get("http://24.197.216.190/api.php", params, new JsonHttpResponseHandler() {
+                client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
 
                     @Override
                     public void onStart() {
@@ -207,103 +142,95 @@ public class DeveloperOptions extends AppCompatActivity {
                         Log.d("july", "got to onSuccess()");
                         String test1 = response.toString();
                         Log.d("july", test1);
-
                     }
 
-
-
                     @Override
-                    public void onRetry(int retryNo) {
+                        public void onRetry(int retryNo) {
                         Log.d("july", "got to onRetry()");
                     }
                 });
 
 
-                Button printbutton = findViewById(R.id.butt3);
-                printbutton.setOnClickListener(new View.OnClickListener() {
+                Button uploadbutton = findViewById(R.id.button3);
+                uploadbutton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        // Log.d("stars","oh my that does sound convenient");
-                        for (int i = 0; i < mApp.size(); i++) {
-                            Log.d("consoleprinting", "Array list item number " + i + " has an air temp of " + mApp.getAirtemplevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an amb humidity of " + mApp.getAmbienthumiditylevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an canopy height of " + mApp.getCanopyheightlevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an co2 of " + mApp.getCanopyheightlevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an DO of " + mApp.getDolevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an Light Height of " + mApp.getLightheight(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an o2 of " + mApp.getO2level(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an orp temp of " + mApp.getOrplevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an pH of " + mApp.getPhlevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has a TDS level of " + mApp.getTdslevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
-                        }
+                        // MyLoopjTask myLoopjTask = new MyLoopjTask();
+                        //myLoopjTask.executeLoopjCall("dogs");
+                        InputStream myInputStream = new InputStream() {
+                                                                  @Override
+                                                                  public int read() throws IOException { return 0;
+                                                                  }
+                                                              };
+                        RequestParams params = new RequestParams();
+                        params.put("secret_passwords", myInputStream, "hello.txt");
 
-                        Snackbar.make(view, "Check LogCat for the Data Activity - tag 'consoleprinting'", Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                    }
+                        params.put("whatiwant", "testdata");
+                        AsyncHttpClient client = new AsyncHttpClient();
+                        client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
+
+                            @Override
+                            public void onStart() {
+                                Log.d("july", "got to onStart()");
+                            }
+
+                            @Override
+                            public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
+                                Log.d("july", "got to onSuccess()");
+                                String test1 = response.toString();
+                                Log.d("july", test1);
+                            }
+
+
+                            @Override
+                            public void onRetry(int retryNo) {
+                                Log.d("july", "got to onRetry()");
+                            }
+                        });
+
+                         Button printbutton = findViewById(R.id.butt3);
+                         printbutton.setOnClickListener(new View.OnClickListener() {
+                             @Override
+                             public void onClick(View view) {
+                                 // Log.d("stars","oh my that does sound convenient");
+                                 for (int i = 0; i < mApp.size(); i++) {
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an air temp of " + mApp.getAirtemplevel(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an amb humidity of " + mApp.getAmbienthumiditylevel(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an canopy height of " + mApp.getCanopyheightlevel(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an co2 of " + mApp.getCanopyheightlevel(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an DO of " + mApp.getDolevel(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an Light Height of " + mApp.getLightheight(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an o2 of " + mApp.getO2level(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an orp temp of " + mApp.getOrplevel(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an pH of " + mApp.getPhlevel(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has a TDS level of " + mApp.getTdslevel(i));
+                                     Log.d("consoleprinting", "Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
+                                     }
+                                     Snackbar.make(view, "Check LogCat for the Data Activity - tag 'consoleprinting'", Snackbar.LENGTH_LONG)
+                                             .setAction("Action", null).show();
+                                 }
+                                 });
+
+                         }
+
+
+                         });
+                }
                 });
-
-            }
-
-
-        });
-    }
-
-    @Override
-    public void onBackPressed() {   //this only triggers for the phone back-button!
-        Intent data = new Intent();
-        //data.putExtra("parameter_name", getIntent().getStringExtra("parameter_name"));
-        setResult(Activity.RESULT_OK, data);
-        //super.onBackPressed();
-        Log.d("doohoohoo", "got to the onbackpressed in the develoepr options function");
-        finish();
-    }
-
-
-    public void writeFileOnInternalStorage(Context mcoContext, String sFileName, String sBody) {
-        File file = new File(mcoContext.getFilesDir(), "mydir");
-        if (!file.exists()) {
-            file.mkdir();
         }
 
-        try {
-            File gpxfile = new File(file, sFileName);
-            FileWriter writer = new FileWriter(gpxfile);
-            writer.append(sBody);
-            writer.flush();
-            writer.close();
 
-        } catch (Exception e) {
 
+
+        @Override
+        public void onBackPressed () {   //this only triggers for the phone back-button!
+            Intent data = new Intent();
+            //data.putExtra("parameter_name", getIntent().getStringExtra("parameter_name"));
+            setResult(Activity.RESULT_OK, data);
+            //super.onBackPressed();
+            Log.d("doohoohoo", "got to the onbackpressed in the develoepr options function");
+            finish();
         }
     }
-
-
-    public String read_file(Context context, String filename) {
-        try {
-            FileInputStream fis = context.openFileInput(filename);
-            InputStreamReader isr = new InputStreamReader(fis, "UTF-8");
-            BufferedReader bufferedReader = new BufferedReader(isr);
-            StringBuilder sb = new StringBuilder();
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                sb.append(line).append("\n");
-            }
-            return sb.toString();
-        } catch (FileNotFoundException e) {
-            return "";
-        } catch (UnsupportedEncodingException e) {
-            return "";
-        } catch (IOException e) {
-            return "";
-        }
-    }
-
-
-
-
-
-
-}

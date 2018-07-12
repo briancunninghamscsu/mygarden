@@ -68,6 +68,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/send_hello_to_server"
                 tools:text="@string/send_hello_to_server" />
+
+            <Button
+                android:id="@+id/button4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Update with Data from Server"
+                tools:text="Update with Data from Server" />
         </LinearLayout>
     </ScrollView>
 
