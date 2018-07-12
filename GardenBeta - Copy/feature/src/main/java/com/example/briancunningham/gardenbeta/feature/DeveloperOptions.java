@@ -131,7 +131,6 @@ public class DeveloperOptions extends AppCompatActivity {
                 params.put("whatiwant", "testdata");
                 AsyncHttpClient client = new AsyncHttpClient();
                 client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
-
                     @Override
                     public void onStart() {
                         Log.d("july", "got to onStart()");
@@ -142,95 +141,89 @@ public class DeveloperOptions extends AppCompatActivity {
                         Log.d("july", "got to onSuccess()");
                         String test1 = response.toString();
                         Log.d("july", test1);
+                        parsemystringplease a = new parsemystringplease(test1);
                     }
 
                     @Override
-                        public void onRetry(int retryNo) {
+                    public void onRetry(int retryNo) {
                         Log.d("july", "got to onRetry()");
                     }
                 });
 
-
-                Button uploadbutton = findViewById(R.id.button3);
-                uploadbutton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        // MyLoopjTask myLoopjTask = new MyLoopjTask();
-                        //myLoopjTask.executeLoopjCall("dogs");
-                        InputStream myInputStream = new InputStream() {
+        Button uploadbutton = findViewById(R.id.button3);
+        uploadbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // MyLoopjTask myLoopjTask = new MyLoopjTask();
+                // myLoopjTask.executeLoopjCall("dogs");
+                InputStream myInputStream = new InputStream() {
                                                                   @Override
                                                                   public int read() throws IOException { return 0;
                                                                   }
                                                               };
-                        RequestParams params = new RequestParams();
-                        params.put("secret_passwords", myInputStream, "hello.txt");
+                RequestParams params = new RequestParams();
+                params.put("secret_passwords", myInputStream, "hello.txt");
 
-                        params.put("whatiwant", "testdata");
-                        AsyncHttpClient client = new AsyncHttpClient();
-                        client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
+                params.put("whatiwant", "testdata");
+                AsyncHttpClient client = new AsyncHttpClient();
+                client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
 
-                            @Override
-                            public void onStart() {
-                                Log.d("july", "got to onStart()");
-                            }
+                    @Override
+                    public void onStart() {
+                        Log.d("july", "got to onStart()");
+                    }
 
-                            @Override
-                            public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
-                                Log.d("july", "got to onSuccess()");
-                                String test1 = response.toString();
-                                Log.d("july", test1);
-                            }
+                        @Override
+                        public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
+                        Log.d("july", "got to onSuccess()");
+                        String test1 = response.toString();
+                        Log.d("july", test1);
+                    }
 
-
-                            @Override
-                            public void onRetry(int retryNo) {
-                                Log.d("july", "got to onRetry()");
-                            }
-                        });
-
-                         Button printbutton = findViewById(R.id.butt3);
-                         printbutton.setOnClickListener(new View.OnClickListener() {
-                             @Override
-                             public void onClick(View view) {
-                                 // Log.d("stars","oh my that does sound convenient");
-                                 for (int i = 0; i < mApp.size(); i++) {
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an air temp of " + mApp.getAirtemplevel(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an amb humidity of " + mApp.getAmbienthumiditylevel(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an canopy height of " + mApp.getCanopyheightlevel(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an co2 of " + mApp.getCanopyheightlevel(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an DO of " + mApp.getDolevel(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an Light Height of " + mApp.getLightheight(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an o2 of " + mApp.getO2level(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an orp temp of " + mApp.getOrplevel(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an pH of " + mApp.getPhlevel(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has a TDS level of " + mApp.getTdslevel(i));
-                                     Log.d("consoleprinting", "Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
-                                     }
-                                     Snackbar.make(view, "Check LogCat for the Data Activity - tag 'consoleprinting'", Snackbar.LENGTH_LONG)
-                                             .setAction("Action", null).show();
-                                 }
-                                 });
-
-                         }
-
-
-                         });
-                }
+                        @Override
+                        public void onRetry(int retryNo) {
+                        Log.d("july", "got to onRetry()");
+                        }
                 });
+
+                Button printbutton = findViewById(R.id.butt3);
+                printbutton.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        // Log.d("stars","oh my that does sound convenient");
+                        for (int i = 0; i < mApp.size(); i++) {
+                            Log.d("consoleprinting", "Array list item number " + i + " has an air temp of " + mApp.getAirtemplevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an amb humidity of " + mApp.getAmbienthumiditylevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an canopy height of " + mApp.getCanopyheightlevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an co2 of " + mApp.getCanopyheightlevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an DO of " + mApp.getDolevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an Light Height of " + mApp.getLightheight(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an o2 of " + mApp.getO2level(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an orp temp of " + mApp.getOrplevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an pH of " + mApp.getPhlevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has a TDS level of " + mApp.getTdslevel(i));
+                            Log.d("consoleprinting", "Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
+                        }
+                        Snackbar.make(view, "Check LogCat for the Data Activity - tag 'consoleprinting'", Snackbar.LENGTH_LONG)
+                                .setAction("Action", null).show();
+                    }
+                });
+            }
+            });
         }
+        });
+    }
 
-
-
-
-        @Override
+    @Override
         public void onBackPressed () {   //this only triggers for the phone back-button!
             Intent data = new Intent();
-            //data.putExtra("parameter_name", getIntent().getStringExtra("parameter_name"));
+            data.putExtra("parameter_name", getIntent().getStringExtra("parameter_name"));
             setResult(Activity.RESULT_OK, data);
             //super.onBackPressed();
             Log.d("doohoohoo", "got to the onbackpressed in the develoepr options function");
             finish();
-        }
     }
+}
+
