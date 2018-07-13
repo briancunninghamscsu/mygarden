@@ -26,6 +26,12 @@ public class MyAppApplication extends Application {
         this.recordedData.add(temppoint);
     }
 
+    public void putavalue(float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoirs){
+
+        //verynicedatapoint temppoint = new verynicedatapoint(airtemplevel,ambienthumiditylevel,canopyheightlevel,co2level,dolevel,lightheight,o2level,orplevel,tdslevel,phlevel,solutiontemplevel,reservoirs);
+        //this.recordedData.add(temppoint);
+    }
+
     public float getAirtemplevel(int z) {
         return recordedData.get(z).getAirtemplevel();
     }
@@ -72,7 +78,7 @@ public class MyAppApplication extends Application {
         return recordedData.get(z).getReservoirs();
     }
 
-    public String getDatapointdatetime(int z) {return recordedData.get(z).getDatapointdatetime();}
+    //public String getDatapointdatetime(int z) {return recordedData.get(z).getDatapointdatetime();}
 
     public Date getDatapointinDateFormat(int z) {return recordedData.get(z).getDatapointinDateFormat();}
     public String getAction(int z) {return recordedData.get(z).getAction();}

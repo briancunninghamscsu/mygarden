@@ -24,10 +24,11 @@ public class verynicedatapoint implements Parcelable {
         private final float phlevel;
         private final float solutiontemplevel;
         private final boolean reservoirs;
-        private final String datapointdatetime;
+        //private final String datapointdatetime;
         private Date datapointinDateFormat;
         private String action;
-
+        private String Date;
+        private String Time;
 
         private verynicedatapoint(Parcel input){
             airtemplevel = input.readFloat();
@@ -44,7 +45,7 @@ public class verynicedatapoint implements Parcelable {
             int localtemp = input.readInt();
             reservoirs = localtemp == 1;
 
-            datapointdatetime=input.readString();
+            //datapointdatetime=input.readString();
 
         }
 
@@ -74,7 +75,7 @@ public class verynicedatapoint implements Parcelable {
             } else {
                 out.writeInt(0);
             }
-            out.writeString(datapointdatetime);
+           // out.writeString(datapointdatetime);
 
         }
 
@@ -91,27 +92,27 @@ public class verynicedatapoint implements Parcelable {
         };
 
 
-// --Commented out by Inspection START (5/19/2018 11:17 AM):
-//        public verynicedatapoint(float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoirs) {
-//            this.airtemplevel = airtemplevel;
-//            this.ambienthumiditylevel = ambienthumiditylevel;
-//            this.canopyheightlevel = canopyheightlevel;
-//            this.co2level = co2level;
-//            this.canopyheightlevel = canopyheightlevel;
-//            this.dolevel = dolevel;
-//            this.lightheight = lightheight;
-//            this.o2level = o2level;
-//            this.orplevel = orplevel;
-//            this.tdslevel = tdslevel;
-//            this.phlevel = phlevel;
-//            this.solutiontemplevel = solutiontemplevel;
-//            this.reservoirs = reservoirs;
-//            Date c = Calendar.getInstance().getTime();
-//            this.datapointinDateFormat = c;
-//            SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
-//            this.datapointdatetime = sdf.format(c);
-//        }
-// --Commented out by Inspection STOP (5/19/2018 11:17 AM)
+
+        public verynicedatapoint(String date, String time, float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoirs) {
+            this.airtemplevel = airtemplevel;
+            this.ambienthumiditylevel = ambienthumiditylevel;
+            this.canopyheightlevel = canopyheightlevel;
+            this.co2level = co2level;
+            this.dolevel = dolevel;
+            this.lightheight = lightheight;
+            this.o2level = o2level;
+            this.orplevel = orplevel;
+            this.tdslevel = tdslevel;
+            this.phlevel = phlevel;
+            this.solutiontemplevel = solutiontemplevel;
+            this.reservoirs = reservoirs;
+            this.Date = date;
+            this.Time = time;
+            //this.datapointinDateFormat = c;
+            //SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
+            //this.datapointdatetime = sdf.format(c);
+        }
+
 
         public verynicedatapoint(){
             Random r = new Random();
@@ -168,7 +169,7 @@ public class verynicedatapoint implements Parcelable {
             Date c = Calendar.getInstance().getTime();
             this.datapointinDateFormat = c;
             SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
-            this.datapointdatetime = sdf.format(c);
+            //this.datapointdatetime = sdf.format(c);
 
             i1 = (r.nextInt(10) + 1);
             switch (i1) {
@@ -247,6 +248,6 @@ public class verynicedatapoint implements Parcelable {
                 return reservoirs;
             }
             public Date getDatapointinDateFormat(){ return datapointinDateFormat;}
-            public String getDatapointdatetime() {return datapointdatetime;}
+            //public String getDatapointdatetime() {return datapointdatetime;}
             public String getAction() {return action;}
 }

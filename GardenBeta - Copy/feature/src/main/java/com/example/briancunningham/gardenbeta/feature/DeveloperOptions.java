@@ -141,7 +141,7 @@ public class DeveloperOptions extends AppCompatActivity {
                         Log.d("july", "got to onSuccess()");
                         String test1 = response.toString();
                         Log.d("july", test1);
-                        parsemystringplease a = new parsemystringplease(test1);
+                        parsemystringplease a = new parsemystringplease(test1,mApp);
                     }
 
                     @Override
@@ -204,7 +204,7 @@ public class DeveloperOptions extends AppCompatActivity {
                             Log.d("consoleprinting", "Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
                             Log.d("consoleprinting", "Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
                             Log.d("consoleprinting", "Array list item number " + i + " has a TDS level of " + mApp.getTdslevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
+                            //Log.d("consoleprinting", "Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
                         }
                         Snackbar.make(view, "Check LogCat for the Data Activity - tag 'consoleprinting'", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();

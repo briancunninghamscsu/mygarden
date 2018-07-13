@@ -137,7 +137,7 @@ public class data_activity extends AppCompatActivity {
             final TextView rowTextViewC = new TextView(this);
 
             // setting some properties of new TextViews
-            rowTextViewA.setText(mApp.getDatapointdatetime(i));
+            //rowTextViewA.setText(mApp.getDatapointdatetime(i));
             rowTextViewA.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             rowTextViewA.setPadding(20, 0, 0, 0);
             String unit_suffix_adder = String.valueOf(mApp.getDolevel(i));
@@ -165,7 +165,7 @@ public class data_activity extends AppCompatActivity {
             TextView nowtemp = findViewById(R.id.do_current_measurement);
             nowtemp.setText(unit_suffix_adder);
             TextView nowtime = findViewById(R.id.do_current_time);
-            nowtime.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+            //nowtime.setText(mApp.getDatapointdatetime(mApp.size() - 1));
         }
 
         else {  // if there's no data to be found
