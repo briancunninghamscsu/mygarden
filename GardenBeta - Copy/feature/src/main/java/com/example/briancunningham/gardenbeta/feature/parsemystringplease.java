@@ -47,11 +47,26 @@ public class parsemystringplease{
             }*/
 
             //assign it into global variables
-            if ((i + 8 ) % 15 == 0) {
+            if ((i + 7 ) % 14 == 0) {
                 // assuming you don't mess up the server data, it should be all in this form.
                 Log.d("july2","a date is "+ words[i]);
                 //mApp.putavalue(words[i],words[i+1],words[i+2],words[i+3],words[i+4],words[i+5],words[i+6],words[i+7],words[i+8],words[i+8],words[i+9]);
-
+                if (i< words.length-7) {
+                    String temp_date = words[i];
+                    String temp_time = words[i + 1];
+                    String temp_airtemp = words[i + 2];
+                    String temp_humidity = words[i + 3];
+                    String temp_TVOC = words[i + 4];
+                    String temp_CO2 = words[i + 5];
+                    String temp_Slntemp = words[i + 6];
+                    String temp_TDS = words[i + 7];
+                    String temp_DO = words[i + 8];
+                    String temp_ORP = words[i + 9];
+                    String temp_pH = words[i + 10];
+                    String temp_reservoirs = words[i + 11];
+                    String temp_canopy = words[i + 12];
+                    String light_height = words[i + 13];
+                }
 
             }
 
