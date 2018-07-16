@@ -14,6 +14,15 @@ public class parsemystringplease{
         {
             thingtochew=thingtochew.replace("\\n"," ");
         }
+        if (thingtochew.contains(">"))
+        {
+            thingtochew=thingtochew.replace(">"," >");
+        }
+
+        if (thingtochew.contains("<"))
+        {
+            thingtochew=thingtochew.replace("<","< ");
+        }
 
         if (thingtochew.contains("payload.\",\"data\":\""))
         {
@@ -27,31 +36,14 @@ public class parsemystringplease{
 
 
 
-        String words[] = thingtochew.split(" ");
-        for (int i = 1; i < words.length; i++) {
-            /*String newline= "\\n";
+       String words[] = thingtochew.split(" ");
+       for (int i = 1; i < words.length; i++) {
 
-            if (words[i].contains(newline))
-            {
-                words[i]=words[i].replace("\\n","");
-            }
-
-            if (words[i].contains("payload.\",\"data\":\""))
-            {
-                words[i]=words[i].replace("payload.\",\"data\":\"","");
-            }
-
-            if (words[i].contains("\"}"))
-            {
-                words[i]=words[i].replace("\"}","");
-            }*/
 
             //assign it into global variables
-            if ((i + 7 ) % 14 == 0) {
-                // assuming you don't mess up the server data, it should be all in this form.
-                Log.d("july2","a date is "+ words[i]);
-                //mApp.putavalue(words[i],words[i+1],words[i+2],words[i+3],words[i+4],words[i+5],words[i+6],words[i+7],words[i+8],words[i+8],words[i+9]);
-                if (i< words.length-7) {
+
+
+           if (words[i-1].equals("<")) {
                     String temp_date = words[i];
                     String temp_time = words[i + 1];
                     String temp_airtemp = words[i + 2];
@@ -65,19 +57,28 @@ public class parsemystringplease{
                     String temp_pH = words[i + 10];
                     String temp_reservoirs = words[i + 11];
                     String temp_canopy = words[i + 12];
-                    String light_height = words[i + 13];
-                }
+                    String temp_lightheight = words[i + 13];
+                    Log.d("july3","the value of temp_date is "+ temp_date);
+                    Log.d("july3","the value of temp_time is "+ temp_time);
+                    Log.d("july3","the value of temp_airtemp is "+ temp_airtemp);
+                    Log.d("july3","the value temp_humidity is " + temp_humidity);
+                    Log.d("july3","the value of temp_TVOC us " + temp_TVOC);
+                    Log.d("july3", "the value of temp_CO2 is " +temp_CO2);
+                    Log.d("july3", "the value of temp_Sln_temp is "+ temp_Slntemp);
+                    Log.d("july3","the value of temp_TDWS is " + temp_TDS);
+                    Log.d("july3", "the value of temp_DO is " + temp_DO);
+                    Log.d("july3","the value of temp_ORP " + temp_ORP);
+                    Log.d("july3","the value of temp_pH is " + temp_pH);
+                    Log.d("july3", "the value of temp+_reservoirs is "+ temp_reservoirs);
+                    Log.d("july3","the value of temp_canopy is " + temp_canopy);
+                    Log.d("july3","the value of temp_lightheight is " + temp_lightheight);
+
+
 
             }
-
-
-
             Log.d("july","Item Number " + i + " is " + words[i]);
-
         }
-
-
-
     }
-
 }
+
+
