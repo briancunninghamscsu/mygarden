@@ -134,10 +134,10 @@ public class data_activity extends AppCompatActivity {
             final TableRow aNewTableRow = new TableRow(this);
             final TextView rowTextViewA = new TextView(this);
             final TextView rowTextViewB = new TextView(this);
-            final TextView rowTextViewC = new TextView(this);
+            //final TextView rowTextViewC = new TextView(this);
 
             // setting some properties of new TextViews
-            //rowTextViewA.setText(mApp.getDatapointdatetime(i));
+            rowTextViewA.setText(mApp.getDatapointdatetime(i));
             rowTextViewA.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             rowTextViewA.setPadding(20, 0, 0, 0);
             String unit_suffix_adder = String.valueOf(mApp.getDolevel(i));
@@ -147,15 +147,15 @@ public class data_activity extends AppCompatActivity {
             rowTextViewB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             rowTextViewB.setPadding(0, 0, 0, 0);
 
-            rowTextViewC.setText(mApp.getAction(i));
+           /* rowTextViewC.setText(mApp.getAction(i));
             rowTextViewC.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
             rowTextViewC.setPadding(0, 0, 20, 0);
             rowTextViewC.setHeight(60);
-
+*/
             // add the textview to the linearlayout
             aNewTableRow.addView(rowTextViewA); // adding first column element to the new row
             aNewTableRow.addView(rowTextViewB); // adding the second column element to the new row
-            aNewTableRow.addView(rowTextViewC); // adding the third column element to the new row
+            //aNewTableRow.addView(rowTextViewC); // adding the third column element to the new row
             tbllay.addView(aNewTableRow);   // adding the new row to the table layout
             }
 
@@ -165,7 +165,7 @@ public class data_activity extends AppCompatActivity {
             TextView nowtemp = findViewById(R.id.do_current_measurement);
             nowtemp.setText(unit_suffix_adder);
             TextView nowtime = findViewById(R.id.do_current_time);
-            //nowtime.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+            nowtime.setText(mApp.getDatapointdatetime(mApp.size() - 1));
         }
 
         else {  // if there's no data to be found

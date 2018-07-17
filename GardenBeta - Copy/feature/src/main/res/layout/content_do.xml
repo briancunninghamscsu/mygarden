@@ -78,15 +78,6 @@
                         android:textSize="18sp"
                         tools:text="Measurement" />
 
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:paddingLeft="10dp"
-                        android:paddingRight="10dp"
-                        android:text="@string/Action"
-                        android:textAlignment="center"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-                        android:textSize="18sp" />
                 </TableRow>
             </TableLayout>
 

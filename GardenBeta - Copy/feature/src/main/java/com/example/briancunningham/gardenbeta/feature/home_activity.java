@@ -88,7 +88,7 @@ public class home_activity extends AppCompatActivity {
             unit_adder = String.valueOf(mApp.getTdslevel(mrtesty - 1)) + getString(R.string.ppm);
             tvtds.setText(unit_adder);
 
-            if (Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "1")) {
+            if ((Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "1")))) {
                 tvres.setText(getString(R.string.full));
             } else {
                 tvres.setText(getString(R.string.notfull));
@@ -323,7 +323,7 @@ public class home_activity extends AppCompatActivity {
                     unit_adder = String.valueOf(mApp.getTdslevel(mrtesty - 1)) + getString(R.string.ppm);
                     tvtds.setText(unit_adder);
 
-                    if (Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "1")) {
+                    if ((Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "1")))) {
                         tvres.setText(getString(R.string.full));
                     } else {
                         tvres.setText(getString(R.string.notfull));

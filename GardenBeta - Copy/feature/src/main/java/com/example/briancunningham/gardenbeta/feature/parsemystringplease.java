@@ -73,9 +73,13 @@ public class parsemystringplease{
                     Log.d("july3","the value of temp_canopy is " + temp_canopy);
                     Log.d("july3","the value of temp_lightheight is " + temp_lightheight);
 
+                    Log.d("july4","the value of boolean.valueof is " + Boolean.valueOf(temp_reservoirs));
+                    //store in global variables
+                    mApp.putavalue(temp_date,temp_time,Float.valueOf(temp_airtemp), Float.valueOf(temp_humidity), Float.valueOf(temp_canopy), Float.valueOf(temp_CO2), Float.valueOf(temp_DO), Float.valueOf(temp_lightheight), Float.valueOf(temp_TVOC), Float.valueOf(temp_ORP), Float.valueOf(temp_TDS), Float.valueOf(temp_pH), Float.valueOf(temp_Slntemp), Boolean.valueOf(temp_reservoirs));
 
 
-            }
+
+               }
             Log.d("july","Item Number " + i + " is " + words[i]);
         }
     }

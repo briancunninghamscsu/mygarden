@@ -121,6 +121,8 @@ public class DeveloperOptions extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //Log.d("july", read_file(mApp, "hello.txt"));
+                Snackbar.make(view, " Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }});
 
         Button getdatafromserverbutton = findViewById(R.id.button4);

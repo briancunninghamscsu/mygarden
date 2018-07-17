@@ -5,9 +5,11 @@ import android.os.Parcelable;
 import android.util.Log;
 
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.Random;
 
 public class verynicedatapoint implements Parcelable {
@@ -24,7 +26,7 @@ public class verynicedatapoint implements Parcelable {
         private final float phlevel;
         private final float solutiontemplevel;
         private final boolean reservoirs;
-        //private final String datapointdatetime;
+        private String datapointdatetime;
         private Date datapointinDateFormat;
         private String action;
         private String Date;
@@ -108,7 +110,18 @@ public class verynicedatapoint implements Parcelable {
             this.reservoirs = reservoirs;
             this.Date = date;
             this.Time = time;
-            //this.datapointinDateFormat = c;
+
+            //gotta have it in SDF format if you want to plot the points
+            String string = date + " AD at " + time;
+            DateFormat format = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss", Locale.ENGLISH);
+            try {
+                this.datapointinDateFormat = format.parse(string);
+                datapointdatetime = string;
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+            //System.out.println(date); // Sat Jan 02 00:00:00 GMT 2010
+
             //SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
             //this.datapointdatetime = sdf.format(c);
         }
@@ -248,6 +261,6 @@ public class verynicedatapoint implements Parcelable {
                 return reservoirs;
             }
             public Date getDatapointinDateFormat(){ return datapointinDateFormat;}
-            //public String getDatapointdatetime() {return datapointdatetime;}
+            public String getDatapointdatetime() {return datapointdatetime;}
             public String getAction() {return action;}
 }
