@@ -26,7 +26,6 @@ public class tolerances extends AppCompatActivity {
         setContentView(R.layout.activity_tolerances);
         setTitle(getIntent().getStringExtra("parameter_name")); //set the correct title
 
-
         MyAppApplication mApp = (MyAppApplication) getApplicationContext(); //get global variables
         LinearLayout ll = findViewById(R.id.linlaytolerances);
         ll.setOrientation(LinearLayout.VERTICAL);
@@ -269,11 +268,11 @@ public class tolerances extends AppCompatActivity {
                 ll.addView(mrchecky4);
 
                 final CheckBox mrchecky4b = new CheckBox(this);
-                mrchecky4b.setText(getString(R.string.turn_on_space_heater));
+                mrchecky4b.setText(getString(R.string.turn_off_space_heater));
                 ll.addView(mrchecky4b);
 
                 final CheckBox mrchecky4c = new CheckBox(this);
-                mrchecky4c.setText(getString(R.string.turn_on_heating_element));
+                mrchecky4c.setText(getString(R.string.turn_off_heating_element));
                 ll.addView(mrchecky4c);
 
                 final TextView belowtext4 = new TextView(this);
@@ -295,11 +294,11 @@ public class tolerances extends AppCompatActivity {
                 ll.addView(mschecky4);
 
                 final CheckBox mrchecky4d = new CheckBox(this);
-                mrchecky4d.setText(getString(R.string.turn_off_space_heater));
+                mrchecky4d.setText(getString(R.string.turn_on_space_heater));
                 ll.addView(mrchecky4d);
 
                 final CheckBox mrchecky4e = new CheckBox(this);
-                mrchecky4e.setText(getString(R.string.turn_off_heating_element));
+                mrchecky4e.setText(getString(R.string.turn_on_heating_element));
                 ll.addView(mrchecky4e);
 
                 final Button buttsoup4 = new Button(this);
@@ -408,16 +407,12 @@ public class tolerances extends AppCompatActivity {
                 ll.addView(mschecky6);
 
                 final CheckBox mrchecky6d = new CheckBox(this);
-                mrchecky6d.setText(getString(R.string.add_florabloom));
+                mrchecky6d.setText(getString(R.string.add_hypochloric));
                 ll.addView(mrchecky6d);
 
                 final CheckBox mrchecky6e = new CheckBox(this);
-                mrchecky6e.setText(getString(R.string.add_floragro));
+                mrchecky6e.setText(getString(R.string.add_peroxide));
                 ll.addView(mrchecky6e);
-
-                final CheckBox mrchecky6f = new CheckBox(this);
-                mrchecky6f.setText(getString(R.string.add_floramicro));
-                ll.addView(mrchecky6f);
 
                 final Button buttsoup6 = new Button(this);
                 buttsoup6.setText(getString(R.string.save_changes));

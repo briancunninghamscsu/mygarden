@@ -56,8 +56,8 @@
     <string name="Sol_above">When the solution temp is above</string>
     <string name="tds_below">When the TDS are below</string>
     <string name="tds_above">When the TDS are above</string>
-    <string name="do_above">When the DO is below</string>
-    <string name="do_below">When the DO is above</string>
+    <string name="do_above">When the DO is above</string>
+    <string name="do_below">When the DO is below</string>
     <string name="orp_below">When the ORP is below</string>
     <string name="orp_above">When the ORP is above</string>
     <string name="pH_below">When the pH is below</string>
