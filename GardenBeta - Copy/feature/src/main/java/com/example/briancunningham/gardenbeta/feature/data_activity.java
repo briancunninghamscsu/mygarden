@@ -51,10 +51,13 @@ public class data_activity extends AppCompatActivity {
 
         MyAppApplication mApp = (MyAppApplication) getApplicationContext(); //get global variables
 
+        GraphView graph = findViewById(R.id.graph);
+
         if (mApp.size() != 0) {     // we don't want to do anything if there is no data to crash
             int a;
             String unit_placeholder = "";
             DataPoint[] values = new DataPoint[mApp.size()]; //make an array of DataPoints, used for graphing
+
 
             for (a = 0; a < mApp.size(); a++) { //setting up the x and y values for the graph.
                 //implementing a case statement to do get the right graph, and to get the right units
@@ -62,46 +65,57 @@ public class data_activity extends AppCompatActivity {
                 switch (getIntent().getStringExtra("parameter_name")){
                     case "Air Temperature":
                         v = new DataPoint (mApp.getDatapointinDateFormat(a), mApp.getAirtemplevel(a));
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Air Temperature in Degrees Fahrenheit");
                         unit_placeholder=getString(R.string.degreef);
                         break;
                     case "Humidity":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getAmbienthumiditylevel(a));
                         unit_placeholder=getString(R.string.percentsign);
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Relative Humidity in %");
                         break;
                     case "TVOC":    //TODO:co2 change
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("TVOC in PPM");
                         unit_placeholder=getString(R.string.ppm);
                         break;
                     case "Solution Temperature":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
                         unit_placeholder=getString(R.string.degreef);
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Solution Temp in Degrees Fahrenheit");
                         break;
                     case "Total Dissolved Solids":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getTdslevel(a));
                         unit_placeholder=getString(R.string.ppm);
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Total Dissolved Solids in PPM");
                         break;
                     case "Dissolved Oxygen":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getDolevel(a));
                         unit_placeholder=getString(R.string.ppm);
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
                         break;
                     case "Oxidation-Reduction Potential":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getOrplevel(a));
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("ORP in mV");
                         unit_placeholder=getString(R.string.mv);
                         break;
                     case "pH":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getPhlevel(a));
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("pH");
                         unit_placeholder=getString(R.string.blank);
                         break;
                     case "Reservoirs":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), 0);
                         unit_placeholder=getString(R.string.blank);
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Tank Fullness");
                         break;
                     case "Canopy Height":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCanopyheightlevel(a));
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Canopy Height in cm");
                         unit_placeholder=getString(R.string.centimeters);
                         break;
                     case "Light Height":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getLightheight(a));
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Light Height in cm");
                         unit_placeholder=getString(R.string.centimeters);
                         break;
                     default:
@@ -110,7 +124,7 @@ public class data_activity extends AppCompatActivity {
                 values[a] = v; //saving the datapoints into an array for graphing later.
             }
 
-            GraphView graph = findViewById(R.id.graph); //tying the graph from XML into the java
+            //tying the graph from XML into the java
             LineGraphSeries<DataPoint> series = new LineGraphSeries<>(values); //put the datapoints into the array used for graphing
             graph.addSeries(series);
 
@@ -119,9 +133,11 @@ public class data_activity extends AppCompatActivity {
             graph.getViewport().setScrollable(true);
             graph.getViewport().setScalableY(true);
             graph.getViewport().setScrollableY(true);
-            graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
             graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
             graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext())); // this line makes it display dates instead of numbers.
+
+
+
 
             //making objects to display on the graph
             /*final TextView[] datepoints = new TextView[mApp.size()]; // create an empty array;
