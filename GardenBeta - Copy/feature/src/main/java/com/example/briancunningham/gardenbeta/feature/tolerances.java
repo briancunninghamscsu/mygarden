@@ -326,104 +326,176 @@ public class tolerances extends AppCompatActivity {
                 break;
 
             case "CO2":
-                final TextView uppertext3 = new TextView(this);
-                uppertext3.setText(getString(R.string.CO2_above));
-                uppertext3.setTextSize(24);
-                uppertext3.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext3.setPadding(8,8,8,8);
-                ll.addView(uppertext3);
 
-                final EditText upperbound3 = new EditText(this);
-                upperbound3.setHint(getString(R.string.ppm));
-                upperbound3.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                upperbound3.setInputType(InputType.TYPE_CLASS_NUMBER);
-                upperbound3.setTextSize(24);
-                ll.addView(upperbound3);
+                // CO2 title text view
+                final TextView CO2_title_text_view = new TextView(this);
+                CO2_title_text_view.setText(getString(R.string.CO2_above));
+                CO2_title_text_view.setTextSize(24);
+                CO2_title_text_view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                CO2_title_text_view.setPadding(8,8,8,8);
+                ll.addView(CO2_title_text_view);
 
-                final CheckBox mrchecky3 = new CheckBox(this);
-                mrchecky3.setText(getString(R.string.send_push));
-                ll.addView(mrchecky3);
+                // CO2 upper bound edit text
+                final EditText CO2_upper_bound_edit_text = new EditText(this);
+                CO2_upper_bound_edit_text.setHint(getString(R.string.ppm));
+                CO2_upper_bound_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                CO2_upper_bound_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                CO2_upper_bound_edit_text.setTextSize(24);
+                ll.addView(CO2_upper_bound_edit_text);
 
-                final TextView belowtext3 = new TextView(this);
-                belowtext3.setText(getString(R.string.CO2_below));
-                belowtext3.setTextSize(24);
-                belowtext3.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                belowtext3.setPadding(8,8,8,8);
-                ll.addView(belowtext3);
+                // CO2 upper push notifications
+                final CheckBox CO2_upper_push_notifications_checkbox = new CheckBox(this);
+                CO2_upper_push_notifications_checkbox.setText(getString(R.string.send_push));
+                ll.addView(CO2_upper_push_notifications_checkbox);
+                if (mApp.CO2_upper_pushnotifications==1){
+                    CO2_upper_push_notifications_checkbox.setChecked(true);
+                }
+                else {
+                    CO2_upper_push_notifications_checkbox.setChecked(false);
+                }
 
-                final EditText lowerbound3 = new EditText(this);
-                lowerbound3.setHint(getString(R.string.ppm));
-                lowerbound3.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lowerbound3.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lowerbound3.setTextSize(24);
-                ll.addView(lowerbound3);
+                // CO2 Below Title
+                final TextView CO2_below_title = new TextView(this);
+                CO2_below_title.setText(getString(R.string.CO2_below));
+                CO2_below_title.setTextSize(24);
+                CO2_below_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                CO2_below_title.setPadding(8,8,8,8);
+                ll.addView(CO2_below_title);
 
-                final CheckBox mschecky3 = new CheckBox(this);
-                mschecky3.setText(getString(R.string.send_push));
-                ll.addView(mschecky3);
+                // CO2 lower threshold edit text
+                final EditText CO2_lower_threshold_edit_text = new EditText(this);
+                CO2_lower_threshold_edit_text.setHint(getString(R.string.ppm));
+                CO2_lower_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                CO2_lower_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                CO2_lower_threshold_edit_text.setTextSize(24);
+                ll.addView(CO2_lower_threshold_edit_text);
 
+                // CO2 lower threshold push notification
+                final CheckBox CO2_lower_threshold_push_notification_checkbox = new CheckBox(this);
+                CO2_lower_threshold_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(CO2_lower_threshold_push_notification_checkbox);
+                if (mApp.CO2_lower_pushnotification==1){
+                    CO2_lower_threshold_push_notification_checkbox.setChecked(true);
+                }
+                else{
+                    CO2_lower_threshold_push_notification_checkbox.setChecked(false);
+                }
+
+
+                // submit changes button
                 final Button buttsoup3 = new Button(this);
                 buttsoup3.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup3);
 
                 break;
+
             case "Solution Temperature":
-                final TextView uppertext4 = new TextView(this);
-                uppertext4.setText(getString(R.string.Sol_above));
-                uppertext4.setTextSize(24);
-                uppertext4.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext4.setPadding(8,8,8,8);
-                ll.addView(uppertext4);
+                // upper solution temperature title
+                final TextView upper_solution_temperature_title_text_view = new TextView(this);
+                upper_solution_temperature_title_text_view.setText(getString(R.string.Sol_above));
+                upper_solution_temperature_title_text_view.setTextSize(24);
+                upper_solution_temperature_title_text_view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upper_solution_temperature_title_text_view.setPadding(8,8,8,8);
+                ll.addView(upper_solution_temperature_title_text_view);
 
-                final EditText upperbound4 = new EditText(this);
-                upperbound4.setHint(getString(R.string.degreef));
-                upperbound4.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                upperbound4.setInputType(InputType.TYPE_CLASS_NUMBER);
-                upperbound4.setTextSize(24);
-                ll.addView(upperbound4);
+                // upper solution temperature edit text
+                final EditText upper_solution_temperature_edit_text = new EditText(this);
+                upper_solution_temperature_edit_text.setHint(mApp.slntemp_upper_threshold + getString(R.string.degreef));
+                upper_solution_temperature_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upper_solution_temperature_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upper_solution_temperature_edit_text.setTextSize(24);
+                ll.addView(upper_solution_temperature_edit_text);
 
-                final CheckBox mrchecky4 = new CheckBox(this);
-                mrchecky4.setText(getString(R.string.send_push));
-                ll.addView(mrchecky4);
+                // upper solution temp check
+                final CheckBox upper_solution_temp_check_box = new CheckBox(this);
+                upper_solution_temp_check_box.setText(getString(R.string.send_push));
+                ll.addView(upper_solution_temp_check_box);
+                if (mApp.slntemp_upper_pushnotification==1){
+                    upper_solution_temp_check_box.setChecked(true);
+                }
+                else{
+                    upper_solution_temp_check_box.setChecked(false);
+                }
 
-                final CheckBox mrchecky4b = new CheckBox(this);
-                mrchecky4b.setText(getString(R.string.turn_off_space_heater));
-                ll.addView(mrchecky4b);
+                // upper sln temp turn off space heater
+                final CheckBox upper_sln_temp_turn_off_space_heater_check_box = new CheckBox(this);
+                upper_sln_temp_turn_off_space_heater_check_box.setText(getString(R.string.turn_off_space_heater));
+                ll.addView(upper_sln_temp_turn_off_space_heater_check_box);
+                if (mApp.slntemp_upper_turn_off_space_heater==1){
+                    upper_sln_temp_turn_off_space_heater_check_box.setChecked(true);
+                }
+                else{
+                    upper_sln_temp_turn_off_space_heater_check_box.setChecked(false);
+                }
 
-                final CheckBox mrchecky4c = new CheckBox(this);
-                mrchecky4c.setText(getString(R.string.turn_off_heating_element));
-                ll.addView(mrchecky4c);
+                // upper sln temp turn off heating element checkbox
+                final CheckBox upper_sln_temp_turn_off_heating_element_checkbox = new CheckBox(this);
+                upper_sln_temp_turn_off_heating_element_checkbox.setText(getString(R.string.turn_off_heating_element));
+                ll.addView(upper_sln_temp_turn_off_heating_element_checkbox);
+                if (mApp.slntemp_upper_turn_off_heating_element==1){
+                    upper_sln_temp_turn_off_heating_element_checkbox.setChecked(true);
+                }
+                else{
+                    upper_sln_temp_turn_off_heating_element_checkbox.setChecked(false);
+                }
 
-                final TextView belowtext4 = new TextView(this);
-                belowtext4.setText(getString(R.string.Sol_below));
-                belowtext4.setTextSize(24);
-                belowtext4.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                belowtext4.setPadding(8,8,8,8);
-                ll.addView(belowtext4);
 
-                final EditText lowerbound4 = new EditText(this);
-                lowerbound4.setHint(getString(R.string.degreef));
-                lowerbound4.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lowerbound4.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lowerbound4.setTextSize(24);
-                ll.addView(lowerbound4);
+                // lower solution temp title
+                final TextView lower_solution_temp_title = new TextView(this);
+                lower_solution_temp_title.setText(getString(R.string.Sol_below));
+                lower_solution_temp_title.setTextSize(24);
+                lower_solution_temp_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lower_solution_temp_title.setPadding(8,8,8,8);
+                ll.addView(lower_solution_temp_title);
 
-                final CheckBox mschecky4 = new CheckBox(this);
-                mschecky4.setText(getString(R.string.send_push));
-                ll.addView(mschecky4);
+                // lower solution temp edit text
+                final EditText lower_solution_temp_edit_text = new EditText(this);
+                lower_solution_temp_edit_text.setHint(mApp.slntemp_lower_threshold + getString(R.string.degreef));
+                lower_solution_temp_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lower_solution_temp_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lower_solution_temp_edit_text.setTextSize(24);
+                ll.addView(lower_solution_temp_edit_text);
 
-                final CheckBox mrchecky4d = new CheckBox(this);
-                mrchecky4d.setText(getString(R.string.turn_on_space_heater));
-                ll.addView(mrchecky4d);
+                //lower solution push notification box
+                final CheckBox lower_solution_temp_push_notification_checkbox = new CheckBox(this);
+                lower_solution_temp_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(lower_solution_temp_push_notification_checkbox);
+                if (mApp.slntemp_lower_pushnotification==1){
+                    lower_solution_temp_push_notification_checkbox.setChecked(true);
+                }
+                else{
+                    lower_solution_temp_push_notification_checkbox.setChecked(false);
+                }
 
-                final CheckBox mrchecky4e = new CheckBox(this);
-                mrchecky4e.setText(getString(R.string.turn_on_heating_element));
-                ll.addView(mrchecky4e);
+                // lower sln temp turn on space heater checkbox
+                final CheckBox lower_solution_temp_turn_on_space_heater_checkbox = new CheckBox(this);
+                lower_solution_temp_turn_on_space_heater_checkbox.setText(getString(R.string.turn_on_space_heater));
+                ll.addView(lower_solution_temp_turn_on_space_heater_checkbox);
+                if (mApp.slntemp_lower_turn_on_space_heater==1){
+                    lower_solution_temp_turn_on_space_heater_checkbox.setChecked(true);
+                }
+                else {
+                    lower_solution_temp_turn_on_space_heater_checkbox.setChecked(false);
+                }
 
+
+                // lower solution temp turn on heating element checkbox
+                final CheckBox lower_solution_temp_turn_on_heating_element_checkbox = new CheckBox(this);
+                lower_solution_temp_turn_on_heating_element_checkbox.setText(getString(R.string.turn_on_heating_element));
+                ll.addView(lower_solution_temp_turn_on_heating_element_checkbox);
+                if (mApp.slntemp_lower_turn_on_heating_element==1) {
+                    lower_solution_temp_turn_on_heating_element_checkbox.setChecked(true);
+                }
+                else {
+                    lower_solution_temp_turn_on_heating_element_checkbox.setChecked(false);
+                }
+
+                //save changes
                 final Button buttsoup4 = new Button(this);
                 buttsoup4.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup4);
                 break;
+
             case "Total Dissolved Solids":
                 final TextView uppertext5 = new TextView(this);
                 uppertext5.setText(getString(R.string.tds_above));
