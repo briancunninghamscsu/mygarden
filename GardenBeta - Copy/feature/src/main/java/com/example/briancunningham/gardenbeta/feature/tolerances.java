@@ -497,59 +497,110 @@ public class tolerances extends AppCompatActivity {
                 break;
 
             case "Total Dissolved Solids":
-                final TextView uppertext5 = new TextView(this);
-                uppertext5.setText(getString(R.string.tds_above));
-                uppertext5.setTextSize(24);
-                uppertext5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext5.setPadding(8,8,8,8);
-                ll.addView(uppertext5);
 
-                final EditText upperbound5 = new EditText(this);
-                upperbound5.setHint(getString(R.string.ppm));
-                upperbound5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                upperbound5.setInputType(InputType.TYPE_CLASS_NUMBER);
-                upperbound5.setTextSize(24);
-                ll.addView(upperbound5);
+                // title
+                final TextView tds_title = new TextView(this);
+                tds_title.setText(getString(R.string.tds_above));
+                tds_title.setTextSize(24);
+                tds_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                tds_title.setPadding(8,8,8,8);
+                ll.addView(tds_title);
 
-                final CheckBox mrchecky5 = new CheckBox(this);
-                mrchecky5.setText(getString(R.string.send_push));
-                ll.addView(mrchecky5);
+                // upper tds edit text
+                final EditText upper_tds_edit_text = new EditText(this);
+                upper_tds_edit_text.setHint(mApp.tds_upper_threshold + getString(R.string.ppm));
+                upper_tds_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upper_tds_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upper_tds_edit_text.setTextSize(24);
+                ll.addView(upper_tds_edit_text);
 
-                final CheckBox mrchecky5b = new CheckBox(this);
-                mrchecky5b.setText(getString(R.string.add_water));
-                ll.addView(mrchecky5b);
+                // upper tds push notification checkbox
+                final CheckBox upper_tds_push_notification_checkbox = new CheckBox(this);
+                upper_tds_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(upper_tds_push_notification_checkbox);
+                if (mApp.tds_upper_push_notification==1){
+                    upper_tds_push_notification_checkbox.setChecked(true);
+                }
+                else{
+                    upper_tds_push_notification_checkbox.setChecked(false);
+                }
+
+                // upper tds add water checkbox
+                final CheckBox upper_tds_add_water_checkbox = new CheckBox(this);
+                upper_tds_add_water_checkbox.setText(getString(R.string.add_water));
+                ll.addView(upper_tds_add_water_checkbox);
+                if (mApp.tds_upper_add_water==1){
+                    upper_tds_add_water_checkbox.setChecked(true);
+                }
+                else {
+                    upper_tds_add_water_checkbox.setChecked(false);
+                }
 
 
-                final TextView belowtext5 = new TextView(this);
-                belowtext5.setText(getString(R.string.tds_below));
-                belowtext5.setTextSize(24);
-                belowtext5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                belowtext5.setPadding(8,8,8,8);
-                ll.addView(belowtext5);
+                // tds lower threshold title
+                final TextView tds_lower_threshold_title = new TextView(this);
+                tds_lower_threshold_title.setText(getString(R.string.tds_below));
+                tds_lower_threshold_title.setTextSize(24);
+                tds_lower_threshold_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                tds_lower_threshold_title.setPadding(8,8,8,8);
+                ll.addView(tds_lower_threshold_title);
 
-                final EditText lowerbound5 = new EditText(this);
-                lowerbound5.setHint(getString(R.string.ppm));
-                lowerbound5.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lowerbound5.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lowerbound5.setTextSize(24);
-                ll.addView(lowerbound5);
+                // tds lower edit text
+                final EditText tds_lower_threshold_edit_text = new EditText(this);
+                tds_lower_threshold_edit_text.setHint(mApp.tds_lower_threshold + getString(R.string.ppm));
+                tds_lower_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                tds_lower_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                tds_lower_threshold_edit_text.setTextSize(24);
+                ll.addView(tds_lower_threshold_edit_text);
 
-                final CheckBox mschecky5 = new CheckBox(this);
-                mschecky5.setText(getString(R.string.send_push));
-                ll.addView(mschecky5);
+                // tds lower threshold send push notification check box
+                final CheckBox tds_lower_threshold_send_push_notifiation = new CheckBox(this);
+                tds_lower_threshold_send_push_notifiation.setText(getString(R.string.send_push));
+                ll.addView(tds_lower_threshold_send_push_notifiation);
+                if (mApp.tds_lower_threshold==1){
+                    tds_lower_threshold_send_push_notifiation.setChecked(true);
+                }
+                else{
+                    tds_lower_threshold_send_push_notifiation.setChecked(false);
+                }
 
-                final CheckBox mrchecky5d = new CheckBox(this);
-                mrchecky5d.setText(getString(R.string.add_florabloom));
-                ll.addView(mrchecky5d);
 
-                final CheckBox mrchecky5e = new CheckBox(this);
-                mrchecky5e.setText(getString(R.string.add_floragro));
-                ll.addView(mrchecky5e);
+                // add flora bloom check box
+                final CheckBox add_flora_bloom_check_box = new CheckBox(this);
+                add_flora_bloom_check_box.setText(getString(R.string.add_florabloom));
+                ll.addView(add_flora_bloom_check_box);
 
-                final CheckBox mrchecky5f = new CheckBox(this);
-                mrchecky5f.setText(getString(R.string.add_floramicro));
-                ll.addView(mrchecky5f);
+                if (mApp.tds_add_florabloom==1){
+                    add_flora_bloom_check_box.setChecked(true);
+                }
+                else {
+                    add_flora_bloom_check_box.setChecked(false);
+                }
 
+                // add flora gro check box
+                final CheckBox add_flora_gro_checkbox = new CheckBox(this);
+                add_flora_gro_checkbox.setText(getString(R.string.add_floragro));
+                ll.addView(add_flora_gro_checkbox);
+                if (mApp.tds_add_floragro==1){
+                    add_flora_gro_checkbox.setChecked(true);
+                }
+                else {
+                    add_flora_gro_checkbox.setChecked(false);
+                }
+
+
+                // add flora micro check box
+                final CheckBox add_flora_micro_check_box = new CheckBox(this);
+                add_flora_micro_check_box.setText(getString(R.string.add_floramicro));
+                ll.addView(add_flora_micro_check_box);
+                if (mApp.tds_add_floramicro==1){
+                    add_flora_micro_check_box.setChecked(true);
+                }
+                else {
+                    add_flora_micro_check_box.setChecked(false);
+                }
+
+                // save changes
                 final Button buttsoup5 = new Button(this);
                 buttsoup5.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup5);
