@@ -38,12 +38,12 @@ public class tolerances extends AppCompatActivity {
                 uppertext.setText(getString(R.string.air_temp_above));
                 uppertext.setTextSize(24);
                 uppertext.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext.setPadding(8,8,8,8);
+                uppertext.setPadding(8, 8, 8, 8);
                 ll.addView(uppertext);
 
                 // logic for displaying current upper bound settings
                 final EditText upperbound = new EditText(this);
-                upperbound.setHint(mApp.air_temp_upper_threshold +  getString(R.string.degreef));
+                upperbound.setHint(mApp.air_temp_upper_threshold + getString(R.string.degreef));
                 upperbound.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 upperbound.setInputType(InputType.TYPE_CLASS_NUMBER);
                 upperbound.setTextSize(24);
@@ -52,10 +52,9 @@ public class tolerances extends AppCompatActivity {
                 //upper bound checkbox display logic
                 final CheckBox air_temp_upper_checkbox = new CheckBox(this);
                 air_temp_upper_checkbox.setText(getString(R.string.send_push));
-                if (mApp.air_temp_upper_pushnotification==1){
+                if (mApp.air_temp_upper_pushnotification == 1) {
                     air_temp_upper_checkbox.setChecked(true);
-                }
-                else{
+                } else {
                     air_temp_upper_checkbox.setChecked(false);
                 }
                 ll.addView(air_temp_upper_checkbox);
@@ -64,10 +63,9 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox air_temp_upper_on_extra_fans = new CheckBox(this);
                 ll.addView(air_temp_upper_on_extra_fans);
                 air_temp_upper_on_extra_fans.setText(getString(R.string.turn_on_fans));
-                if (mApp.air_temp_upper_turn_on_fans==1){
+                if (mApp.air_temp_upper_turn_on_fans == 1) {
                     air_temp_upper_on_extra_fans.setChecked(true);
-                    }
-                else{
+                } else {
                     air_temp_upper_on_extra_fans.setChecked(false);
                 }
 
@@ -75,10 +73,9 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_air_temp_space_heating_checkbox = new CheckBox(this);
                 ll.addView(upper_air_temp_space_heating_checkbox);
                 upper_air_temp_space_heating_checkbox.setText(getString(R.string.turn_off_heating_element));
-                if (mApp.air_temp_upper_turn_off_space_heater==1){
+                if (mApp.air_temp_upper_turn_off_space_heater == 1) {
                     upper_air_temp_space_heating_checkbox.setChecked(true);
-                }
-                else{
+                } else {
                     upper_air_temp_space_heating_checkbox.setChecked(false);
                 }
 
@@ -86,10 +83,9 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_air_temp_space_heater_off = new CheckBox(this);
                 ll.addView(upper_air_temp_space_heater_off);
                 upper_air_temp_space_heater_off.setText(getString(R.string.turn_off_space_heater));
-                if(mApp.air_temp_upper_turn_off_space_heater==1){
+                if (mApp.air_temp_upper_turn_off_space_heater == 1) {
                     upper_air_temp_space_heater_off.setChecked(true);
-                }
-                else {
+                } else {
                     upper_air_temp_space_heater_off.setChecked(false);
                 }
 
@@ -98,7 +94,7 @@ public class tolerances extends AppCompatActivity {
                 belowtext.setText(getString(R.string.air_temp_below));
                 belowtext.setTextSize(24);
                 belowtext.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                belowtext.setPadding(8,8,8,8);
+                belowtext.setPadding(8, 8, 8, 8);
                 ll.addView(belowtext);
 
                 // lower threshold edittext
@@ -113,10 +109,9 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox lower_threshold_push_notification_check_box = new CheckBox(this);
                 lower_threshold_push_notification_check_box.setText(getString(R.string.send_push));
                 ll.addView(lower_threshold_push_notification_check_box);
-                if (mApp.air_temp_lower_threshold==1){
+                if (mApp.air_temp_lower_threshold == 1) {
                     lower_threshold_push_notification_check_box.setChecked(true);
-                }
-                else {
+                } else {
                     lower_threshold_push_notification_check_box.setChecked(false);
                 }
 
@@ -124,10 +119,9 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox lower_threshold_turn_off_extra_fans_checkbox = new CheckBox(this);
                 ll.addView(lower_threshold_turn_off_extra_fans_checkbox);
                 lower_threshold_turn_off_extra_fans_checkbox.setText(getString(R.string.turn_off_fans));
-                if (mApp.air_temp_lower_turn_off_fans==1) {
+                if (mApp.air_temp_lower_turn_off_fans == 1) {
                     lower_threshold_turn_off_extra_fans_checkbox.setChecked(true);
-                }
-                else {
+                } else {
                     lower_threshold_turn_off_extra_fans_checkbox.setChecked(false);
                 }
 
@@ -135,10 +129,9 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox air_temp_lower_turn_on_heating_element = new CheckBox(this);
                 ll.addView(air_temp_lower_turn_on_heating_element);
                 air_temp_lower_turn_on_heating_element.setText(getString(R.string.turn_on_heating_element));
-                if (mApp.air_temp_lower_turn_on_heating_element==1){
+                if (mApp.air_temp_lower_turn_on_heating_element == 1) {
                     air_temp_lower_turn_on_heating_element.setChecked(true);
-                }
-                else {
+                } else {
                     air_temp_lower_turn_on_heating_element.setChecked(false);
                 }
 
@@ -146,54 +139,75 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox lower_threshold_turn_on_space_heater_check_box = new CheckBox(this);
                 ll.addView(lower_threshold_turn_on_space_heater_check_box);
                 lower_threshold_turn_on_space_heater_check_box.setText(getString(R.string.turn_on_space_heater));
-                if (mApp.air_temp_lower_turn_on_space_heater==1){
+                if (mApp.air_temp_lower_turn_on_space_heater == 1) {
                     lower_threshold_turn_on_space_heater_check_box.setChecked(true);
-                }
-                else{
+                } else {
                     lower_threshold_push_notification_check_box.setChecked(false);
                 }
 
-
-
                 // box for sending data to server
-                final Button buttsoup = new Button(this);
-                buttsoup.setText(getString(R.string.save_changes));
-                ll.addView(buttsoup);
+                final Button save_changes_box = new Button(this);
+                save_changes_box.setText(getString(R.string.save_changes));
+                ll.addView(save_changes_box);
                 break;
 
             case "Humidity":
 
-                final TextView uppertext1 = new TextView(this);
-                uppertext1.setText(getString(R.string.hum_above));
-                uppertext1.setTextSize(24);
-                uppertext1.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext1.setPadding(8,8,8,8);
-                ll.addView(uppertext1);
+                // humidity title
+                final TextView uppertext_humidity = new TextView(this);
+                uppertext_humidity.setText(getString(R.string.hum_above));
+                uppertext_humidity.setTextSize(24);
+                uppertext_humidity.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext_humidity.setPadding(8, 8, 8, 8);
+                ll.addView(uppertext_humidity);
 
-                final EditText upperbound1 = new EditText(this);
-                upperbound1.setHint(getString(R.string.percentsign));
-                upperbound1.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                upperbound1.setInputType(InputType.TYPE_CLASS_NUMBER);
-                upperbound1.setTextSize(24);
-                ll.addView(upperbound1);
+                // humidity upper threshold edit text
+                final EditText upperbound_humidity = new EditText(this);
+                upperbound_humidity.setHint(mApp.humidity_upper_threshold + getString(R.string.percentsign));
+                upperbound_humidity.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound_humidity.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound_humidity.setTextSize(24);
+                ll.addView(upperbound_humidity);
 
+                // push notification for upper humidity
+                final CheckBox upper_humidity_push_nofitication_check_box = new CheckBox(this);
+                upper_humidity_push_nofitication_check_box.setText(getString(R.string.send_push));
+                ll.addView(upper_humidity_push_nofitication_check_box);
+                if (mApp.humidity_upper_pushnotification == 1) {
+                    upper_humidity_push_nofitication_check_box.setChecked(true);
+                } else {
+                    upper_humidity_push_nofitication_check_box.setChecked(false);
+                }
 
-                final CheckBox mrchecky1 = new CheckBox(this);
-                mrchecky1.setText(getString(R.string.send_push));
-                ll.addView(mrchecky1);
+                // upper humidity extra fans on
+                final CheckBox upper_humidity_extra_fans_on = new CheckBox(this);
+                ll.addView(upper_humidity_extra_fans_on);
+                upper_humidity_extra_fans_on.setText(getString(R.string.turn_on_fans));
+                if (mApp.humidity_upper_turn_on_extra_fans == 1) {
+                    upper_humidity_extra_fans_on.setChecked(true);
+                } else {
+                    upper_humidity_extra_fans_on.setChecked(false);
+                }
 
-                final CheckBox mrcheckyA1 = new CheckBox(this);
-                ll.addView(mrcheckyA1);
-                mrcheckyA1.setText(getString(R.string.turn_on_fans));
+                // upper_humidity_turn_off_fogger
+                final CheckBox upper_humidity_turn_off_fogger_check_box = new CheckBox(this);
+                ll.addView(upper_humidity_turn_off_fogger_check_box);
+                upper_humidity_turn_off_fogger_check_box.setText(getString(R.string.turn_off_fogger));
+                if (mApp.humidity_upper_turn_off_fogger == 1) {
+                    upper_humidity_turn_off_fogger_check_box.setChecked(true);
+                } else {
+                    upper_humidity_turn_off_fogger_check_box.setChecked(false);
+                }
 
-                final CheckBox mrcheckyB1 = new CheckBox(this);
-                ll.addView(mrcheckyB1);
-                mrcheckyB1.setText(getString(R.string.turn_off_fogger));
+                // upper humidity turn on space heater
+                final CheckBox upper_humidity_turn_on_space_heater_checkbox = new CheckBox(this);
+                ll.addView(upper_humidity_turn_on_space_heater_checkbox);
+                upper_humidity_turn_on_space_heater_checkbox.setText(getString(R.string.turn_on_space_heater));
+                if (mApp.humidity_upper_turn_on_space_heater==1){
+                    upper_humidity_turn_on_space_heater_checkbox.setChecked(true);
+                }
 
-                final CheckBox mscheckyC1 = new CheckBox(this);
-                ll.addView(mscheckyC1);
-                mscheckyC1.setText(getString(R.string.turn_on_space_heater));
-
+                //
                 final TextView belowtext1 = new TextView(this);
                 belowtext1.setText(getString(R.string.hum_below));
                 belowtext1.setTextSize(24);
