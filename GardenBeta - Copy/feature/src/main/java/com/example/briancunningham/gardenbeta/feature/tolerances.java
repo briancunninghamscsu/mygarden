@@ -607,59 +607,101 @@ public class tolerances extends AppCompatActivity {
                 break;
 
             case "Dissolved Oxygen":
-                final TextView uppertext6 = new TextView(this);
-                uppertext6.setText(getString(R.string.do_above));
-                uppertext6.setTextSize(24);
-                uppertext6.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext6.setPadding(8,8,8,8);
-                ll.addView(uppertext6);
 
-                final EditText upperbound6 = new EditText(this);
-                upperbound6.setHint(getString(R.string.ppm));
-                upperbound6.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                upperbound6.setInputType(InputType.TYPE_CLASS_NUMBER);
-                upperbound6.setTextSize(24);
-                ll.addView(upperbound6);
+                // title
+                final TextView do_upper_title = new TextView(this);
+                do_upper_title.setText(getString(R.string.do_above));
+                do_upper_title.setTextSize(24);
+                do_upper_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                do_upper_title.setPadding(8,8,8,8);
+                ll.addView(do_upper_title);
 
-                final CheckBox mrchecky6 = new CheckBox(this);
-                mrchecky6.setText(getString(R.string.send_push));
-                ll.addView(mrchecky6);
+                // do upper threshold edit text
+                final EditText do_upper_threshold_edit_text = new EditText(this);
+                do_upper_threshold_edit_text.setHint(getString(R.string.ppm));
+                do_upper_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                do_upper_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                do_upper_threshold_edit_text.setTextSize(24);
+                ll.addView(do_upper_threshold_edit_text);
 
-                final CheckBox mrchecky6b = new CheckBox(this);
-                mrchecky6b.setText(getString(R.string.add_water));
-                ll.addView(mrchecky6b);
+                // do upper threshold push notification
+                final CheckBox do_upper_threshold_push_notification_checkbox = new CheckBox(this);
+                do_upper_threshold_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(do_upper_threshold_push_notification_checkbox);
+                if (mApp.do_upper_push_notification==1){
+                    do_upper_threshold_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    do_upper_threshold_push_notification_checkbox.setChecked(false);
+                }
+
+                // do upper add water
+                final CheckBox do_upper_add_water_checkbox = new CheckBox(this);
+                do_upper_add_water_checkbox.setText(getString(R.string.add_water));
+                ll.addView(do_upper_add_water_checkbox);
+                if (mApp.tds_upper_add_water==1){
+                    do_upper_add_water_checkbox.setChecked(true);
+                }
+                else{
+                    do_upper_add_water_checkbox.setChecked(false);
+                }
+
+                // do lower title
+                final TextView do_lower_title = new TextView(this);
+                do_lower_title.setText(getString(R.string.do_below));
+                do_lower_title.setTextSize(24);
+                do_lower_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                do_lower_title.setPadding(8,8,8,8);
+                ll.addView(do_lower_title);
+
+                // do lower bound edit text
+                final EditText do_lower_bound_edit_text = new EditText(this);
+                do_lower_bound_edit_text.setHint(getString(R.string.ppm));
+                do_lower_bound_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                do_lower_bound_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                do_lower_bound_edit_text.setTextSize(24);
+                ll.addView(do_lower_bound_edit_text);
+
+                // do lower send push notification checkbox
+                final CheckBox do_lower_send_push_notification_checkbox = new CheckBox(this);
+                do_lower_send_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(do_lower_send_push_notification_checkbox);
+                if (mApp.do_lower_push_notification==1){
+                    do_lower_send_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    do_lower_send_push_notification_checkbox.setChecked(false);
+                }
+
+                // do lower add hypochloric acid
+                final CheckBox do_lower_add_hypochloric_acid = new CheckBox(this);
+                do_lower_add_hypochloric_acid.setText(getString(R.string.add_hypochloric));
+                ll.addView(do_lower_add_hypochloric_acid);
+                if (mApp.do_lower_add_hypochloric_acid==1){
+                    do_lower_add_hypochloric_acid.setChecked(true);
+                }
+                else{
+                    do_lower_add_hypochloric_acid.setChecked(false);
+                }
+
+                // lower do add peroxide
+                final CheckBox do_lower_add_peroxide = new CheckBox(this);
+                do_lower_add_peroxide.setText(getString(R.string.add_peroxide));
+                ll.addView(do_lower_add_peroxide);
+                if (mApp.do_lower_add_hydrogen_peroxide == 1) {
+                    do_lower_add_hypochloric_acid.setChecked(true);
+                }
+                else{
+                    do_lower_add_hypochloric_acid.setChecked(false);
+                }
 
 
-                final TextView belowtext6 = new TextView(this);
-                belowtext6.setText(getString(R.string.do_below));
-                belowtext6.setTextSize(24);
-                belowtext6.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                belowtext6.setPadding(8,8,8,8);
-                ll.addView(belowtext6);
-
-                final EditText lowerbound6 = new EditText(this);
-                lowerbound6.setHint(getString(R.string.ppm));
-                lowerbound6.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lowerbound6.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lowerbound6.setTextSize(24);
-                ll.addView(lowerbound6);
-
-                final CheckBox mschecky6 = new CheckBox(this);
-                mschecky6.setText(getString(R.string.send_push));
-                ll.addView(mschecky6);
-
-                final CheckBox mrchecky6d = new CheckBox(this);
-                mrchecky6d.setText(getString(R.string.add_hypochloric));
-                ll.addView(mrchecky6d);
-
-                final CheckBox mrchecky6e = new CheckBox(this);
-                mrchecky6e.setText(getString(R.string.add_peroxide));
-                ll.addView(mrchecky6e);
-
+                // save changes
                 final Button buttsoup6 = new Button(this);
                 buttsoup6.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup6);
                 break;
+
 
             case "Oxidation-Reduction Potential":
                 final TextView uppertext7 = new TextView(this);
