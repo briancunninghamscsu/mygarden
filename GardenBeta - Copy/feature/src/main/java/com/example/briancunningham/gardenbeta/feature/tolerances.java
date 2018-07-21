@@ -82,10 +82,18 @@ public class tolerances extends AppCompatActivity {
                     upper_air_temp_space_heating_checkbox.setChecked(false);
                 }
 
-                final CheckBox mrcheckyC = new CheckBox(this);
-                ll.addView(mrcheckyC);
-                mrcheckyC.setText(getString(R.string.turn_off_space_heater));
+                //upper air temp turn space heater off
+                final CheckBox upper_air_temp_space_heater_off = new CheckBox(this);
+                ll.addView(upper_air_temp_space_heater_off);
+                upper_air_temp_space_heater_off.setText(getString(R.string.turn_off_space_heater));
+                if(mApp.air_temp_upper_turn_off_space_heater==1){
+                    upper_air_temp_space_heater_off.setChecked(true);
+                }
+                else {
+                    upper_air_temp_space_heater_off.setChecked(false);
+                }
 
+                //lower threshold title
                 final TextView belowtext = new TextView(this);
                 belowtext.setText(getString(R.string.air_temp_below));
                 belowtext.setTextSize(24);
@@ -93,29 +101,61 @@ public class tolerances extends AppCompatActivity {
                 belowtext.setPadding(8,8,8,8);
                 ll.addView(belowtext);
 
+                // lower threshold edittext
                 final EditText lowerbound = new EditText(this);
-                lowerbound.setHint(getString(R.string.degreef));
+                lowerbound.setHint(mApp.air_temp_lower_threshold + getString(R.string.degreef));
                 lowerbound.setInputType(InputType.TYPE_CLASS_NUMBER);
                 lowerbound.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 lowerbound.setTextSize(24);
                 ll.addView(lowerbound);
 
-                final CheckBox mschecky = new CheckBox(this);
-                mschecky.setText(getString(R.string.send_push));
-                ll.addView(mschecky);
+                // lower threshold push notification check box
+                final CheckBox lower_threshold_push_notification_check_box = new CheckBox(this);
+                lower_threshold_push_notification_check_box.setText(getString(R.string.send_push));
+                ll.addView(lower_threshold_push_notification_check_box);
+                if (mApp.air_temp_lower_threshold==1){
+                    lower_threshold_push_notification_check_box.setChecked(true);
+                }
+                else {
+                    lower_threshold_push_notification_check_box.setChecked(false);
+                }
 
-                final CheckBox mscheckyA = new CheckBox(this);
-                ll.addView(mscheckyA);
-                mscheckyA.setText(getString(R.string.turn_off_fans));
+                // lower threshold turn off extra fans
+                final CheckBox lower_threshold_turn_off_extra_fans_checkbox = new CheckBox(this);
+                ll.addView(lower_threshold_turn_off_extra_fans_checkbox);
+                lower_threshold_turn_off_extra_fans_checkbox.setText(getString(R.string.turn_off_fans));
+                if (mApp.air_temp_lower_turn_off_fans==1) {
+                    lower_threshold_turn_off_extra_fans_checkbox.setChecked(true);
+                }
+                else {
+                    lower_threshold_turn_off_extra_fans_checkbox.setChecked(false);
+                }
 
-                final CheckBox mscheckyB = new CheckBox(this);
-                ll.addView(mscheckyB);
-                mscheckyB.setText(getString(R.string.turn_on_heating_element));
+                // lower threshold turn on heating element
+                final CheckBox air_temp_lower_turn_on_heating_element = new CheckBox(this);
+                ll.addView(air_temp_lower_turn_on_heating_element);
+                air_temp_lower_turn_on_heating_element.setText(getString(R.string.turn_on_heating_element));
+                if (mApp.air_temp_lower_turn_on_heating_element==1){
+                    air_temp_lower_turn_on_heating_element.setChecked(true);
+                }
+                else {
+                    air_temp_lower_turn_on_heating_element.setChecked(false);
+                }
 
-                final CheckBox mscheckyC = new CheckBox(this);
-                ll.addView(mscheckyC);
-                mscheckyC.setText(getString(R.string.turn_on_space_heater));
+                // lower threshold turn on space heater
+                final CheckBox lower_threshold_turn_on_space_heater_check_box = new CheckBox(this);
+                ll.addView(lower_threshold_turn_on_space_heater_check_box);
+                lower_threshold_turn_on_space_heater_check_box.setText(getString(R.string.turn_on_space_heater));
+                if (mApp.air_temp_lower_turn_on_space_heater==1){
+                    lower_threshold_turn_on_space_heater_check_box.setChecked(true);
+                }
+                else{
+                    lower_threshold_push_notification_check_box.setChecked(false);
+                }
 
+
+
+                // box for sending data to server
                 final Button buttsoup = new Button(this);
                 buttsoup.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup);
