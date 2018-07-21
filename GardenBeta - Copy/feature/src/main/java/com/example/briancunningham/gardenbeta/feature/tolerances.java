@@ -695,7 +695,6 @@ public class tolerances extends AppCompatActivity {
                     do_lower_add_hypochloric_acid.setChecked(false);
                 }
 
-
                 // save changes
                 final Button buttsoup6 = new Button(this);
                 buttsoup6.setText(getString(R.string.save_changes));
@@ -704,59 +703,105 @@ public class tolerances extends AppCompatActivity {
 
 
             case "Oxidation-Reduction Potential":
-                final TextView uppertext7 = new TextView(this);
-                uppertext7.setText(getString(R.string.orp_above));
-                uppertext7.setTextSize(24);
-                uppertext7.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext7.setPadding(8,8,8,8);
-                ll.addView(uppertext7);
+                // orp title
+                final TextView orp_title_text_view = new TextView(this);
+                orp_title_text_view.setText(getString(R.string.orp_above));
+                orp_title_text_view.setTextSize(24);
+                orp_title_text_view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                orp_title_text_view.setPadding(8,8,8,8);
+                ll.addView(orp_title_text_view);
 
-                final EditText upperbound7 = new EditText(this);
-                upperbound7.setHint(getString(R.string.ppm));
-                upperbound7.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                upperbound7.setInputType(InputType.TYPE_CLASS_NUMBER);
-                upperbound7.setTextSize(24);
-                ll.addView(upperbound7);
+                // upper bound edit text
+                final EditText orp_upper_bound_edit_text = new EditText(this);
+                orp_upper_bound_edit_text.setHint(mApp.orp_upper_threshold + getString(R.string.ppm));
+                orp_upper_bound_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                orp_upper_bound_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                orp_upper_bound_edit_text.setTextSize(24);
+                ll.addView(orp_upper_bound_edit_text);
 
-                final CheckBox mrchecky7 = new CheckBox(this);
-                mrchecky7.setText(getString(R.string.send_push));
-                ll.addView(mrchecky7);
+                // orp upper push notification
+                final CheckBox orp_upper_push_notification_checkbox = new CheckBox(this);
+                orp_upper_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(orp_upper_push_notification_checkbox);
+                if (mApp.orp_upper_push_notification==1){
+                    orp_upper_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    orp_upper_push_notification_checkbox.setChecked(false);
+                }
 
-                final CheckBox mrchecky7b = new CheckBox(this);
-                mrchecky7b.setText(getString(R.string.add_water));
-                ll.addView(mrchecky7b);
+                // orp add upper water checkbox
+                final CheckBox orp_upper_add_water_checkbox = new CheckBox(this);
+                orp_upper_add_water_checkbox.setText(getString(R.string.add_water));
+                ll.addView(orp_upper_add_water_checkbox);
+                if (mApp.orp_upper_add_water==1){
+                    orp_upper_add_water_checkbox.setChecked(true);
+                }
+                else {
+                    orp_upper_add_water_checkbox.setChecked(false);
+                }
 
+                // orp lower title
+                final TextView orp_lower_title = new TextView(this);
+                orp_lower_title.setText(getString(R.string.orp_below));
+                orp_lower_title.setTextSize(24);
+                orp_lower_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                orp_lower_title.setPadding(8,8,8,8);
+                ll.addView(orp_lower_title);
 
-                final TextView belowtext7 = new TextView(this);
-                belowtext7.setText(getString(R.string.orp_below));
-                belowtext7.setTextSize(24);
-                belowtext7.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                belowtext7.setPadding(8,8,8,8);
-                ll.addView(belowtext7);
+                // orp lower threshold edit text
+                final EditText orp_lower_threshold_edit_text = new EditText(this);
+                orp_lower_threshold_edit_text.setHint(mApp.orp_lower_threshold + getString(R.string.ppm));
+                orp_lower_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                orp_lower_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                orp_lower_threshold_edit_text.setTextSize(24);
+                ll.addView(orp_lower_threshold_edit_text);
 
-                final EditText lowerbound7 = new EditText(this);
-                lowerbound7.setHint(getString(R.string.ppm));
-                lowerbound7.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lowerbound7.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lowerbound7.setTextSize(24);
-                ll.addView(lowerbound7);
+                // orp lower push notification
+                final CheckBox orp_lower_push_notification_checkbox = new CheckBox(this);
+                orp_lower_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(orp_lower_push_notification_checkbox);
+                if (mApp.orp_lower_push_notification==1){
+                    orp_lower_push_notification_checkbox.setChecked(true);
+                }
+                else{
+                    orp_lower_push_notification_checkbox.setChecked(false);
+                }
 
-                final CheckBox mschecky7 = new CheckBox(this);
-                mschecky7.setText(getString(R.string.send_push));
-                ll.addView(mschecky7);
+                // orp lower add peroxide
+                final CheckBox orp_lower_add_peroxide_checkbox = new CheckBox(this);
+                orp_lower_add_peroxide_checkbox.setText(getString(R.string.add_peroxide));
+                ll.addView(orp_lower_add_peroxide_checkbox);
+                if (mApp.orp_lower_add_hydrogen_peroxide==1){
+                    orp_lower_add_peroxide_checkbox.setChecked(true);
+                }
+                else {
+                    orp_lower_add_peroxide_checkbox.setChecked(false);
+                }
 
-                final CheckBox mrchecky7d = new CheckBox(this);
-                mrchecky7d.setText(getString(R.string.add_peroxide));
-                ll.addView(mrchecky7d);
+                // orp lower add hypochloric
+                final CheckBox orp_lower_add_hypochloric_checkbox = new CheckBox(this);
+                orp_lower_add_hypochloric_checkbox.setText(getString(R.string.add_hypochloric));
+                ll.addView(orp_lower_add_hypochloric_checkbox);
+                if (mApp.orp_lower_add_hydrogen_peroxide==1){
+                    orp_lower_add_hypochloric_checkbox.setChecked(true);
+                }
+                else {
+                    orp_lower_add_hypochloric_checkbox.setChecked(false);
+                }
 
-                final CheckBox mrchecky7e = new CheckBox(this);
-                mrchecky7e.setText(getString(R.string.add_hypochloric));
-                ll.addView(mrchecky7e);
+                // orp add base
+                final CheckBox orp_lower_add_base = new CheckBox(this);
+                orp_lower_add_base.setText(getString(R.string.add_base));
+                ll.addView(orp_lower_add_base);
+                if (mApp.orp_lower_add_base==1){
+                    orp_lower_add_peroxide_checkbox.setChecked(true);
+                }
+                else {
+                    orp_lower_add_peroxide_checkbox.setChecked(false);
+                }
 
-                final CheckBox mrchecky7f = new CheckBox(this);
-                mrchecky7f.setText(getString(R.string.add_base));
-                ll.addView(mrchecky7f);
-
+                // save changes
                 final Button buttsoup7 = new Button(this);
                 buttsoup7.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup7);
