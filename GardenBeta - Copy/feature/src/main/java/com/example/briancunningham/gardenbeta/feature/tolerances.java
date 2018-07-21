@@ -33,6 +33,7 @@ public class tolerances extends AppCompatActivity {
         switch (getIntent().getStringExtra("parameter_name")) {
             case "Air Temperature":
 
+                // title display
                 final TextView uppertext = new TextView(this);
                 uppertext.setText(getString(R.string.air_temp_above));
                 uppertext.setTextSize(24);
@@ -40,25 +41,46 @@ public class tolerances extends AppCompatActivity {
                 uppertext.setPadding(8,8,8,8);
                 ll.addView(uppertext);
 
+                // logic for displaying current upper bound settings
                 final EditText upperbound = new EditText(this);
-                upperbound.setHint(getString(R.string.degreef));
+                upperbound.setHint(mApp.air_temp_upper_threshold +  getString(R.string.degreef));
                 upperbound.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 upperbound.setInputType(InputType.TYPE_CLASS_NUMBER);
                 upperbound.setTextSize(24);
                 ll.addView(upperbound);
 
+                //upper bound checkbox display logic
+                final CheckBox air_temp_upper_checkbox = new CheckBox(this);
+                air_temp_upper_checkbox.setText(getString(R.string.send_push));
+                if (mApp.air_temp_upper_pushnotification==1){
+                    air_temp_upper_checkbox.setChecked(true);
+                }
+                else{
+                    air_temp_upper_checkbox.setChecked(false);
+                }
+                ll.addView(air_temp_upper_checkbox);
 
-                final CheckBox mrchecky = new CheckBox(this);
-                mrchecky.setText(getString(R.string.send_push));
-                ll.addView(mrchecky);
+                // upper air temp extra fans on display code
+                final CheckBox air_temp_upper_on_extra_fans = new CheckBox(this);
+                ll.addView(air_temp_upper_on_extra_fans);
+                air_temp_upper_on_extra_fans.setText(getString(R.string.turn_on_fans));
+                if (mApp.air_temp_upper_turn_on_fans==1){
+                    air_temp_upper_on_extra_fans.setChecked(true);
+                    }
+                else{
+                    air_temp_upper_on_extra_fans.setChecked(false);
+                }
 
-                final CheckBox mrcheckyA = new CheckBox(this);
-                ll.addView(mrcheckyA);
-                mrcheckyA.setText(getString(R.string.turn_on_fans));
-
-                final CheckBox mrcheckyB = new CheckBox(this);
-                ll.addView(mrcheckyB);
-                mrcheckyB.setText(getString(R.string.turn_off_heating_element));
+                // upper air temp space heating off
+                final CheckBox upper_air_temp_space_heating_checkbox = new CheckBox(this);
+                ll.addView(upper_air_temp_space_heating_checkbox);
+                upper_air_temp_space_heating_checkbox.setText(getString(R.string.turn_off_heating_element));
+                if (mApp.air_temp_upper_turn_off_space_heater==1){
+                    upper_air_temp_space_heating_checkbox.setChecked(true);
+                }
+                else{
+                    upper_air_temp_space_heating_checkbox.setChecked(false);
+                }
 
                 final CheckBox mrcheckyC = new CheckBox(this);
                 ll.addView(mrcheckyC);
@@ -97,7 +119,6 @@ public class tolerances extends AppCompatActivity {
                 final Button buttsoup = new Button(this);
                 buttsoup.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup);
-
                 break;
 
             case "Humidity":
