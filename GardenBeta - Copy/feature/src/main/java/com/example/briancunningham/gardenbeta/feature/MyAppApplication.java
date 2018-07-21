@@ -1,6 +1,7 @@
 package com.example.briancunningham.gardenbeta.feature;
 
 import android.app.Application;
+import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -10,6 +11,85 @@ import java.util.Date;
 public class MyAppApplication extends Application {
 
     private final ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
+    public float air_temp_upper_threshold=80;
+    public float air_temp_upper_pushnotification=1;
+    public float air_temp_upper_turn_on_fans=1;
+    public float air_temp_upper_turn_off_heating_element=1;
+    public float air_temp_upper_turn_off_space_heater=1;
+
+    public float air_temp_lower_threshold=70;
+    public float air_temp_lower_pushnotification=0;
+    public float air_temp_lower_turn_off_fans=0;
+    public float air_temp_lower_turn_on_heating_element=1;
+    public float air_temp_lower_turn_on_space_heater=1;
+
+    public float humidity_upper_threshold=80;
+    public float humidity_upper_pushnotification=0;
+    public float humidity_upper_turn_on_extra_fans=1;
+    public float humidity_upper_turn_off_fogger=1;
+    public float humidity_upper_turn_on_space_heater=0;
+
+    public float humidity_lower_threshold=40;
+    public float humidity_lower_pushnotification=0;
+    public float humidity_lower_turn_off_extra_fans=0;
+    public float humidity_lower_turn_off_space_heater=1;
+
+    public float TVOC_upper_threshold=800;
+    public float TVOC_upper_pushnotifications=0;
+
+    public float TVOC_lower_threshold=400;
+    public float TVOC_lower_pushnotification=0;
+
+    public float CO2_upper_threshold=800;
+    public float CO2_upper_pushnotifications=0;
+
+    public float CO2_lower_threshold=400;
+    public float CO2_lower_pushnotification=0;
+
+    public float slntemp_upper_threshold=80;
+    public float slntemp_upper_pushnotification=0;
+    public float slntemp_upper_turn_off_space_heater=1;
+    public float slntemp_upper_turn_off_heating_element=1;
+
+    public float slntemp_lower_threshold=70;
+    public float slntemp_lower_pushnotification=0;
+    public float slntemp_lower_turn_on_space_heater=0;
+    public float slntemp_lower_turn_on_heating_element=1;
+
+    public float tds_upper_threshold=600;
+    public float tds_upper_push_notification=0;
+    public float tds_upper_add_water=1;
+
+    public float tds_lower_threshold=300;
+    public float tds_lower_pushnotification=0;
+    public float tds_add_florabloom=0;
+    public float tds_add_floragro=1;
+    public float tds_add_floramicro=0;
+
+    public float do_upper_threshold=500;
+    public float do_upper_push_notification=0;
+    public float do_upper_add_water=1;
+
+    public float do_lower_threshold=300;
+    public float do_lower_push_notification=0;
+    public float do_lower_add_hypochloric_acid=1;
+    public float do_lower_add_hydrogen_peroxide=0;
+
+    public float orp_upper_threshold=500;
+    public float orp_upper_push_notification=0;
+    public float orp_upper_add_water=0;
+
+    public float orp_lower_threshold=400;
+    public float orp_lower_push_notification=0;
+    public float orp_lower_add_hydrogen_peroxide=0;
+    public float orp_lower_add_hypochloric_acid=0;
+    public float orp_lower_add_base=1;
+
+    public float reservoirs_need_refilling=1;
+    public float canopy_height_checkpoint=40;
+    public float canopy_height_push_notification=1;
+    public float light_height_target=10;
+    public float light_height_adjustment_push_notification=1;
 
 // --Commented out by Inspection START (5/19/2018 11:17 AM):
 //        public void testingmessage(){
@@ -21,6 +101,89 @@ public class MyAppApplication extends Application {
             return recordedData.size();
     }
 
+    public void showusersettings(){
+        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_threshold);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_pushnotification);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_turn_on_fans);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_turn_off_heating_element);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_turn_off_space_heater);
+
+        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_threshold);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_pushnotification);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_turn_off_fans);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_turn_on_heating_element);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_turn_on_space_heater);
+
+        Log.d("usersettings","air temperature upper bound is " + humidity_upper_threshold);
+        Log.d("usersettings","air temperature upper bound is " + humidity_upper_pushnotification);
+        Log.d("usersettings","air temperature upper bound is " + humidity_upper_turn_on_extra_fans);
+        Log.d("usersettings","air temperature upper bound is " + humidity_upper_turn_off_fogger);
+        Log.d("usersettings","air temperature upper bound is " + humidity_upper_turn_on_space_heater);
+
+        Log.d("usersettings","air temperature upper bound is " + humidity_lower_threshold);
+        Log.d("usersettings","air temperature upper bound is " + humidity_lower_pushnotification);
+        Log.d("usersettings","air temperature upper bound is " + humidity_lower_turn_off_extra_fans);
+        Log.d("usersettings","air temperature upper bound is " + humidity_lower_turn_off_space_heater);
+
+        Log.d("usersettings","air temperature upper bound is " + TVOC_upper_threshold);
+        Log.d("usersettings","air temperature upper bound is " + TVOC_upper_pushnotifications);
+
+        Log.d("usersettings","air temperature upper bound is " + TVOC_lower_threshold);
+        Log.d("usersettings","air temperature upper bound is " + TVOC_lower_pushnotification);
+
+        Log.d("usersettings","air temperature upper bound is " + CO2_upper_threshold);
+        Log.d("usersettings","air temperature upper bound is " + CO2_upper_pushnotifications);
+
+        Log.d("usersettings","air temperature upper bound is " + CO2_lower_threshold);
+        Log.d("usersettings","air temperature upper bound is " + CO2_lower_pushnotification);
+
+        Log.d("usersettings","air temperature upper bound is " + slntemp_upper_threshold);
+        Log.d("usersettings","air temperature upper bound is " + slntemp_upper_pushnotification);
+        Log.d("usersettings","air temperature upper bound is " + slntemp_upper_turn_off_space_heater);
+        Log.d("usersettings","air temperature upper bound is " + slntemp_upper_turn_off_heating_element);
+
+        Log.d("usersettings","air temperature upper bound is " + slntemp_lower_threshold);
+        Log.d("usersettings","air temperature upper bound is " + slntemp_lower_pushnotification);
+        Log.d("usersettings","air temperature upper bound is " + slntemp_lower_turn_on_space_heater);
+        Log.d("usersettings","air temperature upper bound is " + slntemp_lower_turn_on_heating_element);
+
+        Log.d("usersettings","air temperature upper bound is " + tds_upper_threshold);
+        Log.d("usersettings","air temperature upper bound is " + tds_upper_push_notification);
+        Log.d("usersettings","air temperature upper bound is " + tds_upper_add_water);
+
+        Log.d("usersettings","air temperature upper bound is " + tds_lower_threshold);
+        Log.d("usersettings","air temperature upper bound is " + tds_lower_pushnotification);
+        Log.d("usersettings","air temperature upper bound is " + tds_add_florabloom);
+        Log.d("usersettings","air temperature upper bound is " + tds_add_floragro);
+        Log.d("usersettings","air temperature upper bound is " + tds_add_floramicro);
+
+        Log.d("usersettings","air temperature upper bound is " + do_upper_threshold);
+        Log.d("usersettings","air temperature upper bound is " + do_upper_push_notification);
+        Log.d("usersettings","air temperature upper bound is " + do_upper_add_water);
+
+        Log.d("usersettings","air temperature upper bound is " + do_lower_threshold);
+        Log.d("usersettings","air temperature upper bound is " + do_lower_push_notification);
+        Log.d("usersettings","air temperature upper bound is " + do_lower_add_hypochloric_acid);
+        Log.d("usersettings","air temperature upper bound is " + do_lower_add_hydrogen_peroxide);
+
+        Log.d("usersettings","air temperature upper bound is " + orp_upper_threshold);
+        Log.d("usersettings","air temperature upper bound is " + orp_upper_push_notification);
+        Log.d("usersettings","air temperature upper bound is " + orp_upper_add_water);
+
+        Log.d("usersettings","air temperature upper bound is " + orp_lower_threshold);
+        Log.d("usersettings","air temperature upper bound is " + orp_lower_push_notification);
+        Log.d("usersettings","air temperature upper bound is " + orp_lower_add_hydrogen_peroxide);
+        Log.d("usersettings","air temperature upper bound is " + orp_lower_add_hypochloric_acid);
+        Log.d("usersettings","air temperature upper bound is " +  orp_lower_add_base);
+
+        Log.d("usersettings","air temperature upper bound is " + reservoirs_need_refilling);
+        Log.d("usersettings","air temperature upper bound is " + canopy_height_checkpoint);
+        Log.d("usersettings","air temperature upper bound is " + canopy_height_push_notification);
+        Log.d("usersettings","air temperature upper bound is " + light_height_target);
+        Log.d("usersettings","air temperature upper bound is " + light_height_adjustment_push_notification);
+
+        return;
+    };
     public void addavalue() {
         verynicedatapoint temppoint = new verynicedatapoint();
         this.recordedData.add(temppoint);

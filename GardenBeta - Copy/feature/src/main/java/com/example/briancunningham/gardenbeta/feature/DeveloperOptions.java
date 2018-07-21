@@ -93,6 +93,19 @@ public class DeveloperOptions extends AppCompatActivity {
             }
         });
 
+        Button airtempchangebutton = findViewById(R.id.button6);
+        airtempchangebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mApp.air_temp_upper_threshold=66;
+                mApp.showusersettings();
+                Snackbar.make(view, "Spoofed Data. Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+
+            }
+        });
+
+
         Button txtbutton = findViewById(R.id.button);
         txtbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -115,6 +128,16 @@ public class DeveloperOptions extends AppCompatActivity {
             }
         });
 
+
+        Button usersettingsprintbutton = findViewById(R.id.button5);
+        usersettingsprintbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mApp.showusersettings();
+                Log.d("usersettings","got to user settings");
+                //Snackbar.make(view, " Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
+                //        .setAction("Action", null).show();
+            }});
 
         Button readbutton = findViewById(R.id.button2);
         readbutton.setOnClickListener(new View.OnClickListener() {

@@ -75,6 +75,20 @@
                 android:layout_height="wrap_content"
                 android:text="Update with Data from Server"
                 tools:text="Update with Data from Server" />
+
+            <Button
+                android:id="@+id/button5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="print current user settings"
+                tools:text="print current user settings" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="change upper bound"
+                tools:text="change upper bound" />
         </LinearLayout>
     </ScrollView>
 
