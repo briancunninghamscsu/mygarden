@@ -273,17 +273,25 @@ public class tolerances extends AppCompatActivity {
                 ll.addView(TVOC_title);
 
                 // TVOC upper threshold edit text
-                final EditText upperbound2 = new EditText(this);
-                upperbound2.setHint(getString(R.string.ppm));
-                upperbound2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                upperbound2.setInputType(InputType.TYPE_CLASS_NUMBER);
-                upperbound2.setTextSize(24);
-                ll.addView(upperbound2);
+                final EditText tvoc_upper_edit_text = new EditText(this);
+                tvoc_upper_edit_text.setHint(getString(R.string.ppm));
+                tvoc_upper_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                tvoc_upper_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                tvoc_upper_edit_text.setTextSize(24);
+                ll.addView(tvoc_upper_edit_text);
 
-                final CheckBox mrchecky2 = new CheckBox(this);
-                mrchecky2.setText(getString(R.string.send_push));
-                ll.addView(mrchecky2);
+                // TVOC upper threshold push notifications
+                final CheckBox tvoc_upper_threshold_push_nofitications = new CheckBox(this);
+                tvoc_upper_threshold_push_nofitications.setText(getString(R.string.send_push));
+                ll.addView(tvoc_upper_threshold_push_nofitications);
+                if (mApp.humidity_upper_pushnotification==1){
+                    tvoc_upper_threshold_push_nofitications.setChecked(true);
+                }
+                else{
+                    tvoc_upper_threshold_push_nofitications.setChecked(false);
+                }
 
+                // TVOC lower threshold lower title
                 final TextView belowtext2 = new TextView(this);
                 belowtext2.setText(getString(R.string.TVOC_below));
                 belowtext2.setTextSize(24);
@@ -291,22 +299,32 @@ public class tolerances extends AppCompatActivity {
                 belowtext2.setPadding(8,8,8,8);
                 ll.addView(belowtext2);
 
-                final EditText lowerbound2 = new EditText(this);
-                lowerbound2.setHint(getString(R.string.ppm));
-                lowerbound2.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lowerbound2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lowerbound2.setTextSize(24);
-                ll.addView(lowerbound2);
+                // TVOC lower threshold edit text
+                final EditText tvoc_lower_threshold_edit_text = new EditText(this);
+                tvoc_lower_threshold_edit_text.setHint(mApp.TVOC_lower_threshold + getString(R.string.ppm));
+                tvoc_lower_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                tvoc_lower_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                tvoc_lower_threshold_edit_text.setTextSize(24);
+                ll.addView(tvoc_lower_threshold_edit_text);
 
-                final CheckBox mschecky2 = new CheckBox(this);
-                mschecky2.setText(getString(R.string.send_push));
-                ll.addView(mschecky2);
+                // TVOC lower push notification
+                final CheckBox tvoc_lower_push_notification_checkbox = new CheckBox(this);
+                tvoc_lower_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(tvoc_lower_push_notification_checkbox);
+                if (mApp.TVOC_lower_pushnotification==1){
+                    tvoc_lower_push_notification_checkbox.setChecked(true);
+                }
+                else{
+                    tvoc_lower_push_notification_checkbox.setChecked(false);
+                }
 
+                // save changes
                 final Button buttsoup2 = new Button(this);
                 buttsoup2.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup2);
 
                 break;
+
             case "CO2":
                 final TextView uppertext3 = new TextView(this);
                 uppertext3.setText(getString(R.string.CO2_above));
