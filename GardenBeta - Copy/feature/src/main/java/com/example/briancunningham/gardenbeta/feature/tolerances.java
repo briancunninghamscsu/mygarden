@@ -207,46 +207,72 @@ public class tolerances extends AppCompatActivity {
                     upper_humidity_turn_on_space_heater_checkbox.setChecked(true);
                 }
 
-                //
-                final TextView belowtext1 = new TextView(this);
-                belowtext1.setText(getString(R.string.hum_below));
-                belowtext1.setTextSize(24);
-                belowtext1.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                belowtext1.setPadding(8,8,8,8);
-                ll.addView(belowtext1);
+                // lower humidity title
+                final TextView lower_humidity_title = new TextView(this);
+                lower_humidity_title.setText(getString(R.string.hum_below));
+                lower_humidity_title.setTextSize(24);
+                lower_humidity_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lower_humidity_title.setPadding(8,8,8,8);
+                ll.addView(lower_humidity_title);
 
-                final EditText lowerbound1 = new EditText(this);
-                lowerbound1.setHint(getString(R.string.percentsign));
-                lowerbound1.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lowerbound1.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lowerbound1.setTextSize(24);
-                ll.addView(lowerbound1);
+                // lower humidity threshold edit text
+                final EditText lower_humidity_threshold_edit_text = new EditText(this);
+                lower_humidity_threshold_edit_text.setHint(mApp.humidity_lower_threshold + getString(R.string.percentsign));
+                lower_humidity_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lower_humidity_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lower_humidity_threshold_edit_text.setTextSize(24);
+                ll.addView(lower_humidity_threshold_edit_text);
 
-                final CheckBox mschecky1 = new CheckBox(this);
-                mschecky1.setText(getString(R.string.send_push));
-                ll.addView(mschecky1);
+                // lower humidity push notification check box
+                final CheckBox low_humidity_push_notification_check_box = new CheckBox(this);
+                low_humidity_push_notification_check_box.setText(getString(R.string.send_push));
+                ll.addView(low_humidity_push_notification_check_box);
+                if (mApp.humidity_lower_pushnotification==1){
+                    low_humidity_push_notification_check_box.setChecked(true);
+                }
+                else
+                {
+                    low_humidity_push_notification_check_box.setChecked(false);
+                }
 
-                final CheckBox mscheckyA1 = new CheckBox(this);
-                ll.addView(mscheckyA1);
-                mscheckyA1.setText(getString(R.string.turn_off_fans));
+                // low humidity turn off extra fans
+                final CheckBox low_humidity_turn_off_extra_fans = new CheckBox(this);
+                ll.addView(low_humidity_turn_off_extra_fans);
+                low_humidity_turn_off_extra_fans.setText(getString(R.string.turn_off_fans));
+                if (mApp.humidity_lower_turn_off_extra_fans==1){
+                    low_humidity_turn_off_extra_fans.setChecked(true);
+                }
+                else {
+                    low_humidity_turn_off_extra_fans.setChecked(false);
+                }
 
-                final CheckBox mscheckyB1 = new CheckBox(this);
-                ll.addView(mscheckyB1);
-                mscheckyB1.setText(getString(R.string.turn_off_space_heater));
+                // low humidity turn off space heater
+                final CheckBox low_humidty_turn_off_space_heater_checkbox = new CheckBox(this);
+                ll.addView(low_humidty_turn_off_space_heater_checkbox);
+                low_humidty_turn_off_space_heater_checkbox.setText(getString(R.string.turn_off_space_heater));
+                if (mApp.humidity_lower_turn_off_space_heater==1){
+                    low_humidity_turn_off_extra_fans.setChecked(true);
+                }
+                else{
+                    low_humidity_turn_off_extra_fans.setChecked(false);
+                }
 
+                //  submit changes button
                 final Button buttsoup1 = new Button(this);
                 buttsoup1.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup1);
-
                 break;
-            case "TVOC":
-                final TextView uppertext2 = new TextView(this);
-                uppertext2.setText(getString(R.string.TVOC_above));
-                uppertext2.setTextSize(24);
-                uppertext2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext2.setPadding(8,8,8,8);
-                ll.addView(uppertext2);
 
+            case "TVOC":
+                //TVOC upper title
+                final TextView TVOC_title = new TextView(this);
+                TVOC_title.setText(getString(R.string.TVOC_above));
+                TVOC_title.setTextSize(24);
+                TVOC_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                TVOC_title.setPadding(8,8,8,8);
+                ll.addView(TVOC_title);
+
+                // TVOC upper threshold edit text
                 final EditText upperbound2 = new EditText(this);
                 upperbound2.setHint(getString(R.string.ppm));
                 upperbound2.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
