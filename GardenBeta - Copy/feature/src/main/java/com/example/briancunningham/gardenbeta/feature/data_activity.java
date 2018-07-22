@@ -53,6 +53,9 @@ public class data_activity extends AppCompatActivity {
 
         GraphView graph = findViewById(R.id.graph);
 
+        TextView temperature_temp = findViewById(R.id.measurement_header);
+        TextView time_temp = findViewById(R.id.time_header);
+
         if (mApp.size() != 0) {     // we don't want to do anything if there is no data to crash
             int a;
             String unit_placeholder = "";
@@ -72,10 +75,9 @@ public class data_activity extends AppCompatActivity {
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Air Temperature " + getString(R.string.degreef));
 
                         //update the header
-                        TextView temperature_temp = findViewById(R.id.measurement_header);
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getAirtemplevel(mApp.size() - 1)), getString(R.string.degreef)));
-                        TextView time_temp = findViewById(R.id.time_header);
                         time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
                         break;
 
                     case "Humidity":
@@ -85,7 +87,12 @@ public class data_activity extends AppCompatActivity {
                         unit_placeholder = getString(R.string.percentsign);
 
                         // adjust the y-axis
-                        graph.getGridLabelRenderer().setVerticalAxisTitle("Relative Humidity in %");
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Humidity %");
+
+                        //update the header
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getAmbienthumiditylevel(mApp.size() - 1)), getString(R.string.percentsign)));
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
                         break;
                     case "TVOC":
 
@@ -94,8 +101,13 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("TVOC in PPM");
-                        unit_placeholder = getString(R.string.ppm);
+
+                        //update the header
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getCo2level(mApp.size() - 1)), getString(R.string.ppm)));
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
                         break;
+
                     case "Solution Temperature":
 
                         // add the data point to the graph
@@ -104,16 +116,27 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Temperature in " + getString(R.string.degreef));
+
+                        //update the header
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getSolutiontemplevel(mApp.size() - 1)), getString(R.string.degreef)));
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
                         break;
+
                     case "Total Dissolved Solids":
 
                         // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getTdslevel(a));
 
                         // adjust the y-axis
-                        unit_placeholder = getString(R.string.ppm);
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Total Dissolved Solids in PPM");
+
+                        //update the header
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getTdslevel(mApp.size() - 1)), getString(R.string.ppm)));
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
                         break;
+
                     case "Dissolved Oxygen":
 
                         // add the data point to the graph
@@ -122,7 +145,13 @@ public class data_activity extends AppCompatActivity {
                         // adjust the y-axis
                         unit_placeholder = getString(R.string.ppm);
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
+
+                        //update the header
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getDolevel(mApp.size() - 1)), getString(R.string.ppm)));
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
                         break;
+
                     case "Oxidation-Reduction Potential":
 
                         // add the data point to the graph
@@ -130,8 +159,13 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("ORP in mV");
-                        unit_placeholder = getString(R.string.mv);
+
+                        //update the header
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getOrplevel(mApp.size() - 1)), getString(R.string.mv)));
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
                         break;
+
                     case "pH":
 
                         // add the data point to the graph
@@ -139,35 +173,51 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("pH");
-                        unit_placeholder = getString(R.string.blank);
+
+                        //update the header
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getPhlevel(mApp.size() - 1)), getString(R.string.blank)));
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
                         break;
+
                     case "Reservoirs":
 
                         // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), 0);
-                        unit_placeholder = getString(R.string.blank);
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Tank Fullness");
+
                         break;
+
                     case "Canopy Height":
 
                         // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCanopyheightlevel(a));
-                        graph.getGridLabelRenderer().setVerticalAxisTitle("Canopy Height in cm");
 
                         // adjust the y-axis
-                        unit_placeholder = getString(R.string.centimeters);
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Canopy Height in cm");
+
+                        //update the header
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getCanopyheightlevel(mApp.size() - 1)), getString(R.string.centimeters)));
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
                         break;
+
                     case "Light Height":
 
                         // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getLightheight(a));
-                        graph.getGridLabelRenderer().setVerticalAxisTitle("Light Height in cm");
 
                         // adjust the y-axis
-                        unit_placeholder = getString(R.string.centimeters);
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Light Height in cm");
+
+                        //update the header
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getLightheight(mApp.size() - 1)), getString(R.string.centimeters)));
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
                         break;
+
                     default:
                 }
 
