@@ -26,7 +26,7 @@
                 android:padding="20dp" />
 
             <TextView
-                android:id="@+id/do_current_measurement"
+                android:id="@+id/measurement_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/ppm"
@@ -36,7 +36,7 @@
                 android:textStyle="bold" />
 
             <TextView
-                android:id="@+id/do_current_time"
+                android:id="@+id/time_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"

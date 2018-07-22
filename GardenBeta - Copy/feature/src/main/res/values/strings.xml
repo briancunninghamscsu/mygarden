@@ -42,7 +42,7 @@
     <string name="is_below">is below</string>
     <string name="i_want_to">I want to </string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
-
+    <string name="dubs">%s %s</string>
 
     <string name="air_temp_below">When the Air Temperature is below</string>
     <string name="air_temp_above">When the Air Temperature is above</string>

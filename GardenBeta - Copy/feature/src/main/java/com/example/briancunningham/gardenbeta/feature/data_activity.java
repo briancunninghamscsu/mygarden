@@ -64,76 +64,118 @@ public class data_activity extends AppCompatActivity {
                 DataPoint v = new DataPoint(0, 0);
                 switch (getIntent().getStringExtra("parameter_name")) {
                     case "Air Temperature":
-                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getAirtemplevel(a));
-                        graph.getGridLabelRenderer().setVerticalAxisTitle("Air Temperature " + getString(R.string.degreef));
-                        //unit_placeholder = getString(R.string.degreef);
 
-                        //updating header measurements with most recent (highest indexed) measurement
-                        //String unit_suffix_adder = String.valueOf(mApp.getAirtemplevel(mApp.size() - 1));
-                        //unit_suffix_adder = unit_suffix_adder + unit_placeholder;
-                        TextView temperature_temp = findViewById(R.id.do_current_measurement);
-                        temperature_temp.setText(String.valueOf(mApp.getAirtemplevel(mApp.size() - 1)) + getString(R.string.degreef));
-                        TextView time_temp = findViewById(R.id.do_current_time);
+                        // add the data point to the graph
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getAirtemplevel(a));
+
+                        // adjust the y-axis
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Air Temperature " + getString(R.string.degreef));
+
+                        //update the header
+                        TextView temperature_temp = findViewById(R.id.measurement_header);
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getAirtemplevel(mApp.size() - 1)), getString(R.string.degreef)));
+                        TextView time_temp = findViewById(R.id.time_header);
                         time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
                         break;
+
                     case "Humidity":
+
+                        // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getAmbienthumiditylevel(a));
                         unit_placeholder = getString(R.string.percentsign);
+
+                        // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Relative Humidity in %");
                         break;
                     case "TVOC":
+
+                        // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
+
+                        // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("TVOC in PPM");
                         unit_placeholder = getString(R.string.ppm);
                         break;
                     case "Solution Temperature":
+
+                        // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
                         unit_placeholder = getString(R.string.degreef);
+
+                        // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Temperature in " + getString(R.string.degreef));
                         break;
                     case "Total Dissolved Solids":
+
+                        // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getTdslevel(a));
+
+                        // adjust the y-axis
                         unit_placeholder = getString(R.string.ppm);
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Total Dissolved Solids in PPM");
                         break;
                     case "Dissolved Oxygen":
+
+                        // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getDolevel(a));
+
+                        // adjust the y-axis
                         unit_placeholder = getString(R.string.ppm);
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
                         break;
                     case "Oxidation-Reduction Potential":
+
+                        // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getOrplevel(a));
+
+                        // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("ORP in mV");
                         unit_placeholder = getString(R.string.mv);
                         break;
                     case "pH":
+
+                        // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getPhlevel(a));
+
+                        // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("pH");
                         unit_placeholder = getString(R.string.blank);
                         break;
                     case "Reservoirs":
+
+                        // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), 0);
                         unit_placeholder = getString(R.string.blank);
+
+                        // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Tank Fullness");
                         break;
                     case "Canopy Height":
+
+                        // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCanopyheightlevel(a));
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Canopy Height in cm");
+
+                        // adjust the y-axis
                         unit_placeholder = getString(R.string.centimeters);
                         break;
                     case "Light Height":
+
+                        // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getLightheight(a));
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Light Height in cm");
+
+                        // adjust the y-axis
                         unit_placeholder = getString(R.string.centimeters);
                         break;
                     default:
                 }
 
-                values[a] = v; //saving the datapoints into an array for graphing later.
+                values[a] = v; //saving the data points into an array for graphing later.
             }
 
             //tying the graph from XML into the java
-            LineGraphSeries<DataPoint> series = new LineGraphSeries<>(values); //put the datapoints into the array used for graphing
+            LineGraphSeries<DataPoint> series = new LineGraphSeries<>(values); //put the data points into the array used for graphing
             graph.addSeries(series);
 
             //setting graph parameters

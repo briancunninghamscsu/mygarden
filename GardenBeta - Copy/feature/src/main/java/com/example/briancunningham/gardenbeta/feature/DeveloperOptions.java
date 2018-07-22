@@ -183,7 +183,7 @@ public class DeveloperOptions extends AppCompatActivity {
                 // myLoopjTask.executeLoopjCall("dogs");
                 InputStream myInputStream = new InputStream() {
                                                                   @Override
-                                                                  public int read() throws IOException { return 0;
+                                                                  public int read() { return 0;
                                                                   }
                                                               };
                 RequestParams params = new RequestParams();
