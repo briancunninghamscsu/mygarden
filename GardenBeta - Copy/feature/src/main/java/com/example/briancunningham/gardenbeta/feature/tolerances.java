@@ -1,22 +1,16 @@
 package com.example.briancunningham.gardenbeta.feature;
 
-import android.app.ActionBar;
 import android.app.Activity;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.Html;
 import android.text.InputType;
-import android.text.method.LinkMovementMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.RadioButton;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 public class tolerances extends AppCompatActivity {
 
@@ -649,7 +643,7 @@ public class tolerances extends AppCompatActivity {
 
                 // do upper turn extra air pumps off
                 final CheckBox do_upper_turn_extra_air_pumps_off = new CheckBox(this);
-                do_upper_turn_extra_air_pumps_off.setText(getString(R.string.add_water));
+                do_upper_turn_extra_air_pumps_off.setText(getString(R.string.turn_off_air_pump));
                 ll.addView(do_upper_turn_extra_air_pumps_off);
                 if (mApp.do_upper_turn_off_extra_pump==1){
                     do_upper_turn_extra_air_pumps_off.setChecked(true);
@@ -699,7 +693,7 @@ public class tolerances extends AppCompatActivity {
 
                 // do lower turn extra pumps on
                 final CheckBox do_lower_turn_extra_pumps_on= new CheckBox(this);
-                do_lower_turn_extra_pumps_on.setText(getString(R.string.add_water));
+                do_lower_turn_extra_pumps_on.setText(getString(R.string.turn_on_extra_air_pump));
                 ll.addView(do_lower_turn_extra_pumps_on);
                 if (mApp.do_lower_turn_on_extra_pump==1){
                     do_lower_turn_extra_pumps_on.setChecked(true);

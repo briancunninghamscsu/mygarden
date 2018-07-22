@@ -192,7 +192,6 @@ public class MyAppApplication extends Application {
         Log.d("usersettings","air temperature upper bound is " + light_height_target);
         Log.d("usersettings","air temperature upper bound is " + light_height_adjustment_push_notification);
 
-        return;
     }
 
     public void addavalue() {

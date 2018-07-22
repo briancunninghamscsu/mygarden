@@ -12,7 +12,6 @@
     <string name="last_updated_at_July_6_1989">Last Updated at July 6, 1989</string>
     <string name="time">Time</string>
     <string name="Measurement">Measurement</string>
-    <string name="Action">Action</string>
     <string name="Hello_There">Hello There!</string>
     <string name="Air_Temp">Air Temp</string>
     <string name="humidity">Humidity</string>
@@ -38,9 +37,6 @@
     <string name="send_a_string">Send a String</string>
     <string name="Spoof_Data">Spoof Data</string>
     <string name="Print_Data">Print Data</string>
-    <string name="When_the">When the</string>
-    <string name="is_below">is below</string>
-    <string name="i_want_to">I want to </string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
     <string name="dubs">%s %s</string>
     <string name="update_with_data_from_server">Update with Data from Serve</string>

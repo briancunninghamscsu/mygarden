@@ -29,10 +29,8 @@ public class verynicedatapoint implements Parcelable {
         private String datapointdatetime;
         private Date datapointinDateFormat;
         private String action;
-        private String Date;
-        private String Time;
 
-        private verynicedatapoint(Parcel input){
+    private verynicedatapoint(Parcel input){
             airtemplevel = input.readFloat();
             ambienthumiditylevel = input.readFloat();
             canopyheightlevel = input.readFloat();
@@ -108,8 +106,8 @@ public class verynicedatapoint implements Parcelable {
             this.phlevel = phlevel;
             this.solutiontemplevel = solutiontemplevel;
             this.reservoirs = reservoirs;
-            this.Date = date;
-            this.Time = time;
+            String date1 = date;
+            String time1 = time;
 
             //gotta have it in SDF format if you want to plot the points
             String string = date + " AD at " + time;
@@ -179,8 +177,7 @@ public class verynicedatapoint implements Parcelable {
             Log.e("Subtroutine","yougottothe end");
 
 
-            Date c = Calendar.getInstance().getTime();
-            this.datapointinDateFormat = c;
+            this.datapointinDateFormat = Calendar.getInstance().getTime();
             SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
             //this.datapointdatetime = sdf.format(c);
 

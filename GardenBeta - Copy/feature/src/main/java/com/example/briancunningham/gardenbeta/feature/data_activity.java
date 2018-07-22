@@ -84,7 +84,6 @@ public class data_activity extends AppCompatActivity {
 
                         // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getAmbienthumiditylevel(a));
-                        unit_placeholder = getString(R.string.percentsign);
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Humidity %");
@@ -112,7 +111,6 @@ public class data_activity extends AppCompatActivity {
 
                         // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
-                        unit_placeholder = getString(R.string.degreef);
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Temperature in " + getString(R.string.degreef));
@@ -143,7 +141,6 @@ public class data_activity extends AppCompatActivity {
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getDolevel(a));
 
                         // adjust the y-axis
-                        unit_placeholder = getString(R.string.ppm);
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
 
                         //update the header
