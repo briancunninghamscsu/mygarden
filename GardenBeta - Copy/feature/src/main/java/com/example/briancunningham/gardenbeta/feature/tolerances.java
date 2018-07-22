@@ -919,49 +919,68 @@ public class tolerances extends AppCompatActivity {
                 break;
 
             case "Canopy Height":
-                final TextView uppertext10 = new TextView(this);
-                uppertext10.setText(getString(R.string.canopy_height_trigger));
-                uppertext10.setTextSize(24);
-                uppertext10.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext10.setPadding(8,8,8,8);
-                ll.addView(uppertext10);
+                // canopy height title
+                final TextView canopy_height_title = new TextView(this);
+                canopy_height_title.setText(getString(R.string.canopy_height_trigger));
+                canopy_height_title.setTextSize(24);
+                canopy_height_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                canopy_height_title.setPadding(8,8,8,8);
+                ll.addView(canopy_height_title);
 
-                final EditText lowerbound10 = new EditText(this);
-                lowerbound10.setHint(getString(R.string.centimeters));
-                lowerbound10.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lowerbound10.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lowerbound10.setTextSize(24);
-                ll.addView(lowerbound10);
+                // canopy height marker
+                final EditText canopy_height_marker = new EditText(this);
+                canopy_height_marker.setHint(mApp.canopy_height_checkpoint + getString(R.string.centimeters));
+                canopy_height_marker.setInputType(InputType.TYPE_CLASS_NUMBER);
+                canopy_height_marker.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                canopy_height_marker.setTextSize(24);
+                ll.addView(canopy_height_marker);
 
-                final CheckBox mrchecky11 = new CheckBox(this);
-                mrchecky11.setText(getString(R.string.send_push_once));
-                ll.addView(mrchecky11);
+                // canopy push notifications
+                final CheckBox canopy_push_notification_checkbox = new CheckBox(this);
+                canopy_push_notification_checkbox.setText(getString(R.string.send_push_once));
+                ll.addView(canopy_push_notification_checkbox);
+                if (mApp.canopy_height_push_notification==1){
+                    canopy_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    canopy_push_notification_checkbox.setChecked(false);
+                }
 
+                // save changes
                 final Button buttsoup10 = new Button(this);
                 buttsoup10.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup10);
                 break;
 
             case "Light Height":
-                final TextView uppertext12 = new TextView(this);
-                uppertext12.setText(getString(R.string.light_height));
-                uppertext12.setTextSize(24);
-                uppertext12.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext12.setPadding(8,8,8,8);
-                ll.addView(uppertext12);
+                // light height titles
+                final TextView light_height_title = new TextView(this);
+                light_height_title.setText(getString(R.string.light_height));
+                light_height_title.setTextSize(24);
+                light_height_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                light_height_title.setPadding(8,8,8,8);
+                ll.addView(light_height_title);
 
-                final EditText lowerbound11 = new EditText(this);
-                lowerbound11.setHint(getString(R.string.centimeters));
-                lowerbound11.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lowerbound11.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lowerbound11.setTextSize(24);
-                ll.addView(lowerbound11);
+                // light height target
+                final EditText light_height_edit_text = new EditText(this);
+                light_height_edit_text.setHint(mApp.light_height_target + getString(R.string.centimeters));
+                light_height_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                light_height_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                light_height_edit_text.setTextSize(24);
+                ll.addView(light_height_edit_text);
 
+                // light height push checkbox
+                final CheckBox light_height_push_checkbox = new CheckBox(this);
+                light_height_push_checkbox.setText(getString(R.string.send_push_lights));
+                ll.addView(light_height_push_checkbox);
+                if (mApp.light_height_adjustment_push_notification==1){
+                    light_height_push_checkbox.setChecked(true);
+                }
+                else {
+                    light_height_push_checkbox.setChecked(false);
+                }
 
-                final CheckBox mrchecky12 = new CheckBox(this);
-                mrchecky12.setText(getString(R.string.send_push_lights));
-                ll.addView(mrchecky12);
-
+                // push changes
                 final Button buttsoup12 = new Button(this);
                 buttsoup12.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup12);
