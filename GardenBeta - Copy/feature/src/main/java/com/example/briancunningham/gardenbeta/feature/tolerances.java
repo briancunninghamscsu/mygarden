@@ -274,7 +274,7 @@ public class tolerances extends AppCompatActivity {
 
                 // TVOC upper threshold edit text
                 final EditText tvoc_upper_edit_text = new EditText(this);
-                tvoc_upper_edit_text.setHint(getString(R.string.ppm));
+                tvoc_upper_edit_text.setHint(mApp.TVOC_upper_threshold + getString(R.string.ppm));
                 tvoc_upper_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 tvoc_upper_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
                 tvoc_upper_edit_text.setTextSize(24);

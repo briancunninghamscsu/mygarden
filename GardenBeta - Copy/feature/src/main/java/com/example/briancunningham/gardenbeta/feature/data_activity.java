@@ -61,62 +61,70 @@ public class data_activity extends AppCompatActivity {
 
             for (a = 0; a < mApp.size(); a++) { //setting up the x and y values for the graph.
                 //implementing a case statement to do get the right graph, and to get the right units
-                DataPoint v = new DataPoint(0,0);
-                switch (getIntent().getStringExtra("parameter_name")){
+                DataPoint v = new DataPoint(0, 0);
+                switch (getIntent().getStringExtra("parameter_name")) {
                     case "Air Temperature":
-                        v = new DataPoint (mApp.getDatapointinDateFormat(a), mApp.getAirtemplevel(a));
-                        graph.getGridLabelRenderer().setVerticalAxisTitle("Air Temperature in Degrees Fahrenheit");
-                        unit_placeholder=getString(R.string.degreef);
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getAirtemplevel(a));
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Air Temperature " + getString(R.string.degreef));
+                        //unit_placeholder = getString(R.string.degreef);
+
+                        //updating header measurements with most recent (highest indexed) measurement
+                        //String unit_suffix_adder = String.valueOf(mApp.getAirtemplevel(mApp.size() - 1));
+                        //unit_suffix_adder = unit_suffix_adder + unit_placeholder;
+                        TextView temperature_temp = findViewById(R.id.do_current_measurement);
+                        temperature_temp.setText(String.valueOf(mApp.getAirtemplevel(mApp.size() - 1)) + getString(R.string.degreef));
+                        TextView time_temp = findViewById(R.id.do_current_time);
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
                         break;
                     case "Humidity":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getAmbienthumiditylevel(a));
-                        unit_placeholder=getString(R.string.percentsign);
+                        unit_placeholder = getString(R.string.percentsign);
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Relative Humidity in %");
                         break;
-                    case "TVOC":    //TODO:co2 change
+                    case "TVOC":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
                         graph.getGridLabelRenderer().setVerticalAxisTitle("TVOC in PPM");
-                        unit_placeholder=getString(R.string.ppm);
+                        unit_placeholder = getString(R.string.ppm);
                         break;
                     case "Solution Temperature":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
-                        unit_placeholder=getString(R.string.degreef);
-                        graph.getGridLabelRenderer().setVerticalAxisTitle("Solution Temp in Degrees Fahrenheit");
+                        unit_placeholder = getString(R.string.degreef);
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Temperature in " + getString(R.string.degreef));
                         break;
                     case "Total Dissolved Solids":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getTdslevel(a));
-                        unit_placeholder=getString(R.string.ppm);
+                        unit_placeholder = getString(R.string.ppm);
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Total Dissolved Solids in PPM");
                         break;
                     case "Dissolved Oxygen":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getDolevel(a));
-                        unit_placeholder=getString(R.string.ppm);
+                        unit_placeholder = getString(R.string.ppm);
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
                         break;
                     case "Oxidation-Reduction Potential":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getOrplevel(a));
                         graph.getGridLabelRenderer().setVerticalAxisTitle("ORP in mV");
-                        unit_placeholder=getString(R.string.mv);
+                        unit_placeholder = getString(R.string.mv);
                         break;
                     case "pH":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getPhlevel(a));
                         graph.getGridLabelRenderer().setVerticalAxisTitle("pH");
-                        unit_placeholder=getString(R.string.blank);
+                        unit_placeholder = getString(R.string.blank);
                         break;
                     case "Reservoirs":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), 0);
-                        unit_placeholder=getString(R.string.blank);
+                        unit_placeholder = getString(R.string.blank);
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Tank Fullness");
                         break;
                     case "Canopy Height":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCanopyheightlevel(a));
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Canopy Height in cm");
-                        unit_placeholder=getString(R.string.centimeters);
+                        unit_placeholder = getString(R.string.centimeters);
                         break;
                     case "Light Height":
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getLightheight(a));
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Light Height in cm");
-                        unit_placeholder=getString(R.string.centimeters);
+                        unit_placeholder = getString(R.string.centimeters);
                         break;
                     default:
                 }
@@ -138,58 +146,76 @@ public class data_activity extends AppCompatActivity {
 
 
 
-
-            //making objects to display on the graph
-            /*final TextView[] datepoints = new TextView[mApp.size()]; // create an empty array;
-            final TextView[] measurepoints = new TextView[mApp.size()]; // create an empty array;
-            final TextView[] actionpoints = new TextView[mApp.size()]; // create an empty array;
-*/
             for (int i = mApp.size() - 1; i >= 0; i--) {    // decrementing loop, so that it goes from most recent to oldest
 
-            // creating new instances for each row and row-element
-            final TableRow aNewTableRow = new TableRow(this);
-            final TextView rowTextViewA = new TextView(this);
-            final TextView rowTextViewB = new TextView(this);
-            //final TextView rowTextViewC = new TextView(this);
+                // creating new instances for each row and row-element
+                final TableRow aNewTableRow = new TableRow(this);
+                final TextView rowTextViewA = new TextView(this);
+                final TextView rowTextViewB = new TextView(this);
 
-            // setting some properties of new TextViews
-            rowTextViewA.setText(mApp.getDatapointdatetime(i));
-            rowTextViewA.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            rowTextViewA.setPadding(20, 0, 0, 0);
-            String unit_suffix_adder = String.valueOf(mApp.getDolevel(i));
+                switch (getIntent().getStringExtra("parameter_name")) {
+                    case "Air Temperature":
+                        rowTextViewB.setText(String.valueOf(mApp.getAirtemplevel(i)));
+                        break;
+                    case "Humidity":
+                        rowTextViewB.setText(String.valueOf(mApp.getAmbienthumiditylevel(i)));
+                        break;
+                    case "TVOC":
+                        rowTextViewB.setText(String.valueOf(mApp.getCo2level(i)));
+                        break;
+                    case "Solution Temperature":
+                        rowTextViewB.setText(String.valueOf(mApp.getSolutiontemplevel(i)));
+                        break;
+                    case "Total Dissolved Solids":
+                        rowTextViewB.setText(String.valueOf(mApp.getTdslevel(i)));
+                        break;
+                    case "Dissolved Oxygen":
+                        rowTextViewB.setText(String.valueOf(mApp.getDolevel(i)));
+                        break;
+                    case "Oxidation-Reduction Potential":
+                        rowTextViewB.setText(String.valueOf(mApp.getOrplevel(i)));
+                        break;
+                    case "pH":
+                        rowTextViewB.setText(String.valueOf(mApp.getPhlevel(i)));
+                        break;
+                    case "Reservoirs":
+                        rowTextViewB.setText(String.valueOf(mApp.getReservoirs(i)));
+                        break;
+                    case "Canopy Height":
+                        rowTextViewB.setText(String.valueOf(mApp.getCanopyheightlevel(i)));
+                        break;
+                    case "Light Height":
+                        rowTextViewB.setText(String.valueOf(mApp.getLightheight(i)));
+                        break;
+                    default:
 
-            unit_suffix_adder = unit_suffix_adder + unit_placeholder;
-            rowTextViewB.setText(unit_suffix_adder);
-            rowTextViewB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            rowTextViewB.setPadding(0, 0, 0, 0);
+                }
 
-           /* rowTextViewC.setText(mApp.getAction(i));
-            rowTextViewC.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-            rowTextViewC.setPadding(0, 0, 20, 0);
-            rowTextViewC.setHeight(60);
-*/
-            // add the textview to the linearlayout
-            aNewTableRow.addView(rowTextViewA); // adding first column element to the new row
-            aNewTableRow.addView(rowTextViewB); // adding the second column element to the new row
-            //aNewTableRow.addView(rowTextViewC); // adding the third column element to the new row
-            tbllay.addView(aNewTableRow);   // adding the new row to the table layout
+                        // setting some properties of new TextViews
+                        rowTextViewA.setText(mApp.getDatapointdatetime(i));
+                        rowTextViewA.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                        rowTextViewA.setPadding(20, 0, 0, 0);
+                        // String unit_suffix_adder = String.valueOf(mApp.getDolevel(i));
+
+                        //unit_suffix_adder = unit_suffix_adder + unit_placeholder;
+                        //rowTextViewB.setText(unit_suffix_adder);
+                        rowTextViewB.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                        rowTextViewB.setPadding(0, 0, 0, 0);
+
+                        aNewTableRow.addView(rowTextViewA); // adding first column element to the new row
+                        aNewTableRow.addView(rowTextViewB); // adding the second column element to the new row
+                        tbllay.addView(aNewTableRow);   // adding the new row to the table layout
+                }
+
+
+        }
+
+        else{  // if there's no data to be found
+                    TextView tv = new TextView(this);
+                    tv.setText(getResources().getString(R.string.no_data_found));
+                    ll.addView(tv);
+                }
             }
-
-            // this block updates the header measurements
-            String unit_suffix_adder = String.valueOf(mApp.getDolevel(mApp.size() - 1));
-            unit_suffix_adder = unit_suffix_adder + unit_placeholder;
-            TextView nowtemp = findViewById(R.id.do_current_measurement);
-            nowtemp.setText(unit_suffix_adder);
-            TextView nowtime = findViewById(R.id.do_current_time);
-            nowtime.setText(mApp.getDatapointdatetime(mApp.size() - 1));
-        }
-
-        else {  // if there's no data to be found
-            TextView tv = new TextView(this);
-            tv.setText(getResources().getString(R.string.no_data_found));
-            ll.addView(tv);
-        }
-    }
 
 
     @Override
@@ -198,14 +224,6 @@ public class data_activity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_dating, menu);
         return true;
     }
-
-    /*private void setupActionBar() {
-        ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            // Show the Up button in the action bar.
-            //actionBar.setDisplayHomeAsUpEnabled(true);
-            }
-        }*/
 
 
     @Override
