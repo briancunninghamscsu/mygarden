@@ -33,6 +33,7 @@ public class MyAppApplication extends Application {
     public float humidity_lower_pushnotification=0;
     public float humidity_lower_turn_off_extra_fans=0;
     public float humidity_lower_turn_off_space_heater=1;
+    public float humidity_lower_turn_on_fogger=0;
 
     public float TVOC_upper_threshold=800;
     public float TVOC_upper_pushnotifications=0;

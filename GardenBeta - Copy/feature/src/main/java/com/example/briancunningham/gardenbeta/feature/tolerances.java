@@ -246,6 +246,18 @@ public class tolerances extends AppCompatActivity {
                     low_humidity_turn_off_extra_fans.setChecked(false);
                 }
 
+                // low humidity turn on fogger
+                final CheckBox low_humidity_turn_on_fogger = new CheckBox(this);
+                ll.addView(low_humidity_turn_on_fogger);
+                low_humidity_turn_on_fogger.setText(getString(R.string.turn_on_fogger));
+                if (mApp.humidity_lower_turn_on_fogger==1){
+                    low_humidity_turn_on_fogger.setChecked(true);
+                }
+                else {
+                    low_humidity_turn_on_fogger.setChecked(false);
+                }
+
+
                 // low humidity turn off space heater
                 final CheckBox low_humidty_turn_off_space_heater_checkbox = new CheckBox(this);
                 ll.addView(low_humidty_turn_off_space_heater_checkbox);

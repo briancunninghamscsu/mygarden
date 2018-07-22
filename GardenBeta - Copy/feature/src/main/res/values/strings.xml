@@ -43,6 +43,12 @@
     <string name="i_want_to">I want to </string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
     <string name="dubs">%s %s</string>
+    <string name="update_with_data_from_server">Update with Data from Serve</string>
+    <string name="print_current_user_settings">Print Current User Settings</string>
+    <string name="Change_Upper_bound">Change Upper Bound</string>
+
+
+
 
     <string name="air_temp_below">When the Air Temperature is below</string>
     <string name="air_temp_above">When the Air Temperature is above</string>
