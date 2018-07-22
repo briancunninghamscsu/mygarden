@@ -58,7 +58,6 @@ public class data_activity extends AppCompatActivity {
 
         if (mApp.size() != 0) {     // we don't want to do anything if there is no data to crash
             int a;
-            String unit_placeholder = "";
             DataPoint[] values = new DataPoint[mApp.size()]; //make an array of DataPoints, used for graphing
 
 

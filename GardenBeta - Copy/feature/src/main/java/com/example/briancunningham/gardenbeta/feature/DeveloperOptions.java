@@ -18,6 +18,7 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
 
+@SuppressWarnings("ALL")
 public class DeveloperOptions extends AppCompatActivity {
 
     @Override

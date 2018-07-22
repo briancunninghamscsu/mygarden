@@ -2,9 +2,7 @@ package com.example.briancunningham.gardenbeta.feature;
 
 import android.util.Log;
 
-public class parsemystringplease{
-    private MyAppApplication mApp;
-    private String thingtochew;
+class parsemystringplease{
 
     parsemystringplease(String thingtochew,MyAppApplication mApp){
 
