@@ -647,11 +647,23 @@ public class tolerances extends AppCompatActivity {
                     do_upper_threshold_push_notification_checkbox.setChecked(false);
                 }
 
+                // do upper turn extra air pumps off
+                final CheckBox do_upper_turn_extra_air_pumps_off = new CheckBox(this);
+                do_upper_turn_extra_air_pumps_off.setText(getString(R.string.add_water));
+                ll.addView(do_upper_turn_extra_air_pumps_off);
+                if (mApp.do_upper_turn_off_extra_pump==1){
+                    do_upper_turn_extra_air_pumps_off.setChecked(true);
+                }
+                else{
+                    do_upper_turn_extra_air_pumps_off.setChecked(false);
+                }
+
+
                 // do upper add water
                 final CheckBox do_upper_add_water_checkbox = new CheckBox(this);
                 do_upper_add_water_checkbox.setText(getString(R.string.add_water));
                 ll.addView(do_upper_add_water_checkbox);
-                if (mApp.tds_upper_add_water==1){
+                if (mApp.do_upper_add_water==1){
                     do_upper_add_water_checkbox.setChecked(true);
                 }
                 else{
@@ -684,6 +696,18 @@ public class tolerances extends AppCompatActivity {
                 else {
                     do_lower_send_push_notification_checkbox.setChecked(false);
                 }
+
+                // do lower turn extra pumps on
+                final CheckBox do_lower_turn_extra_pumps_on= new CheckBox(this);
+                do_lower_turn_extra_pumps_on.setText(getString(R.string.add_water));
+                ll.addView(do_lower_turn_extra_pumps_on);
+                if (mApp.do_lower_turn_on_extra_pump==1){
+                    do_lower_turn_extra_pumps_on.setChecked(true);
+                }
+                else{
+                    do_lower_turn_extra_pumps_on.setChecked(false);
+                }
+
 
                 // do lower add hypochloric acid
                 final CheckBox do_lower_add_hypochloric_acid = new CheckBox(this);

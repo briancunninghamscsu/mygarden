@@ -70,11 +70,13 @@ public class MyAppApplication extends Application {
     public float do_upper_threshold=500;
     public float do_upper_push_notification=0;
     public float do_upper_add_water=1;
+    public float do_upper_turn_off_extra_pump=1;
 
     public float do_lower_threshold=300;
     public float do_lower_push_notification=0;
     public float do_lower_add_hypochloric_acid=1;
     public float do_lower_add_hydrogen_peroxide=0;
+    public float do_lower_turn_on_extra_pump=1;
 
     public float orp_upper_threshold=500;
     public float orp_upper_push_notification=0;
