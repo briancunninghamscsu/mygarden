@@ -808,69 +808,111 @@ public class tolerances extends AppCompatActivity {
                 break;
 
             case "pH":
-                final TextView uppertext8 = new TextView(this);
-                uppertext8.setText(getString(R.string.pH_above));
-                uppertext8.setTextSize(24);
-                uppertext8.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext8.setPadding(8,8,8,8);
-                ll.addView(uppertext8);
 
-                final EditText upperbound8 = new EditText(this);
-                upperbound8.setHint(getString(R.string.ppm));
-                upperbound8.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                upperbound8.setInputType(InputType.TYPE_CLASS_NUMBER);
-                upperbound8.setTextSize(24);
-                ll.addView(upperbound8);
+                //ph title
+                final TextView pH_title = new TextView(this);
+                pH_title.setText(getString(R.string.pH_above));
+                pH_title.setTextSize(24);
+                pH_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                pH_title.setPadding(8,8,8,8);
+                ll.addView(pH_title);
 
-                final CheckBox mrchecky8 = new CheckBox(this);
-                mrchecky8.setText(getString(R.string.send_push));
-                ll.addView(mrchecky8);
+                // ph upper bound edit text
+                final EditText pH_upper_bound_edit_text = new EditText(this);
+                pH_upper_bound_edit_text.setHint(getString(R.string.ppm));
+                pH_upper_bound_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                pH_upper_bound_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                pH_upper_bound_edit_text.setTextSize(24);
+                ll.addView(pH_upper_bound_edit_text);
 
-                final CheckBox mrchecky8b = new CheckBox(this);
-                mrchecky8b.setText(getString(R.string.add_acid));
-                ll.addView(mrchecky8b);
+                // ph upper push notification
+                final CheckBox pH_upper_push_notification_checkbox = new CheckBox(this);
+                pH_upper_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(pH_upper_push_notification_checkbox);
+                if (mApp.pH_upper_push_notification==1){
+                    pH_upper_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    pH_upper_push_notification_checkbox.setChecked(false);
+                }
 
+                // pH upper add acid
+                final CheckBox ph_upper_add_acid_checkbox = new CheckBox(this);
+                ph_upper_add_acid_checkbox.setText(getString(R.string.add_acid));
+                ll.addView(ph_upper_add_acid_checkbox);
+                if (mApp.pH_upper_add_acid==1){
+                    ph_upper_add_acid_checkbox.setChecked(true);
+                }
+                else {
+                    ph_upper_add_acid_checkbox.setChecked(false);
+                }
 
-                final TextView belowtext8 = new TextView(this);
-                belowtext8.setText(getString(R.string.pH_below));
-                belowtext8.setTextSize(24);
-                belowtext8.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                belowtext8.setPadding(8,8,8,8);
-                ll.addView(belowtext8);
+                // lower title
+                final TextView lower_title_pH = new TextView(this);
+                lower_title_pH.setText(getString(R.string.pH_below));
+                lower_title_pH.setTextSize(24);
+                lower_title_pH.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lower_title_pH.setPadding(8,8,8,8);
+                ll.addView(lower_title_pH);
 
-                final EditText lowerbound8 = new EditText(this);
-                lowerbound8.setHint(getString(R.string.ppm));
-                lowerbound8.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lowerbound8.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lowerbound8.setTextSize(24);
-                ll.addView(lowerbound8);
+                // lower edit text
+                final EditText lower_ph_edit_text = new EditText(this);
+                lower_ph_edit_text.setHint(mApp.pH_lower_threshold + getString(R.string.ppm));
+                lower_ph_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lower_ph_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lower_ph_edit_text.setTextSize(24);
+                ll.addView(lower_ph_edit_text);
 
-                final CheckBox mschecky8 = new CheckBox(this);
-                mschecky8.setText(getString(R.string.send_push));
-                ll.addView(mschecky8);
+                // lower ph push notification checkbox
+                final CheckBox lower_ph_push_notification_checkbox = new CheckBox(this);
+                lower_ph_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(lower_ph_push_notification_checkbox);
+                if (mApp.pH_lower_push_notification==1){
+                    lower_ph_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    lower_ph_push_notification_checkbox.setChecked(false);
+                }
 
-                final CheckBox mrchecky8d = new CheckBox(this);
-                mrchecky8d.setText(getString(R.string.add_base));
-                ll.addView(mrchecky8d);
+                // lower ph add base checkbox
+                final CheckBox lower_ph_add_base_checkbox = new CheckBox(this);
+                lower_ph_add_base_checkbox.setText(getString(R.string.add_base));
+                ll.addView(lower_ph_add_base_checkbox);
+                if (mApp.pH_lower_add_base==1){
+                    lower_ph_add_base_checkbox.setChecked(true);
+                }
+                else{
+                    lower_ph_add_base_checkbox.setChecked(false);
+                }
 
+                // save changes
                 final Button buttsoup8 = new Button(this);
                 buttsoup8.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup8);
                 break;
 
             case "Reservoirs":
-                final TextView uppertext9 = new TextView(this);
-                uppertext9.setText(getString(R.string.reservoirs_low));
-                uppertext9.setTextSize(24);
-                uppertext9.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext9.setPadding(8,8,8,8);
-                ll.addView(uppertext9);
 
+                // reservoirs title
+                final TextView reservoirs_title_text_view = new TextView(this);
+                reservoirs_title_text_view.setText(getString(R.string.reservoirs_low));
+                reservoirs_title_text_view.setTextSize(24);
+                reservoirs_title_text_view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                reservoirs_title_text_view.setPadding(8,8,8,8);
+                ll.addView(reservoirs_title_text_view);
 
-                final CheckBox mrchecky10 = new CheckBox(this);
-                mrchecky10.setText(getString(R.string.send_push));
-                ll.addView(mrchecky10);
+                // reservoirs checkbox
+                final CheckBox reservoirs_checkbox = new CheckBox(this);
+                reservoirs_checkbox.setText(getString(R.string.send_push));
+                ll.addView(reservoirs_checkbox);
+                if (mApp.reservoirs_need_refilling==1){
+                    reservoirs_checkbox.setChecked(true);
+                }
+                else {
+                    reservoirs_checkbox.setChecked(false);
+                }
 
+                //save changes
                 final Button buttsoup9 = new Button(this);
                 buttsoup9.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup9);

@@ -85,6 +85,13 @@ public class MyAppApplication extends Application {
     public float orp_lower_add_hypochloric_acid=0;
     public float orp_lower_add_base=1;
 
+    public double pH_upper_threshold=6.5;
+    public double pH_lower_threshold=5.5;
+    public double pH_upper_add_acid=1;
+    public double pH_lower_add_base=1;
+    public double pH_upper_push_notification=0;
+    public double pH_lower_push_notification=0;
+
     public float reservoirs_need_refilling=1;
     public float canopy_height_checkpoint=40;
     public float canopy_height_push_notification=1;
@@ -174,7 +181,7 @@ public class MyAppApplication extends Application {
         Log.d("usersettings","air temperature upper bound is " + orp_lower_push_notification);
         Log.d("usersettings","air temperature upper bound is " + orp_lower_add_hydrogen_peroxide);
         Log.d("usersettings","air temperature upper bound is " + orp_lower_add_hypochloric_acid);
-        Log.d("usersettings","air temperature upper bound is " +  orp_lower_add_base);
+        Log.d("usersettings","air temperature upper bound is " + orp_lower_add_base);
 
         Log.d("usersettings","air temperature upper bound is " + reservoirs_need_refilling);
         Log.d("usersettings","air temperature upper bound is " + canopy_height_checkpoint);
