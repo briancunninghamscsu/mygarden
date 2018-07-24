@@ -89,6 +89,13 @@
                 android:layout_height="wrap_content"
                 android:text="@string/Change_Upper_bound"
                 tools:text="@string/Change_Upper_bound" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pull User Settings from @string/update_with_data_from_server"
+                tools:text="pull user settings from server" />
         </LinearLayout>
     </ScrollView>
 

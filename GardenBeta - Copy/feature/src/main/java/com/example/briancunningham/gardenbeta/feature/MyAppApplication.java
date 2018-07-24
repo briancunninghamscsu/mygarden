@@ -11,29 +11,30 @@ import java.util.Date;
 public class MyAppApplication extends Application {
 
     private final ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
-    public float air_temp_upper_threshold=80;
+
+    public double air_temp_upper_threshold=80;
     public final float air_temp_upper_pushnotification=1;
     public final float air_temp_upper_turn_on_fans=1;
     public final float air_temp_upper_turn_off_heating_element=1;
     public final float air_temp_upper_turn_off_space_heater=1;
 
-    public final float air_temp_lower_threshold=70;
+    public double air_temp_lower_threshold=70;
     public final float air_temp_lower_pushnotification=0;
     public final float air_temp_lower_turn_off_fans=0;
     public final float air_temp_lower_turn_on_heating_element=1;
     public final float air_temp_lower_turn_on_space_heater=1;
 
-    public final float humidity_upper_threshold=80;
+    public double humidity_upper_threshold=80;
     public final float humidity_upper_pushnotification=0;
     public final float humidity_upper_turn_on_extra_fans=1;
     public final float humidity_upper_turn_off_fogger=1;
     public final float humidity_upper_turn_on_space_heater=0;
 
-    public final float humidity_lower_threshold=40;
+    public double humidity_lower_threshold=40;
     public final float humidity_lower_pushnotification=0;
     public final float humidity_lower_turn_off_extra_fans=0;
     public final float humidity_lower_turn_off_space_heater=1;
-    // --Commented out by Inspection (7/21/2018 10:00 PM):public final float humidity_lower_turn_on_fogger=0;
+    public final float humidity_lower_turn_on_fogger=0;
 
     public final float TVOC_upper_threshold=800;
     public final float TVOC_upper_pushnotifications=0;
@@ -70,13 +71,13 @@ public class MyAppApplication extends Application {
     public final float do_upper_threshold=500;
     public final float do_upper_push_notification=0;
     public final float do_upper_add_water=1;
-    // --Commented out by Inspection (7/21/2018 10:00 PM):public final float do_upper_turn_off_extra_pump=1;
+    public final float do_upper_turn_off_extra_pump=1;
 
     public final float do_lower_threshold=300;
     public final float do_lower_push_notification=0;
     public final float do_lower_add_hypochloric_acid=1;
     public final float do_lower_add_hydrogen_peroxide=0;
-    // --Commented out by Inspection (7/21/2018 10:00 PM):public final float do_lower_turn_on_extra_pump=1;
+    public final float do_lower_turn_on_extra_pump=1;
 
     public final float orp_upper_threshold=500;
     public final float orp_upper_push_notification=0;
@@ -89,10 +90,10 @@ public class MyAppApplication extends Application {
     public final float orp_lower_add_base=1;
 
     public final double pH_lower_threshold=5.5;
-    // --Commented out by Inspection (7/21/2018 10:00 PM):public final double pH_upper_add_acid=1;
-    // --Commented out by Inspection (7/21/2018 10:00 PM):public final double pH_lower_add_base=1;
-    // --Commented out by Inspection (7/21/2018 10:00 PM):public final double pH_upper_push_notification=0;
-    // --Commented out by Inspection (7/21/2018 10:00 PM):public final double pH_lower_push_notification=0;
+    public final double pH_upper_add_acid=1;
+    public final double pH_lower_add_base=1;
+    public final double pH_upper_push_notification=0;
+    public final double pH_lower_push_notification=0;
 
     public final float reservoirs_need_refilling=1;
     public final float canopy_height_checkpoint=40;

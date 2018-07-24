@@ -5,12 +5,19 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONObject;
 
 public class tolerances extends AppCompatActivity {
 
@@ -46,26 +53,42 @@ public class tolerances extends AppCompatActivity {
                 //upper bound checkbox display logic
                 final CheckBox air_temp_upper_checkbox = new CheckBox(this);
                 air_temp_upper_checkbox.setText(getString(R.string.send_push));
-                air_temp_upper_checkbox.setChecked(true);
+                if (mApp.air_temp_upper_pushnotification == 1) {
+                    air_temp_upper_checkbox.setChecked(true);
+                } else {
+                    air_temp_upper_checkbox.setChecked(false);
+                }
                 ll.addView(air_temp_upper_checkbox);
 
                 // upper air temp extra fans on display code
                 final CheckBox air_temp_upper_on_extra_fans = new CheckBox(this);
                 ll.addView(air_temp_upper_on_extra_fans);
                 air_temp_upper_on_extra_fans.setText(getString(R.string.turn_on_fans));
-                air_temp_upper_on_extra_fans.setChecked(true);
+                if (mApp.air_temp_upper_turn_on_fans == 1) {
+                    air_temp_upper_on_extra_fans.setChecked(true);
+                } else {
+                    air_temp_upper_on_extra_fans.setChecked(false);
+                }
 
                 // upper air temp space heating off
                 final CheckBox upper_air_temp_space_heating_checkbox = new CheckBox(this);
                 ll.addView(upper_air_temp_space_heating_checkbox);
                 upper_air_temp_space_heating_checkbox.setText(getString(R.string.turn_off_heating_element));
-                upper_air_temp_space_heating_checkbox.setChecked(true);
+                if (mApp.air_temp_upper_turn_off_space_heater == 1) {
+                    upper_air_temp_space_heating_checkbox.setChecked(true);
+                } else {
+                    upper_air_temp_space_heating_checkbox.setChecked(false);
+                }
 
                 //upper air temp turn space heater off
                 final CheckBox upper_air_temp_space_heater_off = new CheckBox(this);
                 ll.addView(upper_air_temp_space_heater_off);
                 upper_air_temp_space_heater_off.setText(getString(R.string.turn_off_space_heater));
-                upper_air_temp_space_heater_off.setChecked(true);
+                if (mApp.air_temp_upper_turn_off_space_heater == 1) {
+                    upper_air_temp_space_heater_off.setChecked(true);
+                } else {
+                    upper_air_temp_space_heater_off.setChecked(false);
+                }
 
                 //lower threshold title
                 final TextView belowtext = new TextView(this);
@@ -87,30 +110,84 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox lower_threshold_push_notification_check_box = new CheckBox(this);
                 lower_threshold_push_notification_check_box.setText(getString(R.string.send_push));
                 ll.addView(lower_threshold_push_notification_check_box);
-                lower_threshold_push_notification_check_box.setChecked(false);
+                if (mApp.air_temp_lower_threshold == 1) {
+                    lower_threshold_push_notification_check_box.setChecked(true);
+                } else {
+                    lower_threshold_push_notification_check_box.setChecked(false);
+                }
 
                 // lower threshold turn off extra fans
                 final CheckBox lower_threshold_turn_off_extra_fans_checkbox = new CheckBox(this);
                 ll.addView(lower_threshold_turn_off_extra_fans_checkbox);
                 lower_threshold_turn_off_extra_fans_checkbox.setText(getString(R.string.turn_off_fans));
-                lower_threshold_turn_off_extra_fans_checkbox.setChecked(false);
+                if (mApp.air_temp_lower_turn_off_fans == 1) {
+                    lower_threshold_turn_off_extra_fans_checkbox.setChecked(true);
+                } else {
+                    lower_threshold_turn_off_extra_fans_checkbox.setChecked(false);
+                }
 
                 // lower threshold turn on heating element
                 final CheckBox air_temp_lower_turn_on_heating_element = new CheckBox(this);
                 ll.addView(air_temp_lower_turn_on_heating_element);
                 air_temp_lower_turn_on_heating_element.setText(getString(R.string.turn_on_heating_element));
-                air_temp_lower_turn_on_heating_element.setChecked(true);
+                if (mApp.air_temp_lower_turn_on_heating_element == 1) {
+                    air_temp_lower_turn_on_heating_element.setChecked(true);
+                } else {
+                    air_temp_lower_turn_on_heating_element.setChecked(false);
+                }
 
                 // lower threshold turn on space heater
                 final CheckBox lower_threshold_turn_on_space_heater_check_box = new CheckBox(this);
                 ll.addView(lower_threshold_turn_on_space_heater_check_box);
                 lower_threshold_turn_on_space_heater_check_box.setText(getString(R.string.turn_on_space_heater));
-                lower_threshold_turn_on_space_heater_check_box.setChecked(true);
+                if (mApp.air_temp_lower_turn_on_space_heater == 1) {
+                    lower_threshold_turn_on_space_heater_check_box.setChecked(true);
+                } else {
+                    lower_threshold_push_notification_check_box.setChecked(false);
+                }
 
                 // box for sending data to server
                 final Button save_changes_box = new Button(this);
                 save_changes_box.setText(getString(R.string.save_changes));
                 ll.addView(save_changes_box);
+                save_changes_box.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                        // try and connect to the server.
+                        RequestParams params = new RequestParams();
+                        params.put("whatiwant", "testdata");
+                        AsyncHttpClient client = new AsyncHttpClient();
+                        client.get("http://24.197.216.190/mygarden/api.php", params,new JsonHttpResponseHandler() {
+                                    @Override
+                                    public void onStart() {
+                                        Log.d("kirk", "got to onStart()");
+                                    }
+
+                                    @Override
+                                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
+                                        Log.d("kirk", "got to onSuccess()");
+                                        String test1 = response.toString();
+                                        Log.d("kirk", test1);
+                                        //parsemystringplease a = new parsemystringplease(test1, mApp);
+                                    }
+
+                                    @Override
+                                    public void onFinish(){
+                                        Log.d("kirk","got to onfinish");
+
+                                    }
+                                    @Override
+                                    public void onRetry(int retryNo) {
+                                        Log.d("kirk", "got to onRetry()");
+                                    }
+                                }
+                        );  // this is the end of client.get line
+                    }
+                }
+                )
+                ;
+
                 break;
 
             case "Humidity":
@@ -135,24 +212,39 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_humidity_push_nofitication_check_box = new CheckBox(this);
                 upper_humidity_push_nofitication_check_box.setText(getString(R.string.send_push));
                 ll.addView(upper_humidity_push_nofitication_check_box);
-                upper_humidity_push_nofitication_check_box.setChecked(false);
+                if (mApp.humidity_upper_pushnotification == 1) {
+                    upper_humidity_push_nofitication_check_box.setChecked(true);
+                } else {
+                    upper_humidity_push_nofitication_check_box.setChecked(false);
+                }
 
                 // upper humidity extra fans on
                 final CheckBox upper_humidity_extra_fans_on = new CheckBox(this);
                 ll.addView(upper_humidity_extra_fans_on);
                 upper_humidity_extra_fans_on.setText(getString(R.string.turn_on_fans));
-                upper_humidity_extra_fans_on.setChecked(true);
+                if (mApp.humidity_upper_turn_on_extra_fans == 1) {
+                    upper_humidity_extra_fans_on.setChecked(true);
+                } else {
+                    upper_humidity_extra_fans_on.setChecked(false);
+                }
 
                 // upper_humidity_turn_off_fogger
                 final CheckBox upper_humidity_turn_off_fogger_check_box = new CheckBox(this);
                 ll.addView(upper_humidity_turn_off_fogger_check_box);
                 upper_humidity_turn_off_fogger_check_box.setText(getString(R.string.turn_off_fogger));
-                upper_humidity_turn_off_fogger_check_box.setChecked(true);
+                if (mApp.humidity_upper_turn_off_fogger == 1) {
+                    upper_humidity_turn_off_fogger_check_box.setChecked(true);
+                } else {
+                    upper_humidity_turn_off_fogger_check_box.setChecked(false);
+                }
 
                 // upper humidity turn on space heater
                 final CheckBox upper_humidity_turn_on_space_heater_checkbox = new CheckBox(this);
                 ll.addView(upper_humidity_turn_on_space_heater_checkbox);
                 upper_humidity_turn_on_space_heater_checkbox.setText(getString(R.string.turn_on_space_heater));
+                if (mApp.humidity_upper_turn_on_space_heater==1){
+                    upper_humidity_turn_on_space_heater_checkbox.setChecked(true);
+                }
 
                 // lower humidity title
                 final TextView lower_humidity_title = new TextView(this);
@@ -174,26 +266,47 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox low_humidity_push_notification_check_box = new CheckBox(this);
                 low_humidity_push_notification_check_box.setText(getString(R.string.send_push));
                 ll.addView(low_humidity_push_notification_check_box);
-                low_humidity_push_notification_check_box.setChecked(false);
+                if (mApp.humidity_lower_pushnotification==1){
+                    low_humidity_push_notification_check_box.setChecked(true);
+                }
+                else
+                {
+                    low_humidity_push_notification_check_box.setChecked(false);
+                }
 
                 // low humidity turn off extra fans
                 final CheckBox low_humidity_turn_off_extra_fans = new CheckBox(this);
                 ll.addView(low_humidity_turn_off_extra_fans);
                 low_humidity_turn_off_extra_fans.setText(getString(R.string.turn_off_fans));
-                low_humidity_turn_off_extra_fans.setChecked(false);
+                if (mApp.humidity_lower_turn_off_extra_fans==1){
+                    low_humidity_turn_off_extra_fans.setChecked(true);
+                }
+                else {
+                    low_humidity_turn_off_extra_fans.setChecked(false);
+                }
 
                 // low humidity turn on fogger
                 final CheckBox low_humidity_turn_on_fogger = new CheckBox(this);
                 ll.addView(low_humidity_turn_on_fogger);
                 low_humidity_turn_on_fogger.setText(getString(R.string.turn_on_fogger));
-                low_humidity_turn_on_fogger.setChecked(false);
+                if (mApp.humidity_lower_turn_on_fogger==1){
+                    low_humidity_turn_on_fogger.setChecked(true);
+                }
+                else {
+                    low_humidity_turn_on_fogger.setChecked(false);
+                }
 
 
                 // low humidity turn off space heater
                 final CheckBox low_humidty_turn_off_space_heater_checkbox = new CheckBox(this);
                 ll.addView(low_humidty_turn_off_space_heater_checkbox);
                 low_humidty_turn_off_space_heater_checkbox.setText(getString(R.string.turn_off_space_heater));
-                low_humidity_turn_off_extra_fans.setChecked(true);
+                if (mApp.humidity_lower_turn_off_space_heater==1){
+                    low_humidity_turn_off_extra_fans.setChecked(true);
+                }
+                else{
+                    low_humidity_turn_off_extra_fans.setChecked(false);
+                }
 
                 //  submit changes button
                 final Button buttsoup1 = new Button(this);
@@ -222,7 +335,12 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox tvoc_upper_threshold_push_nofitications = new CheckBox(this);
                 tvoc_upper_threshold_push_nofitications.setText(getString(R.string.send_push));
                 ll.addView(tvoc_upper_threshold_push_nofitications);
-                tvoc_upper_threshold_push_nofitications.setChecked(false);
+                if (mApp.humidity_upper_pushnotification==1){
+                    tvoc_upper_threshold_push_nofitications.setChecked(true);
+                }
+                else{
+                    tvoc_upper_threshold_push_nofitications.setChecked(false);
+                }
 
                 // TVOC lower threshold lower title
                 final TextView belowtext2 = new TextView(this);
@@ -244,7 +362,12 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox tvoc_lower_push_notification_checkbox = new CheckBox(this);
                 tvoc_lower_push_notification_checkbox.setText(getString(R.string.send_push));
                 ll.addView(tvoc_lower_push_notification_checkbox);
-                tvoc_lower_push_notification_checkbox.setChecked(false);
+                if (mApp.TVOC_lower_pushnotification==1){
+                    tvoc_lower_push_notification_checkbox.setChecked(true);
+                }
+                else{
+                    tvoc_lower_push_notification_checkbox.setChecked(false);
+                }
 
                 // save changes
                 final Button buttsoup2 = new Button(this);
@@ -275,7 +398,12 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox CO2_upper_push_notifications_checkbox = new CheckBox(this);
                 CO2_upper_push_notifications_checkbox.setText(getString(R.string.send_push));
                 ll.addView(CO2_upper_push_notifications_checkbox);
-                CO2_upper_push_notifications_checkbox.setChecked(false);
+                if (mApp.CO2_upper_pushnotifications==1){
+                    CO2_upper_push_notifications_checkbox.setChecked(true);
+                }
+                else {
+                    CO2_upper_push_notifications_checkbox.setChecked(false);
+                }
 
                 // CO2 Below Title
                 final TextView CO2_below_title = new TextView(this);
@@ -297,7 +425,12 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox CO2_lower_threshold_push_notification_checkbox = new CheckBox(this);
                 CO2_lower_threshold_push_notification_checkbox.setText(getString(R.string.send_push));
                 ll.addView(CO2_lower_threshold_push_notification_checkbox);
-                CO2_lower_threshold_push_notification_checkbox.setChecked(false);
+                if (mApp.CO2_lower_pushnotification==1){
+                    CO2_lower_threshold_push_notification_checkbox.setChecked(true);
+                }
+                else{
+                    CO2_lower_threshold_push_notification_checkbox.setChecked(false);
+                }
 
 
                 // submit changes button
@@ -328,19 +461,34 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_solution_temp_check_box = new CheckBox(this);
                 upper_solution_temp_check_box.setText(getString(R.string.send_push));
                 ll.addView(upper_solution_temp_check_box);
-                upper_solution_temp_check_box.setChecked(false);
+                if (mApp.slntemp_upper_pushnotification==1){
+                    upper_solution_temp_check_box.setChecked(true);
+                }
+                else{
+                    upper_solution_temp_check_box.setChecked(false);
+                }
 
                 // upper sln temp turn off space heater
                 final CheckBox upper_sln_temp_turn_off_space_heater_check_box = new CheckBox(this);
                 upper_sln_temp_turn_off_space_heater_check_box.setText(getString(R.string.turn_off_space_heater));
                 ll.addView(upper_sln_temp_turn_off_space_heater_check_box);
-                upper_sln_temp_turn_off_space_heater_check_box.setChecked(true);
+                if (mApp.slntemp_upper_turn_off_space_heater==1){
+                    upper_sln_temp_turn_off_space_heater_check_box.setChecked(true);
+                }
+                else{
+                    upper_sln_temp_turn_off_space_heater_check_box.setChecked(false);
+                }
 
                 // upper sln temp turn off heating element checkbox
                 final CheckBox upper_sln_temp_turn_off_heating_element_checkbox = new CheckBox(this);
                 upper_sln_temp_turn_off_heating_element_checkbox.setText(getString(R.string.turn_off_heating_element));
                 ll.addView(upper_sln_temp_turn_off_heating_element_checkbox);
-                upper_sln_temp_turn_off_heating_element_checkbox.setChecked(true);
+                if (mApp.slntemp_upper_turn_off_heating_element==1){
+                    upper_sln_temp_turn_off_heating_element_checkbox.setChecked(true);
+                }
+                else{
+                    upper_sln_temp_turn_off_heating_element_checkbox.setChecked(false);
+                }
 
 
                 // lower solution temp title
@@ -363,20 +511,35 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox lower_solution_temp_push_notification_checkbox = new CheckBox(this);
                 lower_solution_temp_push_notification_checkbox.setText(getString(R.string.send_push));
                 ll.addView(lower_solution_temp_push_notification_checkbox);
-                lower_solution_temp_push_notification_checkbox.setChecked(false);
+                if (mApp.slntemp_lower_pushnotification==1){
+                    lower_solution_temp_push_notification_checkbox.setChecked(true);
+                }
+                else{
+                    lower_solution_temp_push_notification_checkbox.setChecked(false);
+                }
 
                 // lower sln temp turn on space heater checkbox
                 final CheckBox lower_solution_temp_turn_on_space_heater_checkbox = new CheckBox(this);
                 lower_solution_temp_turn_on_space_heater_checkbox.setText(getString(R.string.turn_on_space_heater));
                 ll.addView(lower_solution_temp_turn_on_space_heater_checkbox);
-                lower_solution_temp_turn_on_space_heater_checkbox.setChecked(false);
+                if (mApp.slntemp_lower_turn_on_space_heater==1){
+                    lower_solution_temp_turn_on_space_heater_checkbox.setChecked(true);
+                }
+                else {
+                    lower_solution_temp_turn_on_space_heater_checkbox.setChecked(false);
+                }
 
 
                 // lower solution temp turn on heating element checkbox
                 final CheckBox lower_solution_temp_turn_on_heating_element_checkbox = new CheckBox(this);
                 lower_solution_temp_turn_on_heating_element_checkbox.setText(getString(R.string.turn_on_heating_element));
                 ll.addView(lower_solution_temp_turn_on_heating_element_checkbox);
-                lower_solution_temp_turn_on_heating_element_checkbox.setChecked(true);
+                if (mApp.slntemp_lower_turn_on_heating_element==1) {
+                    lower_solution_temp_turn_on_heating_element_checkbox.setChecked(true);
+                }
+                else {
+                    lower_solution_temp_turn_on_heating_element_checkbox.setChecked(false);
+                }
 
                 //save changes
                 final Button buttsoup4 = new Button(this);
@@ -406,13 +569,23 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_tds_push_notification_checkbox = new CheckBox(this);
                 upper_tds_push_notification_checkbox.setText(getString(R.string.send_push));
                 ll.addView(upper_tds_push_notification_checkbox);
-                upper_tds_push_notification_checkbox.setChecked(false);
+                if (mApp.tds_upper_push_notification==1){
+                    upper_tds_push_notification_checkbox.setChecked(true);
+                }
+                else{
+                    upper_tds_push_notification_checkbox.setChecked(false);
+                }
 
                 // upper tds add water checkbox
                 final CheckBox upper_tds_add_water_checkbox = new CheckBox(this);
                 upper_tds_add_water_checkbox.setText(getString(R.string.add_water));
                 ll.addView(upper_tds_add_water_checkbox);
-                upper_tds_add_water_checkbox.setChecked(true);
+                if (mApp.tds_upper_add_water==1){
+                    upper_tds_add_water_checkbox.setChecked(true);
+                }
+                else {
+                    upper_tds_add_water_checkbox.setChecked(false);
+                }
 
 
                 // tds lower threshold title
@@ -435,7 +608,12 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox tds_lower_threshold_send_push_notifiation = new CheckBox(this);
                 tds_lower_threshold_send_push_notifiation.setText(getString(R.string.send_push));
                 ll.addView(tds_lower_threshold_send_push_notifiation);
-                tds_lower_threshold_send_push_notifiation.setChecked(false);
+                if (mApp.tds_lower_threshold==1){
+                    tds_lower_threshold_send_push_notifiation.setChecked(true);
+                }
+                else{
+                    tds_lower_threshold_send_push_notifiation.setChecked(false);
+                }
 
 
                 // add flora bloom check box
@@ -443,20 +621,35 @@ public class tolerances extends AppCompatActivity {
                 add_flora_bloom_check_box.setText(getString(R.string.add_florabloom));
                 ll.addView(add_flora_bloom_check_box);
 
-                add_flora_bloom_check_box.setChecked(false);
+                if (mApp.tds_add_florabloom==1){
+                    add_flora_bloom_check_box.setChecked(true);
+                }
+                else {
+                    add_flora_bloom_check_box.setChecked(false);
+                }
 
                 // add flora gro check box
                 final CheckBox add_flora_gro_checkbox = new CheckBox(this);
                 add_flora_gro_checkbox.setText(getString(R.string.add_floragro));
                 ll.addView(add_flora_gro_checkbox);
-                add_flora_gro_checkbox.setChecked(true);
+                if (mApp.tds_add_floragro==1){
+                    add_flora_gro_checkbox.setChecked(true);
+                }
+                else {
+                    add_flora_gro_checkbox.setChecked(false);
+                }
 
 
                 // add flora micro check box
                 final CheckBox add_flora_micro_check_box = new CheckBox(this);
                 add_flora_micro_check_box.setText(getString(R.string.add_floramicro));
                 ll.addView(add_flora_micro_check_box);
-                add_flora_micro_check_box.setChecked(false);
+                if (mApp.tds_add_floramicro==1){
+                    add_flora_micro_check_box.setChecked(true);
+                }
+                else {
+                    add_flora_micro_check_box.setChecked(false);
+                }
 
                 // save changes
                 final Button buttsoup5 = new Button(this);
@@ -486,20 +679,35 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox do_upper_threshold_push_notification_checkbox = new CheckBox(this);
                 do_upper_threshold_push_notification_checkbox.setText(getString(R.string.send_push));
                 ll.addView(do_upper_threshold_push_notification_checkbox);
-                do_upper_threshold_push_notification_checkbox.setChecked(false);
+                if (mApp.do_upper_push_notification==1){
+                    do_upper_threshold_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    do_upper_threshold_push_notification_checkbox.setChecked(false);
+                }
 
                 // do upper turn extra air pumps off
                 final CheckBox do_upper_turn_extra_air_pumps_off = new CheckBox(this);
                 do_upper_turn_extra_air_pumps_off.setText(getString(R.string.turn_off_air_pump));
                 ll.addView(do_upper_turn_extra_air_pumps_off);
-                do_upper_turn_extra_air_pumps_off.setChecked(true);
+                if (mApp.do_upper_turn_off_extra_pump==1){
+                    do_upper_turn_extra_air_pumps_off.setChecked(true);
+                }
+                else{
+                    do_upper_turn_extra_air_pumps_off.setChecked(false);
+                }
 
 
                 // do upper add water
                 final CheckBox do_upper_add_water_checkbox = new CheckBox(this);
                 do_upper_add_water_checkbox.setText(getString(R.string.add_water));
                 ll.addView(do_upper_add_water_checkbox);
-                do_upper_add_water_checkbox.setChecked(true);
+                if (mApp.do_upper_add_water==1){
+                    do_upper_add_water_checkbox.setChecked(true);
+                }
+                else{
+                    do_upper_add_water_checkbox.setChecked(false);
+                }
 
                 // do lower title
                 final TextView do_lower_title = new TextView(this);
@@ -521,26 +729,46 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox do_lower_send_push_notification_checkbox = new CheckBox(this);
                 do_lower_send_push_notification_checkbox.setText(getString(R.string.send_push));
                 ll.addView(do_lower_send_push_notification_checkbox);
-                do_lower_send_push_notification_checkbox.setChecked(false);
+                if (mApp.do_lower_push_notification==1){
+                    do_lower_send_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    do_lower_send_push_notification_checkbox.setChecked(false);
+                }
 
                 // do lower turn extra pumps on
                 final CheckBox do_lower_turn_extra_pumps_on= new CheckBox(this);
                 do_lower_turn_extra_pumps_on.setText(getString(R.string.turn_on_extra_air_pump));
                 ll.addView(do_lower_turn_extra_pumps_on);
-                do_lower_turn_extra_pumps_on.setChecked(true);
+                if (mApp.do_lower_turn_on_extra_pump==1){
+                    do_lower_turn_extra_pumps_on.setChecked(true);
+                }
+                else{
+                    do_lower_turn_extra_pumps_on.setChecked(false);
+                }
 
 
                 // do lower add hypochloric acid
                 final CheckBox do_lower_add_hypochloric_acid = new CheckBox(this);
                 do_lower_add_hypochloric_acid.setText(getString(R.string.add_hypochloric));
                 ll.addView(do_lower_add_hypochloric_acid);
-                do_lower_add_hypochloric_acid.setChecked(true);
+                if (mApp.do_lower_add_hypochloric_acid==1){
+                    do_lower_add_hypochloric_acid.setChecked(true);
+                }
+                else{
+                    do_lower_add_hypochloric_acid.setChecked(false);
+                }
 
                 // lower do add peroxide
                 final CheckBox do_lower_add_peroxide = new CheckBox(this);
                 do_lower_add_peroxide.setText(getString(R.string.add_peroxide));
                 ll.addView(do_lower_add_peroxide);
-                do_lower_add_hypochloric_acid.setChecked(false);
+                if (mApp.do_lower_add_hydrogen_peroxide == 1) {
+                    do_lower_add_hypochloric_acid.setChecked(true);
+                }
+                else{
+                    do_lower_add_hypochloric_acid.setChecked(false);
+                }
 
                 // save changes
                 final Button buttsoup6 = new Button(this);
@@ -570,13 +798,23 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox orp_upper_push_notification_checkbox = new CheckBox(this);
                 orp_upper_push_notification_checkbox.setText(getString(R.string.send_push));
                 ll.addView(orp_upper_push_notification_checkbox);
-                orp_upper_push_notification_checkbox.setChecked(false);
+                if (mApp.orp_upper_push_notification==1){
+                    orp_upper_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    orp_upper_push_notification_checkbox.setChecked(false);
+                }
 
                 // orp add upper water checkbox
                 final CheckBox orp_upper_add_water_checkbox = new CheckBox(this);
                 orp_upper_add_water_checkbox.setText(getString(R.string.add_water));
                 ll.addView(orp_upper_add_water_checkbox);
-                orp_upper_add_water_checkbox.setChecked(false);
+                if (mApp.orp_upper_add_water==1){
+                    orp_upper_add_water_checkbox.setChecked(true);
+                }
+                else {
+                    orp_upper_add_water_checkbox.setChecked(false);
+                }
 
                 // orp lower title
                 final TextView orp_lower_title = new TextView(this);
@@ -598,25 +836,45 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox orp_lower_push_notification_checkbox = new CheckBox(this);
                 orp_lower_push_notification_checkbox.setText(getString(R.string.send_push));
                 ll.addView(orp_lower_push_notification_checkbox);
-                orp_lower_push_notification_checkbox.setChecked(false);
+                if (mApp.orp_lower_push_notification==1){
+                    orp_lower_push_notification_checkbox.setChecked(true);
+                }
+                else{
+                    orp_lower_push_notification_checkbox.setChecked(false);
+                }
 
                 // orp lower add peroxide
                 final CheckBox orp_lower_add_peroxide_checkbox = new CheckBox(this);
                 orp_lower_add_peroxide_checkbox.setText(getString(R.string.add_peroxide));
                 ll.addView(orp_lower_add_peroxide_checkbox);
-                orp_lower_add_peroxide_checkbox.setChecked(false);
+                if (mApp.orp_lower_add_hydrogen_peroxide==1){
+                    orp_lower_add_peroxide_checkbox.setChecked(true);
+                }
+                else {
+                    orp_lower_add_peroxide_checkbox.setChecked(false);
+                }
 
                 // orp lower add hypochloric
                 final CheckBox orp_lower_add_hypochloric_checkbox = new CheckBox(this);
                 orp_lower_add_hypochloric_checkbox.setText(getString(R.string.add_hypochloric));
                 ll.addView(orp_lower_add_hypochloric_checkbox);
-                orp_lower_add_hypochloric_checkbox.setChecked(false);
+                if (mApp.orp_lower_add_hydrogen_peroxide==1){
+                    orp_lower_add_hypochloric_checkbox.setChecked(true);
+                }
+                else {
+                    orp_lower_add_hypochloric_checkbox.setChecked(false);
+                }
 
                 // orp add base
                 final CheckBox orp_lower_add_base = new CheckBox(this);
                 orp_lower_add_base.setText(getString(R.string.add_base));
                 ll.addView(orp_lower_add_base);
-                orp_lower_add_peroxide_checkbox.setChecked(true);
+                if (mApp.orp_lower_add_base==1){
+                    orp_lower_add_peroxide_checkbox.setChecked(true);
+                }
+                else {
+                    orp_lower_add_peroxide_checkbox.setChecked(false);
+                }
 
                 // save changes
                 final Button buttsoup7 = new Button(this);
@@ -646,13 +904,23 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox pH_upper_push_notification_checkbox = new CheckBox(this);
                 pH_upper_push_notification_checkbox.setText(getString(R.string.send_push));
                 ll.addView(pH_upper_push_notification_checkbox);
-                pH_upper_push_notification_checkbox.setChecked(false);
+                if (mApp.pH_upper_push_notification==1){
+                    pH_upper_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    pH_upper_push_notification_checkbox.setChecked(false);
+                }
 
                 // pH upper add acid
                 final CheckBox ph_upper_add_acid_checkbox = new CheckBox(this);
                 ph_upper_add_acid_checkbox.setText(getString(R.string.add_acid));
                 ll.addView(ph_upper_add_acid_checkbox);
-                ph_upper_add_acid_checkbox.setChecked(true);
+                if (mApp.pH_upper_add_acid==1){
+                    ph_upper_add_acid_checkbox.setChecked(true);
+                }
+                else {
+                    ph_upper_add_acid_checkbox.setChecked(false);
+                }
 
                 // lower title
                 final TextView lower_title_pH = new TextView(this);
@@ -674,13 +942,23 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox lower_ph_push_notification_checkbox = new CheckBox(this);
                 lower_ph_push_notification_checkbox.setText(getString(R.string.send_push));
                 ll.addView(lower_ph_push_notification_checkbox);
-                lower_ph_push_notification_checkbox.setChecked(false);
+                if (mApp.pH_lower_push_notification==1){
+                    lower_ph_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    lower_ph_push_notification_checkbox.setChecked(false);
+                }
 
                 // lower ph add base checkbox
                 final CheckBox lower_ph_add_base_checkbox = new CheckBox(this);
                 lower_ph_add_base_checkbox.setText(getString(R.string.add_base));
                 ll.addView(lower_ph_add_base_checkbox);
-                lower_ph_add_base_checkbox.setChecked(true);
+                if (mApp.pH_lower_add_base==1){
+                    lower_ph_add_base_checkbox.setChecked(true);
+                }
+                else{
+                    lower_ph_add_base_checkbox.setChecked(false);
+                }
 
                 // save changes
                 final Button buttsoup8 = new Button(this);
@@ -702,7 +980,12 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox reservoirs_checkbox = new CheckBox(this);
                 reservoirs_checkbox.setText(getString(R.string.send_push));
                 ll.addView(reservoirs_checkbox);
-                reservoirs_checkbox.setChecked(true);
+                if (mApp.reservoirs_need_refilling==1){
+                    reservoirs_checkbox.setChecked(true);
+                }
+                else {
+                    reservoirs_checkbox.setChecked(false);
+                }
 
                 //save changes
                 final Button buttsoup9 = new Button(this);
@@ -731,7 +1014,12 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox canopy_push_notification_checkbox = new CheckBox(this);
                 canopy_push_notification_checkbox.setText(getString(R.string.send_push_once));
                 ll.addView(canopy_push_notification_checkbox);
-                canopy_push_notification_checkbox.setChecked(true);
+                if (mApp.canopy_height_push_notification==1){
+                    canopy_push_notification_checkbox.setChecked(true);
+                }
+                else {
+                    canopy_push_notification_checkbox.setChecked(false);
+                }
 
                 // save changes
                 final Button buttsoup10 = new Button(this);
@@ -760,7 +1048,12 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox light_height_push_checkbox = new CheckBox(this);
                 light_height_push_checkbox.setText(getString(R.string.send_push_lights));
                 ll.addView(light_height_push_checkbox);
-                light_height_push_checkbox.setChecked(true);
+                if (mApp.light_height_adjustment_push_notification==1){
+                    light_height_push_checkbox.setChecked(true);
+                }
+                else {
+                    light_height_push_checkbox.setChecked(false);
+                }
 
                 // push changes
                 final Button buttsoup12 = new Button(this);
