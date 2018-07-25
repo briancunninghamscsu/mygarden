@@ -117,7 +117,7 @@ public class DeveloperOptions extends AppCompatActivity {
         });
 
 
-        Button usersettingsprintbutton = findViewById(R.id.button5);
+        final Button usersettingsprintbutton = findViewById(R.id.button5);
         usersettingsprintbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -154,7 +154,7 @@ public class DeveloperOptions extends AppCompatActivity {
                         Log.d("july", "got to onSuccess()");
                         String test1 = response.toString();
                         Log.d("july", test1);
-                        parsemystringplease a = new parsemystringplease(test1,mApp);
+                        parsemystringplease a = new parsemystringplease(test1, mApp);
                     }
 
                     @Override
@@ -162,6 +162,46 @@ public class DeveloperOptions extends AppCompatActivity {
                         Log.d("july", "got to onRetry()");
                     }
                 });
+            }
+        }
+        );
+
+        Button user_settings_button = findViewById(R.id.button7);
+        user_settings_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Log.d("spock","you got to the on click listen");
+                RequestParams params = new RequestParams();
+                params.put("whatiwant", "pull_settings");
+                AsyncHttpClient client = new AsyncHttpClient();
+                client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onStart() {
+                        Log.d("spock", "got to onStart()");
+                    }
+
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
+                        Log.d("spock", "got to onSuccess()");
+                        String test2 = response.toString();
+                        Log.d("spock", test2);
+                        parse_for_user_settings b = new parse_for_user_settings(test2, mApp);
+                    }
+
+                    @Override
+                    public void onRetry(int retryNo) {
+                        Log.d("spock", "got to onRetry()");
+                    }
+                });
+            }
+        }
+        );
+
+
+
+
+
+
 
         Button uploadbutton = findViewById(R.id.button3);
         uploadbutton.setOnClickListener(new View.OnClickListener() {
@@ -226,8 +266,7 @@ public class DeveloperOptions extends AppCompatActivity {
             }
             });
         }
-        });
-    }
+
 
     @Override
         public void onBackPressed () {   //this only triggers for the phone back-button!
