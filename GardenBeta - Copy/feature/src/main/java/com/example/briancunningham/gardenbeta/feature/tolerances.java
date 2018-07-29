@@ -27,7 +27,7 @@ public class tolerances extends AppCompatActivity {
         setContentView(R.layout.activity_tolerances);
         setTitle(getIntent().getStringExtra("parameter_name")); //set the correct title
 
-        MyAppApplication mApp = (MyAppApplication) getApplicationContext(); //get global variables
+        final MyAppApplication mApp = (MyAppApplication) getApplicationContext(); //get global variables
         LinearLayout ll = findViewById(R.id.linlaytolerances);
         ll.setOrientation(LinearLayout.VERTICAL);
 
@@ -51,14 +51,14 @@ public class tolerances extends AppCompatActivity {
                 ll.addView(upperbound);
 
                 //upper bound checkbox display logic
-                final CheckBox air_temp_upper_checkbox = new CheckBox(this);
-                air_temp_upper_checkbox.setText(getString(R.string.send_push));
+                final CheckBox air_temp_upper_push_notifications_checkbox = new CheckBox(this);
+                air_temp_upper_push_notifications_checkbox.setText(getString(R.string.send_push));
                 if (mApp.air_temp_upper_pushnotification == 1) {
-                    air_temp_upper_checkbox.setChecked(true);
+                    air_temp_upper_push_notifications_checkbox.setChecked(true);
                 } else {
-                    air_temp_upper_checkbox.setChecked(false);
+                    air_temp_upper_push_notifications_checkbox.setChecked(false);
                 }
-                ll.addView(air_temp_upper_checkbox);
+                ll.addView(air_temp_upper_push_notifications_checkbox);
 
                 // upper air temp extra fans on display code
                 final CheckBox air_temp_upper_on_extra_fans = new CheckBox(this);
@@ -70,24 +70,24 @@ public class tolerances extends AppCompatActivity {
                     air_temp_upper_on_extra_fans.setChecked(false);
                 }
 
-                // upper air temp space heating off
-                final CheckBox upper_air_temp_space_heating_checkbox = new CheckBox(this);
-                ll.addView(upper_air_temp_space_heating_checkbox);
-                upper_air_temp_space_heating_checkbox.setText(getString(R.string.turn_off_heating_element));
-                if (mApp.air_temp_upper_turn_off_space_heater == 1) {
-                    upper_air_temp_space_heating_checkbox.setChecked(true);
+                // upper air temp heating element off
+                final CheckBox upper_air_temp_heating_element_checkbox = new CheckBox(this);
+                ll.addView(upper_air_temp_heating_element_checkbox);
+                upper_air_temp_heating_element_checkbox.setText(getString(R.string.turn_off_heating_element));
+                if (mApp.air_temp_upper_turn_off_heating_element == 1) {
+                    upper_air_temp_heating_element_checkbox.setChecked(true);
                 } else {
-                    upper_air_temp_space_heating_checkbox.setChecked(false);
+                    upper_air_temp_heating_element_checkbox.setChecked(false);
                 }
 
-                //upper air temp turn space heater off
-                final CheckBox upper_air_temp_space_heater_off = new CheckBox(this);
-                ll.addView(upper_air_temp_space_heater_off);
-                upper_air_temp_space_heater_off.setText(getString(R.string.turn_off_space_heater));
+                // upper air temp turn space heater off
+                final CheckBox upper_air_temp_space_heater_off_checkbox = new CheckBox(this);
+                ll.addView(upper_air_temp_space_heater_off_checkbox);
+                upper_air_temp_space_heater_off_checkbox.setText(getString(R.string.turn_off_space_heater));
                 if (mApp.air_temp_upper_turn_off_space_heater == 1) {
-                    upper_air_temp_space_heater_off.setChecked(true);
+                    upper_air_temp_space_heater_off_checkbox.setChecked(true);
                 } else {
-                    upper_air_temp_space_heater_off.setChecked(false);
+                    upper_air_temp_space_heater_off_checkbox.setChecked(false);
                 }
 
                 //lower threshold title
@@ -107,33 +107,33 @@ public class tolerances extends AppCompatActivity {
                 ll.addView(lowerbound);
 
                 // lower threshold push notification check box
-                final CheckBox lower_threshold_push_notification_check_box = new CheckBox(this);
-                lower_threshold_push_notification_check_box.setText(getString(R.string.send_push));
-                ll.addView(lower_threshold_push_notification_check_box);
-                if (mApp.air_temp_lower_threshold == 1) {
-                    lower_threshold_push_notification_check_box.setChecked(true);
+                final CheckBox air_temp_lower_threshold_push_notification_check_box = new CheckBox(this);
+                air_temp_lower_threshold_push_notification_check_box.setText(getString(R.string.send_push));
+                ll.addView(air_temp_lower_threshold_push_notification_check_box);
+                if (mApp.air_temp_lower_pushnotification == 1) {
+                    air_temp_lower_threshold_push_notification_check_box.setChecked(true);
                 } else {
-                    lower_threshold_push_notification_check_box.setChecked(false);
+                    air_temp_lower_threshold_push_notification_check_box.setChecked(false);
                 }
 
                 // lower threshold turn off extra fans
-                final CheckBox lower_threshold_turn_off_extra_fans_checkbox = new CheckBox(this);
-                ll.addView(lower_threshold_turn_off_extra_fans_checkbox);
-                lower_threshold_turn_off_extra_fans_checkbox.setText(getString(R.string.turn_off_fans));
+                final CheckBox air_temp_lower_turn_off_extra_fans_checkbox = new CheckBox(this);
+                ll.addView(air_temp_lower_turn_off_extra_fans_checkbox);
+                air_temp_lower_turn_off_extra_fans_checkbox.setText(getString(R.string.turn_off_fans));
                 if (mApp.air_temp_lower_turn_off_fans == 1) {
-                    lower_threshold_turn_off_extra_fans_checkbox.setChecked(true);
+                    air_temp_lower_turn_off_extra_fans_checkbox.setChecked(true);
                 } else {
-                    lower_threshold_turn_off_extra_fans_checkbox.setChecked(false);
+                    air_temp_lower_turn_off_extra_fans_checkbox.setChecked(false);
                 }
 
                 // lower threshold turn on heating element
-                final CheckBox air_temp_lower_turn_on_heating_element = new CheckBox(this);
-                ll.addView(air_temp_lower_turn_on_heating_element);
-                air_temp_lower_turn_on_heating_element.setText(getString(R.string.turn_on_heating_element));
+                final CheckBox air_temp_lower_turn_on_heating_element_checkbox = new CheckBox(this);
+                ll.addView(air_temp_lower_turn_on_heating_element_checkbox);
+                air_temp_lower_turn_on_heating_element_checkbox.setText(getString(R.string.turn_on_heating_element));
                 if (mApp.air_temp_lower_turn_on_heating_element == 1) {
-                    air_temp_lower_turn_on_heating_element.setChecked(true);
+                    air_temp_lower_turn_on_heating_element_checkbox.setChecked(true);
                 } else {
-                    air_temp_lower_turn_on_heating_element.setChecked(false);
+                    air_temp_lower_turn_on_heating_element_checkbox.setChecked(false);
                 }
 
                 // lower threshold turn on space heater
@@ -143,7 +143,7 @@ public class tolerances extends AppCompatActivity {
                 if (mApp.air_temp_lower_turn_on_space_heater == 1) {
                     lower_threshold_turn_on_space_heater_check_box.setChecked(true);
                 } else {
-                    lower_threshold_push_notification_check_box.setChecked(false);
+                    air_temp_lower_threshold_push_notification_check_box.setChecked(false);
                 }
 
                 // box for sending data to server
@@ -154,9 +154,49 @@ public class tolerances extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
+                        /*
+                        We assign each of the UI settings parameters into temporary variables for
+                        packing into key-value pairs. If the server connection is successful, than the local
+                        variables (mApp.whatever) are updated so that the app is synchronized with the server.
+                        */
+
+
                         // try and connect to the server.
                         RequestParams params = new RequestParams();
-                        params.put("whatiwant", "testdata");
+                        params.put("whatiwant", "push_settings");
+
+                        // keeps from null pointer crashing
+                        if (upperbound.getText().toString().equals("")) {
+                            params.put("air_temp_upper_threshold",mApp.air_temp_upper_threshold);   // if they haven't entered, keep the old value
+                        }
+                        else {
+                            params.put("air_temp_upper_threshold", Double.valueOf(upperbound.getText().toString()));
+                        }
+                        params.put("air_temp_upper_pushnotification", (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0));
+                        params.put("air_temp_upper_turn_on_fans",(air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0));
+                        params.put("air_temp_upper_turn_off_heating_element",(upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0));
+                        params.put("air_temp_upper_turn_off_space_heater", (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0));
+
+
+                        // keeps from null pointer crashing
+                        if (lowerbound.getText().toString().equals("")) {
+                            params.put("air_temp_lower_threshold",mApp.air_temp_lower_threshold);   // if they haven't entered, keep the old value
+                        }
+                        else {
+                            params.put("air_temp_lower_threshold", Double.valueOf(lowerbound.getText().toString()));
+                        }
+
+
+                        params.put("air_temp_lower_pushnotification", (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0));
+                        params.put("air_temp_lower_turn_off_fans", (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0));
+                        params.put("air_temp_lower_turn_on_heating_element", (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0));
+                        params.put("air_temp_lower_turn_on_space_heater", (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0));
+
+
+
+
+
+
                         AsyncHttpClient client = new AsyncHttpClient();
                         client.get("http://24.197.216.190/mygarden/api.php", params,new JsonHttpResponseHandler() {
                                     @Override
@@ -169,7 +209,42 @@ public class tolerances extends AppCompatActivity {
                                         Log.d("kirk", "got to onSuccess()");
                                         String test1 = response.toString();
                                         Log.d("kirk", test1);
-                                        //parsemystringplease a = new parsemystringplease(test1, mApp);
+
+
+                                        // save the variables from the UI
+                                        // upper settings
+
+                                        if (upperbound.getText().toString().equals("")) {
+                                            //params.put("air_temp_lower_threshold",mApp.air_temp_lower_threshold);   // if they haven't entered, keep the old value
+                                        }
+                                        else {
+                                            mApp.air_temp_upper_threshold = Double.valueOf(upperbound.getText().toString());
+                                        }
+
+                                        mApp.air_temp_upper_pushnotification = (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_turn_on_fans = (air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_turn_off_heating_element = (upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_turn_off_space_heater = (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0);
+
+                                        // lower settings
+
+                                        if (lowerbound.getText().toString().equals("")) {
+                                            //params.put("air_temp_lower_threshold",mApp.air_temp_lower_threshold);   // if they haven't entered, keep the old value
+                                        }
+                                        else {
+                                            mApp.air_temp_lower_threshold=Double.valueOf(lowerbound.getText().toString());
+                                        }
+                                        mApp.air_temp_lower_pushnotification = (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_turn_off_fans = (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_turn_on_heating_element = (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_turn_on_space_heater = (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0);
+
+                                        //verifying assignments
+                                        //Log.d("kirk",mApp.air_temp_upper_threshold + " " + mApp.air_temp_upper_pushnotification + " ");
+
+                                        // assigning key-values pairs
+
+
                                     }
 
                                     @Override
