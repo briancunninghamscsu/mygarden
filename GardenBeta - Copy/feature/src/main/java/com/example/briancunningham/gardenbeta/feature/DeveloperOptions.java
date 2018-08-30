@@ -143,7 +143,7 @@ public class DeveloperOptions extends AppCompatActivity {
                 RequestParams params = new RequestParams();
                 params.put("whatiwant", "testdata");
                 AsyncHttpClient client = new AsyncHttpClient();
-                client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
+                client.get("http://192.168.1.12/mygarden/api.php", params, new JsonHttpResponseHandler() {
                     @Override
                     public void onStart() {
                         Log.d("july", "got to onStart()");
@@ -254,7 +254,7 @@ public class DeveloperOptions extends AppCompatActivity {
                             Log.d("consoleprinting", "Array list item number " + i + " has an o2 of " + mApp.getO2level(i));
                             Log.d("consoleprinting", "Array list item number " + i + " has an orp temp of " + mApp.getOrplevel(i));
                             Log.d("consoleprinting", "Array list item number " + i + " has an pH of " + mApp.getPhlevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
+                            //Log.d("consoleprinting", "Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
                             Log.d("consoleprinting", "Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
                             Log.d("consoleprinting", "Array list item number " + i + " has a TDS level of " + mApp.getTdslevel(i));
                             //Log.d("consoleprinting", "Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));

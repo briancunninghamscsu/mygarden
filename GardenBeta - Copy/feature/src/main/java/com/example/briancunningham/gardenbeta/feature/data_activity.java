@@ -267,7 +267,7 @@ public class data_activity extends AppCompatActivity {
                         rowTextViewB.setText(String.valueOf(mApp.getPhlevel(i)));
                         break;
                     case "Reservoirs":
-                        rowTextViewB.setText(String.valueOf(mApp.getReservoirs(i)));
+                        rowTextViewB.setText("okay for now");
                         break;
                     case "Canopy Height":
                         rowTextViewB.setText(String.valueOf(mApp.getCanopyheightlevel(i)));

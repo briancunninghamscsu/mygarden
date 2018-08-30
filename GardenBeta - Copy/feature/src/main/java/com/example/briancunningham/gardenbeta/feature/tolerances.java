@@ -172,6 +172,7 @@ public class tolerances extends AppCompatActivity {
                         else {
                             params.put("air_temp_upper_threshold", Double.valueOf(upperbound.getText().toString()));
                         }
+
                         params.put("air_temp_upper_pushnotification", (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0));
                         params.put("air_temp_upper_turn_on_fans",(air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0));
                         params.put("air_temp_upper_turn_off_heating_element",(upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0));

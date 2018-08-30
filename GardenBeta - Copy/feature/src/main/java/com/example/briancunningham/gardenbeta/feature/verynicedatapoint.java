@@ -12,7 +12,7 @@ import java.util.Date;
 import java.util.Locale;
 import java.util.Random;
 
-public class verynicedatapoint implements Parcelable {
+public class verynicedatapoint {
 
         private final float airtemplevel;
         private final float ambienthumiditylevel;
@@ -25,11 +25,19 @@ public class verynicedatapoint implements Parcelable {
         private final float tdslevel;
         private final float phlevel;
         private final float solutiontemplevel;
-        private final boolean reservoirs;
+        private boolean reservoir1;
+        private boolean reservoir2;
+        private boolean reservoir3;
+        private final boolean reservoir4;
+        private final boolean reservoir5;
+        private final boolean reservoir6;
+        private final boolean reservoir7;
+        private final boolean reservoir8;
+        private final boolean reservoir9;
         private String datapointdatetime;
         private Date datapointinDateFormat;
 
-    private verynicedatapoint(Parcel input){
+    /*private verynicedatapoint(Parcel input){
             airtemplevel = input.readFloat();
             ambienthumiditylevel = input.readFloat();
             canopyheightlevel = input.readFloat();
@@ -88,11 +96,11 @@ public class verynicedatapoint implements Parcelable {
             public verynicedatapoint[] newArray(int size) {
             return new verynicedatapoint[size];
         }
-        };
+        };*/
 
 
 
-        public verynicedatapoint(String date, String time, float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoirs) {
+        public verynicedatapoint(String date, String time, float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoir1, boolean reservoir2, boolean reservoir3, boolean reservoir4, boolean reservoir5, boolean reservoir6, boolean reservoir7, boolean reservoir8, boolean reservoir9) {
             this.airtemplevel = airtemplevel;
             this.ambienthumiditylevel = ambienthumiditylevel;
             this.canopyheightlevel = canopyheightlevel;
@@ -104,7 +112,15 @@ public class verynicedatapoint implements Parcelable {
             this.tdslevel = tdslevel;
             this.phlevel = phlevel;
             this.solutiontemplevel = solutiontemplevel;
-            this.reservoirs = reservoirs;
+            this.reservoir1 = reservoir1;
+            this.reservoir2 = reservoir2;
+            this.reservoir3 = reservoir3;
+            this.reservoir4 = reservoir4;
+            this.reservoir5 = reservoir5;
+            this.reservoir6 = reservoir6;
+            this.reservoir7 = reservoir7;
+            this.reservoir8 = reservoir8;
+            this.reservoir9 = reservoir9;
 
             //gotta have it in SDF format if you want to plot the points
             String string = date + " AD at " + time;
@@ -122,56 +138,56 @@ public class verynicedatapoint implements Parcelable {
         }
 
 
-        public verynicedatapoint(){
+        public verynicedatapoint() {
             Random r = new Random();
 
 
             int i1 = (r.nextInt(80) + 65);
-            this.airtemplevel=i1;
-            Log.d("spoof","randomly generated Air Temp level is " + i1);
+            this.airtemplevel = i1;
+            Log.d("spoof", "randomly generated Air Temp level is " + i1);
 
 
             i1 = (r.nextInt(40) + 60);
-            this.ambienthumiditylevel=i1;
-            Log.d("spoof","randomly generated Ambient Humidity level is " + i1);
+            this.ambienthumiditylevel = i1;
+            Log.d("spoof", "randomly generated Ambient Humidity level is " + i1);
 
 
             i1 = (r.nextInt(1) + 20);
-            this.canopyheightlevel=i1;
-            Log.d("spoof","randomly generated Canopy Height level is " + i1);
+            this.canopyheightlevel = i1;
+            Log.d("spoof", "randomly generated Canopy Height level is " + i1);
 
             i1 = (r.nextInt(900) + 1000);
-            this.co2level=i1;
-            Log.d("spoof","randomly generated Co2 level is " + i1);
+            this.co2level = i1;
+            Log.d("spoof", "randomly generated Co2 level is " + i1);
 
             i1 = (r.nextInt(600) + 1000);
-            this.dolevel=i1;
-            Log.d("spoof","randomly generated DO level is " + i1);
+            this.dolevel = i1;
+            Log.d("spoof", "randomly generated DO level is " + i1);
 
             i1 = (r.nextInt(10) + 60);
-            this.lightheight=i1;
-            Log.d("spoof","randomly generated light height level is " + i1);
+            this.lightheight = i1;
+            Log.d("spoof", "randomly generated light height level is " + i1);
 
             i1 = (r.nextInt(400) + 600);
-            this.o2level=i1;
-            Log.d("spoof","randomly generated O2 level is " + i1);
+            this.o2level = i1;
+            Log.d("spoof", "randomly generated O2 level is " + i1);
 
             i1 = (r.nextInt(1) + 5);
-            this.orplevel=i1;
-            Log.d("spoof","randomly generated ORP level is " + i1);
+            this.orplevel = i1;
+            Log.d("spoof", "randomly generated ORP level is " + i1);
 
             i1 = (r.nextInt(500) + 1000);
-            this.tdslevel=i1;
-            Log.d("spoof","randomly generated ORP level is " + i1);
+            this.tdslevel = i1;
+            Log.d("spoof", "randomly generated ORP level is " + i1);
 
             i1 = (r.nextInt(14) + 1);
-            this.phlevel=i1;
-            Log.d("spoof","randomly generated pH level is " + i1);
+            this.phlevel = i1;
+            Log.d("spoof", "randomly generated pH level is " + i1);
 
             i1 = (r.nextInt(80) + 65);
-            this.solutiontemplevel=i1;
-            Log.d("spoof","randomly generated Solution Temp level is " + i1);
-            Log.e("Subtroutine","yougottothe end");
+            this.solutiontemplevel = i1;
+            Log.d("spoof", "randomly generated Solution Temp level is " + i1);
+            Log.e("Subtroutine", "yougottothe end");
 
 
             this.datapointinDateFormat = Calendar.getInstance().getTime();
@@ -192,17 +208,26 @@ public class verynicedatapoint implements Parcelable {
             }
 
 
-             i1 = (r.nextInt(1) + 1);
-             if (i1==1) {
-                 this.reservoirs = false;
-                 Log.d("spoof", "reserviors are false (empty)");
-             }
-                 else{
-                 this.reservoirs=true;
-                 Log.d("spoof","reservoirs are true (full)");
-             }}
+            i1 = (r.nextInt(1) + 1);
+            if (i1 == 1) {
+                this.reservoir1 = false;
+                Log.d("spoof", "reserviors are false (empty)");
+            } else {
+                this.reservoir1 = true;
+                Log.d("spoof", "reservoirs are true (full)");
+            }
+
+            this.reservoir2 = true;
+            this.reservoir3 = true;
+            this.reservoir4 = true;
+            this.reservoir5 = true;
+            this.reservoir6 = true;
+            this.reservoir7 = true;
+            this.reservoir8 = true;
+            this.reservoir9 = true;
 
 
+        }
 
             public float getAirtemplevel() {
                 return airtemplevel;
@@ -248,9 +273,36 @@ public class verynicedatapoint implements Parcelable {
                 return solutiontemplevel;
             }
 
-            public boolean getReservoirs(){
-                return reservoirs;
+            public boolean getReservoir1(){
+                return reservoir1;
             }
+
+            public boolean getReservoir2(){
+                return reservoir2;
+            }
+            public boolean getReservoir3(){
+                return reservoir3;
+            }
+            public boolean getReservoir4(){
+                return reservoir4;
+            }
+            public boolean getReservoir5(){
+                return reservoir5;
+            }
+            public boolean getReservoir6(){
+                return reservoir6;
+            }
+            public boolean getReservoir7(){
+                return reservoir7;
+            }
+            public boolean getReservoir8(){
+                return reservoir8;
+            }
+            public boolean getReservoir9(){
+                return reservoir9;
+            }
+
+
             public Date getDatapointinDateFormat(){ return datapointinDateFormat;}
             public String getDatapointdatetime() {return datapointdatetime;}
 }
