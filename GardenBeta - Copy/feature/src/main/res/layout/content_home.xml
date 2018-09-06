@@ -18,6 +18,8 @@
         android:orientation="horizontal">
 
 
+
+
         <TableRow
             android:id="@+id/tblrow_airtemp"
             android:layout_width="match_parent"
@@ -329,7 +331,7 @@
                 android:typeface="monospace" />
         </TableRow>
 
-        <TableRow
+      <!--  <TableRow
             android:id="@+id/tblrow_reservoirs"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -361,7 +363,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textSize="20sp"
                 android:typeface="monospace" />
-        </TableRow>
+        </TableRow>-->
 
         <TableRow
             android:id="@+id/tblrow_canhei"
@@ -395,6 +397,7 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textSize="20sp"
                 android:typeface="monospace" />
+
         </TableRow>
 
         <TableRow
@@ -430,6 +433,203 @@
                 android:textSize="20sp"
                 android:typeface="monospace" />
         </TableRow>
+
+        <TableRow
+            android:id="@+id/tblrow_reservoir_one"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:srcCompat="@drawable/num1" />
+
+            <TextView
+                android:id="@+id/res1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="FloraGro 2-1-6"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp"
+                tools:text="Reservoir 1" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tblrow_num2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:srcCompat="@drawable/num2" />
+
+            <TextView
+                android:id="@+id/tast1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="FloraMicro 5-0-1"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp"
+                tools:text="Reservoir 2" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tblrow_num1a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView2c"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:srcCompat="@drawable/num3" />
+
+            <TextView
+                android:id="@+id/res3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="Florabloom 0-5-4"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp"
+                tools:text="Reservoir 1" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tblrow_num4"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView3b"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:srcCompat="@drawable/num4" />
+
+            <TextView
+                android:id="@+id/tast4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="Hypochlorous Acid"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp"
+                tools:text="Reservoir 2" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tblrow_numf1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView2y"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:srcCompat="@drawable/num5" />
+
+            <TextView
+                android:id="@+id/res1y"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="Hydrogen Peroxide"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp"
+                tools:text="Reservoir 1" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tblrow_nasdfadsum6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageViewffdf6b"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:srcCompat="@drawable/num6" />
+
+            <TextView
+                android:id="@+id/tast1fdasds"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="Tap Water"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp"
+                tools:text="Reservoir 5" />
+
+
+
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tblrow_num6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView6b"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:srcCompat="@drawable/num7" />
+
+            <TextView
+                android:id="@+id/tast1s"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="Base Concentrate"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp"
+                tools:text="Reservoir 5" />
+
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tblrow_num62"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView6bc"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                app:srcCompat="@drawable/num8" />
+
+            <TextView
+                android:id="@+id/tast1sd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="Acid Concentrate"
+                android:textAlignment="viewStart"
+                android:textAppearance="@style/TextAppearance.AppCompat.Body2"
+                android:textSize="24sp"
+                tools:text="Reservoir 5" />
+
+        </TableRow>
+
+
 
 
     </TableLayout>

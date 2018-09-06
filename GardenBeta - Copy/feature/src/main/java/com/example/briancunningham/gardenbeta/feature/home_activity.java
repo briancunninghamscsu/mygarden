@@ -35,7 +35,7 @@ public class home_activity extends AppCompatActivity {
         TextView tvorp = findViewById(R.id.textView_orp);
         TextView tvph = findViewById(R.id.textView_ph);
         TextView tvtds = findViewById(R.id.textView_nuttds);
-        TextView tvres = findViewById(R.id.textView_res);
+        //TextView tvres = findViewById(R.id.textView_res);
         TextView tvslntemp = findViewById(R.id.textView_soltemp);
 
         // assigning java to xml assignments - tablerows for activity linking
@@ -48,7 +48,7 @@ public class home_activity extends AppCompatActivity {
         TableRow tblroworp = findViewById(R.id.tblrow_nutorp);
         TableRow tblrowph = findViewById(R.id.tblrow_ph);
         TableRow tblrowslntemp = findViewById(R.id.tblrow_slntemp);
-        TableRow tblrowres = findViewById(R.id.tblrow_reservoirs);
+        //TableRow tblrowres = findViewById(R.id.tblrow_reservoirs);
         TableRow tblrowtds = findViewById(R.id.tblrow_nuttds);
         TableRow tblrowcanhei = findViewById(R.id.tblrow_canhei);
 
@@ -89,7 +89,7 @@ public class home_activity extends AppCompatActivity {
             tvtds.setText(unit_adder);
 
 
-            tvres.setText(getString(R.string.full));
+            //tvres.setText(getString(R.string.full));
             /*if ((Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "1")))) {
                 tvres.setText(getString(R.string.full));
             } else {
@@ -180,14 +180,14 @@ public class home_activity extends AppCompatActivity {
         });
 
 
-        tblrowres.setOnClickListener(new View.OnClickListener() {
+       /* //tblrowres.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent myIntent = new Intent(home_activity.this, data_activity.class);
                 myIntent.putExtra("parameter_name", "Reservoirs");
                 home_activity.this.startActivity(myIntent);
             }
-        });
+        });*/
 
         tblrowcanhei.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -271,7 +271,7 @@ public class home_activity extends AppCompatActivity {
                 TextView tvorp = findViewById(R.id.textView_orp);
                 TextView tvph = findViewById(R.id.textView_ph);
                 TextView tvtds = findViewById(R.id.textView_nuttds);
-                TextView tvres = findViewById(R.id.textView_res);
+                //TextView tvres = findViewById(R.id.textView_res);
                 TextView tvslntemp = findViewById(R.id.textView_soltemp);
 
                 // assigning java to xml assignments - tablerows for activity linking
@@ -326,7 +326,7 @@ public class home_activity extends AppCompatActivity {
                     tvtds.setText(unit_adder);
 
 
-                    tvres.setText(getString(R.string.full));
+                    //tvres.setText(getString(R.string.full));
                    /* if ((Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "1")))) {
                         tvres.setText(getString(R.string.full));
                     } else {
