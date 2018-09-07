@@ -25,15 +25,15 @@ public class verynicedatapoint {
         private final float tdslevel;
         private final float phlevel;
         private final float solutiontemplevel;
-        private boolean reservoir1;
-        private boolean reservoir2;
-        private boolean reservoir3;
-        private final boolean reservoir4;
-        private final boolean reservoir5;
-        private final boolean reservoir6;
-        private final boolean reservoir7;
-        private final boolean reservoir8;
-        private final boolean reservoir9;
+        private float reservoir1;
+        private float reservoir2;
+        private float reservoir3;
+        private float reservoir4;
+        private float reservoir5;
+        private float reservoir6;
+        private float reservoir7;
+        private float reservoir8;
+        private float reservoir9;
         private String datapointdatetime;
         private Date datapointinDateFormat;
 
@@ -100,7 +100,7 @@ public class verynicedatapoint {
 
 
 
-        public verynicedatapoint(String date, String time, float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoir1, boolean reservoir2, boolean reservoir3, boolean reservoir4, boolean reservoir5, boolean reservoir6, boolean reservoir7, boolean reservoir8, boolean reservoir9) {
+        public verynicedatapoint(String date, String time, float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, float reservoir1, float reservoir2, float reservoir3, float reservoir4, float reservoir5, float reservoir6, float reservoir7, float reservoir8, float reservoir9) {
             this.airtemplevel = airtemplevel;
             this.ambienthumiditylevel = ambienthumiditylevel;
             this.canopyheightlevel = canopyheightlevel;
@@ -210,21 +210,21 @@ public class verynicedatapoint {
 
             i1 = (r.nextInt(1) + 1);
             if (i1 == 1) {
-                this.reservoir1 = false;
+                this.reservoir1 = 0;
                 Log.d("spoof", "reserviors are false (empty)");
             } else {
-                this.reservoir1 = true;
+                this.reservoir1 = 1;
                 Log.d("spoof", "reservoirs are true (full)");
             }
 
-            this.reservoir2 = true;
-            this.reservoir3 = true;
-            this.reservoir4 = true;
-            this.reservoir5 = true;
-            this.reservoir6 = true;
-            this.reservoir7 = true;
-            this.reservoir8 = true;
-            this.reservoir9 = true;
+            this.reservoir2 = 1;
+            this.reservoir3 = 1;
+            this.reservoir4 = 1;
+            this.reservoir5 = 1;
+            this.reservoir6 = 1;
+            this.reservoir7 = 1;
+            this.reservoir8 = 1;
+            this.reservoir9 = 1;
 
 
         }
@@ -273,32 +273,32 @@ public class verynicedatapoint {
                 return solutiontemplevel;
             }
 
-            public boolean getReservoir1(){
+            public float getReservoir1(){
                 return reservoir1;
             }
 
-            public boolean getReservoir2(){
+            public float getReservoir2(){
                 return reservoir2;
             }
-            public boolean getReservoir3(){
+            public float getReservoir3(){
                 return reservoir3;
             }
-            public boolean getReservoir4(){
+            public float getReservoir4(){
                 return reservoir4;
             }
-            public boolean getReservoir5(){
+            public float getReservoir5(){
                 return reservoir5;
             }
-            public boolean getReservoir6(){
+            public float getReservoir6(){
                 return reservoir6;
             }
-            public boolean getReservoir7(){
+            public float getReservoir7(){
                 return reservoir7;
             }
-            public boolean getReservoir8(){
+            public float getReservoir8(){
                 return reservoir8;
             }
-            public boolean getReservoir9(){
+            public float getReservoir9(){
                 return reservoir9;
             }
 

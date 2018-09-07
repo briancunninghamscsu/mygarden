@@ -456,6 +456,18 @@
                 android:textSize="24sp"
                 tools:text="Reservoir 1" />
 
+            <TextView
+                android:id="@+id/textView_res1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="monospace"
+                android:text="Full"
+                android:textAlignment="textEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20sp"
+                android:typeface="monospace" />
+
         </TableRow>
 
         <TableRow
@@ -479,6 +491,18 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp"
                 tools:text="Reservoir 2" />
+
+            <TextView
+                android:id="@+id/textView_res2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="monospace"
+                android:textAlignment="textEnd"
+                android:text="Full"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20sp"
+                android:typeface="monospace" />
 
         </TableRow>
 
@@ -504,6 +528,18 @@
                 android:textSize="24sp"
                 tools:text="Reservoir 1" />
 
+            <TextView
+                android:id="@+id/textView_res3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="monospace"
+                android:textAlignment="textEnd"
+                android:text="Full"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20sp"
+                android:typeface="monospace" />
+
         </TableRow>
 
         <TableRow
@@ -527,6 +563,18 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp"
                 tools:text="Reservoir 2" />
+
+            <TextView
+                android:id="@+id/textView_res4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="monospace"
+                android:textAlignment="textEnd"
+                android:text="Full"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20sp"
+                android:typeface="monospace" />
 
         </TableRow>
 
@@ -552,6 +600,18 @@
                 android:textSize="24sp"
                 tools:text="Reservoir 1" />
 
+            <TextView
+                android:id="@+id/textView_res5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="monospace"
+                android:text="Full"
+                android:textAlignment="textEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20sp"
+                android:typeface="monospace" />
+
         </TableRow>
 
         <TableRow
@@ -576,7 +636,17 @@
                 android:textSize="24sp"
                 tools:text="Reservoir 5" />
 
-
+            <TextView
+                android:id="@+id/textView_res6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="monospace"
+                android:text="Full"
+                android:textAlignment="textEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20sp"
+                android:typeface="monospace" />
 
 
         </TableRow>
@@ -603,6 +673,18 @@
                 android:textSize="24sp"
                 tools:text="Reservoir 5" />
 
+            <TextView
+                android:id="@+id/textView_res7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:fontFamily="monospace"
+                android:text="Full"
+                android:textAlignment="textEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20sp"
+                android:typeface="monospace" />
+
         </TableRow>
 
         <TableRow
@@ -626,6 +708,18 @@
                 android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                 android:textSize="24sp"
                 tools:text="Reservoir 5" />
+
+            <TextView
+                android:id="@+id/textView_res8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="10dp"
+                android:text="Full"
+                android:fontFamily="monospace"
+                android:textAlignment="textEnd"
+                android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+                android:textSize="20sp"
+                android:typeface="monospace" />
 
         </TableRow>
 

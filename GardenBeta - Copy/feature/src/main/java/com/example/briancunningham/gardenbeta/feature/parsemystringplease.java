@@ -76,6 +76,7 @@ class parsemystringplease{
                     Log.d("july3", "the value of temp_DO is " + temp_DO);
                     Log.d("july3","the value of temp_ORP " + temp_ORP);
                     Log.d("july3","the value of temp_pH is " + temp_pH);
+                    Log.d("pounder","the value of temp_reservoirs is " + temp_reservoir1);
                     /*Log.d("july3", "the value of temp_reservoirs is "+ temp_reservoir1);
                     Log.d("july3","the value of temp_canopy is " + temp_canopy);
                     Log.d("july3","the value of temp_lightheight is " + temp_lightheight);*/
@@ -86,7 +87,7 @@ class parsemystringplease{
 
                     //store in global variables
                Log.e("august","i think line 90 is what's crashing it");
-                    mApp.putavalue(temp_date,temp_time,Float.valueOf(temp_airtemp), Float.valueOf(temp_humidity), Float.valueOf(temp_canopy), Float.valueOf(temp_CO2), Float.valueOf(temp_DO), Float.valueOf(temp_lightheight), Float.valueOf(temp_TVOC), Float.valueOf(temp_ORP), Float.valueOf(temp_TDS), Float.valueOf(temp_pH), Float.valueOf(temp_Slntemp), Boolean.valueOf(temp_reservoir1),Boolean.valueOf(temp_reservoir2),Boolean.valueOf(temp_reservoir3),Boolean.valueOf(temp_reservoir4),Boolean.valueOf(temp_reservoir5),Boolean.valueOf(temp_reservoir6),Boolean.valueOf(temp_reservoir7),Boolean.valueOf(temp_reservoir8),Boolean.valueOf(temp_reservoir9));
+                    mApp.putavalue(temp_date,temp_time,Float.valueOf(temp_airtemp), Float.valueOf(temp_humidity), Float.valueOf(temp_canopy), Float.valueOf(temp_CO2), Float.valueOf(temp_DO), Float.valueOf(temp_lightheight), Float.valueOf(temp_TVOC), Float.valueOf(temp_ORP), Float.valueOf(temp_TDS), Float.valueOf(temp_pH), Float.valueOf(temp_Slntemp), Float.valueOf(temp_reservoir1),Float.valueOf(temp_reservoir2),Float.valueOf(temp_reservoir3),Float.valueOf(temp_reservoir4),Float.valueOf(temp_reservoir5),Float.valueOf(temp_reservoir6),Float.valueOf(temp_reservoir7),Float.valueOf(temp_reservoir8),Float.valueOf(temp_reservoir9));
                     Log.d("august","the size of mApp is " + mApp.size());
 
 

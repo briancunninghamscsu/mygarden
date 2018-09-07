@@ -38,6 +38,18 @@ public class home_activity extends AppCompatActivity {
         //TextView tvres = findViewById(R.id.textView_res);
         TextView tvslntemp = findViewById(R.id.textView_soltemp);
 
+        //reservoir numbers
+        TextView tvres1 = findViewById(R.id.textView_res1);
+        TextView tvres2 = findViewById(R.id.textView_res2);
+        TextView tvres3 = findViewById(R.id.textView_res3);
+        TextView tvres4 = findViewById(R.id.textView_res4);
+        TextView tvres5 = findViewById(R.id.textView_res5);
+        TextView tvres6 = findViewById(R.id.textView_res6);
+        TextView tvres7 = findViewById(R.id.textView_res7);
+        TextView tvres8 = findViewById(R.id.textView_res8);
+
+
+
         // assigning java to xml assignments - tablerows for activity linking
         TableRow tblrowairtemp = findViewById(R.id.tblrow_airtemp);
         TableRow tblrowambhum = findViewById(R.id.tblrow_ambhum);
@@ -51,6 +63,9 @@ public class home_activity extends AppCompatActivity {
         //TableRow tblrowres = findViewById(R.id.tblrow_reservoirs);
         TableRow tblrowtds = findViewById(R.id.tblrow_nuttds);
         TableRow tblrowcanhei = findViewById(R.id.tblrow_canhei);
+
+
+
 
         // updating the main activity with the most recently-indexed array list
         int mrtesty = mApp.size();
@@ -89,12 +104,59 @@ public class home_activity extends AppCompatActivity {
             tvtds.setText(unit_adder);
 
 
-            //tvres.setText(getString(R.string.full));
-            /*if ((Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoirs(mrtesty - 1)), "1")))) {
-                tvres.setText(getString(R.string.full));
+            // Reservoirs
+            if ((Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "1")))) {
+                tvres1.setText(getString(R.string.full));
             } else {
-                tvres.setText(getString(R.string.notfull));
-            }*/
+                tvres1.setText(getString(R.string.notfull));
+            }
+
+            if ((Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "1")))) {
+                tvres2.setText(getString(R.string.full));
+            } else {
+                tvres2.setText(getString(R.string.notfull));
+            }
+
+            if ((Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "1")))) {
+                tvres3.setText(getString(R.string.full));
+            } else {
+                tvres3.setText(getString(R.string.notfull));
+            }
+
+            if ((Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "1")))) {
+                tvres4.setText(getString(R.string.full));
+            } else {
+                tvres4.setText(getString(R.string.notfull));
+            }
+
+            if ((Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "1")))) {
+                tvres5.setText(getString(R.string.full));
+            } else {
+                tvres5.setText(getString(R.string.notfull));
+            }
+
+            if ((Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "1")))) {
+                tvres6.setText(getString(R.string.full));
+            } else {
+                tvres6.setText(getString(R.string.notfull));
+            }
+
+            if ((Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "1")))) {
+                tvres7.setText(getString(R.string.full));
+            } else {
+                tvres7.setText(getString(R.string.notfull));
+            }
+
+            if ((Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "1")))) {
+                tvres8.setText(getString(R.string.full));
+            } else {
+                tvres8.setText(getString(R.string.notfull));
+            }
+
+
+
+
+
         }
 
         // assigning listeners that link activities
@@ -324,6 +386,83 @@ public class home_activity extends AppCompatActivity {
 
                     unit_adder = String.valueOf(mApp.getTdslevel(mrtesty - 1)) + getString(R.string.ppm);
                     tvtds.setText(unit_adder);
+
+                    //reservoir numbers
+                    TextView tvres1 = findViewById(R.id.textView_res1);
+                    TextView tvres2 = findViewById(R.id.textView_res2);
+                    TextView tvres3 = findViewById(R.id.textView_res3);
+                    TextView tvres4 = findViewById(R.id.textView_res4);
+                    TextView tvres5 = findViewById(R.id.textView_res5);
+                    TextView tvres6 = findViewById(R.id.textView_res6);
+                    TextView tvres7 = findViewById(R.id.textView_res7);
+                    TextView tvres8 = findViewById(R.id.textView_res8);
+
+                    // Reservoirs
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "1.0") || (Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "1")))) {
+                        tvres1.setText(getString(R.string.full));
+                    } else {
+                        tvres1.setText(getString(R.string.notfull));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "1.0") || (Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "1")))) {
+                        tvres2.setText(getString(R.string.full));
+                    } else {
+                        tvres2.setText(getString(R.string.notfull));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "1.0") || (Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "1")))) {
+                        tvres3.setText(getString(R.string.full));
+                    } else {
+                        tvres3.setText(getString(R.string.notfull));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "1.0") || (Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "1")))) {
+                        tvres4.setText(getString(R.string.full));
+                    } else {
+                        tvres4.setText(getString(R.string.notfull));
+                        //Log.d("pounder",String.valueOf(mApp.getReservoir8(mrtesty - 1)));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "1.0") || (Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "1")))) {
+                        tvres5.setText(getString(R.string.full));
+                    } else {
+                        tvres5.setText(getString(R.string.notfull));
+                       // Log.d("pounder",String.valueOf(mApp.getReservoir8(mrtesty - 1)));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "1.0") || (Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "1")))) {
+                        tvres6.setText(getString(R.string.full));
+                    } else {
+                        tvres6.setText(getString(R.string.notfull));
+                        //Log.d("pounder",String.valueOf(mApp.getReservoir8(mrtesty - 1)));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "1.0") || (Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "1")))) {
+                        tvres7.setText(getString(R.string.full));
+                    } else {
+                        tvres7.setText(getString(R.string.notfull));
+                        //Log.d("pounder",String.valueOf(mApp.getReservoir8(mrtesty - 1)));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "1.0")  || (Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "1")))) {
+                        tvres8.setText(getString(R.string.full));
+                        //Log.d("pounder",String.valueOf(mApp.getReservoir8(mrtesty - 1)));
+                    } else {
+                        tvres8.setText(getString(R.string.notfull));
+                        //Log.d("pounder",String.valueOf(mApp.getReservoir8(mrtesty - 1)));
+                    }
+
+                    Log.d("pounder",String.valueOf(mApp.size()));
+                    Log.d("pounder","res 1 is " + (String.valueOf(mApp.getReservoir1(mrtesty - 1))));
+                    Log.d("pounder","res 2 is " + (String.valueOf(mApp.getReservoir2(mrtesty - 1))));
+                    Log.d("pounder","res 3 is " + (String.valueOf(mApp.getReservoir3(mrtesty - 1))));
+                    Log.d("pounder","res 4 is " + (String.valueOf(mApp.getReservoir4(mrtesty - 1))));
+
+                    Log.d("pounder","res 5 is " + (String.valueOf(mApp.getReservoir5(mrtesty - 1))));
+                    Log.d("pounder","res 6 is " + (String.valueOf(mApp.getReservoir6(mrtesty - 1))));
+                    Log.d("pounder","res 7 is " + (String.valueOf(mApp.getReservoir7(mrtesty - 1))));
+                    Log.d("pounder","res 8 is " + (String.valueOf(mApp.getReservoir8(mrtesty - 1))));
+
 
 
                     //tvres.setText(getString(R.string.full));

@@ -143,7 +143,7 @@ public class DeveloperOptions extends AppCompatActivity {
                 RequestParams params = new RequestParams();
                 params.put("whatiwant", "testdata");
                 AsyncHttpClient client = new AsyncHttpClient();
-                client.get("http://192.168.1.12/mygarden/api.php", params, new JsonHttpResponseHandler() {
+                client.get("http://192.168.1.13/mygarden/api.php", params, new JsonHttpResponseHandler() {
                     @Override
                     public void onStart() {
                         Log.d("july", "got to onStart()");

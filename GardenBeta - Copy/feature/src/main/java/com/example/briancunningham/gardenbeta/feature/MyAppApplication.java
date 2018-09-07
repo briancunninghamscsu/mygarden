@@ -199,7 +199,7 @@ public class MyAppApplication extends Application {
         this.recordedData.add(temppoint);
     }
 
-    public void putavalue(String date, String time, float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, boolean reservoir1, boolean reservoir2, boolean reservoir3, boolean reservoir4, boolean reservoir5, boolean reservoir6, boolean reservoir7, boolean reservoir8, boolean reservoir9){
+    public void putavalue(String date, String time, float airtemplevel, float ambienthumiditylevel, float canopyheightlevel, float co2level, float dolevel, float lightheight, float o2level, float orplevel, float tdslevel, float phlevel, float solutiontemplevel, float reservoir1, float reservoir2, float reservoir3, float reservoir4, float reservoir5, float reservoir6, float reservoir7, float reservoir8, float reservoir9){
 
         verynicedatapoint temppoint = new verynicedatapoint(date, time,airtemplevel,ambienthumiditylevel,canopyheightlevel,co2level,dolevel,lightheight,o2level,orplevel,tdslevel,phlevel,solutiontemplevel,reservoir1,reservoir2,reservoir3,reservoir4,reservoir5,reservoir6,reservoir7,reservoir8,reservoir9);
         this.recordedData.add(temppoint);
@@ -247,31 +247,31 @@ public class MyAppApplication extends Application {
         return recordedData.get(z).getSolutiontemplevel();
     }
 
-    public boolean getReservoir1(int z){
+    public float getReservoir1(int z){
         return recordedData.get(z).getReservoir1();
     }
-    public boolean getReservoir2(int z){
+    public float getReservoir2(int z){
         return recordedData.get(z).getReservoir2();
     }
-    public boolean getReservoir3(int z){
+    public float getReservoir3(int z){
         return recordedData.get(z).getReservoir3();
     }
-    public boolean getReservoir4(int z){
+    public float getReservoir4(int z){
         return recordedData.get(z).getReservoir4();
     }
-    public boolean getReservoir5(int z){
+    public float getReservoir5(int z){
         return recordedData.get(z).getReservoir5();
     }
-    public boolean getReservoir6(int z){
+    public float getReservoir6(int z){
         return recordedData.get(z).getReservoir6();
     }
-    public boolean getReservoir7(int z){
+    public float getReservoir7(int z){
         return recordedData.get(z).getReservoir7();
     }
-    public boolean getReservoir8(int z){
+    public float getReservoir8(int z){
         return recordedData.get(z).getReservoir8();
     }
-    public boolean getReservoir9(int z){
+    public float getReservoir9(int z){
         return recordedData.get(z).getReservoir9();
     }
 
