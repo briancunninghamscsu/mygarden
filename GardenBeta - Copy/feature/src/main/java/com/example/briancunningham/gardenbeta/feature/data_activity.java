@@ -212,6 +212,20 @@ public class data_activity extends AppCompatActivity {
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getLightheight(mApp.size() - 1)), getString(R.string.centimeters)));
                         time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
 
+                    case "CO2":
+
+                        // add the data point to the graph
+                        v = new DataPoint(mApp.getDatapointinDateFormat(a), mApp.getCo2level(a));
+
+                        // adjust the y-axis
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("CO2 Level in PPM");
+
+                        //update the header
+                        temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getCo2level(mApp.size() - 1)), getString(R.string.ppm)));
+                        time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
+
+
+
                         break;
 
                     default:
@@ -268,6 +282,8 @@ public class data_activity extends AppCompatActivity {
                         break;
                     case "Reservoirs":
                         rowTextViewB.setText("okay for now");
+                    case "CO2":
+                        rowTextViewB.setText(String.valueOf(mApp.getCo2level(i)));
                         break;
                     case "Canopy Height":
                         rowTextViewB.setText(String.valueOf(mApp.getCanopyheightlevel(i)));
