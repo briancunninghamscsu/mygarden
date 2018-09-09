@@ -124,17 +124,6 @@ public class tolerances extends AppCompatActivity {
 
 
 
-               /* // night time entering box
-                final EditText night_time_lower_box = new EditText(this);
-                night_time_lower_box.setHint("Military Format HHMM");
-                night_time_lower_box.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                night_time_lower_box.setInputType(InputType.TYPE_CLASS_NUMBER);
-                night_time_lower_box.setTextSize(24);
-                ll.addView(night_time_lower_box);*/
-
-
-
-
 
                 final TextView uppertext = new TextView(this);
                 uppertext.setText("If Day Air Temp is Above ");
@@ -408,7 +397,7 @@ public class tolerances extends AppCompatActivity {
 
 
 
-                        // ERROR CHECKING
+                        // ERROR CHECKING FOR AIR TEMP
 
                         if (mApp.air_temp_lower_threshold_day_time<45){
                             mApp.air_temp_lower_threshold_day_time=45;
@@ -494,54 +483,36 @@ public class tolerances extends AppCompatActivity {
 
                                     @Override
                                     public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
-                                        Log.d("kirk", "got to onSuccess()");
-                                        String test1 = response.toString();
-                                        Log.d("kirk", test1);
                                         Snackbar snackbar = Snackbar
                                                 .make(screen, "Changes Saved Succsesfully!", Snackbar.LENGTH_LONG);
                                         snackbar.show();
 
                                         // save the variables from the UI
-                                        // upper settings
 
-                                       /* if (upperbound.getText().toString().equals("")) {
-                                            //params.put("air_temp_lower_threshold_day_time",mApp.air_temp_lower_threshold_day_time);   // if they haven't entered, keep the old value
-                                        }
-                                        else {
-                                            mApp.air_temp_upper_threshold_day_time = Double.valueOf(upperbound.getText().toString());
-                                        }*/
-
+                                        // day time upper settings
                                         mApp.air_temp_upper_pushnotification_day_time = (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0);
                                         mApp.air_temp_upper_turn_on_fans_day_time = (air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0);
                                         mApp.air_temp_upper_turn_off_heating_element_day_time = (upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0);
                                         mApp.air_temp_upper_turn_off_space_heater_day_time = (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0);
 
-                                        // lower settings
-
-                                        if (lowerbound.getText().toString().equals("")) {
-                                            //params.put("air_temp_lower_threshold_day_time",mApp.air_temp_lower_threshold_day_time);   // if they haven't entered, keep the old value
-                                        }
-                                        else {
-                                            mApp.air_temp_lower_threshold_day_time =Double.valueOf(lowerbound.getText().toString());
-                                        }
+                                        //day time lower settings
                                         mApp.air_temp_lower_pushnotification_day_time = (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0);
                                         mApp.air_temp_lower_turn_off_fans_day_time = (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0);
                                         mApp.air_temp_lower_turn_on_heating_element_day_time = (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0);
                                         mApp.air_temp_lower_turn_on_space_heater_day_time = (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0);
 
-                                        //verifying assignments
-                                        //Log.d("kirk",mApp.air_temp_upper_threshold_day_time + " " + mApp.air_temp_upper_pushnotification_day_time + " ");
+                                        // night time upper settings
+                                        mApp.air_temp_upper_pushnotification_night_time = (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_turn_on_fans_night_time = (air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_turn_off_heating_element_night_time = (upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_turn_off_space_heater_night_time = (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0);
 
-                                        // assigning key-values pairs
-
-
-
-                                        //updating UI edittexts
-                                        /*lowerbound.setHint(mApp.air_temp_lower_threshold_night_time + getString(R.string.degreef));
-                                        upperbound.setHint(mApp.air_temp_upper_threshold_day_time + getString(R.string.degreef));
-                                        upperbound_night.setHint(mApp.air_temp_upper_threshold_night_time + getString(R.string.degreef));
-                                        lowerbound_night.setHint(mApp.air_temp_lower_threshold_night_time + getString(R.string.degreef));
-                                    */}
+                                        //night time lower settings
+                                        mApp.air_temp_lower_pushnotification_night_time = (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_turn_off_fans_night_time = (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_turn_on_heating_element_night_time = (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_turn_on_space_heater_night_time = (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0);
+                                    }
 
                                     @Override
                                     public void onFinish(){
@@ -566,57 +537,60 @@ public class tolerances extends AppCompatActivity {
             case "Humidity":
 
                 // humidity title
-                final TextView uppertext_humidity = new TextView(this);
-                uppertext_humidity.setText(getString(R.string.hum_above));
-                uppertext_humidity.setTextSize(24);
-                uppertext_humidity.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                uppertext_humidity.setPadding(8, 8, 8, 8);
-                ll.addView(uppertext_humidity);
+                final TextView uppertext_humidity_day_time = new TextView(this);
+                uppertext_humidity_day_time.setText("If day time humidity is above");
+                uppertext_humidity_day_time.setTextSize(24);
+                uppertext_humidity_day_time.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext_humidity_day_time.setPadding(8, 8, 8, 8);
+                ll.addView(uppertext_humidity_day_time);
 
                 // humidity upper threshold edit text
-                final EditText upperbound_humidity = new EditText(this);
-                upperbound_humidity.setHint(mApp.humidity_upper_threshold_day_time + getString(R.string.percentsign));
-                upperbound_humidity.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                upperbound_humidity.setInputType(InputType.TYPE_CLASS_NUMBER);
-                upperbound_humidity.setTextSize(24);
-                ll.addView(upperbound_humidity);
+                final EditText upperbound_humidity_day_time = new EditText(this);
+                upperbound_humidity_day_time.setHint(mApp.humidity_upper_threshold_day_time + getString(R.string.percentsign));
+                upperbound_humidity_day_time.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound_humidity_day_time.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound_humidity_day_time.setTextSize(24);
+                ll.addView(upperbound_humidity_day_time);
 
                 // push notification for upper humidity
-                final CheckBox upper_humidity_push_nofitication_check_box = new CheckBox(this);
-                upper_humidity_push_nofitication_check_box.setText(getString(R.string.send_push));
-                ll.addView(upper_humidity_push_nofitication_check_box);
+                final CheckBox upper_humidity_push_nofitication_check_box_day_time = new CheckBox(this);
+                upper_humidity_push_nofitication_check_box_day_time.setText(getString(R.string.send_push));
+                ll.addView(upper_humidity_push_nofitication_check_box_day_time);
                 if (mApp.humidity_upper_pushnotification_day_time == 1) {
-                    upper_humidity_push_nofitication_check_box.setChecked(true);
+                    upper_humidity_push_nofitication_check_box_day_time.setChecked(true);
                 } else {
-                    upper_humidity_push_nofitication_check_box.setChecked(false);
+                    upper_humidity_push_nofitication_check_box_day_time.setChecked(false);
                 }
 
                 // upper humidity extra fans on
-                final CheckBox upper_humidity_extra_fans_on = new CheckBox(this);
-                ll.addView(upper_humidity_extra_fans_on);
-                upper_humidity_extra_fans_on.setText(getString(R.string.turn_on_fans));
+                final CheckBox upper_humidity_extra_fans_on_day_time = new CheckBox(this);
+                ll.addView(upper_humidity_extra_fans_on_day_time);
+                upper_humidity_extra_fans_on_day_time.setText(getString(R.string.turn_on_fans));
                 if (mApp.humidity_upper_turn_on_extra_fans_day_time == 1) {
-                    upper_humidity_extra_fans_on.setChecked(true);
+                    upper_humidity_extra_fans_on_day_time.setChecked(true);
                 } else {
-                    upper_humidity_extra_fans_on.setChecked(false);
+                    upper_humidity_extra_fans_on_day_time.setChecked(false);
                 }
 
                 // upper_humidity_turn_off_fogger
-                final CheckBox upper_humidity_turn_off_fogger_check_box = new CheckBox(this);
-                ll.addView(upper_humidity_turn_off_fogger_check_box);
-                upper_humidity_turn_off_fogger_check_box.setText(getString(R.string.turn_off_fogger));
+                final CheckBox upper_humidity_turn_off_fogger_check_box_day_time = new CheckBox(this);
+                ll.addView(upper_humidity_turn_off_fogger_check_box_day_time);
+                upper_humidity_turn_off_fogger_check_box_day_time.setText(getString(R.string.turn_off_fogger));
                 if (mApp.humidity_upper_turn_off_fogger_day_time == 1) {
-                    upper_humidity_turn_off_fogger_check_box.setChecked(true);
+                    upper_humidity_turn_off_fogger_check_box_day_time.setChecked(true);
                 } else {
-                    upper_humidity_turn_off_fogger_check_box.setChecked(false);
+                    upper_humidity_turn_off_fogger_check_box_day_time.setChecked(false);
                 }
 
                 // upper humidity turn on space heater
-                final CheckBox upper_humidity_turn_on_space_heater_checkbox = new CheckBox(this);
-                ll.addView(upper_humidity_turn_on_space_heater_checkbox);
-                upper_humidity_turn_on_space_heater_checkbox.setText(getString(R.string.turn_on_space_heater));
+                final CheckBox upper_humidity_turn_on_space_heater_checkbox_day_time = new CheckBox(this);
+                ll.addView(upper_humidity_turn_on_space_heater_checkbox_day_time);
+                upper_humidity_turn_on_space_heater_checkbox_day_time.setText(getString(R.string.turn_on_space_heater));
                 if (mApp.humidity_upper_turn_on_space_heater_day_time ==1){
-                    upper_humidity_turn_on_space_heater_checkbox.setChecked(true);
+                    upper_humidity_turn_on_space_heater_checkbox_day_time.setChecked(true);
+                }
+                else {
+                    upper_humidity_turn_on_space_heater_checkbox_day_time.setChecked(false);
                 }
 
                 // lower humidity title
@@ -628,64 +602,288 @@ public class tolerances extends AppCompatActivity {
                 ll.addView(lower_humidity_title);
 
                 // lower humidity threshold edit text
-                final EditText lower_humidity_threshold_edit_text = new EditText(this);
-                lower_humidity_threshold_edit_text.setHint(mApp.humidity_lower_threshold_day_time + getString(R.string.percentsign));
-                lower_humidity_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
-                lower_humidity_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                lower_humidity_threshold_edit_text.setTextSize(24);
-                ll.addView(lower_humidity_threshold_edit_text);
+                final EditText lower_humidity_threshold_edit_text_day_time = new EditText(this);
+                lower_humidity_threshold_edit_text_day_time.setHint(mApp.humidity_lower_threshold_day_time + getString(R.string.percentsign));
+                lower_humidity_threshold_edit_text_day_time.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lower_humidity_threshold_edit_text_day_time.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lower_humidity_threshold_edit_text_day_time.setTextSize(24);
+                ll.addView(lower_humidity_threshold_edit_text_day_time);
 
                 // lower humidity push notification check box
-                final CheckBox low_humidity_push_notification_check_box = new CheckBox(this);
-                low_humidity_push_notification_check_box.setText(getString(R.string.send_push));
-                ll.addView(low_humidity_push_notification_check_box);
+                final CheckBox low_humidity_push_notification_check_box_day_time = new CheckBox(this);
+                low_humidity_push_notification_check_box_day_time.setText(getString(R.string.send_push));
+                ll.addView(low_humidity_push_notification_check_box_day_time);
                 if (mApp.humidity_lower_pushnotification_day_time ==1){
-                    low_humidity_push_notification_check_box.setChecked(true);
+                    low_humidity_push_notification_check_box_day_time.setChecked(true);
                 }
                 else
                 {
-                    low_humidity_push_notification_check_box.setChecked(false);
+                    low_humidity_push_notification_check_box_day_time.setChecked(false);
                 }
 
                 // low humidity turn off extra fans
-                final CheckBox low_humidity_turn_off_extra_fans = new CheckBox(this);
-                ll.addView(low_humidity_turn_off_extra_fans);
-                low_humidity_turn_off_extra_fans.setText(getString(R.string.turn_off_fans));
+                final CheckBox low_humidity_turn_off_extra_fans_day_time = new CheckBox(this);
+                ll.addView(low_humidity_turn_off_extra_fans_day_time);
+                low_humidity_turn_off_extra_fans_day_time.setText(getString(R.string.turn_off_fans));
                 if (mApp.humidity_lower_turn_off_extra_fans_day_time ==1){
-                    low_humidity_turn_off_extra_fans.setChecked(true);
+                    low_humidity_turn_off_extra_fans_day_time.setChecked(true);
                 }
                 else {
-                    low_humidity_turn_off_extra_fans.setChecked(false);
+                    low_humidity_turn_off_extra_fans_day_time.setChecked(false);
                 }
 
                 // low humidity turn on fogger
-                final CheckBox low_humidity_turn_on_fogger = new CheckBox(this);
-                ll.addView(low_humidity_turn_on_fogger);
-                low_humidity_turn_on_fogger.setText(getString(R.string.turn_on_fogger));
+                final CheckBox low_humidity_turn_on_fogger_day_time = new CheckBox(this);
+                ll.addView(low_humidity_turn_on_fogger_day_time);
+                low_humidity_turn_on_fogger_day_time.setText(getString(R.string.turn_on_fogger));
                 if (mApp.humidity_lower_turn_on_fogger_day_time ==1){
-                    low_humidity_turn_on_fogger.setChecked(true);
+                    low_humidity_turn_on_fogger_day_time.setChecked(true);
                 }
                 else {
-                    low_humidity_turn_on_fogger.setChecked(false);
+                    low_humidity_turn_on_fogger_day_time.setChecked(false);
                 }
 
 
                 // low humidity turn off space heater
-                final CheckBox low_humidty_turn_off_space_heater_checkbox = new CheckBox(this);
-                ll.addView(low_humidty_turn_off_space_heater_checkbox);
-                low_humidty_turn_off_space_heater_checkbox.setText(getString(R.string.turn_off_space_heater));
-                if (mApp.humidity_lower_turn_off_space_heater_day_time ==1){
-                    low_humidity_turn_off_extra_fans.setChecked(true);
+                final CheckBox low_humidity_turn_off_space_heater_checkbox_day_time = new CheckBox(this);
+                ll.addView(low_humidity_turn_off_space_heater_checkbox_day_time);
+                low_humidity_turn_off_space_heater_checkbox_day_time.setText(getString(R.string.turn_off_space_heater));
+                if (mApp.humidity_lower_turn_off_space_heater_day_time==1){
+                    low_humidity_turn_off_space_heater_checkbox_day_time.setChecked(true);
                 }
                 else{
-                    low_humidity_turn_off_extra_fans.setChecked(false);
+                    low_humidity_turn_off_space_heater_checkbox_day_time.setChecked(false);
                 }
+
+                // HUMIDITY NIGHT TIME
+
+                // humidity title
+                final TextView uppertext_humidity_night_time = new TextView(this);
+                uppertext_humidity_night_time.setText("If night time humidity is above");
+                uppertext_humidity_night_time.setTextSize(24);
+                uppertext_humidity_night_time.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext_humidity_night_time.setPadding(8, 8, 8, 8);
+                ll.addView(uppertext_humidity_night_time);
+
+// humidity upper threshold edit text
+                final EditText upperbound_humidity_night_time = new EditText(this);
+                upperbound_humidity_night_time.setHint(mApp.humidity_upper_threshold_night_time + getString(R.string.percentsign));
+                upperbound_humidity_night_time.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound_humidity_night_time.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound_humidity_night_time.setTextSize(24);
+                ll.addView(upperbound_humidity_night_time);
+
+// push notification for upper humidity
+                final CheckBox upper_humidity_push_nofitication_check_box_night_time = new CheckBox(this);
+                upper_humidity_push_nofitication_check_box_night_time.setText(getString(R.string.send_push));
+                ll.addView(upper_humidity_push_nofitication_check_box_night_time);
+                if (mApp.humidity_upper_pushnotification_night_time == 1) {
+                    upper_humidity_push_nofitication_check_box_night_time.setChecked(true);
+                } else {
+                    upper_humidity_push_nofitication_check_box_night_time.setChecked(false);
+                }
+
+// upper humidity extra fans on
+                final CheckBox upper_humidity_extra_fans_on_night_time = new CheckBox(this);
+                ll.addView(upper_humidity_extra_fans_on_night_time);
+                upper_humidity_extra_fans_on_night_time.setText(getString(R.string.turn_on_fans));
+                if (mApp.humidity_upper_turn_on_extra_fans_night_time == 1) {
+                    upper_humidity_extra_fans_on_night_time.setChecked(true);
+                } else {
+                    upper_humidity_extra_fans_on_night_time.setChecked(false);
+                }
+
+// upper_humidity_turn_off_fogger
+                final CheckBox upper_humidity_turn_off_fogger_check_box_night_time = new CheckBox(this);
+                ll.addView(upper_humidity_turn_off_fogger_check_box_night_time);
+                upper_humidity_turn_off_fogger_check_box_night_time.setText(getString(R.string.turn_off_fogger));
+                if (mApp.humidity_upper_turn_off_fogger_night_time == 1) {
+                    upper_humidity_turn_off_fogger_check_box_night_time.setChecked(true);
+                } else {
+                    upper_humidity_turn_off_fogger_check_box_night_time.setChecked(false);
+                }
+
+// upper humidity turn on space heater
+                final CheckBox upper_humidity_turn_on_space_heater_checkbox_night_time = new CheckBox(this);
+                ll.addView(upper_humidity_turn_on_space_heater_checkbox_night_time);
+                upper_humidity_turn_on_space_heater_checkbox_night_time.setText(getString(R.string.turn_on_space_heater));
+                if (mApp.humidity_upper_turn_on_space_heater_night_time ==1){
+                    upper_humidity_turn_on_space_heater_checkbox_night_time.setChecked(true);
+                }
+
+// lower humidity title
+                final TextView lower_humidity_title_night = new TextView(this);
+                lower_humidity_title_night.setText(getString(R.string.hum_below));
+                lower_humidity_title_night.setTextSize(24);
+                lower_humidity_title_night.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lower_humidity_title_night.setPadding(8,8,8,8);
+                ll.addView(lower_humidity_title_night);
+
+// lower humidity threshold edit text
+                final EditText lower_humidity_threshold_edit_text_night_time = new EditText(this);
+                lower_humidity_threshold_edit_text_night_time.setHint(mApp.humidity_lower_threshold_night_time + getString(R.string.percentsign));
+                lower_humidity_threshold_edit_text_night_time.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lower_humidity_threshold_edit_text_night_time.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lower_humidity_threshold_edit_text_night_time.setTextSize(24);
+                ll.addView(lower_humidity_threshold_edit_text_night_time);
+
+// lower humidity push notification check box
+                final CheckBox low_humidity_push_notification_check_box_night_time = new CheckBox(this);
+                low_humidity_push_notification_check_box_night_time.setText(getString(R.string.send_push));
+                ll.addView(low_humidity_push_notification_check_box_night_time);
+                if (mApp.humidity_lower_pushnotification_night_time ==1){
+                    low_humidity_push_notification_check_box_night_time.setChecked(true);
+                }
+                else
+                {
+                    low_humidity_push_notification_check_box_night_time.setChecked(false);
+                }
+
+// low humidity turn off extra fans
+                final CheckBox low_humidity_turn_off_extra_fans_night_time = new CheckBox(this);
+                ll.addView(low_humidity_turn_off_extra_fans_night_time);
+                low_humidity_turn_off_extra_fans_night_time.setText(getString(R.string.turn_off_fans));
+                if (mApp.humidity_lower_turn_off_extra_fans_night_time ==1){
+                    low_humidity_turn_off_extra_fans_night_time.setChecked(true);
+                }
+                else {
+                    low_humidity_turn_off_extra_fans_night_time.setChecked(false);
+                }
+
+// low humidity turn on fogger
+                final CheckBox low_humidity_turn_on_fogger_night_time = new CheckBox(this);
+                ll.addView(low_humidity_turn_on_fogger_night_time);
+                low_humidity_turn_on_fogger_night_time.setText(getString(R.string.turn_on_fogger));
+                if (mApp.humidity_lower_turn_on_fogger_night_time ==1){
+                    low_humidity_turn_on_fogger_night_time.setChecked(true);
+                }
+                else {
+                    low_humidity_turn_on_fogger_night_time.setChecked(false);
+                }
+
+
+                // low humidity turn off space heater
+                CheckBox low_humidity_turn_off_space_heater_checkbox_night_time = new CheckBox(this);
+                ll.addView(low_humidity_turn_off_space_heater_checkbox_night_time);
+                low_humidity_turn_off_space_heater_checkbox_night_time.setText(getString(R.string.turn_off_space_heater));
+                if (mApp.humidity_lower_turn_off_space_heater_night_time==1){
+                    low_humidity_turn_off_space_heater_checkbox_night_time.setChecked(true);
+                }
+                else{
+                    low_humidity_turn_off_space_heater_checkbox_night_time.setChecked(false);
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
                 //  submit changes button
                 final Button buttsoup1 = new Button(this);
                 buttsoup1.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup1);
-                break;
+                buttsoup1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+
+                       /* mApp.humidity_upper_threshold_day_time=Double.parseDouble(uppertext.getText().toString());
+                        mApp.humidity_lower_threshold_day_time=Double.parseDouble(belowtext.getText().toString());
+                        mApp.humidity_upper_threshold_night_time=Double.parseDouble(uppertext_night.getText().toString());
+                       */
+
+                        /*mApp.humidity_lower_threshold_night_time=belowtext_night.getText().toString().isEmpty() ? mApp.humidity_lower_threshold_night_time:Double.parseDouble(belowtext_night.getText().toString());
+                        mApp.humidity_upper_threshold_night_time=uppertext_night.getText().toString().isEmpty() ? mApp.humidity_upper_threshold_night_time:Double.parseDouble(uppertext_night.getText().toString());
+                        mApp.humidity_lower_threshold_day_time=belowtext.getText().toString().isEmpty() ? mApp.humidity_lower_threshold_day_time:Double.parseDouble(belowtext.getText().toString());
+                        mApp.humidity_upper_threshold_day_time=uppertext.getText().toString().isEmpty() ? mApp.humidity_upper_threshold_day_time:Double.parseDouble(uppertext_night.getText().toString());
+*/
+
+                        if (!lower_humidity_threshold_edit_text_day_time.getText().toString().equals("")) {
+                            mApp.humidity_lower_threshold_day_time = Double.parseDouble(lower_humidity_threshold_edit_text_day_time.getText().toString());
+                        }
+
+                        if (!upperbound_humidity_day_time.getText().toString().equals("")) {
+                            mApp.humidity_upper_threshold_day_time = Double.parseDouble(upperbound_humidity_day_time.getText().toString());
+                        }
+                        if (!lower_humidity_threshold_edit_text_night_time.getText().toString().equals("")) {
+                            mApp.humidity_lower_threshold_night_time = Double.parseDouble(lower_humidity_threshold_edit_text_night_time.getText().toString());
+                        }
+                        if (!upperbound_humidity_night_time.getText().toString().equals("")) {
+                            mApp.humidity_upper_threshold_night_time = Double.parseDouble(upperbound_humidity_night_time.getText().toString());
+                        }
+
+
+                        // ERROR CHECKING FOR HUMIDITY
+
+                        if (mApp.humidity_lower_threshold_day_time < 50) {
+                            mApp.humidity_lower_threshold_day_time = 50;
+                        }
+                        if (mApp.humidity_lower_threshold_night_time < 40) {
+                            mApp.humidity_lower_threshold_night_time = 40;
+                        }
+                        if (mApp.humidity_upper_threshold_day_time > 80) {
+                            mApp.humidity_upper_threshold_day_time = 80;
+                        }
+                        if (mApp.humidity_upper_threshold_night_time > 70) {
+                            mApp.humidity_upper_threshold_night_time = 70;
+                        }
+
+
+                        if (mApp.humidity_lower_threshold_day_time >= mApp.humidity_upper_threshold_day_time) {
+                            mApp.humidity_lower_threshold_day_time = 60;
+                            mApp.humidity_upper_threshold_day_time = 80;
+                        }
+                        if (mApp.humidity_lower_threshold_night_time >= mApp.humidity_upper_threshold_night_time) {
+                            mApp.humidity_lower_threshold_night_time = 50;
+                            mApp.humidity_upper_threshold_night_time = 70;
+                        }
+
+                        // saving the changes in the checkboxes
+                        // day time upper settings
+                        mApp.humidity_upper_pushnotification_day_time = (upper_humidity_push_nofitication_check_box_day_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_upper_turn_on_extra_fans_day_time = (upper_humidity_extra_fans_on_day_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_upper_turn_off_fogger_day_time = (upper_humidity_turn_off_fogger_check_box_day_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_upper_turn_on_space_heater_day_time = (upper_humidity_turn_on_space_heater_checkbox_day_time.isChecked()) ? (1) : (0);
+
+                        //day time lower settings
+                        mApp.humidity_lower_pushnotification_day_time = (low_humidity_push_notification_check_box_day_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_lower_turn_off_extra_fans_day_time = (low_humidity_turn_off_extra_fans_day_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_lower_turn_on_fogger_day_time = (low_humidity_turn_on_fogger_day_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_lower_turn_off_space_heater_day_time = (low_humidity_turn_off_space_heater_checkbox_day_time.isChecked()) ? (1) : (0);
+
+
+                        // night time upper settings
+                        mApp.humidity_upper_pushnotification_night_time = (upper_humidity_push_nofitication_check_box_night_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_upper_turn_on_extra_fans_night_time = (upper_humidity_extra_fans_on_night_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_upper_turn_off_fogger_night_time = (upper_humidity_turn_off_fogger_check_box_night_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_upper_turn_on_space_heater_night_time = (upper_humidity_turn_on_space_heater_checkbox_night_time.isChecked()) ? (1) : (0);
+
+                    //night time lower settings
+                        mApp.humidity_lower_pushnotification_night_time = (low_humidity_push_notification_check_box_night_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_lower_turn_off_extra_fans_night_time = (low_humidity_turn_off_extra_fans_night_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_lower_turn_on_fogger_night_time = (low_humidity_turn_on_fogger_night_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_lower_turn_off_space_heater_night_time = (low_humidity_turn_off_space_heater_checkbox_day_time.isChecked()) ? (1) : (0);
+
+
+
+
+                    }
+                }
+                );
+
+
+
+
+
+                        break;
 
             case "TVOC":
                 //TVOC upper title
