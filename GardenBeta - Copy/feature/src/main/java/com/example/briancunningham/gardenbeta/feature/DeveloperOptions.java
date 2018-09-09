@@ -29,7 +29,7 @@ public class DeveloperOptions extends AppCompatActivity {
         MyLoopjTask myLoopjTask = new MyLoopjTask();
 
 
-        Button makethirty = findViewById(R.id.butt4);
+       /* Button makethirty = findViewById(R.id.butt4);
         makethirty.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -67,10 +67,10 @@ public class DeveloperOptions extends AppCompatActivity {
                         .setAction("Action", null).show();
 
             }
-        });
+        });*/
 
 
-        Button spoofbutton = findViewById(R.id.butt2);
+        /*Button spoofbutton = findViewById(R.id.butt2);
         spoofbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -79,9 +79,9 @@ public class DeveloperOptions extends AppCompatActivity {
                         .setAction("Action", null).show();
 
             }
-        });
+        });*/
 
-        Button airtempchangebutton = findViewById(R.id.button6);
+        /*Button airtempchangebutton = findViewById(R.id.button6);
         airtempchangebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,10 +91,10 @@ public class DeveloperOptions extends AppCompatActivity {
                         .setAction("Action", null).show();
 
             }
-        });
+        });*/
 
 
-        Button txtbutton = findViewById(R.id.button);
+       /* Button txtbutton = findViewById(R.id.button);
         txtbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,10 +114,10 @@ public class DeveloperOptions extends AppCompatActivity {
 
 
             }
-        });
+        });*/
 
 
-        final Button usersettingsprintbutton = findViewById(R.id.button5);
+        /*final Button usersettingsprintbutton = findViewById(R.id.button5);
         usersettingsprintbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -125,16 +125,16 @@ public class DeveloperOptions extends AppCompatActivity {
                 Log.d("usersettings","got to user settings");
                 //Snackbar.make(view, " Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
                 //        .setAction("Action", null).show();
-            }});
+            }});*/
 
-        Button readbutton = findViewById(R.id.button2);
+        /*Button readbutton = findViewById(R.id.button2);
         readbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //Log.d("july", read_file(mApp, "hello.txt"));
                 Snackbar.make(view, " Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
-            }});
+            }});*/
 
         Button getdatafromserverbutton = findViewById(R.id.button4);
         getdatafromserverbutton.setOnClickListener(new View.OnClickListener() {
@@ -203,7 +203,7 @@ public class DeveloperOptions extends AppCompatActivity {
 
 
 
-        Button uploadbutton = findViewById(R.id.button3);
+        /*Button uploadbutton = findViewById(R.id.button3);
         uploadbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -239,7 +239,7 @@ public class DeveloperOptions extends AppCompatActivity {
                         }
                 });
 
-                Button printbutton = findViewById(R.id.butt3);
+                /*Button printbutton = findViewById(R.id.butt3);
                 printbutton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -262,10 +262,10 @@ public class DeveloperOptions extends AppCompatActivity {
                         Snackbar.make(view, "Check LogCat for the Data Activity - tag 'consoleprinting'", Snackbar.LENGTH_LONG)
                                 .setAction("Action", null).show();
                     }
-                });
+                });*/
             }
-            });
-        }
+
+
 
 
     @Override

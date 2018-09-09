@@ -5,6 +5,7 @@
         "Not for public release.\n\nAll images used under Public Domain.\n\n"
         "Android Graphing Library by Jonas Gehring.\n\n"
         View License at \nhttps://github.com/jjoe64/GraphView"
+        View License at \nhttps://github.com/jjoe64/GraphView"
     </string>
     <string name="learn">Learn</string>
     <string name="ppm">ppm</string>
@@ -39,7 +40,7 @@
     <string name="Print_Data">Print Data</string>
     <string name="Make_30_Data_Points">"Make 30 Data Points"</string>
     <string name="dubs">%s %s</string>
-    <string name="update_with_data_from_server">Update with Data from Serve</string>
+    <string name="update_with_data_from_server">Update with Data from Server</string>
     <string name="print_current_user_settings">Print Current User Settings</string>
     <string name="Change_Upper_bound">Change Upper Bound</string>
 

@@ -14,60 +14,9 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-
-            <Button
-                android:id="@+id/butt1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/send_a_string"
-                tools:text="@string/send_a_string" />
-
-            <Button
-                android:id="@+id/butt2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Spoof_Data"
-                tools:text="@string/Spoof_Data" />
-
-            <Button
-                android:id="@+id/butt3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Print_Data"
-                tools:text="@string/Print_Data"/>
-
-            <Button
-                android:id="@+id/butt4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/Make_30_Data_Points"
-                tools:text="@string/Make_30_Data_Points"/>
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/make_a_txt_file"
-                tools:layout_editor_absoluteX="1dp"
-                tools:layout_editor_absoluteY="192dp"
-                tools:text="@string/make_a_txt_file" />
-
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/read_files_in_app_mem"
-                tools:text="@string/read_files_in_app_mem" />
-
-            <Button
-                android:id="@+id/button3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/send_hello_to_server"
-                tools:text="@string/send_hello_to_server" />
 
             <Button
                 android:id="@+id/button4"
@@ -77,25 +26,11 @@
                 tools:text="@string/update_with_data_from_server" />
 
             <Button
-                android:id="@+id/button5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/print_current_user_settings"
-                tools:text="@string/print_current_user_settings" />
-
-            <Button
-                android:id="@+id/button6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/Change_Upper_bound"
-                tools:text="@string/Change_Upper_bound" />
-
-            <Button
                 android:id="@+id/button7"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Pull User Settings from @string/update_with_data_from_server"
-                tools:text="pull user settings from server" />
+                android:text="Pull User Settings"
+                tools:text="pull user settings" />
         </LinearLayout>
     </ScrollView>
 
