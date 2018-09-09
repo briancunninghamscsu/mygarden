@@ -12,29 +12,59 @@ public class MyAppApplication extends Application {
 
     private final ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
 
-    public double air_temp_upper_threshold=0;
-    public double air_temp_upper_pushnotification=0;
-    public double air_temp_upper_turn_on_fans=0;
-    public double air_temp_upper_turn_off_heating_element=0;
-    public double air_temp_upper_turn_off_space_heater=0;
 
-    public double air_temp_lower_threshold=0;
-    public double air_temp_lower_pushnotification=0;
-    public double air_temp_lower_turn_off_fans=0;
-    public double air_temp_lower_turn_on_heating_element=0;
-    public double air_temp_lower_turn_on_space_heater=0;
+    public double day_time_starts_at=800;
+    public double night_time_starts_at=2000;
 
-    public double humidity_upper_threshold=0;
-    public double humidity_upper_pushnotification=0;
-    public double humidity_upper_turn_on_extra_fans=0;
-    public double humidity_upper_turn_off_fogger=0;
-    public double humidity_upper_turn_on_space_heater=0;
+    public double air_temp_upper_threshold_day_time =0;
+    public double air_temp_upper_pushnotification_day_time =0;
+    public double air_temp_upper_turn_on_fans_day_time=0;
+    public double air_temp_upper_turn_off_heating_element_day_time =0;
+    public double air_temp_upper_turn_off_space_heater_day_time =0;
 
-    public double humidity_lower_threshold=0;
-    public double humidity_lower_pushnotification=0;
-    public double humidity_lower_turn_off_extra_fans=0;
-    public double humidity_lower_turn_off_space_heater=0;
-    public double humidity_lower_turn_on_fogger=0;
+    public double air_temp_lower_threshold_day_time =0;
+    public double air_temp_lower_pushnotification_day_time =0;
+    public double air_temp_lower_turn_off_fans_day_time =0;
+    public double air_temp_lower_turn_on_heating_element_day_time =0;
+    public double air_temp_lower_turn_on_space_heater_day_time =0;
+
+    public double air_temp_upper_threshold_night_time =0;
+    public double air_temp_upper_pushnotification_night_time =0;
+    public double air_temp_upper_turn_on_fans_night_time=0;
+    public double air_temp_upper_turn_off_heating_element_night_time =0;
+    public double air_temp_upper_turn_off_space_heater_night_time =0;
+
+    public double air_temp_lower_threshold_night_time =0;
+    public double air_temp_lower_pushnotification_night_time =0;
+    public double air_temp_lower_turn_off_fans_night_time =0;
+    public double air_temp_lower_turn_on_heating_element_night_time =0;
+    public double air_temp_lower_turn_on_space_heater_night_time =0;
+
+
+
+    public double humidity_upper_threshold_day_time =0;
+    public double humidity_upper_pushnotification_day_time =0;
+    public double humidity_upper_turn_on_extra_fans_day_time =0;
+    public double humidity_upper_turn_off_fogger_day_time =0;
+    public double humidity_upper_turn_on_space_heater_day_time =0;
+
+    public double humidity_lower_threshold_day_time =0;
+    public double humidity_lower_pushnotification_day_time =0;
+    public double humidity_lower_turn_off_extra_fans_day_time =0;
+    public double humidity_lower_turn_off_space_heater_day_time =0;
+    public double humidity_lower_turn_on_fogger_day_time =0;
+
+    public double humidity_upper_threshold_night_time =0;
+    public double humidity_upper_pushnotification_night_time =0;
+    public double humidity_upper_turn_on_extra_fans_night_time =0;
+    public double humidity_upper_turn_off_fogger_night_time =0;
+    public double humidity_upper_turn_on_space_heater_night_time =0;
+
+    public double humidity_lower_threshold_night_time =0;
+    public double humidity_lower_pushnotification_night_time =0;
+    public double humidity_lower_turn_off_extra_fans_night_time =0;
+    public double humidity_lower_turn_off_space_heater_night_time =0;
+    public double humidity_lower_turn_on_fogger_night_time =0;
 
     public double TVOC_upper_threshold=0;
     public double TVOC_upper_pushnotifications=0;
@@ -112,28 +142,28 @@ public class MyAppApplication extends Application {
     }
 
     public void showusersettings(){
-        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_threshold);
-        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_pushnotification);
-        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_turn_on_fans);
-        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_turn_off_heating_element);
-        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_turn_off_space_heater);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_threshold_day_time);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_pushnotification_day_time);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_turn_on_fans_day_time);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_turn_off_heating_element_day_time);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_upper_turn_off_space_heater_day_time);
 
-        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_threshold);
-        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_pushnotification);
-        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_turn_off_fans);
-        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_turn_on_heating_element);
-        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_turn_on_space_heater);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_threshold_day_time);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_pushnotification_day_time);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_turn_off_fans_day_time);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_turn_on_heating_element_day_time);
+        Log.d("usersettings","air temperature upper bound is " + air_temp_lower_turn_on_space_heater_day_time);
 
-        Log.d("usersettings","air temperature upper bound is " + humidity_upper_threshold);
-        Log.d("usersettings","air temperature upper bound is " + humidity_upper_pushnotification);
-        Log.d("usersettings","air temperature upper bound is " + humidity_upper_turn_on_extra_fans);
-        Log.d("usersettings","air temperature upper bound is " + humidity_upper_turn_off_fogger);
-        Log.d("usersettings","air temperature upper bound is " + humidity_upper_turn_on_space_heater);
+        Log.d("usersettings","air temperature upper bound is " + humidity_upper_threshold_day_time);
+        Log.d("usersettings","air temperature upper bound is " + humidity_upper_pushnotification_day_time);
+        Log.d("usersettings","air temperature upper bound is " + humidity_upper_turn_on_extra_fans_day_time);
+        Log.d("usersettings","air temperature upper bound is " + humidity_upper_turn_off_fogger_day_time);
+        Log.d("usersettings","air temperature upper bound is " + humidity_upper_turn_on_space_heater_day_time);
 
-        Log.d("usersettings","air temperature upper bound is " + humidity_lower_threshold);
-        Log.d("usersettings","air temperature upper bound is " + humidity_lower_pushnotification);
-        Log.d("usersettings","air temperature upper bound is " + humidity_lower_turn_off_extra_fans);
-        Log.d("usersettings","air temperature upper bound is " + humidity_lower_turn_off_space_heater);
+        Log.d("usersettings","air temperature upper bound is " + humidity_lower_threshold_day_time);
+        Log.d("usersettings","air temperature upper bound is " + humidity_lower_pushnotification_day_time);
+        Log.d("usersettings","air temperature upper bound is " + humidity_lower_turn_off_extra_fans_day_time);
+        Log.d("usersettings","air temperature upper bound is " + humidity_lower_turn_off_space_heater_day_time);
 
         Log.d("usersettings","air temperature upper bound is " + TVOC_upper_threshold);
         Log.d("usersettings","air temperature upper bound is " + TVOC_upper_pushnotifications);

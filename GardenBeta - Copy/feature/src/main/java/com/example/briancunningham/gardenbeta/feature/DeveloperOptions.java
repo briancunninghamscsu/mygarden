@@ -1,22 +1,34 @@
 package com.example.briancunningham.gardenbeta.feature;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.app.DialogFragment;
+import android.app.Fragment;
+import android.app.FragmentManager;
+import android.app.FragmentTransaction;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TimePicker;
 
 import com.loopj.android.http.*;
 
 import org.json.JSONObject;
 
+import java.io.FileDescriptor;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStreamWriter;
+import java.io.PrintWriter;
+import java.util.Calendar;
+import java.util.List;
 
 @SuppressWarnings("ALL")
 public class DeveloperOptions extends AppCompatActivity {
@@ -85,7 +97,7 @@ public class DeveloperOptions extends AppCompatActivity {
         airtempchangebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mApp.air_temp_upper_threshold=66;
+                mApp.air_temp_upper_threshold_day_time=66;
                 mApp.showusersettings();
                 Snackbar.make(view, "Spoofed Data. Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
@@ -135,6 +147,20 @@ public class DeveloperOptions extends AppCompatActivity {
                 Snackbar.make(view, " Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }});*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         Button getdatafromserverbutton = findViewById(R.id.button4);
         getdatafromserverbutton.setOnClickListener(new View.OnClickListener() {
@@ -277,5 +303,8 @@ public class DeveloperOptions extends AppCompatActivity {
             Log.d("doohoohoo", "got to the onbackpressed in the develoepr options function");
             finish();
     }
+
+
 }
+
 

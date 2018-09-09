@@ -13,7 +13,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Space;
 import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -84,7 +83,7 @@ public class tolerances extends AppCompatActivity {
 
                 // logic for displaying current upper bound settings
                 final EditText upperbound = new EditText(this);
-                upperbound.setHint(mApp.air_temp_upper_threshold + getString(R.string.degreef));
+                upperbound.setHint(mApp.air_temp_upper_threshold_day_time + getString(R.string.degreef));
                 upperbound.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 upperbound.setInputType(InputType.TYPE_CLASS_NUMBER);
                 upperbound.setTextSize(24);
@@ -93,7 +92,7 @@ public class tolerances extends AppCompatActivity {
                 //upper bound checkbox display logic
                 final CheckBox air_temp_upper_push_notifications_checkbox = new CheckBox(this);
                 air_temp_upper_push_notifications_checkbox.setText(getString(R.string.send_push));
-                if (mApp.air_temp_upper_pushnotification == 1) {
+                if (mApp.air_temp_upper_pushnotification_day_time == 1) {
                     air_temp_upper_push_notifications_checkbox.setChecked(true);
                 } else {
                     air_temp_upper_push_notifications_checkbox.setChecked(false);
@@ -104,7 +103,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox air_temp_upper_on_extra_fans = new CheckBox(this);
                 ll.addView(air_temp_upper_on_extra_fans);
                 air_temp_upper_on_extra_fans.setText(getString(R.string.turn_on_fans));
-                if (mApp.air_temp_upper_turn_on_fans == 1) {
+                if (mApp.air_temp_upper_turn_on_fans_day_time == 1) {
                     air_temp_upper_on_extra_fans.setChecked(true);
                 } else {
                     air_temp_upper_on_extra_fans.setChecked(false);
@@ -114,7 +113,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_air_temp_heating_element_checkbox = new CheckBox(this);
                 ll.addView(upper_air_temp_heating_element_checkbox);
                 upper_air_temp_heating_element_checkbox.setText(getString(R.string.turn_off_heating_element));
-                if (mApp.air_temp_upper_turn_off_heating_element == 1) {
+                if (mApp.air_temp_upper_turn_off_heating_element_day_time == 1) {
                     upper_air_temp_heating_element_checkbox.setChecked(true);
                 } else {
                     upper_air_temp_heating_element_checkbox.setChecked(false);
@@ -124,7 +123,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_air_temp_space_heater_off_checkbox = new CheckBox(this);
                 ll.addView(upper_air_temp_space_heater_off_checkbox);
                 upper_air_temp_space_heater_off_checkbox.setText(getString(R.string.turn_off_space_heater));
-                if (mApp.air_temp_upper_turn_off_space_heater == 1) {
+                if (mApp.air_temp_upper_turn_off_space_heater_day_time == 1) {
                     upper_air_temp_space_heater_off_checkbox.setChecked(true);
                 } else {
                     upper_air_temp_space_heater_off_checkbox.setChecked(false);
@@ -140,7 +139,7 @@ public class tolerances extends AppCompatActivity {
 
                 // lower threshold edittext
                 final EditText lowerbound = new EditText(this);
-                lowerbound.setHint(mApp.air_temp_lower_threshold + getString(R.string.degreef));
+                lowerbound.setHint(mApp.air_temp_lower_threshold_day_time + getString(R.string.degreef));
                 lowerbound.setInputType(InputType.TYPE_CLASS_NUMBER);
                 lowerbound.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 lowerbound.setTextSize(24);
@@ -150,7 +149,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox air_temp_lower_threshold_push_notification_check_box = new CheckBox(this);
                 air_temp_lower_threshold_push_notification_check_box.setText(getString(R.string.send_push));
                 ll.addView(air_temp_lower_threshold_push_notification_check_box);
-                if (mApp.air_temp_lower_pushnotification == 1) {
+                if (mApp.air_temp_lower_pushnotification_day_time == 1) {
                     air_temp_lower_threshold_push_notification_check_box.setChecked(true);
                 } else {
                     air_temp_lower_threshold_push_notification_check_box.setChecked(false);
@@ -160,7 +159,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox air_temp_lower_turn_off_extra_fans_checkbox = new CheckBox(this);
                 ll.addView(air_temp_lower_turn_off_extra_fans_checkbox);
                 air_temp_lower_turn_off_extra_fans_checkbox.setText(getString(R.string.turn_off_fans));
-                if (mApp.air_temp_lower_turn_off_fans == 1) {
+                if (mApp.air_temp_lower_turn_off_fans_day_time == 1) {
                     air_temp_lower_turn_off_extra_fans_checkbox.setChecked(true);
                 } else {
                     air_temp_lower_turn_off_extra_fans_checkbox.setChecked(false);
@@ -170,7 +169,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox air_temp_lower_turn_on_heating_element_checkbox = new CheckBox(this);
                 ll.addView(air_temp_lower_turn_on_heating_element_checkbox);
                 air_temp_lower_turn_on_heating_element_checkbox.setText(getString(R.string.turn_on_heating_element));
-                if (mApp.air_temp_lower_turn_on_heating_element == 1) {
+                if (mApp.air_temp_lower_turn_on_heating_element_day_time == 1) {
                     air_temp_lower_turn_on_heating_element_checkbox.setChecked(true);
                 } else {
                     air_temp_lower_turn_on_heating_element_checkbox.setChecked(false);
@@ -180,7 +179,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox lower_threshold_turn_on_space_heater_check_box = new CheckBox(this);
                 ll.addView(lower_threshold_turn_on_space_heater_check_box);
                 lower_threshold_turn_on_space_heater_check_box.setText(getString(R.string.turn_on_space_heater));
-                if (mApp.air_temp_lower_turn_on_space_heater == 1) {
+                if (mApp.air_temp_lower_turn_on_space_heater_day_time == 1) {
                     lower_threshold_turn_on_space_heater_check_box.setChecked(true);
                 } else {
                     air_temp_lower_threshold_push_notification_check_box.setChecked(false);
@@ -199,7 +198,7 @@ public class tolerances extends AppCompatActivity {
 
                 // logic for displaying current upper bound settings
                 final EditText upperbound_night = new EditText(this);
-                upperbound_night.setHint(mApp.air_temp_upper_threshold + getString(R.string.degreef));
+                upperbound_night.setHint(mApp.air_temp_upper_threshold_day_time + getString(R.string.degreef));
                 upperbound_night.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 upperbound_night.setInputType(InputType.TYPE_CLASS_NUMBER);
                 upperbound_night.setTextSize(24);
@@ -208,7 +207,7 @@ public class tolerances extends AppCompatActivity {
                 //upper bound checkbox display logic
                 final CheckBox air_temp_upper_push_notifications_checkbox_night = new CheckBox(this);
                 air_temp_upper_push_notifications_checkbox_night.setText(getString(R.string.send_push));
-                if (mApp.air_temp_upper_pushnotification == 1) {
+                if (mApp.air_temp_upper_pushnotification_day_time == 1) {
                     air_temp_upper_push_notifications_checkbox_night.setChecked(true);
                 } else {
                     air_temp_upper_push_notifications_checkbox_night.setChecked(false);
@@ -219,7 +218,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox air_temp_upper_on_extra_fans_night = new CheckBox(this);
                 ll.addView(air_temp_upper_on_extra_fans_night);
                 air_temp_upper_on_extra_fans_night.setText(getString(R.string.turn_on_fans));
-                if (mApp.air_temp_upper_turn_on_fans == 1) {
+                if (mApp.air_temp_upper_turn_on_fans_day_time == 1) {
                     air_temp_upper_on_extra_fans_night.setChecked(true);
                 } else {
                     air_temp_upper_on_extra_fans_night.setChecked(false);
@@ -229,7 +228,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_air_temp_heating_element_checkbox_night = new CheckBox(this);
                 ll.addView(upper_air_temp_heating_element_checkbox_night);
                 upper_air_temp_heating_element_checkbox_night.setText(getString(R.string.turn_off_heating_element));
-                if (mApp.air_temp_upper_turn_off_heating_element == 1) {
+                if (mApp.air_temp_upper_turn_off_heating_element_day_time == 1) {
                     upper_air_temp_heating_element_checkbox_night.setChecked(true);
                 } else {
                     upper_air_temp_heating_element_checkbox_night.setChecked(false);
@@ -239,7 +238,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_air_temp_space_heater_off_checkbox_night = new CheckBox(this);
                 ll.addView(upper_air_temp_space_heater_off_checkbox_night);
                 upper_air_temp_space_heater_off_checkbox_night.setText(getString(R.string.turn_off_space_heater));
-                if (mApp.air_temp_upper_turn_off_space_heater == 1) {
+                if (mApp.air_temp_upper_turn_off_space_heater_day_time == 1) {
                     upper_air_temp_space_heater_off_checkbox_night.setChecked(true);
                 } else {
                     upper_air_temp_space_heater_off_checkbox_night.setChecked(false);
@@ -255,7 +254,7 @@ public class tolerances extends AppCompatActivity {
 
                 // lower threshold edittext
                 final EditText lowerbound_night = new EditText(this);
-                lowerbound_night.setHint(mApp.air_temp_lower_threshold + getString(R.string.degreef));
+                lowerbound_night.setHint(mApp.air_temp_lower_threshold_day_time + getString(R.string.degreef));
                 lowerbound_night.setInputType(InputType.TYPE_CLASS_NUMBER);
                 lowerbound_night.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 lowerbound_night.setTextSize(24);
@@ -265,7 +264,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox air_temp_lower_threshold_push_notification_check_box_night = new CheckBox(this);
                 air_temp_lower_threshold_push_notification_check_box_night.setText(getString(R.string.send_push));
                 ll.addView(air_temp_lower_threshold_push_notification_check_box_night);
-                if (mApp.air_temp_lower_pushnotification == 1) {
+                if (mApp.air_temp_lower_pushnotification_day_time == 1) {
                     air_temp_lower_threshold_push_notification_check_box_night.setChecked(true);
                 } else {
                     air_temp_lower_threshold_push_notification_check_box_night.setChecked(false);
@@ -275,7 +274,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox air_temp_lower_turn_off_extra_fans_checkbox_night = new CheckBox(this);
                 ll.addView(air_temp_lower_turn_off_extra_fans_checkbox_night);
                 air_temp_lower_turn_off_extra_fans_checkbox_night.setText(getString(R.string.turn_off_fans));
-                if (mApp.air_temp_lower_turn_off_fans == 1) {
+                if (mApp.air_temp_lower_turn_off_fans_day_time == 1) {
                     air_temp_lower_turn_off_extra_fans_checkbox_night.setChecked(true);
                 } else {
                     air_temp_lower_turn_off_extra_fans_checkbox_night.setChecked(false);
@@ -285,7 +284,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox air_temp_lower_turn_on_heating_element_checkbox_night = new CheckBox(this);
                 ll.addView(air_temp_lower_turn_on_heating_element_checkbox_night);
                 air_temp_lower_turn_on_heating_element_checkbox_night.setText(getString(R.string.turn_on_heating_element));
-                if (mApp.air_temp_lower_turn_on_heating_element == 1) {
+                if (mApp.air_temp_lower_turn_on_heating_element_day_time == 1) {
                     air_temp_lower_turn_on_heating_element_checkbox_night.setChecked(true);
                 } else {
                     air_temp_lower_turn_on_heating_element_checkbox_night.setChecked(false);
@@ -295,7 +294,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox lower_threshold_turn_on_space_heater_check_box_night = new CheckBox(this);
                 ll.addView(lower_threshold_turn_on_space_heater_check_box_night);
                 lower_threshold_turn_on_space_heater_check_box_night.setText(getString(R.string.turn_on_space_heater));
-                if (mApp.air_temp_lower_turn_on_space_heater == 1) {
+                if (mApp.air_temp_lower_turn_on_space_heater_day_time == 1) {
                     lower_threshold_turn_on_space_heater_check_box_night.setChecked(true);
                 } else {
                     lower_threshold_turn_on_space_heater_check_box_night.setChecked(false);
@@ -332,31 +331,31 @@ public class tolerances extends AppCompatActivity {
 
                         // keeps from null pointer crashing
                         if (upperbound.getText().toString().equals("")) {
-                            params.put("air_temp_upper_threshold",mApp.air_temp_upper_threshold);   // if they haven't entered, keep the old value
+                            params.put("air_temp_upper_threshold_day_time",mApp.air_temp_upper_threshold_day_time);   // if they haven't entered, keep the old value
                         }
                         else {
-                            params.put("air_temp_upper_threshold", Double.valueOf(upperbound.getText().toString()));
+                            params.put("air_temp_upper_threshold_day_time", Double.valueOf(upperbound.getText().toString()));
                         }
 
-                        params.put("air_temp_upper_pushnotification", (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0));
-                        params.put("air_temp_upper_turn_on_fans",(air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0));
-                        params.put("air_temp_upper_turn_off_heating_element",(upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0));
-                        params.put("air_temp_upper_turn_off_space_heater", (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0));
+                        params.put("air_temp_upper_pushnotification_day_time", (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0));
+                        params.put("air_temp_upper_turn_on_fans_day_time",(air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0));
+                        params.put("air_temp_upper_turn_off_heating_element_day_time",(upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0));
+                        params.put("air_temp_upper_turn_off_space_heater_day_time", (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0));
 
 
                         // keeps from null pointer crashing
                         if (lowerbound.getText().toString().equals("")) {
-                            params.put("air_temp_lower_threshold",mApp.air_temp_lower_threshold);   // if they haven't entered, keep the old value
+                            params.put("air_temp_lower_threshold_day_time",mApp.air_temp_lower_threshold_day_time);   // if they haven't entered, keep the old value
                         }
                         else {
-                            params.put("air_temp_lower_threshold", Double.valueOf(lowerbound.getText().toString()));
+                            params.put("air_temp_lower_threshold_day_time", Double.valueOf(lowerbound.getText().toString()));
                         }
 
 
-                        params.put("air_temp_lower_pushnotification", (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0));
-                        params.put("air_temp_lower_turn_off_fans", (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0));
-                        params.put("air_temp_lower_turn_on_heating_element", (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0));
-                        params.put("air_temp_lower_turn_on_space_heater", (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0));
+                        params.put("air_temp_lower_pushnotification_day_time", (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0));
+                        params.put("air_temp_lower_turn_off_fans_day_time", (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0));
+                        params.put("air_temp_lower_turn_on_heating_element_day_time", (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0));
+                        params.put("air_temp_lower_turn_on_space_heater_day_time", (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0));
 */
 
                         final ConstraintLayout screen = findViewById(R.id.constrainters);
@@ -383,32 +382,32 @@ public class tolerances extends AppCompatActivity {
                                         // upper settings
 
                                         if (upperbound.getText().toString().equals("")) {
-                                            //params.put("air_temp_lower_threshold",mApp.air_temp_lower_threshold);   // if they haven't entered, keep the old value
+                                            //params.put("air_temp_lower_threshold_day_time",mApp.air_temp_lower_threshold_day_time);   // if they haven't entered, keep the old value
                                         }
                                         else {
-                                            mApp.air_temp_upper_threshold = Double.valueOf(upperbound.getText().toString());
+                                            mApp.air_temp_upper_threshold_day_time = Double.valueOf(upperbound.getText().toString());
                                         }
 
-                                        mApp.air_temp_upper_pushnotification = (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_upper_turn_on_fans = (air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_upper_turn_off_heating_element = (upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_upper_turn_off_space_heater = (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_pushnotification_day_time = (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_turn_on_fans_day_time = (air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_turn_off_heating_element_day_time = (upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_turn_off_space_heater_day_time = (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0);
 
                                         // lower settings
 
                                         if (lowerbound.getText().toString().equals("")) {
-                                            //params.put("air_temp_lower_threshold",mApp.air_temp_lower_threshold);   // if they haven't entered, keep the old value
+                                            //params.put("air_temp_lower_threshold_day_time",mApp.air_temp_lower_threshold_day_time);   // if they haven't entered, keep the old value
                                         }
                                         else {
-                                            mApp.air_temp_lower_threshold=Double.valueOf(lowerbound.getText().toString());
+                                            mApp.air_temp_lower_threshold_day_time =Double.valueOf(lowerbound.getText().toString());
                                         }
-                                        mApp.air_temp_lower_pushnotification = (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_lower_turn_off_fans = (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_lower_turn_on_heating_element = (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_lower_turn_on_space_heater = (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_pushnotification_day_time = (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_turn_off_fans_day_time = (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_turn_on_heating_element_day_time = (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_turn_on_space_heater_day_time = (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0);
 
                                         //verifying assignments
-                                        //Log.d("kirk",mApp.air_temp_upper_threshold + " " + mApp.air_temp_upper_pushnotification + " ");
+                                        //Log.d("kirk",mApp.air_temp_upper_threshold_day_time + " " + mApp.air_temp_upper_pushnotification_day_time + " ");
 
                                         // assigning key-values pairs
 
@@ -447,7 +446,7 @@ public class tolerances extends AppCompatActivity {
 
                 // humidity upper threshold edit text
                 final EditText upperbound_humidity = new EditText(this);
-                upperbound_humidity.setHint(mApp.humidity_upper_threshold + getString(R.string.percentsign));
+                upperbound_humidity.setHint(mApp.humidity_upper_threshold_day_time + getString(R.string.percentsign));
                 upperbound_humidity.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 upperbound_humidity.setInputType(InputType.TYPE_CLASS_NUMBER);
                 upperbound_humidity.setTextSize(24);
@@ -457,7 +456,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_humidity_push_nofitication_check_box = new CheckBox(this);
                 upper_humidity_push_nofitication_check_box.setText(getString(R.string.send_push));
                 ll.addView(upper_humidity_push_nofitication_check_box);
-                if (mApp.humidity_upper_pushnotification == 1) {
+                if (mApp.humidity_upper_pushnotification_day_time == 1) {
                     upper_humidity_push_nofitication_check_box.setChecked(true);
                 } else {
                     upper_humidity_push_nofitication_check_box.setChecked(false);
@@ -467,7 +466,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_humidity_extra_fans_on = new CheckBox(this);
                 ll.addView(upper_humidity_extra_fans_on);
                 upper_humidity_extra_fans_on.setText(getString(R.string.turn_on_fans));
-                if (mApp.humidity_upper_turn_on_extra_fans == 1) {
+                if (mApp.humidity_upper_turn_on_extra_fans_day_time == 1) {
                     upper_humidity_extra_fans_on.setChecked(true);
                 } else {
                     upper_humidity_extra_fans_on.setChecked(false);
@@ -477,7 +476,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_humidity_turn_off_fogger_check_box = new CheckBox(this);
                 ll.addView(upper_humidity_turn_off_fogger_check_box);
                 upper_humidity_turn_off_fogger_check_box.setText(getString(R.string.turn_off_fogger));
-                if (mApp.humidity_upper_turn_off_fogger == 1) {
+                if (mApp.humidity_upper_turn_off_fogger_day_time == 1) {
                     upper_humidity_turn_off_fogger_check_box.setChecked(true);
                 } else {
                     upper_humidity_turn_off_fogger_check_box.setChecked(false);
@@ -487,7 +486,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox upper_humidity_turn_on_space_heater_checkbox = new CheckBox(this);
                 ll.addView(upper_humidity_turn_on_space_heater_checkbox);
                 upper_humidity_turn_on_space_heater_checkbox.setText(getString(R.string.turn_on_space_heater));
-                if (mApp.humidity_upper_turn_on_space_heater==1){
+                if (mApp.humidity_upper_turn_on_space_heater_day_time ==1){
                     upper_humidity_turn_on_space_heater_checkbox.setChecked(true);
                 }
 
@@ -501,7 +500,7 @@ public class tolerances extends AppCompatActivity {
 
                 // lower humidity threshold edit text
                 final EditText lower_humidity_threshold_edit_text = new EditText(this);
-                lower_humidity_threshold_edit_text.setHint(mApp.humidity_lower_threshold + getString(R.string.percentsign));
+                lower_humidity_threshold_edit_text.setHint(mApp.humidity_lower_threshold_day_time + getString(R.string.percentsign));
                 lower_humidity_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
                 lower_humidity_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 lower_humidity_threshold_edit_text.setTextSize(24);
@@ -511,7 +510,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox low_humidity_push_notification_check_box = new CheckBox(this);
                 low_humidity_push_notification_check_box.setText(getString(R.string.send_push));
                 ll.addView(low_humidity_push_notification_check_box);
-                if (mApp.humidity_lower_pushnotification==1){
+                if (mApp.humidity_lower_pushnotification_day_time ==1){
                     low_humidity_push_notification_check_box.setChecked(true);
                 }
                 else
@@ -523,7 +522,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox low_humidity_turn_off_extra_fans = new CheckBox(this);
                 ll.addView(low_humidity_turn_off_extra_fans);
                 low_humidity_turn_off_extra_fans.setText(getString(R.string.turn_off_fans));
-                if (mApp.humidity_lower_turn_off_extra_fans==1){
+                if (mApp.humidity_lower_turn_off_extra_fans_day_time ==1){
                     low_humidity_turn_off_extra_fans.setChecked(true);
                 }
                 else {
@@ -534,7 +533,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox low_humidity_turn_on_fogger = new CheckBox(this);
                 ll.addView(low_humidity_turn_on_fogger);
                 low_humidity_turn_on_fogger.setText(getString(R.string.turn_on_fogger));
-                if (mApp.humidity_lower_turn_on_fogger==1){
+                if (mApp.humidity_lower_turn_on_fogger_day_time ==1){
                     low_humidity_turn_on_fogger.setChecked(true);
                 }
                 else {
@@ -546,7 +545,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox low_humidty_turn_off_space_heater_checkbox = new CheckBox(this);
                 ll.addView(low_humidty_turn_off_space_heater_checkbox);
                 low_humidty_turn_off_space_heater_checkbox.setText(getString(R.string.turn_off_space_heater));
-                if (mApp.humidity_lower_turn_off_space_heater==1){
+                if (mApp.humidity_lower_turn_off_space_heater_day_time ==1){
                     low_humidity_turn_off_extra_fans.setChecked(true);
                 }
                 else{
@@ -580,7 +579,7 @@ public class tolerances extends AppCompatActivity {
                 final CheckBox tvoc_upper_threshold_push_nofitications = new CheckBox(this);
                 tvoc_upper_threshold_push_nofitications.setText(getString(R.string.send_push));
                 ll.addView(tvoc_upper_threshold_push_nofitications);
-                if (mApp.humidity_upper_pushnotification==1){
+                if (mApp.humidity_upper_pushnotification_day_time ==1){
                     tvoc_upper_threshold_push_nofitications.setChecked(true);
                 }
                 else{
