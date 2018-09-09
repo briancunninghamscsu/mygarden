@@ -1066,14 +1066,14 @@ public class tolerances extends AppCompatActivity {
             case "Solution Temperature":
                 // upper solution temperature title
                 final TextView upper_solution_temperature_title_text_view = new TextView(this);
-                upper_solution_temperature_title_text_view.setText(getString(R.string.Sol_above));
+                upper_solution_temperature_title_text_view.setText("The solution temperature reflects the system settings of the air temperature.");
                 upper_solution_temperature_title_text_view.setTextSize(24);
                 upper_solution_temperature_title_text_view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 upper_solution_temperature_title_text_view.setPadding(8,8,8,8);
                 ll.addView(upper_solution_temperature_title_text_view);
 
                 // upper solution temperature edit text
-                final EditText upper_solution_temperature_edit_text = new EditText(this);
+                /*final EditText upper_solution_temperature_edit_text = new EditText(this);
                 upper_solution_temperature_edit_text.setHint(mApp.slntemp_upper_threshold + getString(R.string.degreef));
                 upper_solution_temperature_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 upper_solution_temperature_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
@@ -1167,7 +1167,7 @@ public class tolerances extends AppCompatActivity {
                 //save changes
                 final Button buttsoup4 = new Button(this);
                 buttsoup4.setText(getString(R.string.save_changes));
-                ll.addView(buttsoup4);
+                ll.addView(buttsoup4);*/
                 break;
 
             case "Total Dissolved Solids":
