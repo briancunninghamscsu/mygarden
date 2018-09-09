@@ -795,17 +795,6 @@ public class tolerances extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                       /* mApp.humidity_upper_threshold_day_time=Double.parseDouble(uppertext.getText().toString());
-                        mApp.humidity_lower_threshold_day_time=Double.parseDouble(belowtext.getText().toString());
-                        mApp.humidity_upper_threshold_night_time=Double.parseDouble(uppertext_night.getText().toString());
-                       */
-
-                        /*mApp.humidity_lower_threshold_night_time=belowtext_night.getText().toString().isEmpty() ? mApp.humidity_lower_threshold_night_time:Double.parseDouble(belowtext_night.getText().toString());
-                        mApp.humidity_upper_threshold_night_time=uppertext_night.getText().toString().isEmpty() ? mApp.humidity_upper_threshold_night_time:Double.parseDouble(uppertext_night.getText().toString());
-                        mApp.humidity_lower_threshold_day_time=belowtext.getText().toString().isEmpty() ? mApp.humidity_lower_threshold_day_time:Double.parseDouble(belowtext.getText().toString());
-                        mApp.humidity_upper_threshold_day_time=uppertext.getText().toString().isEmpty() ? mApp.humidity_upper_threshold_day_time:Double.parseDouble(uppertext_night.getText().toString());
-*/
-
                         if (!lower_humidity_threshold_edit_text_day_time.getText().toString().equals("")) {
                             mApp.humidity_lower_threshold_day_time = Double.parseDouble(lower_humidity_threshold_edit_text_day_time.getText().toString());
                         }
@@ -903,14 +892,14 @@ public class tolerances extends AppCompatActivity {
                 ll.addView(tvoc_upper_edit_text);
 
                 // TVOC upper threshold push notifications
-                final CheckBox tvoc_upper_threshold_push_nofitications = new CheckBox(this);
-                tvoc_upper_threshold_push_nofitications.setText(getString(R.string.send_push));
-                ll.addView(tvoc_upper_threshold_push_nofitications);
-                if (mApp.humidity_upper_pushnotification_day_time ==1){
-                    tvoc_upper_threshold_push_nofitications.setChecked(true);
+                final CheckBox tvoc_upper_threshold_push_notifications = new CheckBox(this);
+                tvoc_upper_threshold_push_notifications.setText(getString(R.string.send_push));
+                ll.addView(tvoc_upper_threshold_push_notifications);
+                if (mApp.TVOC_upper_pushnotifications ==1){
+                    tvoc_upper_threshold_push_notifications.setChecked(true);
                 }
                 else{
-                    tvoc_upper_threshold_push_nofitications.setChecked(false);
+                    tvoc_upper_threshold_push_notifications.setChecked(false);
                 }
 
                 // TVOC lower threshold lower title
@@ -944,7 +933,38 @@ public class tolerances extends AppCompatActivity {
                 final Button buttsoup2 = new Button(this);
                 buttsoup2.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup2);
+                buttsoup2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                        public void onClick(View view) {
+                        mApp.TVOC_lower_pushnotification = (tvoc_lower_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        mApp.TVOC_upper_pushnotifications = (tvoc_upper_threshold_push_notifications.isChecked()) ? (1) : (0);
 
+                        if (!tvoc_lower_threshold_edit_text.getText().toString().equals("")) {
+                            mApp.TVOC_lower_threshold = Double.parseDouble(tvoc_lower_threshold_edit_text.getText().toString());
+                        }
+
+                        if (!tvoc_upper_edit_text.getText().toString().equals("")) {
+                            mApp.TVOC_upper_threshold = Double.parseDouble(tvoc_upper_edit_text.getText().toString());
+                        }
+
+
+                        // ERROR CHECKING FOR HUMIDITY
+
+                        if (mApp.TVOC_lower_threshold < 400) {
+                            mApp.TVOC_lower_threshold = 400;
+                        }
+                        if (mApp.TVOC_upper_threshold > 1000) {
+                            mApp.TVOC_upper_threshold = 1000;
+                        }
+                        if (mApp.TVOC_upper_threshold <= mApp.TVOC_lower_threshold) {
+                            mApp.TVOC_lower_threshold = 600;
+                            mApp.TVOC_upper_threshold=800;
+                        }
+
+
+                    }
+                }
+                );
                 break;
 
             case "CO2":
