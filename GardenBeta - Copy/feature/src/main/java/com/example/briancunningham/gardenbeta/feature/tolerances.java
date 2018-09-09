@@ -39,12 +39,12 @@ public class tolerances extends AppCompatActivity {
             case "Air Temperature":
 
                 // daytime starting title
-                final TextView daytime_lower = new TextView(this);
-                daytime_lower.setText("I want daytime to start at " +mApp.day_time_starts_at);
-                daytime_lower.setTextSize(24);
-                daytime_lower.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                daytime_lower.setPadding(8, 8, 8, 8);
-                daytime_lower.setOnClickListener(new View.OnClickListener() {
+                final TextView day_time_lower = new TextView(this);
+                day_time_lower.setText("I want daytime to start at " +mApp.day_time_starts_at);
+                day_time_lower.setTextSize(24);
+                day_time_lower.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                day_time_lower.setPadding(8, 8, 8, 8);
+                day_time_lower.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
 
@@ -57,7 +57,20 @@ public class tolerances extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 // the user clicked on colors[which]
                                 mApp.day_time_starts_at=times[which];
-                                daytime_lower.setText("I want daytime to start at " +mApp.day_time_starts_at+".");
+
+                                // error checking
+                                if (mApp.night_time_starts_at.equals(mApp.day_time_starts_at)){
+                                    if (mApp.day_time_starts_at.equals("12:00AM")){
+                                        mApp.day_time_starts_at="11:00PM";
+                                    }
+                                    else {
+                                        mApp.day_time_starts_at = times[which - 1];
+                                    }
+                                }
+
+
+
+                                day_time_lower.setText("I want day time to start at " +mApp.day_time_starts_at+".");
                             }
                             });
                         builder.show();
@@ -65,26 +78,59 @@ public class tolerances extends AppCompatActivity {
                         }
                 )
                 ;
-                ll.addView(daytime_lower);
+                ll.addView(day_time_lower);
 
 
 
 
 
                 final TextView night_time_lower = new TextView(this);
-                night_time_lower.setText("I want daytime to start at " +mApp.night_time_starts_at + ".");
+                night_time_lower.setText("I want night time to start at " +mApp.night_time_starts_at + ".");
                 night_time_lower.setTextSize(24);
                 night_time_lower.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 night_time_lower.setPadding(8, 8, 8, 8);
+                night_time_lower.setOnClickListener(new View.OnClickListener() {
+                                                     @Override
+                                                     public void onClick(View view) {
+
+                                                         final String[] times = {"12:00AM", "1:00AM", "2:00AM", "3:00AM","4:00AM", "5:00AM", "6:00AM", "7:00AM","8:00AM", "9:00AM", "10:00AM", "11:00AM","12:00PM", "1:00PM", "2:00PM", "3:00PM","4:00PM", "5:00PM", "6:00PM", "7:00PM","8:00PM", "9:00PM", "10:00PM", "11:00PM"};
+
+                                                         AlertDialog.Builder builder = new AlertDialog.Builder(tolerances.this);
+                                                         builder.setTitle("When should night time start?");
+                                                         builder.setItems(times, new DialogInterface.OnClickListener() {
+                                                             @Override
+                                                             public void onClick(DialogInterface dialog, int which) {
+                                                                 // the user clicked on colors[which]
+                                                                 mApp.night_time_starts_at=times[which];
+
+                                                                 if (mApp.night_time_starts_at.equals(mApp.day_time_starts_at)){
+                                                                     if (mApp.night_time_starts_at.equals("11:00PM")){
+                                                                         mApp.night_time_starts_at="12:00AM";
+                                                                     }
+                                                                     else {
+                                                                         mApp.night_time_starts_at = times[which + 1];
+                                                                     }
+                                                                 }
+                                                                 night_time_lower.setText("I want night time to start at " +mApp.night_time_starts_at+".");
+                                                             }
+                                                         });
+                                                         builder.show();
+                                                     }
+                                                 }
+                )
+                ;
+
                 ll.addView(night_time_lower);
 
-                // night time entering box
+
+
+               /* // night time entering box
                 final EditText night_time_lower_box = new EditText(this);
                 night_time_lower_box.setHint("Military Format HHMM");
                 night_time_lower_box.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 night_time_lower_box.setInputType(InputType.TYPE_CLASS_NUMBER);
                 night_time_lower_box.setTextSize(24);
-                ll.addView(night_time_lower_box);
+                ll.addView(night_time_lower_box);*/
 
 
 
@@ -333,6 +379,15 @@ public class tolerances extends AppCompatActivity {
                 save_changes_box.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+
+                        // ERROR CHECKING
+
+
+
+
+
+
+
 
                         /*
                         We assign each of the UI settings parameters into temporary variables for
