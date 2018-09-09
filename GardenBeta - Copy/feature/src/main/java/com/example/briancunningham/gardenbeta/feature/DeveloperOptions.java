@@ -1,6 +1,7 @@
 package com.example.briancunningham.gardenbeta.feature;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
 import android.app.Fragment;
@@ -8,6 +9,7 @@ import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -155,10 +157,26 @@ public class DeveloperOptions extends AppCompatActivity {
 
 
 
+        final Button timebutton = findViewById(R.id.timebutton);
+        timebutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
+                String[] colors = {"r", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black",};
 
-
-
+                AlertDialog.Builder builder = new AlertDialog.Builder(DeveloperOptions.this);
+                builder.setTitle("Pick a color");
+                builder.setItems(colors, new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // the user clicked on colors[which]
+                    }
+                });
+                builder.show();
+            }
+        }
+        )
+            ;
 
 
 

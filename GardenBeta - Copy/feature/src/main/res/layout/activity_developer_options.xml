@@ -32,7 +32,13 @@
                 android:text="Pull User Settings"
                 tools:text="pull user settings" />
 
-
+            <Button
+                android:id="@+id/timebutton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Button"
+                tools:layout_editor_absoluteX="8dp"
+                tools:layout_editor_absoluteY="96dp" />
 
 
         </LinearLayout>

@@ -13,8 +13,8 @@ public class MyAppApplication extends Application {
     private final ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
 
 
-    public double day_time_starts_at=800;
-    public double night_time_starts_at=2000;
+    public String day_time_starts_at="8:00 AM";
+    public String night_time_starts_at="8:00 PM";
 
     public double air_temp_upper_threshold_day_time =0;
     public double air_temp_upper_pushnotification_day_time =0;
