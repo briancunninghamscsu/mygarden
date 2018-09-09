@@ -1333,7 +1333,7 @@ public class tolerances extends AppCompatActivity {
 
                 // do upper threshold edit text
                 final EditText do_upper_threshold_edit_text = new EditText(this);
-                do_upper_threshold_edit_text.setHint(getString(R.string.ppm));
+                do_upper_threshold_edit_text.setHint(mApp.do_upper_threshold + getString(R.string.ppm));
                 do_upper_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 do_upper_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
                 do_upper_threshold_edit_text.setTextSize(24);
@@ -1383,7 +1383,7 @@ public class tolerances extends AppCompatActivity {
 
                 // do lower bound edit text
                 final EditText do_lower_bound_edit_text = new EditText(this);
-                do_lower_bound_edit_text.setHint(getString(R.string.ppm));
+                do_lower_bound_edit_text.setHint(mApp.do_lower_threshold + getString(R.string.ppm));
                 do_lower_bound_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
                 do_lower_bound_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 do_lower_bound_edit_text.setTextSize(24);
@@ -1428,16 +1428,60 @@ public class tolerances extends AppCompatActivity {
                 do_lower_add_peroxide.setText(getString(R.string.add_peroxide));
                 ll.addView(do_lower_add_peroxide);
                 if (mApp.do_lower_add_hydrogen_peroxide == 1) {
-                    do_lower_add_hypochloric_acid.setChecked(true);
+                    do_lower_add_peroxide.setChecked(true);
                 }
                 else{
-                    do_lower_add_hypochloric_acid.setChecked(false);
+                    do_lower_add_peroxide.setChecked(false);
                 }
 
                 // save changes
-                final Button buttsoup6 = new Button(this);
-                buttsoup6.setText(getString(R.string.save_changes));
-                ll.addView(buttsoup6);
+                final Button save_changes_button_do = new Button(this);
+                save_changes_button_do.setText(getString(R.string.save_changes));
+                ll.addView(save_changes_button_do);
+                save_changes_button_do.setOnClickListener(new View.OnClickListener() {
+                                                              @Override
+                                                              public void onClick(View view) {
+                                                                  //checkboxes
+                                                                  mApp.do_lower_push_notification = (do_lower_send_push_notification_checkbox.isChecked()) ? (1) : (0);
+                                                                  mApp.do_upper_push_notification = (do_upper_threshold_push_notification_checkbox.isChecked()) ? (1) : (0);
+
+                                                                  mApp.do_upper_turn_off_extra_pump = (do_upper_turn_extra_air_pumps_off.isChecked()) ? (1) : (0);
+                                                                  mApp.do_upper_add_water = (do_upper_add_water_checkbox.isChecked()) ? (1) : (0);
+                                                                  mApp.do_lower_turn_on_extra_pump = (do_lower_turn_extra_pumps_on.isChecked()) ? (1) : (0);
+                                                                  mApp.do_lower_add_hydrogen_peroxide = (do_lower_add_peroxide.isChecked()) ? (1) : (0);
+                                                                  mApp.do_lower_add_hypochloric_acid = (do_lower_add_hypochloric_acid.isChecked()) ? (1) : (0);
+
+                                                                  if (!do_lower_bound_edit_text.getText().toString().equals("")) {
+                                                                      mApp.do_lower_threshold = Double.parseDouble(do_lower_bound_edit_text.getText().toString());
+                                                                  }
+
+                                                                  if (!do_upper_threshold_edit_text.getText().toString().equals("")) {
+                                                                      mApp.do_upper_threshold = Double.parseDouble(do_upper_threshold_edit_text.getText().toString());
+                                                                  }
+
+
+                                                                  // ERROR CHECKING FOR do
+
+                                                                  if (mApp.do_lower_threshold < 5) {
+                                                                      mApp.do_lower_threshold = 5;
+                                                                  }
+                                                                  if (mApp.do_upper_threshold > 12) {
+                                                                      mApp.do_upper_threshold = 12;
+                                                                  }
+                                                                  if (mApp.do_upper_threshold <= mApp.do_lower_threshold) {
+                                                                      mApp.do_lower_threshold = 7;
+                                                                      mApp.do_upper_threshold=9;
+                                                                  }
+
+
+                                                              }
+                                                          }
+                );
+
+
+
+
+
                 break;
 
 
