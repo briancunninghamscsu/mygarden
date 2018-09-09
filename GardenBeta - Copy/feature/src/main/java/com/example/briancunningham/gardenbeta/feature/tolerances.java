@@ -1496,7 +1496,7 @@ public class tolerances extends AppCompatActivity {
 
                 // upper bound edit text
                 final EditText orp_upper_bound_edit_text = new EditText(this);
-                orp_upper_bound_edit_text.setHint(mApp.orp_upper_threshold + getString(R.string.ppm));
+                orp_upper_bound_edit_text.setHint(mApp.orp_upper_threshold + getString(R.string.mv));
                 orp_upper_bound_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 orp_upper_bound_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
                 orp_upper_bound_edit_text.setTextSize(24);
@@ -1534,7 +1534,7 @@ public class tolerances extends AppCompatActivity {
 
                 // orp lower threshold edit text
                 final EditText orp_lower_threshold_edit_text = new EditText(this);
-                orp_lower_threshold_edit_text.setHint(mApp.orp_lower_threshold + getString(R.string.ppm));
+                orp_lower_threshold_edit_text.setHint(mApp.orp_lower_threshold + getString(R.string.mv));
                 orp_lower_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
                 orp_lower_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 orp_lower_threshold_edit_text.setTextSize(24);
@@ -1578,16 +1578,58 @@ public class tolerances extends AppCompatActivity {
                 orp_lower_add_base.setText(getString(R.string.add_base));
                 ll.addView(orp_lower_add_base);
                 if (mApp.orp_lower_add_base==1){
-                    orp_lower_add_peroxide_checkbox.setChecked(true);
+                    orp_lower_add_base.setChecked(true);
                 }
                 else {
-                    orp_lower_add_peroxide_checkbox.setChecked(false);
+                    orp_lower_add_base.setChecked(false);
                 }
 
                 // save changes
-                final Button buttsoup7 = new Button(this);
-                buttsoup7.setText(getString(R.string.save_changes));
-                ll.addView(buttsoup7);
+                final Button save_changes_button_orp = new Button(this);
+                save_changes_button_orp.setText(getString(R.string.save_changes));
+                ll.addView(save_changes_button_orp);
+                save_changes_button_orp.setOnClickListener(new View.OnClickListener() {
+                                                               @Override
+                                                               public void onClick(View view) {
+
+                                                                   //checkboxes
+                                                                   mApp.orp_lower_push_notification = (orp_lower_push_notification_checkbox.isChecked()) ? (1) : (0);
+                                                                   mApp.orp_upper_push_notification = (orp_upper_push_notification_checkbox.isChecked()) ? (1) : (0);
+
+                                                                   mApp.orp_upper_add_water = (orp_upper_add_water_checkbox.isChecked()) ? (1) : (0);
+                                                                   mApp.orp_lower_add_base = (orp_lower_add_base.isChecked()) ? (1) : (0);
+                                                                   mApp.orp_lower_add_hydrogen_peroxide = (orp_lower_add_peroxide_checkbox.isChecked()) ? (1) : (0);
+                                                                   mApp.orp_lower_add_hypochloric_acid = (orp_lower_add_hypochloric_checkbox.isChecked()) ? (1) : (0);
+
+
+
+                                                                   if (!orp_lower_threshold_edit_text.getText().toString().equals("")) {
+                                                                       mApp.orp_lower_threshold = Double.parseDouble(orp_lower_threshold_edit_text.getText().toString());
+                                                                   }
+
+                                                                   if (!orp_upper_bound_edit_text.getText().toString().equals("")) {
+                                                                       mApp.orp_upper_threshold = Double.parseDouble(orp_upper_bound_edit_text.getText().toString());
+                                                                   }
+
+
+                                                                   // ERROR CHECKING FOR orp
+
+                                                                   if (mApp.orp_lower_threshold < 200) {
+                                                                       mApp.orp_lower_threshold = 200;
+                                                                   }
+                                                                   if (mApp.orp_upper_threshold > 500) {
+                                                                       mApp.orp_upper_threshold = 500;
+                                                                   }
+                                                                   if (mApp.orp_upper_threshold <= mApp.orp_lower_threshold) {
+                                                                       mApp.orp_lower_threshold = 400;
+                                                                       mApp.orp_upper_threshold=500;
+                                                                   }
+
+
+                                                               }
+                                                           }
+                );
+
                 break;
 
             case "pH":
