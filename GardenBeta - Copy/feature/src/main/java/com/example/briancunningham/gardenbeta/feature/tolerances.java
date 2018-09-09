@@ -1228,14 +1228,14 @@ public class tolerances extends AppCompatActivity {
                 ll.addView(tds_lower_threshold_edit_text);
 
                 // tds lower threshold send push notification check box
-                final CheckBox tds_lower_threshold_send_push_notifiation = new CheckBox(this);
-                tds_lower_threshold_send_push_notifiation.setText(getString(R.string.send_push));
-                ll.addView(tds_lower_threshold_send_push_notifiation);
-                if (mApp.tds_lower_threshold==1){
-                    tds_lower_threshold_send_push_notifiation.setChecked(true);
+                final CheckBox tds_lower_threshold_send_push_notification = new CheckBox(this);
+                tds_lower_threshold_send_push_notification.setText(getString(R.string.send_push));
+                ll.addView(tds_lower_threshold_send_push_notification);
+                if (mApp.tds_lower_pushnotification==1){
+                    tds_lower_threshold_send_push_notification.setChecked(true);
                 }
                 else{
-                    tds_lower_threshold_send_push_notifiation.setChecked(false);
+                    tds_lower_threshold_send_push_notification.setChecked(false);
                 }
 
 
@@ -1278,6 +1278,47 @@ public class tolerances extends AppCompatActivity {
                 final Button buttsoup5 = new Button(this);
                 buttsoup5.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup5);
+                buttsoup5.setOnClickListener(new View.OnClickListener() {
+                                                @Override
+                                                public void onClick(View view) {
+                                                    //checkboxes
+                                                    mApp.tds_lower_pushnotification = (tds_lower_threshold_send_push_notification.isChecked()) ? (1) : (0);
+                                                    mApp.tds_upper_push_notification = (upper_tds_push_notification_checkbox.isChecked()) ? (1) : (0);
+
+                                                    mApp.tds_upper_add_water = (upper_tds_add_water_checkbox.isChecked()) ? (1) : (0);
+                                                    mApp.tds_add_floramicro = (add_flora_micro_check_box.isChecked()) ? (1) : (0);
+                                                    mApp.tds_add_floragro = (add_flora_gro_checkbox.isChecked()) ? (1) : (0);
+                                                    mApp.tds_add_florabloom = (add_flora_bloom_check_box.isChecked()) ? (1) : (0);
+
+
+                                                    if (!tds_lower_threshold_edit_text.getText().toString().equals("")) {
+                                                        mApp.tds_lower_threshold = Double.parseDouble(tds_lower_threshold_edit_text.getText().toString());
+                                                    }
+
+                                                    if (!upper_tds_edit_text.getText().toString().equals("")) {
+                                                        mApp.tds_upper_threshold = Double.parseDouble(upper_tds_edit_text.getText().toString());
+                                                    }
+
+
+                                                    // ERROR CHECKING FOR tds thresholds
+
+                                                    if (mApp.tds_lower_threshold < 300) {
+                                                        mApp.tds_lower_threshold = 300;
+                                                    }
+                                                    if (mApp.tds_upper_threshold > 600) {
+                                                        mApp.tds_upper_threshold = 600;
+                                                    }
+                                                    if (mApp.tds_upper_threshold <= mApp.tds_lower_threshold) {
+                                                        mApp.tds_lower_threshold = 400;
+                                                        mApp.tds_upper_threshold=500;
+                                                    }
+
+
+                                                }
+                                            }
+                );
+
+
                 break;
 
             case "Dissolved Oxygen":
