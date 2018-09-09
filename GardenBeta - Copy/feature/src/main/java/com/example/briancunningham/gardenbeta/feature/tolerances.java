@@ -2,6 +2,8 @@ package com.example.briancunningham.gardenbeta.feature;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.InputType;
@@ -11,6 +13,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Space;
 import android.widget.TextView;
 
 import com.loopj.android.http.AsyncHttpClient;
@@ -28,15 +31,52 @@ public class tolerances extends AppCompatActivity {
         setTitle(getIntent().getStringExtra("parameter_name")); //set the correct title
 
         final MyAppApplication mApp = (MyAppApplication) getApplicationContext(); //get global variables
-        LinearLayout ll = findViewById(R.id.linlaytolerances);
+        final LinearLayout ll = findViewById(R.id.linlaytolerances);
         ll.setOrientation(LinearLayout.VERTICAL);
 
         switch (getIntent().getStringExtra("parameter_name")) {
             case "Air Temperature":
 
-                // title display
+                // daytime starting title
+                final TextView daytime_lower = new TextView(this);
+                daytime_lower.setText("I want daytime to start at");
+                daytime_lower.setTextSize(24);
+                daytime_lower.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                daytime_lower.setPadding(8, 8, 8, 8);
+                ll.addView(daytime_lower);
+
+                // daytime entering box
+                final EditText daytime_lower_box = new EditText(this);
+                daytime_lower_box.setHint("Military Format HHMM");
+                daytime_lower_box.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                daytime_lower_box.setInputType(InputType.TYPE_CLASS_NUMBER);
+                daytime_lower_box.setTextSize(24);
+                ll.addView(daytime_lower_box);
+
+
+
+
+                final TextView night_time_lower = new TextView(this);
+                night_time_lower.setText("I want night time to start at");
+                night_time_lower.setTextSize(24);
+                night_time_lower.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                night_time_lower.setPadding(8, 8, 8, 8);
+                ll.addView(night_time_lower);
+
+                // night time entering box
+                final EditText night_time_lower_box = new EditText(this);
+                night_time_lower_box.setHint("Military Format HHMM");
+                night_time_lower_box.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                night_time_lower_box.setInputType(InputType.TYPE_CLASS_NUMBER);
+                night_time_lower_box.setTextSize(24);
+                ll.addView(night_time_lower_box);
+
+
+
+
+
                 final TextView uppertext = new TextView(this);
-                uppertext.setText(getString(R.string.air_temp_above));
+                uppertext.setText("If Day Air Temp is Above ");
                 uppertext.setTextSize(24);
                 uppertext.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 uppertext.setPadding(8, 8, 8, 8);
@@ -92,7 +132,7 @@ public class tolerances extends AppCompatActivity {
 
                 //lower threshold title
                 final TextView belowtext = new TextView(this);
-                belowtext.setText(getString(R.string.air_temp_below));
+                belowtext.setText("If Day Air Temp is Below");
                 belowtext.setTextSize(24);
                 belowtext.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 belowtext.setPadding(8, 8, 8, 8);
@@ -146,6 +186,131 @@ public class tolerances extends AppCompatActivity {
                     air_temp_lower_threshold_push_notification_check_box.setChecked(false);
                 }
 
+
+
+
+                // NIGHT TIME SETTINGS
+                final TextView uppertext_night = new TextView(this);
+                uppertext_night.setText("If Night Air Temp is Above ");
+                uppertext_night.setTextSize(24);
+                uppertext_night.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                uppertext_night.setPadding(8, 8, 8, 8);
+                ll.addView(uppertext_night);
+
+                // logic for displaying current upper bound settings
+                final EditText upperbound_night = new EditText(this);
+                upperbound_night.setHint(mApp.air_temp_upper_threshold + getString(R.string.degreef));
+                upperbound_night.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                upperbound_night.setInputType(InputType.TYPE_CLASS_NUMBER);
+                upperbound_night.setTextSize(24);
+                ll.addView(upperbound_night);
+
+                //upper bound checkbox display logic
+                final CheckBox air_temp_upper_push_notifications_checkbox_night = new CheckBox(this);
+                air_temp_upper_push_notifications_checkbox_night.setText(getString(R.string.send_push));
+                if (mApp.air_temp_upper_pushnotification == 1) {
+                    air_temp_upper_push_notifications_checkbox_night.setChecked(true);
+                } else {
+                    air_temp_upper_push_notifications_checkbox_night.setChecked(false);
+                }
+                ll.addView(air_temp_upper_push_notifications_checkbox_night);
+
+                // upper air temp extra fans on display code
+                final CheckBox air_temp_upper_on_extra_fans_night = new CheckBox(this);
+                ll.addView(air_temp_upper_on_extra_fans_night);
+                air_temp_upper_on_extra_fans_night.setText(getString(R.string.turn_on_fans));
+                if (mApp.air_temp_upper_turn_on_fans == 1) {
+                    air_temp_upper_on_extra_fans_night.setChecked(true);
+                } else {
+                    air_temp_upper_on_extra_fans_night.setChecked(false);
+                }
+
+                // upper air temp heating element off
+                final CheckBox upper_air_temp_heating_element_checkbox_night = new CheckBox(this);
+                ll.addView(upper_air_temp_heating_element_checkbox_night);
+                upper_air_temp_heating_element_checkbox_night.setText(getString(R.string.turn_off_heating_element));
+                if (mApp.air_temp_upper_turn_off_heating_element == 1) {
+                    upper_air_temp_heating_element_checkbox_night.setChecked(true);
+                } else {
+                    upper_air_temp_heating_element_checkbox_night.setChecked(false);
+                }
+
+                // upper air temp turn space heater off
+                final CheckBox upper_air_temp_space_heater_off_checkbox_night = new CheckBox(this);
+                ll.addView(upper_air_temp_space_heater_off_checkbox_night);
+                upper_air_temp_space_heater_off_checkbox_night.setText(getString(R.string.turn_off_space_heater));
+                if (mApp.air_temp_upper_turn_off_space_heater == 1) {
+                    upper_air_temp_space_heater_off_checkbox_night.setChecked(true);
+                } else {
+                    upper_air_temp_space_heater_off_checkbox_night.setChecked(false);
+                }
+
+                //lower threshold title
+                final TextView belowtext_night = new TextView(this);
+                belowtext_night.setText("If Night Air Temp is Below");
+                belowtext_night.setTextSize(24);
+                belowtext_night.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                belowtext_night.setPadding(8, 8, 8, 8);
+                ll.addView(belowtext_night);
+
+                // lower threshold edittext
+                final EditText lowerbound_night = new EditText(this);
+                lowerbound_night.setHint(mApp.air_temp_lower_threshold + getString(R.string.degreef));
+                lowerbound_night.setInputType(InputType.TYPE_CLASS_NUMBER);
+                lowerbound_night.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                lowerbound_night.setTextSize(24);
+                ll.addView(lowerbound_night);
+
+                // lower threshold push notification check box
+                final CheckBox air_temp_lower_threshold_push_notification_check_box_night = new CheckBox(this);
+                air_temp_lower_threshold_push_notification_check_box_night.setText(getString(R.string.send_push));
+                ll.addView(air_temp_lower_threshold_push_notification_check_box_night);
+                if (mApp.air_temp_lower_pushnotification == 1) {
+                    air_temp_lower_threshold_push_notification_check_box_night.setChecked(true);
+                } else {
+                    air_temp_lower_threshold_push_notification_check_box_night.setChecked(false);
+                }
+
+                // lower threshold turn off extra fans
+                final CheckBox air_temp_lower_turn_off_extra_fans_checkbox_night = new CheckBox(this);
+                ll.addView(air_temp_lower_turn_off_extra_fans_checkbox_night);
+                air_temp_lower_turn_off_extra_fans_checkbox_night.setText(getString(R.string.turn_off_fans));
+                if (mApp.air_temp_lower_turn_off_fans == 1) {
+                    air_temp_lower_turn_off_extra_fans_checkbox_night.setChecked(true);
+                } else {
+                    air_temp_lower_turn_off_extra_fans_checkbox_night.setChecked(false);
+                }
+
+                // lower threshold turn on heating element
+                final CheckBox air_temp_lower_turn_on_heating_element_checkbox_night = new CheckBox(this);
+                ll.addView(air_temp_lower_turn_on_heating_element_checkbox_night);
+                air_temp_lower_turn_on_heating_element_checkbox_night.setText(getString(R.string.turn_on_heating_element));
+                if (mApp.air_temp_lower_turn_on_heating_element == 1) {
+                    air_temp_lower_turn_on_heating_element_checkbox_night.setChecked(true);
+                } else {
+                    air_temp_lower_turn_on_heating_element_checkbox_night.setChecked(false);
+                }
+
+                // lower threshold turn on space heater
+                final CheckBox lower_threshold_turn_on_space_heater_check_box_night = new CheckBox(this);
+                ll.addView(lower_threshold_turn_on_space_heater_check_box_night);
+                lower_threshold_turn_on_space_heater_check_box_night.setText(getString(R.string.turn_on_space_heater));
+                if (mApp.air_temp_lower_turn_on_space_heater == 1) {
+                    lower_threshold_turn_on_space_heater_check_box_night.setChecked(true);
+                } else {
+                    lower_threshold_turn_on_space_heater_check_box_night.setChecked(false);
+                }
+
+
+
+
+
+
+
+
+
+
+
                 // box for sending data to server
                 final Button save_changes_box = new Button(this);
                 save_changes_box.setText(getString(R.string.save_changes));
@@ -162,7 +327,7 @@ public class tolerances extends AppCompatActivity {
 
 
                         // try and connect to the server.
-                        RequestParams params = new RequestParams();
+                        /*RequestParams params = new RequestParams();
                         params.put("whatiwant", "push_settings");
 
                         // keeps from null pointer crashing
@@ -192,14 +357,14 @@ public class tolerances extends AppCompatActivity {
                         params.put("air_temp_lower_turn_off_fans", (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0));
                         params.put("air_temp_lower_turn_on_heating_element", (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0));
                         params.put("air_temp_lower_turn_on_space_heater", (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0));
+*/
 
+                        final ConstraintLayout screen = findViewById(R.id.constrainters);
 
-
-
-
-
+                        RequestParams params = new RequestParams();
+                        params.put("whatiwant", "testdata");
                         AsyncHttpClient client = new AsyncHttpClient();
-                        client.get("http://24.197.216.190/mygarden/api.php", params,new JsonHttpResponseHandler() {
+                        client.get("http://192.168.1.13/mygarden/api.php", params,new JsonHttpResponseHandler() {
                                     @Override
                                     public void onStart() {
                                         Log.d("kirk", "got to onStart()");
@@ -210,7 +375,9 @@ public class tolerances extends AppCompatActivity {
                                         Log.d("kirk", "got to onSuccess()");
                                         String test1 = response.toString();
                                         Log.d("kirk", test1);
-
+                                        Snackbar snackbar = Snackbar
+                                                .make(screen, "Changes Saved Succsesfully!", Snackbar.LENGTH_LONG);
+                                        snackbar.show();
 
                                         // save the variables from the UI
                                         // upper settings
@@ -251,7 +418,9 @@ public class tolerances extends AppCompatActivity {
                                     @Override
                                     public void onFinish(){
                                         Log.d("kirk","got to onfinish");
-
+                                        Snackbar snackbar = Snackbar
+                                                .make(screen, "Failed to Connect! Changes not saved.", Snackbar.LENGTH_LONG);
+                                        //snackbar.show();
                                     }
                                     @Override
                                     public void onRetry(int retryNo) {
