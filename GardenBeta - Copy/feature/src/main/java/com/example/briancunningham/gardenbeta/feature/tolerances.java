@@ -969,65 +969,97 @@ public class tolerances extends AppCompatActivity {
 
             case "CO2":
 
-                // CO2 title text view
-                final TextView CO2_title_text_view = new TextView(this);
-                CO2_title_text_view.setText(getString(R.string.CO2_above));
-                CO2_title_text_view.setTextSize(24);
-                CO2_title_text_view.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                CO2_title_text_view.setPadding(8,8,8,8);
-                ll.addView(CO2_title_text_view);
+                //CO2 upper title
+                final TextView CO2_title = new TextView(this);
+                CO2_title.setText(getString(R.string.CO2_above));
+                CO2_title.setTextSize(24);
+                CO2_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                CO2_title.setPadding(8,8,8,8);
+                ll.addView(CO2_title);
 
-                // CO2 upper bound edit text
-                final EditText CO2_upper_bound_edit_text = new EditText(this);
-                CO2_upper_bound_edit_text.setHint(getString(R.string.ppm));
-                CO2_upper_bound_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                CO2_upper_bound_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
-                CO2_upper_bound_edit_text.setTextSize(24);
-                ll.addView(CO2_upper_bound_edit_text);
+// CO2 upper threshold edit text
+                final EditText CO2_upper_edit_text = new EditText(this);
+                CO2_upper_edit_text.setHint(mApp.CO2_upper_threshold + getString(R.string.ppm));
+                CO2_upper_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                CO2_upper_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
+                CO2_upper_edit_text.setTextSize(24);
+                ll.addView(CO2_upper_edit_text);
 
-                // CO2 upper push notifications
-                final CheckBox CO2_upper_push_notifications_checkbox = new CheckBox(this);
-                CO2_upper_push_notifications_checkbox.setText(getString(R.string.send_push));
-                ll.addView(CO2_upper_push_notifications_checkbox);
-                if (mApp.CO2_upper_pushnotifications==1){
-                    CO2_upper_push_notifications_checkbox.setChecked(true);
+// CO2 upper threshold push notifications
+                final CheckBox CO2_upper_threshold_push_notifications = new CheckBox(this);
+                CO2_upper_threshold_push_notifications.setText(getString(R.string.send_push));
+                ll.addView(CO2_upper_threshold_push_notifications);
+                if (mApp.CO2_upper_pushnotifications ==1){
+                    CO2_upper_threshold_push_notifications.setChecked(true);
                 }
-                else {
-                    CO2_upper_push_notifications_checkbox.setChecked(false);
+                else{
+                    CO2_upper_threshold_push_notifications.setChecked(false);
                 }
 
-                // CO2 Below Title
-                final TextView CO2_below_title = new TextView(this);
-                CO2_below_title.setText(getString(R.string.CO2_below));
-                CO2_below_title.setTextSize(24);
-                CO2_below_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                CO2_below_title.setPadding(8,8,8,8);
-                ll.addView(CO2_below_title);
+// CO2 lower threshold lower title
+                final TextView CO2_lower_threshold_title = new TextView(this);
+                CO2_lower_threshold_title.setText(getString(R.string.CO2_below));
+                CO2_lower_threshold_title.setTextSize(24);
+                CO2_lower_threshold_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                CO2_lower_threshold_title.setPadding(8,8,8,8);
+                ll.addView(CO2_lower_threshold_title);
 
-                // CO2 lower threshold edit text
+// CO2 lower threshold edit text
                 final EditText CO2_lower_threshold_edit_text = new EditText(this);
-                CO2_lower_threshold_edit_text.setHint(getString(R.string.ppm));
+                CO2_lower_threshold_edit_text.setHint(mApp.CO2_lower_threshold + getString(R.string.ppm));
                 CO2_lower_threshold_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
                 CO2_lower_threshold_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 CO2_lower_threshold_edit_text.setTextSize(24);
                 ll.addView(CO2_lower_threshold_edit_text);
 
-                // CO2 lower threshold push notification
-                final CheckBox CO2_lower_threshold_push_notification_checkbox = new CheckBox(this);
-                CO2_lower_threshold_push_notification_checkbox.setText(getString(R.string.send_push));
-                ll.addView(CO2_lower_threshold_push_notification_checkbox);
+// CO2 lower push notification
+                final CheckBox CO2_lower_push_notification_checkbox = new CheckBox(this);
+                CO2_lower_push_notification_checkbox.setText(getString(R.string.send_push));
+                ll.addView(CO2_lower_push_notification_checkbox);
                 if (mApp.CO2_lower_pushnotification==1){
-                    CO2_lower_threshold_push_notification_checkbox.setChecked(true);
+                    CO2_lower_push_notification_checkbox.setChecked(true);
                 }
                 else{
-                    CO2_lower_threshold_push_notification_checkbox.setChecked(false);
+                    CO2_lower_push_notification_checkbox.setChecked(false);
                 }
 
+// save changes
+                final Button save_change_button_CO2 = new Button(this);
+                save_change_button_CO2.setText(getString(R.string.save_changes));
+                ll.addView(save_change_button_CO2);
+                save_change_button_CO2.setOnClickListener(new View.OnClickListener() {
+                                                 @Override
+                                                 public void onClick(View view) {
+                                                     mApp.CO2_lower_pushnotification = (CO2_lower_push_notification_checkbox.isChecked()) ? (1) : (0);
+                                                     mApp.CO2_upper_pushnotifications = (CO2_upper_threshold_push_notifications.isChecked()) ? (1) : (0);
 
-                // submit changes button
-                final Button buttsoup3 = new Button(this);
-                buttsoup3.setText(getString(R.string.save_changes));
-                ll.addView(buttsoup3);
+                                                     if (!CO2_lower_threshold_edit_text.getText().toString().equals("")) {
+                                                         mApp.CO2_lower_threshold = Double.parseDouble(CO2_lower_threshold_edit_text.getText().toString());
+                                                     }
+
+                                                     if (!CO2_upper_edit_text.getText().toString().equals("")) {
+                                                         mApp.CO2_upper_threshold = Double.parseDouble(CO2_upper_edit_text.getText().toString());
+                                                     }
+
+
+                                                     // ERROR CHECKING FOR CO2
+
+                                                     if (mApp.CO2_lower_threshold < 400) {
+                                                         mApp.CO2_lower_threshold = 400;
+                                                     }
+                                                     if (mApp.CO2_upper_threshold > 1000) {
+                                                         mApp.CO2_upper_threshold = 1000;
+                                                     }
+                                                     if (mApp.CO2_upper_threshold <= mApp.CO2_lower_threshold) {
+                                                         mApp.CO2_lower_threshold = 600;
+                                                         mApp.CO2_upper_threshold=800;
+                                                     }
+
+
+                                                 }
+                                             }
+                );
+
 
                 break;
 
