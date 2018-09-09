@@ -2,7 +2,7 @@
     <string name="aboutmetext">
         "Application and System created by Brian Cunningham and Dylan Kohl.\n\n"
         "Created for ECE 461 &amp; 462 Senior Design 2018.\n\n"
-        "Not for public release.\n\n"
+        "Not for public release.\n\nAll images used under Public Domain.\n\n"
         "Android Graphing Library by Jonas Gehring.\n\n"
         View License at \nhttps://github.com/jjoe64/GraphView"
     </string>

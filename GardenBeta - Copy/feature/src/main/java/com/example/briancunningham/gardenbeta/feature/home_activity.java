@@ -297,21 +297,13 @@ public class home_activity extends AppCompatActivity {
         //Snackbar.make(, "asdasdasdasd", Snackbar.LENGTH_LONG)
         //  .setAction("Action", null).show();
 
-        if (id == R.id.action_settings) {
-            Intent myIntent = new Intent(home_activity.this, SettingsActivity.class);
-            home_activity.this.startActivity(myIntent);
-            return true;
-        }
+
         if (id == R.id.aboutmeid) {
             Intent myIntent = new Intent(home_activity.this, AboutActivity.class);
             home_activity.this.startActivity(myIntent);
             return true;
         }
-        if (id == R.id.firsttimesetupid) {
-            Intent myIntent = new Intent(home_activity.this, FirstTimeSetup.class);
-            home_activity.this.startActivity(myIntent);
-            return true;
-        }
+
         return super.onOptionsItemSelected(item);
     }
 
