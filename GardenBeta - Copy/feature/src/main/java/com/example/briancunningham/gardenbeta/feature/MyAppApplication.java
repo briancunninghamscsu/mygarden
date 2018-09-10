@@ -119,6 +119,7 @@ public class MyAppApplication extends Application {
     public double orp_lower_add_hypochloric_acid=0;
     public double orp_lower_add_base=0;
 
+    public double pH_upper_threshold=0;
     public double pH_lower_threshold=0;
     public double pH_upper_add_acid=0;
     public double pH_lower_add_base=0;

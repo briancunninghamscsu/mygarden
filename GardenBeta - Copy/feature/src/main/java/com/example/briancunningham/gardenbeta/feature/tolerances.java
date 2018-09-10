@@ -1644,7 +1644,7 @@ public class tolerances extends AppCompatActivity {
 
                 // ph upper bound edit text
                 final EditText pH_upper_bound_edit_text = new EditText(this);
-                pH_upper_bound_edit_text.setHint(getString(R.string.ppm));
+                pH_upper_bound_edit_text.setHint(String.valueOf(mApp.pH_upper_threshold));
                 pH_upper_bound_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 pH_upper_bound_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
                 pH_upper_bound_edit_text.setTextSize(24);
@@ -1682,7 +1682,7 @@ public class tolerances extends AppCompatActivity {
 
                 // lower edit text
                 final EditText lower_ph_edit_text = new EditText(this);
-                lower_ph_edit_text.setHint(mApp.pH_lower_threshold + getString(R.string.ppm));
+                lower_ph_edit_text.setHint(String.valueOf(mApp.pH_lower_threshold));
                 lower_ph_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
                 lower_ph_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 lower_ph_edit_text.setTextSize(24);
@@ -1711,9 +1711,47 @@ public class tolerances extends AppCompatActivity {
                 }
 
                 // save changes
-                final Button buttsoup8 = new Button(this);
-                buttsoup8.setText(getString(R.string.save_changes));
-                ll.addView(buttsoup8);
+                final Button save_changes_button_ph = new Button(this);
+                save_changes_button_ph.setText(getString(R.string.save_changes));
+                ll.addView(save_changes_button_ph);
+                save_changes_button_ph.setOnClickListener(new View.OnClickListener() {
+                                                              @Override
+                                                              public void onClick(View view) {
+
+                                                                  // pH checkboxes
+                                                                  mApp.pH_lower_add_base = (lower_ph_add_base_checkbox.isChecked()) ? (1) : (0);
+                                                                  mApp.pH_upper_add_acid = (ph_upper_add_acid_checkbox.isChecked()) ? (1) : (0);
+
+                                                                  mApp.pH_lower_push_notification = (lower_ph_push_notification_checkbox.isChecked()) ? (1) : (0);
+                                                                  mApp.pH_upper_push_notification = (pH_upper_push_notification_checkbox.isChecked()) ? (1) : (0);
+
+                                                                  if (!lower_ph_edit_text.getText().toString().equals("")) {
+                                                                      mApp.pH_lower_threshold = Double.parseDouble(lower_ph_edit_text.getText().toString());
+                                                                  }
+
+                                                                  if (!pH_upper_bound_edit_text.getText().toString().equals("")) {
+                                                                      mApp.pH_upper_threshold = Double.parseDouble(pH_upper_bound_edit_text.getText().toString());
+                                                                  }
+
+
+                                                                  // ERROR CHECKING FOR ph
+
+                                                                  if (mApp.pH_lower_threshold < 3) {
+                                                                      mApp.pH_lower_threshold = 3;
+                                                                  }
+                                                                  if (mApp.pH_upper_threshold > 10) {
+                                                                      mApp.pH_upper_threshold = 10;
+                                                                  }
+                                                                  if (mApp.pH_upper_threshold <= mApp.pH_lower_threshold) {
+                                                                      mApp.pH_lower_threshold = 5;
+                                                                      mApp.pH_upper_threshold=7;
+                                                                  }
+
+
+                                                              }
+                                                          }
+                );
+
                 break;
 
             case "Reservoirs":
