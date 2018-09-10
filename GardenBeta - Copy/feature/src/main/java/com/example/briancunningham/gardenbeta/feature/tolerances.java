@@ -1756,7 +1756,7 @@ public class tolerances extends AppCompatActivity {
 
             case "Reservoirs":
 
-                // reservoirs title
+               /* // reservoirs title
                 final TextView reservoirs_title_text_view = new TextView(this);
                 reservoirs_title_text_view.setText(getString(R.string.reservoirs_low));
                 reservoirs_title_text_view.setTextSize(24);
@@ -1778,18 +1778,18 @@ public class tolerances extends AppCompatActivity {
                 //save changes
                 final Button buttsoup9 = new Button(this);
                 buttsoup9.setText(getString(R.string.save_changes));
-                ll.addView(buttsoup9);
+                ll.addView(buttsoup9);*/
                 break;
 
             case "Canopy Height":
                 // canopy height title
                 final TextView canopy_height_title = new TextView(this);
-                canopy_height_title.setText(getString(R.string.canopy_height_trigger));
+                canopy_height_title.setText("There are no adjustable canopy height settings in this program version.");
                 canopy_height_title.setTextSize(24);
                 canopy_height_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 canopy_height_title.setPadding(8,8,8,8);
                 ll.addView(canopy_height_title);
-
+/*
                 // canopy height marker
                 final EditText canopy_height_marker = new EditText(this);
                 canopy_height_marker.setHint(mApp.canopy_height_checkpoint + getString(R.string.centimeters));
@@ -1812,20 +1812,20 @@ public class tolerances extends AppCompatActivity {
                 // save changes
                 final Button buttsoup10 = new Button(this);
                 buttsoup10.setText(getString(R.string.save_changes));
-                ll.addView(buttsoup10);
+                ll.addView(buttsoup10);*/
                 break;
 
             case "Light Height":
                 // light height titles
                 final TextView light_height_title = new TextView(this);
-                light_height_title.setText(getString(R.string.light_height));
+                light_height_title.setText("At this point, there are no light-height related parameters.");
                 light_height_title.setTextSize(24);
                 light_height_title.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 light_height_title.setPadding(8,8,8,8);
                 ll.addView(light_height_title);
 
                 // light height target
-                final EditText light_height_edit_text = new EditText(this);
+                /*final EditText light_height_edit_text = new EditText(this);
                 light_height_edit_text.setHint(mApp.light_height_target + getString(R.string.centimeters));
                 light_height_edit_text.setInputType(InputType.TYPE_CLASS_NUMBER);
                 light_height_edit_text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
@@ -1846,7 +1846,7 @@ public class tolerances extends AppCompatActivity {
                 // push changes
                 final Button buttsoup12 = new Button(this);
                 buttsoup12.setText(getString(R.string.save_changes));
-                ll.addView(buttsoup12);
+                ll.addView(buttsoup12);*/
                 break;
             default:
         }
