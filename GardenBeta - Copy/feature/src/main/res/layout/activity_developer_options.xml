@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/devcontrols_toplvl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.briancunningham.gardenbeta.feature.DeveloperOptions">
@@ -64,96 +65,97 @@
                 <RadioGroup
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content">
-                <RadioButton
-                    android:id="@+id/butt_pump1"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Pump 1 On" />
 
-                <RadioButton
-                    android:id="@+id/butt_pump2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Pump 2 On" />
+                    <RadioButton
+                        android:id="@+id/butt_pump1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Pump 1 On" />
 
-                <RadioButton
-                    android:id="@+id/butt_pump3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Pump 3 On" />
+                    <RadioButton
+                        android:id="@+id/butt_pump2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Pump 2 On" />
 
-                <RadioButton
-                    android:id="@+id/butt_pump4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Pump 4 On" />
+                    <RadioButton
+                        android:id="@+id/butt_pump3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Pump 3 On" />
 
-                <RadioButton
-                    android:id="@+id/butt_pump5"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Pump 5 On" />
+                    <RadioButton
+                        android:id="@+id/butt_pump4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Pump 4 On" />
 
-                <RadioButton
-                    android:id="@+id/butt_pump6"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Pump 6 On" />
+                    <RadioButton
+                        android:id="@+id/butt_pump5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Pump 5 On" />
 
-                <RadioButton
-                    android:id="@+id/butt_pump7"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Pump 7 On" />
+                    <RadioButton
+                        android:id="@+id/butt_pump6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Pump 6 On" />
 
-                <RadioButton
-                    android:id="@+id/butt_pump8"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Pump 8 On" />
+                    <RadioButton
+                        android:id="@+id/butt_pump7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Pump 7 On" />
 
-                <RadioButton
-                    android:id="@+id/butt_space_heater"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Space Heater On" />
+                    <RadioButton
+                        android:id="@+id/butt_pump8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Pump 8 On" />
 
-                <RadioButton
-                    android:id="@+id/butt_grow_light"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Grow Light On" />
+                    <RadioButton
+                        android:id="@+id/butt_space_heater"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Space Heater On" />
 
-                <RadioButton
-                    android:id="@+id/butt_fogger"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Fogger On" />
+                    <RadioButton
+                        android:id="@+id/butt_grow_light"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Grow Light On" />
 
-                <RadioButton
-                    android:id="@+id/butt_DC_motor"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn DC Motor On" />
+                    <RadioButton
+                        android:id="@+id/butt_fogger"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Fogger On" />
 
-                <RadioButton
-                    android:id="@+id/butt_extra_fans"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Extra Fans On" />
+                    <RadioButton
+                        android:id="@+id/butt_DC_motor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn DC Motor On" />
 
-                <RadioButton
-                    android:id="@+id/butt_extra_air_pump"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Extra Air Pump On" />
+                    <RadioButton
+                        android:id="@+id/butt_extra_fans"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Extra Fans On" />
+
+                    <RadioButton
+                        android:id="@+id/butt_extra_air_pump"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Extra Air Pump On" />
 
 
-                <RadioButton
-                    android:id="@+id/butt_heating_element"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Turn Heating Element On" />
+                    <RadioButton
+                        android:id="@+id/butt_heating_element"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Turn Heating Element On" />
                 </RadioGroup>
             </LinearLayout>
         </ScrollView>

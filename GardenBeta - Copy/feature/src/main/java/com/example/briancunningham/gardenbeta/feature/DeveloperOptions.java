@@ -11,6 +11,7 @@ import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -43,7 +44,7 @@ public class DeveloperOptions extends AppCompatActivity {
         setContentView(R.layout.activity_developer_options);
         final MyAppApplication mApp = (MyAppApplication) getApplicationContext();
         MyLoopjTask myLoopjTask = new MyLoopjTask();
-
+        final ConstraintLayout devtp = findViewById(R.id.devcontrols_toplvl);
 
         final CheckBox am_checkbox = findViewById(R.id.actuator_mode_checkbox);
         final RadioButton pump1butt = findViewById(R.id.butt_pump1);
@@ -535,9 +536,11 @@ public class DeveloperOptions extends AppCompatActivity {
         push_user_settings_butt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            user_settings_pusher USP1 = new user_settings_pusher();
+            user_settings_pusher USP1 = new user_settings_pusher(mApp,"Dev Options",devtp);
             }
         });
+
+
 
 
 
