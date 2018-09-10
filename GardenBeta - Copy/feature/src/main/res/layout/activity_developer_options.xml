@@ -28,14 +28,14 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button4"
+                    android:id="@+id/pull_data_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/update_with_data_from_server"
                     tools:text="@string/update_with_data_from_server" />
 
                 <Button
-                    android:id="@+id/button7"
+                    android:id="@+id/pull_user_settings_button"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Pull User Settings"

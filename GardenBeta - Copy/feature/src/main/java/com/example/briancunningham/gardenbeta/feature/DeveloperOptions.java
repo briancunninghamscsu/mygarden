@@ -63,6 +63,9 @@ public class DeveloperOptions extends AppCompatActivity {
         final RadioButton extra_air_pump_butt = findViewById(R.id.butt_extra_air_pump);
         final RadioButton heating_element_butt = findViewById(R.id.butt_heating_element);
 
+
+
+
         // actuator mode enabling and UI logic
         am_checkbox.setChecked(mApp.am_enable==1 ? true : false);
         am_checkbox.setOnClickListener(new View.OnClickListener() {
@@ -498,7 +501,7 @@ public class DeveloperOptions extends AppCompatActivity {
 
 
 
-        Button getdatafromserverbutton = findViewById(R.id.button4);
+        Button getdatafromserverbutton = findViewById(R.id.pull_data_button);
         getdatafromserverbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -528,11 +531,27 @@ public class DeveloperOptions extends AppCompatActivity {
         }
         );
 
-        Button user_settings_button = findViewById(R.id.button7);
-        user_settings_button.setOnClickListener(new View.OnClickListener() {
+        Button push_user_settings_butt = findViewById(R.id.push_user_settings_button);
+        push_user_settings_butt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d("spock","you got to the on click listen");
+            user_settings_pusher USP1 = new user_settings_pusher();
+            }
+        });
+
+
+
+
+
+
+
+
+
+        Button pull_user_settings_button = findViewById(R.id.pull_user_settings_button);
+        pull_user_settings_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                /*Log.d("spock","you got to the on click listen");
                 RequestParams params = new RequestParams();
                 params.put("whatiwant", "pull_settings");
                 AsyncHttpClient client = new AsyncHttpClient();
@@ -555,6 +574,9 @@ public class DeveloperOptions extends AppCompatActivity {
                         Log.d("spock", "got to onRetry()");
                     }
                 });
+            }
+        }*/
+            //user_settings_pusher USP1 = new user_settings_pusher();
             }
         }
         );

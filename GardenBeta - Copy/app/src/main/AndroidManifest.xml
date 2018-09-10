@@ -1,2 +1,4 @@
-<manifest package="com.example.briancunningham.gardenbeta.app" />
+<manifest package="com.example.briancunningham.gardenbeta.app"
+    android:icon="@mipmap/ic_launcher_round"
+    xmlns:android="http://schemas.android.com/apk/res/android" />
 
