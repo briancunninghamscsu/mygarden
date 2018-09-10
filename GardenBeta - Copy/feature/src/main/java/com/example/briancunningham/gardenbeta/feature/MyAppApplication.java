@@ -126,11 +126,29 @@ public class MyAppApplication extends Application {
     public double pH_upper_push_notification=0;
     public double pH_lower_push_notification=0;
 
-    public double reservoirs_need_refilling=0;
+
+    public int am_enable=0;
+    public int am_pump1=0;
+    public int am_pump2=0;
+    public int am_pump3=0;
+    public int am_pump4=0;
+    public int am_pump5=0;
+    public int am_pump6=0;
+    public int am_pump7=0;
+    public int am_pump8=0;
+    public int am_space_heater=0;
+    public int am_grow_light=0;
+    public int am_fogger=0;
+    public int am_dc_motor=0;
+    public int am_extra_fans=0;
+    public int am_extra_air_pump=0;
+    public int am_heating_element=0;
+
+    /*public double reservoirs_need_refilling=0;
     public double canopy_height_checkpoint=0;
     public double canopy_height_push_notification=1;
     public double light_height_target=0;
-    public double light_height_adjustment_push_notification=0;
+    public double light_height_adjustment_push_notification=0;*/
 
 // --Commented out by Inspection START (5/19/2018 11:17 AM):
 //        public void testingmessage(){
@@ -217,12 +235,12 @@ public class MyAppApplication extends Application {
         Log.d("usersettings","air temperature upper bound is " + orp_lower_add_hypochloric_acid);
         Log.d("usersettings","air temperature upper bound is " + orp_lower_add_base);
 
-        Log.d("usersettings","air temperature upper bound is " + reservoirs_need_refilling);
+      /*  Log.d("usersettings","air temperature upper bound is " + reservoirs_need_refilling);
         Log.d("usersettings","air temperature upper bound is " + canopy_height_checkpoint);
         Log.d("usersettings","air temperature upper bound is " + canopy_height_push_notification);
         Log.d("usersettings","air temperature upper bound is " + light_height_target);
         Log.d("usersettings","air temperature upper bound is " + light_height_adjustment_push_notification);
-
+*/
     }
 
     public void addavalue() {

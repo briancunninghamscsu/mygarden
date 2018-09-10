@@ -18,6 +18,8 @@ import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.RadioButton;
 import android.widget.TimePicker;
 
 import com.loopj.android.http.*;
@@ -43,112 +45,446 @@ public class DeveloperOptions extends AppCompatActivity {
         MyLoopjTask myLoopjTask = new MyLoopjTask();
 
 
-       /* Button makethirty = findViewById(R.id.butt4);
-        makethirty.setOnClickListener(new View.OnClickListener() {
+        final CheckBox am_checkbox = findViewById(R.id.actuator_mode_checkbox);
+        final RadioButton pump1butt = findViewById(R.id.butt_pump1);
+        final RadioButton pump2butt = findViewById(R.id.butt_pump2);
+        final RadioButton pump3butt = findViewById(R.id.butt_pump3);
+        final RadioButton pump4butt = findViewById(R.id.butt_pump4);
+        final RadioButton pump5butt = findViewById(R.id.butt_pump5);
+        final RadioButton pump6butt = findViewById(R.id.butt_pump6);
+        final RadioButton pump7butt = findViewById(R.id.butt_pump7);
+        final RadioButton pump8butt = findViewById(R.id.butt_pump8);
+
+        final RadioButton space_heater_butt = findViewById(R.id.butt_space_heater);
+        final RadioButton grow_light_butt = findViewById(R.id.butt_grow_light);
+        final RadioButton fogger_butt = findViewById(R.id.butt_fogger);
+        final RadioButton dc_motor_butt = findViewById(R.id.butt_DC_motor);
+        final RadioButton extra_fans_butt = findViewById(R.id.butt_extra_fans);
+        final RadioButton extra_air_pump_butt = findViewById(R.id.butt_extra_air_pump);
+        final RadioButton heating_element_butt = findViewById(R.id.butt_heating_element);
+
+        // actuator mode enabling and UI logic
+        am_checkbox.setChecked(mApp.am_enable==1 ? true : false);
+        am_checkbox.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                mApp.addavalue();
-                Snackbar.make(view, " Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
 
-            }
-        });*/
-
-
-        /*Button spoofbutton = findViewById(R.id.butt2);
-        spoofbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mApp.addavalue();
-                Snackbar.make(view, "Spoofed Data. Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-            }
-        });*/
-
-        /*Button airtempchangebutton = findViewById(R.id.button6);
-        airtempchangebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mApp.air_temp_upper_threshold_day_time=66;
-                mApp.showusersettings();
-                Snackbar.make(view, "Spoofed Data. Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-
-            }
-        });*/
-
-
-       /* Button txtbutton = findViewById(R.id.button);
-        txtbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                try {
-                    FileOutputStream fOut = openFileOutput("hello.txt", Context.MODE_PRIVATE);
-                    Log.d("july", "made hello.txt");
-                    OutputStreamWriter outputStreamWriter = new OutputStreamWriter(fOut);
-                    outputStreamWriter.write("apples bananas carrots durian eggplant\n\n");
-                    outputStreamWriter.close();
-                } catch (Exception e) {
-                    Log.d("july", "went into make a text file catch block");
-
-
-                    Snackbar.make(view, "catch block", Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
+                mApp.am_enable = (am_checkbox.isChecked() ? 1 : 0);
+                //TODO insert call to push user settings
                 }
-
-
             }
-        });*/
+        );
 
-
-        /*final Button usersettingsprintbutton = findViewById(R.id.button5);
-        usersettingsprintbutton.setOnClickListener(new View.OnClickListener() {
+        pump1butt.setChecked(mApp.am_pump1==1 ? true : false);
+        pump1butt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mApp.showusersettings();
-                Log.d("usersettings","got to user settings");
-                //Snackbar.make(view, " Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
-                //        .setAction("Action", null).show();
-            }});*/
+                // turn all actuators off
+                mApp.am_pump1=0;
+                mApp.am_pump2=0;
+                mApp.am_pump3=0;
+                mApp.am_pump4=0;
+                mApp.am_pump5=0;
+                mApp.am_pump6=0;
+                mApp.am_pump7=0;
+                mApp.am_pump8=0;
+                mApp.am_space_heater=0;
+                mApp.am_heating_element=0;
+                mApp.am_extra_air_pump=0;
+                mApp.am_extra_fans=0;
+                mApp.am_grow_light=0;
+                mApp.am_dc_motor=0;
+                mApp.am_fogger=0;
 
-        /*Button readbutton = findViewById(R.id.button2);
-        readbutton.setOnClickListener(new View.OnClickListener() {
+                //turn this actuator on
+                mApp.am_pump1 = (pump1butt.isChecked() ? 1 : 0);
+                //TODO insert call to push user settings
+            }
+            }
+        );
+
+        pump2butt.setChecked(mApp.am_pump2==1 ? true : false);
+        pump2butt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Log.d("july", read_file(mApp, "hello.txt"));
-                Snackbar.make(view, " Quantity in ArrayList is " + mApp.size(), Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }});*/
+                // turn all actuators off
+                mApp.am_pump1=0;
+                mApp.am_pump2=0;
+                mApp.am_pump3=0;
+                mApp.am_pump4=0;
+                mApp.am_pump5=0;
+                mApp.am_pump6=0;
+                mApp.am_pump7=0;
+                mApp.am_pump8=0;
+                mApp.am_space_heater=0;
+                mApp.am_heating_element=0;
+                mApp.am_extra_air_pump=0;
+                mApp.am_extra_fans=0;
+                mApp.am_grow_light=0;
+                mApp.am_dc_motor=0;
+                mApp.am_fogger=0;
+
+                //turn this actuator on
+                mApp.am_pump2 = (pump2butt.isChecked() ? 1 : 0);
+                //TODO insert call to push user settings
+            }
+            }
+            );
+
+        pump3butt.setChecked(mApp.am_pump3==1 ? true : false);
+        pump3butt.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {
+                                             // turn all actuators off
+                                             mApp.am_pump1=0;
+                                             mApp.am_pump2=0;
+                                             mApp.am_pump3=0;
+                                             mApp.am_pump4=0;
+                                             mApp.am_pump5=0;
+                                             mApp.am_pump6=0;
+                                             mApp.am_pump7=0;
+                                             mApp.am_pump8=0;
+                                             mApp.am_space_heater=0;
+                                             mApp.am_heating_element=0;
+                                             mApp.am_extra_air_pump=0;
+                                             mApp.am_extra_fans=0;
+                                             mApp.am_grow_light=0;
+                                             mApp.am_dc_motor=0;
+                                             mApp.am_fogger=0;
+
+                                             //turn this actuator on
+                                             mApp.am_pump3 = (pump3butt.isChecked() ? 1 : 0);
+                                             //TODO insert call to push user settings
+                                         }
+                                     }
+        );
+
+        pump4butt.setChecked(mApp.am_pump4==1 ? true : false);
+        pump4butt.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {// turn all actuators off
+                                             mApp.am_pump1=0;
+                                             mApp.am_pump2=0;
+                                             mApp.am_pump3=0;
+                                             mApp.am_pump4=0;
+                                             mApp.am_pump5=0;
+                                             mApp.am_pump6=0;
+                                             mApp.am_pump7=0;
+                                             mApp.am_pump8=0;
+                                             mApp.am_space_heater=0;
+                                             mApp.am_heating_element=0;
+                                             mApp.am_extra_air_pump=0;
+                                             mApp.am_extra_fans=0;
+                                             mApp.am_grow_light=0;
+                                             mApp.am_dc_motor=0;
+                                             mApp.am_fogger=0;
+
+                                             //turn this actuator on
+                                             mApp.am_pump4 = (pump4butt.isChecked() ? 1 : 0);
+                                             //TODO insert call to push user settings
+                                         }
+                                     }
+        );
+
+        pump5butt.setChecked(mApp.am_pump5==1 ? true : false);
+        pump5butt.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {// turn all actuators off
+                                             mApp.am_pump1=0;
+                                             mApp.am_pump2=0;
+                                             mApp.am_pump3=0;
+                                             mApp.am_pump4=0;
+                                             mApp.am_pump5=0;
+                                             mApp.am_pump6=0;
+                                             mApp.am_pump7=0;
+                                             mApp.am_pump8=0;
+                                             mApp.am_space_heater=0;
+                                             mApp.am_heating_element=0;
+                                             mApp.am_extra_air_pump=0;
+                                             mApp.am_extra_fans=0;
+                                             mApp.am_grow_light=0;
+                                             mApp.am_dc_motor=0;
+                                             mApp.am_fogger=0;
+
+                                             //turn this actuator on
+                                             mApp.am_pump5 = (pump5butt.isChecked() ? 1 : 0);
+                                             //TODO insert call to push user settings
+                                         }
+                                     }
+        );
+
+        pump6butt.setChecked(mApp.am_pump6==1 ? true : false);
+        pump6butt.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {// turn all actuators off
+                                             mApp.am_pump1=0;
+                                             mApp.am_pump2=0;
+                                             mApp.am_pump3=0;
+                                             mApp.am_pump4=0;
+                                             mApp.am_pump5=0;
+                                             mApp.am_pump6=0;
+                                             mApp.am_pump7=0;
+                                             mApp.am_pump8=0;
+                                             mApp.am_space_heater=0;
+                                             mApp.am_heating_element=0;
+                                             mApp.am_extra_air_pump=0;
+                                             mApp.am_extra_fans=0;
+                                             mApp.am_grow_light=0;
+                                             mApp.am_dc_motor=0;
+                                             mApp.am_fogger=0;
+
+                                             //turn this actuator on
+                                             mApp.am_pump6 = (pump6butt.isChecked() ? 1 : 0);
+                                             //TODO insert call to push user settings
+                                         }
+                                     }
+        );
+
+        pump7butt.setChecked(mApp.am_pump7==1 ? true : false);
+        pump7butt.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {// turn all actuators off
+                                             mApp.am_pump1=0;
+                                             mApp.am_pump2=0;
+                                             mApp.am_pump3=0;
+                                             mApp.am_pump4=0;
+                                             mApp.am_pump5=0;
+                                             mApp.am_pump6=0;
+                                             mApp.am_pump7=0;
+                                             mApp.am_pump8=0;
+                                             mApp.am_space_heater=0;
+                                             mApp.am_heating_element=0;
+                                             mApp.am_extra_air_pump=0;
+                                             mApp.am_extra_fans=0;
+                                             mApp.am_grow_light=0;
+                                             mApp.am_dc_motor=0;
+                                             mApp.am_fogger=0;
+
+                                             //turn this actuator on
+                                             mApp.am_pump7 = (pump7butt.isChecked() ? 1 : 0);
+                                             //TODO insert call to push user settings
+                                         }
+                                     }
+        );
+
+        pump8butt.setChecked(mApp.am_pump8==1 ? true : false);
+        pump8butt.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {// turn all actuators off
+                                             mApp.am_pump1=0;
+                                             mApp.am_pump2=0;
+                                             mApp.am_pump3=0;
+                                             mApp.am_pump4=0;
+                                             mApp.am_pump5=0;
+                                             mApp.am_pump6=0;
+                                             mApp.am_pump7=0;
+                                             mApp.am_pump8=0;
+                                             mApp.am_space_heater=0;
+                                             mApp.am_heating_element=0;
+                                             mApp.am_extra_air_pump=0;
+                                             mApp.am_extra_fans=0;
+                                             mApp.am_grow_light=0;
+                                             mApp.am_dc_motor=0;
+                                             mApp.am_fogger=0;
+
+                                             //turn this actuator on
+                                             mApp.am_pump8 = (pump8butt.isChecked() ? 1 : 0);
+                                             //TODO insert call to push user settings
+                                         }
+                                     }
+        );
+
+
+        space_heater_butt.setChecked(mApp.am_space_heater==1 ? true : false);
+        space_heater_butt.setOnClickListener(new View.OnClickListener() {
+                                         @Override
+                                         public void onClick(View view) {// turn all actuators off
+                                             mApp.am_pump1=0;
+                                             mApp.am_pump2=0;
+                                             mApp.am_pump3=0;
+                                             mApp.am_pump4=0;
+                                             mApp.am_pump5=0;
+                                             mApp.am_pump6=0;
+                                             mApp.am_pump7=0;
+                                             mApp.am_pump8=0;
+                                             mApp.am_space_heater=0;
+                                             mApp.am_heating_element=0;
+                                             mApp.am_extra_air_pump=0;
+                                             mApp.am_extra_fans=0;
+                                             mApp.am_grow_light=0;
+                                             mApp.am_dc_motor=0;
+                                             mApp.am_fogger=0;
+
+                                             //turn this actuator on
+                                             mApp.am_space_heater= (space_heater_butt.isChecked() ? 1 : 0);
+                                             //TODO insert call to push user settings
+                                         }
+                                     }
+        );
+
+
+        grow_light_butt.setChecked(mApp.am_grow_light==1 ? true : false);
+        grow_light_butt.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View view) {// turn all actuators off
+                                                   mApp.am_pump1=0;
+                                                   mApp.am_pump2=0;
+                                                   mApp.am_pump3=0;
+                                                   mApp.am_pump4=0;
+                                                   mApp.am_pump5=0;
+                                                   mApp.am_pump6=0;
+                                                   mApp.am_pump7=0;
+                                                   mApp.am_pump8=0;
+                                                   mApp.am_space_heater=0;
+                                                   mApp.am_heating_element=0;
+                                                   mApp.am_extra_air_pump=0;
+                                                   mApp.am_extra_fans=0;
+                                                   mApp.am_grow_light=0;
+                                                   mApp.am_dc_motor=0;
+                                                   mApp.am_fogger=0;
+
+                                                   //turn this actuator on
+                                                   mApp.am_grow_light= (grow_light_butt.isChecked() ? 1 : 0);
+                                                   //TODO insert call to push user settings
+                                               }
+                                           }
+        );
+
+        fogger_butt.setChecked(mApp.am_fogger==1 ? true : false);
+        fogger_butt.setOnClickListener(new View.OnClickListener() {
+                                           @Override
+                                           public void onClick(View view) {// turn all actuators off
+                                               mApp.am_pump1=0;
+                                               mApp.am_pump2=0;
+                                               mApp.am_pump3=0;
+                                               mApp.am_pump4=0;
+                                               mApp.am_pump5=0;
+                                               mApp.am_pump6=0;
+                                               mApp.am_pump7=0;
+                                               mApp.am_pump8=0;
+                                               mApp.am_space_heater=0;
+                                               mApp.am_heating_element=0;
+                                               mApp.am_extra_air_pump=0;
+                                               mApp.am_extra_fans=0;
+                                               mApp.am_grow_light=0;
+                                               mApp.am_dc_motor=0;
+                                               mApp.am_fogger=0;
+
+                                               //turn this actuator on
+                                               mApp.am_fogger= (fogger_butt.isChecked() ? 1 : 0);
+                                               //TODO insert call to push user settings
+                                           }
+                                       }
+        );
+
+        dc_motor_butt.setChecked(mApp.am_dc_motor==1 ? true : false);
+        dc_motor_butt.setOnClickListener(new View.OnClickListener() {
+                                             @Override
+                                             public void onClick(View view) {// turn all actuators off
+                                                 mApp.am_pump1=0;
+                                                 mApp.am_pump2=0;
+                                                 mApp.am_pump3=0;
+                                                 mApp.am_pump4=0;
+                                                 mApp.am_pump5=0;
+                                                 mApp.am_pump6=0;
+                                                 mApp.am_pump7=0;
+                                                 mApp.am_pump8=0;
+                                                 mApp.am_space_heater=0;
+                                                 mApp.am_heating_element=0;
+                                                 mApp.am_extra_air_pump=0;
+                                                 mApp.am_extra_fans=0;
+                                                 mApp.am_grow_light=0;
+                                                 mApp.am_dc_motor=0;
+                                                 mApp.am_fogger=0;
+
+                                                 //turn this actuator on
+                                                 mApp.am_dc_motor= (dc_motor_butt.isChecked() ? 1 : 0);
+                                                 //TODO insert call to push user settings
+                                             }
+                                         }
+        );
+
+
+        extra_fans_butt.setChecked(mApp.am_extra_fans==1 ? true : false);
+        extra_fans_butt.setOnClickListener(new View.OnClickListener() {
+                                               @Override
+                                               public void onClick(View view) {// turn all actuators off
+                                                   mApp.am_pump1=0;
+                                                   mApp.am_pump2=0;
+                                                   mApp.am_pump3=0;
+                                                   mApp.am_pump4=0;
+                                                   mApp.am_pump5=0;
+                                                   mApp.am_pump6=0;
+                                                   mApp.am_pump7=0;
+                                                   mApp.am_pump8=0;
+                                                   mApp.am_space_heater=0;
+                                                   mApp.am_heating_element=0;
+                                                   mApp.am_extra_air_pump=0;
+                                                   mApp.am_extra_fans=0;
+                                                   mApp.am_grow_light=0;
+                                                   mApp.am_dc_motor=0;
+                                                   mApp.am_fogger=0;
+
+                                                   //turn this actuator on
+                                                   mApp.am_extra_fans= (extra_fans_butt.isChecked() ? 1 : 0);
+                                                   //TODO insert call to push user settings
+                                               }
+                                           }
+        );
+
+        extra_air_pump_butt.setChecked(mApp.am_extra_air_pump==1 ? true : false);
+        extra_air_pump_butt.setOnClickListener(new View.OnClickListener() {
+                                                   @Override
+                                                   public void onClick(View view) {// turn all actuators off
+                                                       mApp.am_pump1=0;
+                                                       mApp.am_pump2=0;
+                                                       mApp.am_pump3=0;
+                                                       mApp.am_pump4=0;
+                                                       mApp.am_pump5=0;
+                                                       mApp.am_pump6=0;
+                                                       mApp.am_pump7=0;
+                                                       mApp.am_pump8=0;
+                                                       mApp.am_space_heater=0;
+                                                       mApp.am_heating_element=0;
+                                                       mApp.am_extra_air_pump=0;
+                                                       mApp.am_extra_fans=0;
+                                                       mApp.am_grow_light=0;
+                                                       mApp.am_dc_motor=0;
+                                                       mApp.am_fogger=0;
+
+                                                       //turn this actuator on
+                                                       mApp.am_extra_air_pump= (extra_air_pump_butt.isChecked() ? 1 : 0);
+                                                       //TODO insert call to push user settings
+                                                   }
+                                               }
+        );
+
+        heating_element_butt.setChecked(mApp.am_heating_element==1 ? true : false);
+        heating_element_butt.setOnClickListener(new View.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(View view) {// turn all actuators off
+                                                        mApp.am_pump1=0;
+                                                        mApp.am_pump2=0;
+                                                        mApp.am_pump3=0;
+                                                        mApp.am_pump4=0;
+                                                        mApp.am_pump5=0;
+                                                        mApp.am_pump6=0;
+                                                        mApp.am_pump7=0;
+                                                        mApp.am_pump8=0;
+                                                        mApp.am_space_heater=0;
+                                                        mApp.am_heating_element=0;
+                                                        mApp.am_extra_air_pump=0;
+                                                        mApp.am_extra_fans=0;
+                                                        mApp.am_grow_light=0;
+                                                        mApp.am_dc_motor=0;
+                                                        mApp.am_fogger=0;
+
+                                                        //turn this actuator on
+                                                        mApp.am_heating_element= (heating_element_butt.isChecked() ? 1 : 0);
+                                                        //TODO insert call to push user settings
+                                                    }
+                                                }
+        );
 
 
 
@@ -225,70 +561,6 @@ public class DeveloperOptions extends AppCompatActivity {
 
 
 
-
-
-
-
-        /*Button uploadbutton = findViewById(R.id.button3);
-        uploadbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                // MyLoopjTask myLoopjTask = new MyLoopjTask();
-                // myLoopjTask.executeLoopjCall("dogs");
-                InputStream myInputStream = new InputStream() {
-                                                                  @Override
-                                                                  public int read() { return 0;
-                                                                  }
-                                                              };
-                RequestParams params = new RequestParams();
-                params.put("secret_passwords", myInputStream, "hello.txt");
-
-                params.put("whatiwant", "testdata");
-                AsyncHttpClient client = new AsyncHttpClient();
-                client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
-
-                    @Override
-                    public void onStart() {
-                        Log.d("july", "got to onStart()");
-                    }
-
-                        @Override
-                        public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
-                        Log.d("july", "got to onSuccess()");
-                        String test1 = response.toString();
-                        Log.d("july", test1);
-                    }
-
-                        @Override
-                        public void onRetry(int retryNo) {
-                        Log.d("july", "got to onRetry()");
-                        }
-                });
-
-                /*Button printbutton = findViewById(R.id.butt3);
-                printbutton.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        // Log.d("stars","oh my that does sound convenient");
-                        for (int i = 0; i < mApp.size(); i++) {
-                            Log.d("consoleprinting", "Array list item number " + i + " has an air temp of " + mApp.getAirtemplevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an amb humidity of " + mApp.getAmbienthumiditylevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an canopy height of " + mApp.getCanopyheightlevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an co2 of " + mApp.getCanopyheightlevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an DO of " + mApp.getDolevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an Light Height of " + mApp.getLightheight(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an o2 of " + mApp.getO2level(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an orp temp of " + mApp.getOrplevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an pH of " + mApp.getPhlevel(i));
-                            //Log.d("consoleprinting", "Array list item number " + i + " has an reservoir state of " + mApp.getReservoirs(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has an solution temp of " + mApp.getSolutiontemplevel(i));
-                            Log.d("consoleprinting", "Array list item number " + i + " has a TDS level of " + mApp.getTdslevel(i));
-                            //Log.d("consoleprinting", "Array list item number " + i + " has a timestamp " + mApp.getDatapointdatetime(i));
-                        }
-                        Snackbar.make(view, "Check LogCat for the Data Activity - tag 'consoleprinting'", Snackbar.LENGTH_LONG)
-                                .setAction("Action", null).show();
-                    }
-                });*/
             }
 
 

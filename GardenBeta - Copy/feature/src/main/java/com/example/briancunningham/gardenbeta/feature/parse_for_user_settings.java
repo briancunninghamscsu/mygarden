@@ -261,7 +261,7 @@ public class parse_for_user_settings {
 
             // reservoirs
 
-            else if (words[i].equals("reservoirs_need_refilling"))
+            /*else if (words[i].equals("reservoirs_need_refilling"))
                 mApp.reservoirs_need_refilling = valueOf(words[i + 1]);
 
             // canopy height
@@ -275,7 +275,7 @@ public class parse_for_user_settings {
             // light height
 
             else if (words[i].equals("light_height_target"))
-                mApp.light_height_target = valueOf(words[i + 1]);
+                mApp.light_height_target = valueOf(words[i + 1]);*/
 
 
 
