@@ -134,7 +134,7 @@ public class parse_for_user_settings {
 
             // solution temp
 
-            else if (words[i].equals("slntemp_upper_threshold"))
+            /*else if (words[i].equals("slntemp_upper_threshold"))
                 mApp.slntemp_upper_threshold = valueOf(words[i + 1]);
 
             else if (words[i].equals("slntemp_upper_pushnotification"))
@@ -156,7 +156,7 @@ public class parse_for_user_settings {
                 mApp.slntemp_lower_turn_on_space_heater = valueOf(words[i + 1]);
 
             else if (words[i].equals("CO2_lower_pushnotification"))
-                mApp.slntemp_lower_turn_on_heating_element = valueOf(words[i + 1]);
+                mApp.slntemp_lower_turn_on_heating_element = valueOf(words[i + 1]);*/
 
 
             // TDS

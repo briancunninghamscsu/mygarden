@@ -78,6 +78,7 @@ public class MyAppApplication extends Application {
     public double CO2_lower_threshold=0;
     public double CO2_lower_pushnotification=0;
 
+/*
     public double slntemp_upper_threshold=0;
     public double slntemp_upper_pushnotification=0;
     public double slntemp_upper_turn_off_space_heater=0;
@@ -87,6 +88,7 @@ public class MyAppApplication extends Application {
     public double slntemp_lower_pushnotification=0;
     public double slntemp_lower_turn_on_space_heater=0;
     public double slntemp_lower_turn_on_heating_element=0;
+*/
 
     public double tds_upper_threshold=0;
     public double tds_upper_push_notification=0;
@@ -196,7 +198,8 @@ public class MyAppApplication extends Application {
         Log.d("usersettings","air temperature upper bound is " + CO2_lower_threshold);
         Log.d("usersettings","air temperature upper bound is " + CO2_lower_pushnotification);
 
-        Log.d("usersettings","air temperature upper bound is " + slntemp_upper_threshold);
+        //Log.d("usersettings","air temperature upper bound is " + slntemp_upper_threshold);
+/*
         Log.d("usersettings","air temperature upper bound is " + slntemp_upper_pushnotification);
         Log.d("usersettings","air temperature upper bound is " + slntemp_upper_turn_off_space_heater);
         Log.d("usersettings","air temperature upper bound is " + slntemp_upper_turn_off_heating_element);
@@ -205,6 +208,7 @@ public class MyAppApplication extends Application {
         Log.d("usersettings","air temperature upper bound is " + slntemp_lower_pushnotification);
         Log.d("usersettings","air temperature upper bound is " + slntemp_lower_turn_on_space_heater);
         Log.d("usersettings","air temperature upper bound is " + slntemp_lower_turn_on_heating_element);
+*/
 
         Log.d("usersettings","air temperature upper bound is " + tds_upper_threshold);
         Log.d("usersettings","air temperature upper bound is " + tds_upper_push_notification);
