@@ -157,26 +157,8 @@ public class DeveloperOptions extends AppCompatActivity {
 
 
 
-        final Button timebutton = findViewById(R.id.timebutton);
-        timebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                String[] colors = {"r", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black","red", "green", "blue", "black",};
 
-                AlertDialog.Builder builder = new AlertDialog.Builder(DeveloperOptions.this);
-                builder.setTitle("Pick a color");
-                builder.setItems(colors, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        // the user clicked on colors[which]
-                    }
-                });
-                builder.show();
-            }
-        }
-        )
-            ;
 
 
 

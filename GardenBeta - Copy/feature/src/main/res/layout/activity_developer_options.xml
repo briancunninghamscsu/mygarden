@@ -6,42 +6,147 @@
     android:layout_height="match_parent"
     tools:context="com.example.briancunningham.gardenbeta.feature.DeveloperOptions">
 
-    <ScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    <LinearLayout
+        android:id="@+id/outie"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <LinearLayout
+        <ScrollView
+            android:id="@+id/scrvew"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:scrollbarStyle="insideOverlay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <Button
-                android:id="@+id/button4"
+            <LinearLayout
+                android:id="@+id/llvdev"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/update_with_data_from_server"
-                tools:text="@string/update_with_data_from_server" />
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/button7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Pull User Settings"
-                tools:text="pull user settings" />
+                <Button
+                    android:id="@+id/button4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/update_with_data_from_server"
+                    tools:text="@string/update_with_data_from_server" />
 
-            <Button
-                android:id="@+id/timebutton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Button"
-                tools:layout_editor_absoluteX="8dp"
-                tools:layout_editor_absoluteY="96dp" />
+                <Button
+                    android:id="@+id/button7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pull User Settings"
+                    tools:text="pull user settings" />
+
+                <Button
+                    android:id="@+id/push_user_settings_button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Push User Settings"
+                    tools:layout_editor_absoluteX="8dp"
+                    tools:layout_editor_absoluteY="96dp"
+                    tools:text="Push User Settings" />
+
+                <CheckBox
+                    android:id="@+id/actuator_mode_checkbox"
+                    style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Actuator Testing Mode"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    tools:text="Actuator Testing Mode" />
+
+                <Button
+                    android:id="@+id/butt_pump1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Pump 1 On" />
+
+                <Button
+                    android:id="@+id/butt_pump2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Pump 2 On" />
+
+                <Button
+                    android:id="@+id/butt_pump3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Pump 3 On" />
+
+                <Button
+                    android:id="@+id/butt_pump4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Pump 4 On" />
+
+                <Button
+                    android:id="@+id/butt_pump5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Pump 5 On" />
+
+                <Button
+                    android:id="@+id/butt_pump6"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Pump 6 On" />
+
+                <Button
+                    android:id="@+id/butt_pump7"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Pump 7 On" />
+
+                <Button
+                    android:id="@+id/butt_pump8"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Pump 8 On" />
+
+                <Button
+                    android:id="@+id/butt_space_heater"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Space Heater On" />
+
+                <Button
+                    android:id="@+id/butt_grow_light"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Grow Light On" />
+
+                <Button
+                    android:id="@+id/butt_fogger"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Fogger On" />
+
+                <Button
+                    android:id="@+id/butt_DC_motor"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn DC Motor On" />
+
+                <Button
+                    android:id="@+id/butt_extra_fans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Extra Fans On" />
+
+                <Button
+                    android:id="@+id/butt_extra_air_pump"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Turn Extra Air Pump On" />
 
 
-        </LinearLayout>
-    </ScrollView>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>
