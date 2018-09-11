@@ -78,17 +78,7 @@ public class MyAppApplication extends Application {
     public double CO2_lower_threshold=0;
     public double CO2_lower_pushnotification=0;
 
-/*
-    public double slntemp_upper_threshold=0;
-    public double slntemp_upper_pushnotification=0;
-    public double slntemp_upper_turn_off_space_heater=0;
-    public double slntemp_upper_turn_off_heating_element=0;
 
-    public double slntemp_lower_threshold=0;
-    public double slntemp_lower_pushnotification=0;
-    public double slntemp_lower_turn_on_space_heater=0;
-    public double slntemp_lower_turn_on_heating_element=0;
-*/
 
     public double tds_upper_threshold=0;
     public double tds_upper_push_notification=0;
