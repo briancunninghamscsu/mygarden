@@ -90,39 +90,37 @@ public class tolerances extends AppCompatActivity {
                 night_time_lower.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
                 night_time_lower.setPadding(8, 8, 8, 8);
                 night_time_lower.setOnClickListener(new View.OnClickListener() {
-                                                     @Override
-                                                     public void onClick(View view) {
+                    @Override
+                    public void onClick(View view) {
 
-                                                         final String[] times = {"12:00AM", "1:00AM", "2:00AM", "3:00AM","4:00AM", "5:00AM", "6:00AM", "7:00AM","8:00AM", "9:00AM", "10:00AM", "11:00AM","12:00PM", "1:00PM", "2:00PM", "3:00PM","4:00PM", "5:00PM", "6:00PM", "7:00PM","8:00PM", "9:00PM", "10:00PM", "11:00PM"};
+                        final String[] times = {"12:00AM", "1:00AM", "2:00AM", "3:00AM","4:00AM", "5:00AM", "6:00AM", "7:00AM","8:00AM", "9:00AM", "10:00AM", "11:00AM","12:00PM", "1:00PM", "2:00PM", "3:00PM","4:00PM", "5:00PM", "6:00PM", "7:00PM","8:00PM", "9:00PM", "10:00PM", "11:00PM"};
 
-                                                         AlertDialog.Builder builder = new AlertDialog.Builder(tolerances.this);
-                                                         builder.setTitle("When should night time start?");
-                                                         builder.setItems(times, new DialogInterface.OnClickListener() {
-                                                             @Override
-                                                             public void onClick(DialogInterface dialog, int which) {
-                                                                 // the user clicked on colors[which]
-                                                                 mApp.night_time_starts_at=times[which];
+                        AlertDialog.Builder builder = new AlertDialog.Builder(tolerances.this);
+                        builder.setTitle("When should night time start?");
+                        builder.setItems(times, new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                // the user clicked on colors[which]
+                                mApp.night_time_starts_at=times[which];
 
-                                                                 if (mApp.night_time_starts_at.equals(mApp.day_time_starts_at)){
-                                                                     if (mApp.night_time_starts_at.equals("11:00PM")){
-                                                                         mApp.night_time_starts_at="12:00AM";
-                                                                     }
-                                                                     else {
-                                                                         mApp.night_time_starts_at = times[which + 1];
-                                                                     }
-                                                                 }
-                                                                 night_time_lower.setText("I want night time to start at " +mApp.night_time_starts_at+".");
-                                                             }
-                                                         });
-                                                         builder.show();
-                                                     }
-                                                 }
-                )
-                ;
+                                if (mApp.night_time_starts_at.equals(mApp.day_time_starts_at)){
+                                    if (mApp.night_time_starts_at.equals("11:00PM")){
+                                        mApp.night_time_starts_at="12:00AM";
+                                        }
+                                        else {
+                                        mApp.night_time_starts_at = times[which + 1];
+                                        }
+                                        }
+                                        night_time_lower.setText("I want night time to start at " +mApp.night_time_starts_at+".");
+                                }
+                                }
+                                );
+                        builder.show();
+                        }
+                        }
+                        );
 
                 ll.addView(night_time_lower);
-
-
 
 
                 final TextView uppertext = new TextView(this);
@@ -471,8 +469,8 @@ public class tolerances extends AppCompatActivity {
 */
 
                         final ConstraintLayout screen = findViewById(R.id.constrainters);
-
-                        RequestParams params = new RequestParams();
+                        user_settings_pusher USPair = new user_settings_pusher(mApp, "Air Temp", screen);
+                        /*RequestParams params = new RequestParams();
                         params.put("whatiwant", "testdata");
                         AsyncHttpClient client = new AsyncHttpClient();
                         client.get("http://192.168.1.13/mygarden/api.php", params,new JsonHttpResponseHandler() {
@@ -526,7 +524,7 @@ public class tolerances extends AppCompatActivity {
                                         Log.d("kirk", "got to onRetry()");
                                     }
                                 }
-                        );  // this is the end of client.get line
+                        );  // this is the end of client.get line*/
                     }
                 }
                 )
@@ -861,7 +859,8 @@ public class tolerances extends AppCompatActivity {
                         mApp.humidity_lower_turn_on_fogger_night_time = (low_humidity_turn_on_fogger_night_time.isChecked()) ? (1) : (0);
                         mApp.humidity_lower_turn_off_space_heater_night_time = (low_humidity_turn_off_space_heater_checkbox_day_time.isChecked()) ? (1) : (0);
 
-
+                        final ConstraintLayout screen = findViewById(R.id.constrainters);
+                        user_settings_pusher USPair = new user_settings_pusher(mApp, "Humidity", screen);
 
 
                     }
@@ -960,7 +959,8 @@ public class tolerances extends AppCompatActivity {
                             mApp.TVOC_lower_threshold = 600;
                             mApp.TVOC_upper_threshold=800;
                         }
-
+                        final ConstraintLayout screen = findViewById(R.id.constrainters);
+                        user_settings_pusher USPair = new user_settings_pusher(mApp, "TVOC", screen);
 
                     }
                 }
@@ -1028,39 +1028,36 @@ public class tolerances extends AppCompatActivity {
                 save_change_button_CO2.setText(getString(R.string.save_changes));
                 ll.addView(save_change_button_CO2);
                 save_change_button_CO2.setOnClickListener(new View.OnClickListener() {
-                                                 @Override
-                                                 public void onClick(View view) {
-                                                     mApp.CO2_lower_pushnotification = (CO2_lower_push_notification_checkbox.isChecked()) ? (1) : (0);
-                                                     mApp.CO2_upper_pushnotifications = (CO2_upper_threshold_push_notifications.isChecked()) ? (1) : (0);
+                    @Override
+                    public void onClick(View view) {
+                        mApp.CO2_lower_pushnotification = (CO2_lower_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        mApp.CO2_upper_pushnotifications = (CO2_upper_threshold_push_notifications.isChecked()) ? (1) : (0);
 
-                                                     if (!CO2_lower_threshold_edit_text.getText().toString().equals("")) {
-                                                         mApp.CO2_lower_threshold = Double.parseDouble(CO2_lower_threshold_edit_text.getText().toString());
-                                                     }
+                        if (!CO2_lower_threshold_edit_text.getText().toString().equals("")) {
+                            mApp.CO2_lower_threshold = Double.parseDouble(CO2_lower_threshold_edit_text.getText().toString());
+                            }
 
-                                                     if (!CO2_upper_edit_text.getText().toString().equals("")) {
-                                                         mApp.CO2_upper_threshold = Double.parseDouble(CO2_upper_edit_text.getText().toString());
-                                                     }
+                            if (!CO2_upper_edit_text.getText().toString().equals("")) {
+                            mApp.CO2_upper_threshold = Double.parseDouble(CO2_upper_edit_text.getText().toString());
+                            }
 
+                            // ERROR CHECKING FOR CO2
 
-                                                     // ERROR CHECKING FOR CO2
-
-                                                     if (mApp.CO2_lower_threshold < 400) {
-                                                         mApp.CO2_lower_threshold = 400;
-                                                     }
-                                                     if (mApp.CO2_upper_threshold > 1000) {
-                                                         mApp.CO2_upper_threshold = 1000;
-                                                     }
-                                                     if (mApp.CO2_upper_threshold <= mApp.CO2_lower_threshold) {
-                                                         mApp.CO2_lower_threshold = 600;
-                                                         mApp.CO2_upper_threshold=800;
-                                                     }
-
-
-                                                 }
-                                             }
-                );
-
-
+                        if (mApp.CO2_lower_threshold < 400) {
+                            mApp.CO2_lower_threshold = 400;
+                            }
+                            if (mApp.CO2_upper_threshold > 1000) {
+                            mApp.CO2_upper_threshold = 1000;
+                            }
+                            if (mApp.CO2_upper_threshold <= mApp.CO2_lower_threshold) {
+                            mApp.CO2_lower_threshold = 600;
+                            mApp.CO2_upper_threshold=800;
+                            }
+                        final ConstraintLayout screen = findViewById(R.id.constrainters);
+                        user_settings_pusher USPair = new user_settings_pusher(mApp, "CO2", screen);
+                            }
+                            }
+                            );
                 break;
 
             case "Solution Temperature":
@@ -1279,45 +1276,46 @@ public class tolerances extends AppCompatActivity {
                 buttsoup5.setText(getString(R.string.save_changes));
                 ll.addView(buttsoup5);
                 buttsoup5.setOnClickListener(new View.OnClickListener() {
-                                                @Override
-                                                public void onClick(View view) {
-                                                    //checkboxes
-                                                    mApp.tds_lower_pushnotification = (tds_lower_threshold_send_push_notification.isChecked()) ? (1) : (0);
-                                                    mApp.tds_upper_push_notification = (upper_tds_push_notification_checkbox.isChecked()) ? (1) : (0);
+                    @Override
+                    public void onClick(View view) {
+                        //checkboxes
+                        mApp.tds_lower_pushnotification = (tds_lower_threshold_send_push_notification.isChecked()) ? (1) : (0);
+                        mApp.tds_upper_push_notification = (upper_tds_push_notification_checkbox.isChecked()) ? (1) : (0);
 
-                                                    mApp.tds_upper_add_water = (upper_tds_add_water_checkbox.isChecked()) ? (1) : (0);
-                                                    mApp.tds_add_floramicro = (add_flora_micro_check_box.isChecked()) ? (1) : (0);
-                                                    mApp.tds_add_floragro = (add_flora_gro_checkbox.isChecked()) ? (1) : (0);
-                                                    mApp.tds_add_florabloom = (add_flora_bloom_check_box.isChecked()) ? (1) : (0);
-
-
-                                                    if (!tds_lower_threshold_edit_text.getText().toString().equals("")) {
-                                                        mApp.tds_lower_threshold = Double.parseDouble(tds_lower_threshold_edit_text.getText().toString());
-                                                    }
-
-                                                    if (!upper_tds_edit_text.getText().toString().equals("")) {
-                                                        mApp.tds_upper_threshold = Double.parseDouble(upper_tds_edit_text.getText().toString());
-                                                    }
+                        mApp.tds_upper_add_water = (upper_tds_add_water_checkbox.isChecked()) ? (1) : (0);
+                        mApp.tds_add_floramicro = (add_flora_micro_check_box.isChecked()) ? (1) : (0);
+                        mApp.tds_add_floragro = (add_flora_gro_checkbox.isChecked()) ? (1) : (0);
+                        mApp.tds_add_florabloom = (add_flora_bloom_check_box.isChecked()) ? (1) : (0);
 
 
-                                                    // ERROR CHECKING FOR tds thresholds
+                        if (!tds_lower_threshold_edit_text.getText().toString().equals("")) {
+                            mApp.tds_lower_threshold = Double.parseDouble(tds_lower_threshold_edit_text.getText().toString());
+                            }
 
-                                                    if (mApp.tds_lower_threshold < 300) {
-                                                        mApp.tds_lower_threshold = 300;
-                                                    }
-                                                    if (mApp.tds_upper_threshold > 600) {
-                                                        mApp.tds_upper_threshold = 600;
-                                                    }
-                                                    if (mApp.tds_upper_threshold <= mApp.tds_lower_threshold) {
-                                                        mApp.tds_lower_threshold = 400;
-                                                        mApp.tds_upper_threshold=500;
-                                                    }
+                            if (!upper_tds_edit_text.getText().toString().equals("")) {
+                            mApp.tds_upper_threshold = Double.parseDouble(upper_tds_edit_text.getText().toString());
+                            }
 
 
-                                                }
-                                            }
-                );
+                            // ERROR CHECKING FOR tds thresholds
 
+                        if (mApp.tds_lower_threshold < 300) {
+                            mApp.tds_lower_threshold = 300;
+                            }
+                            if (mApp.tds_upper_threshold > 600) {
+                            mApp.tds_upper_threshold = 600;
+                            }
+                            if (mApp.tds_upper_threshold <= mApp.tds_lower_threshold) {
+                            mApp.tds_lower_threshold = 400;
+                            mApp.tds_upper_threshold=500;
+                            }
+
+
+                            }
+                                                 final ConstraintLayout screen = findViewById(R.id.constrainters);
+                                                 user_settings_pusher USPair = new user_settings_pusher(mApp, "TDS", screen);
+                            }
+                            );
 
                 break;
 
@@ -1439,51 +1437,47 @@ public class tolerances extends AppCompatActivity {
                 save_changes_button_do.setText(getString(R.string.save_changes));
                 ll.addView(save_changes_button_do);
                 save_changes_button_do.setOnClickListener(new View.OnClickListener() {
-                                                              @Override
-                                                              public void onClick(View view) {
-                                                                  //checkboxes
-                                                                  mApp.do_lower_push_notification = (do_lower_send_push_notification_checkbox.isChecked()) ? (1) : (0);
-                                                                  mApp.do_upper_push_notification = (do_upper_threshold_push_notification_checkbox.isChecked()) ? (1) : (0);
+                    @Override
+                    public void onClick(View view) {
+                        //checkboxes
+                        mApp.do_lower_push_notification = (do_lower_send_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        mApp.do_upper_push_notification = (do_upper_threshold_push_notification_checkbox.isChecked()) ? (1) : (0);
 
-                                                                  mApp.do_upper_turn_off_extra_pump = (do_upper_turn_extra_air_pumps_off.isChecked()) ? (1) : (0);
-                                                                  mApp.do_upper_add_water = (do_upper_add_water_checkbox.isChecked()) ? (1) : (0);
-                                                                  mApp.do_lower_turn_on_extra_pump = (do_lower_turn_extra_pumps_on.isChecked()) ? (1) : (0);
-                                                                  mApp.do_lower_add_hydrogen_peroxide = (do_lower_add_peroxide.isChecked()) ? (1) : (0);
-                                                                  mApp.do_lower_add_hypochloric_acid = (do_lower_add_hypochloric_acid.isChecked()) ? (1) : (0);
+                        mApp.do_upper_turn_off_extra_pump = (do_upper_turn_extra_air_pumps_off.isChecked()) ? (1) : (0);
+                        mApp.do_upper_add_water = (do_upper_add_water_checkbox.isChecked()) ? (1) : (0);
+                        mApp.do_lower_turn_on_extra_pump = (do_lower_turn_extra_pumps_on.isChecked()) ? (1) : (0);
+                        mApp.do_lower_add_hydrogen_peroxide = (do_lower_add_peroxide.isChecked()) ? (1) : (0);
+                        mApp.do_lower_add_hypochloric_acid = (do_lower_add_hypochloric_acid.isChecked()) ? (1) : (0);
 
-                                                                  if (!do_lower_bound_edit_text.getText().toString().equals("")) {
-                                                                      mApp.do_lower_threshold = Double.parseDouble(do_lower_bound_edit_text.getText().toString());
-                                                                  }
+                        if (!do_lower_bound_edit_text.getText().toString().equals("")) {
+                            mApp.do_lower_threshold = Double.parseDouble(do_lower_bound_edit_text.getText().toString());
+                            }
 
-                                                                  if (!do_upper_threshold_edit_text.getText().toString().equals("")) {
-                                                                      mApp.do_upper_threshold = Double.parseDouble(do_upper_threshold_edit_text.getText().toString());
-                                                                  }
-
-
-                                                                  // ERROR CHECKING FOR do
-
-                                                                  if (mApp.do_lower_threshold < 5) {
-                                                                      mApp.do_lower_threshold = 5;
-                                                                  }
-                                                                  if (mApp.do_upper_threshold > 12) {
-                                                                      mApp.do_upper_threshold = 12;
-                                                                  }
-                                                                  if (mApp.do_upper_threshold <= mApp.do_lower_threshold) {
-                                                                      mApp.do_lower_threshold = 7;
-                                                                      mApp.do_upper_threshold=9;
-                                                                  }
+                            if (!do_upper_threshold_edit_text.getText().toString().equals("")) {
+                            mApp.do_upper_threshold = Double.parseDouble(do_upper_threshold_edit_text.getText().toString());
+                            }
 
 
-                                                              }
-                                                          }
+                            // ERROR CHECKING FOR do
+
+                        if (mApp.do_lower_threshold < 5) {
+                            mApp.do_lower_threshold = 5;
+                            }
+                            if (mApp.do_upper_threshold > 12) {
+                            mApp.do_upper_threshold = 12;
+                            }
+                            if (mApp.do_upper_threshold <= mApp.do_lower_threshold) {
+                            mApp.do_lower_threshold = 7;
+                            mApp.do_upper_threshold=9;
+                            }
+
+
+                            }
+                            final ConstraintLayout screen = findViewById(R.id.constrainters);
+                            user_settings_pusher USPair = new user_settings_pusher(mApp, "Air Temp", screen);
+                }
                 );
-
-
-
-
-
                 break;
-
 
             case "Oxidation-Reduction Potential":
                 // orp title
@@ -1589,45 +1583,46 @@ public class tolerances extends AppCompatActivity {
                 save_changes_button_orp.setText(getString(R.string.save_changes));
                 ll.addView(save_changes_button_orp);
                 save_changes_button_orp.setOnClickListener(new View.OnClickListener() {
-                                                               @Override
-                                                               public void onClick(View view) {
+                    @Override
+                    public void onClick(View view) {
 
-                                                                   //checkboxes
-                                                                   mApp.orp_lower_push_notification = (orp_lower_push_notification_checkbox.isChecked()) ? (1) : (0);
-                                                                   mApp.orp_upper_push_notification = (orp_upper_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        //checkboxes
+                        mApp.orp_lower_push_notification = (orp_lower_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        mApp.orp_upper_push_notification = (orp_upper_push_notification_checkbox.isChecked()) ? (1) : (0);
 
-                                                                   mApp.orp_upper_add_water = (orp_upper_add_water_checkbox.isChecked()) ? (1) : (0);
-                                                                   mApp.orp_lower_add_base = (orp_lower_add_base.isChecked()) ? (1) : (0);
-                                                                   mApp.orp_lower_add_hydrogen_peroxide = (orp_lower_add_peroxide_checkbox.isChecked()) ? (1) : (0);
-                                                                   mApp.orp_lower_add_hypochloric_acid = (orp_lower_add_hypochloric_checkbox.isChecked()) ? (1) : (0);
-
-
-
-                                                                   if (!orp_lower_threshold_edit_text.getText().toString().equals("")) {
-                                                                       mApp.orp_lower_threshold = Double.parseDouble(orp_lower_threshold_edit_text.getText().toString());
-                                                                   }
-
-                                                                   if (!orp_upper_bound_edit_text.getText().toString().equals("")) {
-                                                                       mApp.orp_upper_threshold = Double.parseDouble(orp_upper_bound_edit_text.getText().toString());
-                                                                   }
+                        mApp.orp_upper_add_water = (orp_upper_add_water_checkbox.isChecked()) ? (1) : (0);
+                        mApp.orp_lower_add_base = (orp_lower_add_base.isChecked()) ? (1) : (0);
+                        mApp.orp_lower_add_hydrogen_peroxide = (orp_lower_add_peroxide_checkbox.isChecked()) ? (1) : (0);
+                        mApp.orp_lower_add_hypochloric_acid = (orp_lower_add_hypochloric_checkbox.isChecked()) ? (1) : (0);
 
 
-                                                                   // ERROR CHECKING FOR orp
+                        if (!orp_lower_threshold_edit_text.getText().toString().equals("")) {
+                            mApp.orp_lower_threshold = Double.parseDouble(orp_lower_threshold_edit_text.getText().toString());
+                            }
 
-                                                                   if (mApp.orp_lower_threshold < 200) {
-                                                                       mApp.orp_lower_threshold = 200;
-                                                                   }
-                                                                   if (mApp.orp_upper_threshold > 500) {
-                                                                       mApp.orp_upper_threshold = 500;
-                                                                   }
-                                                                   if (mApp.orp_upper_threshold <= mApp.orp_lower_threshold) {
-                                                                       mApp.orp_lower_threshold = 400;
-                                                                       mApp.orp_upper_threshold=500;
-                                                                   }
+                            if (!orp_upper_bound_edit_text.getText().toString().equals("")) {
+                            mApp.orp_upper_threshold = Double.parseDouble(orp_upper_bound_edit_text.getText().toString());
+                            }
+
+                            // ERROR CHECKING FOR orp
+
+                        if (mApp.orp_lower_threshold < 200) {
+                            mApp.orp_lower_threshold = 200;
+                            }
+                            if (mApp.orp_upper_threshold > 500) {
+                            mApp.orp_upper_threshold = 500;
+                            }
+                            if (mApp.orp_upper_threshold <= mApp.orp_lower_threshold) {
+                            mApp.orp_lower_threshold = 400;
+                            mApp.orp_upper_threshold=500;
+                            }
+
+                        final ConstraintLayout screen = findViewById(R.id.constrainters);
+                        user_settings_pusher USPair = new user_settings_pusher(mApp, "ORP", screen);
 
 
-                                                               }
-                                                           }
+                    }
+                            }
                 );
 
                 break;
@@ -1715,41 +1710,42 @@ public class tolerances extends AppCompatActivity {
                 save_changes_button_ph.setText(getString(R.string.save_changes));
                 ll.addView(save_changes_button_ph);
                 save_changes_button_ph.setOnClickListener(new View.OnClickListener() {
-                                                              @Override
-                                                              public void onClick(View view) {
+                    @Override
+                    public void onClick(View view) {
 
-                                                                  // pH checkboxes
-                                                                  mApp.pH_lower_add_base = (lower_ph_add_base_checkbox.isChecked()) ? (1) : (0);
-                                                                  mApp.pH_upper_add_acid = (ph_upper_add_acid_checkbox.isChecked()) ? (1) : (0);
+                        // pH checkboxes
+                        mApp.pH_lower_add_base = (lower_ph_add_base_checkbox.isChecked()) ? (1) : (0);
+                        mApp.pH_upper_add_acid = (ph_upper_add_acid_checkbox.isChecked()) ? (1) : (0);
 
-                                                                  mApp.pH_lower_push_notification = (lower_ph_push_notification_checkbox.isChecked()) ? (1) : (0);
-                                                                  mApp.pH_upper_push_notification = (pH_upper_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        mApp.pH_lower_push_notification = (lower_ph_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        mApp.pH_upper_push_notification = (pH_upper_push_notification_checkbox.isChecked()) ? (1) : (0);
 
-                                                                  if (!lower_ph_edit_text.getText().toString().equals("")) {
-                                                                      mApp.pH_lower_threshold = Double.parseDouble(lower_ph_edit_text.getText().toString());
-                                                                  }
+                        if (!lower_ph_edit_text.getText().toString().equals("")) {
+                            mApp.pH_lower_threshold = Double.parseDouble(lower_ph_edit_text.getText().toString());
+                            }
 
-                                                                  if (!pH_upper_bound_edit_text.getText().toString().equals("")) {
-                                                                      mApp.pH_upper_threshold = Double.parseDouble(pH_upper_bound_edit_text.getText().toString());
-                                                                  }
-
-
-                                                                  // ERROR CHECKING FOR ph
-
-                                                                  if (mApp.pH_lower_threshold < 3) {
-                                                                      mApp.pH_lower_threshold = 3;
-                                                                  }
-                                                                  if (mApp.pH_upper_threshold > 10) {
-                                                                      mApp.pH_upper_threshold = 10;
-                                                                  }
-                                                                  if (mApp.pH_upper_threshold <= mApp.pH_lower_threshold) {
-                                                                      mApp.pH_lower_threshold = 5;
-                                                                      mApp.pH_upper_threshold=7;
-                                                                  }
+                            if (!pH_upper_bound_edit_text.getText().toString().equals("")) {
+                            mApp.pH_upper_threshold = Double.parseDouble(pH_upper_bound_edit_text.getText().toString());
+                            }
 
 
-                                                              }
-                                                          }
+                            // ERROR CHECKING FOR ph
+
+                        if (mApp.pH_lower_threshold < 3) {
+                            mApp.pH_lower_threshold = 3;
+                            }
+                            if (mApp.pH_upper_threshold > 10) {
+                            mApp.pH_upper_threshold = 10;
+                            }
+                            if (mApp.pH_upper_threshold <= mApp.pH_lower_threshold) {
+                            mApp.pH_lower_threshold = 5;
+                            mApp.pH_upper_threshold=7;
+                            }
+                        final ConstraintLayout screen = findViewById(R.id.constrainters);
+                        user_settings_pusher USPair = new user_settings_pusher(mApp, "pH", screen);
+
+                            }
+                            }
                 );
 
                 break;
