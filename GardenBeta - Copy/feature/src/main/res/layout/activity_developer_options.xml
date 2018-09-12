@@ -5,11 +5,12 @@
     android:id="@+id/devcontrols_toplvl"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context="com.example.briancunningham.gardenbeta.feature.DeveloperOptions">
 
     <LinearLayout
         android:id="@+id/outie"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
@@ -18,6 +19,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
+            android:fillViewport="true"
             android:scrollbarStyle="insideOverlay"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
