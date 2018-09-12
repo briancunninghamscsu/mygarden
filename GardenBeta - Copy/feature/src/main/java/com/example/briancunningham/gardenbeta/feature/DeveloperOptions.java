@@ -545,48 +545,8 @@ public class DeveloperOptions extends AppCompatActivity {
         pull_user_settings_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
-                Log.d("spock","you got to the on click listen");
-                RequestParams params = new RequestParams();
-                params.put("whatiwant", "pull_settings");
-                AsyncHttpClient client = new AsyncHttpClient();
-                client.setMaxRetriesAndTimeout(2,10000);
-                client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
-                    @Override
-                    public void onStart() {
-                        Log.d("spock", "got to onStart()");
-                    }
-
-                    @Override
-                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
-                        Log.d("spock", "got to onSuccess()");
-                        String test2 = response.toString();
-                        Log.d("spock", test2);
-                        user_settings_puller b = new user_settings_puller(test2, mApp);
-                        Snackbar snackbar = Snackbar
-                                .make(devtp, "Settings pulled from Server!", Snackbar.LENGTH_LONG);
-                        snackbar.show();
-                    }
-
-                    @Override
-                    public void onFinish(){
-                        Snackbar snackbar = Snackbar
-                                .make(devtp, "Could not connect to server!", Snackbar.LENGTH_LONG);
-                        snackbar.show();
-                    }
-
-
-
-                    @Override
-                    public void onRetry(int retryNo) {
-                        Log.d("spock", "got to onRetry()");
-                    }
-                }
-                );
-            }
-                //user_settings_pusher USP1 = new user_settings_pusher();
-            }
+                user_settings_puller USP1 = new user_settings_puller(devtp,mApp, "DevOptions");
+            }}
         );
 
 

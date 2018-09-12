@@ -154,7 +154,7 @@ public class user_settings_pusher {
 
 
         AsyncHttpClient client = new AsyncHttpClient();
-        //client.setMaxRetriesAndTimeout(2,10000);
+        client.setTimeout(1500);
         client.get("http://192.168.1.13/mygarden/api.php", params,new JsonHttpResponseHandler() {
                     @Override
                     public void onStart(){

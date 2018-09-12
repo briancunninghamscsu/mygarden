@@ -1,12 +1,65 @@
 package com.example.briancunningham.gardenbeta.feature;
 
+import android.support.constraint.ConstraintLayout;
+import android.support.design.widget.Snackbar;
 import android.util.Log;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONObject;
 
 import static java.lang.Double.valueOf;
 
 public class user_settings_puller {
 
-    user_settings_puller(String thingtochew, MyAppApplication mApp){
+    user_settings_puller(final ConstraintLayout toplevellayout, final MyAppApplication mApp, final String stringy){
+
+        //call the server for the user settings
+        RequestParams params = new RequestParams();
+        params.put("whatiwant", "pull_settings");
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.setTimeout(1500);
+        client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
+                    @Override
+                    public void onStart() {
+                        //Log.d("spock", "got to onStart()");
+                    }
+
+                    @Override
+                    public void onFinish(){
+                        Snackbar snackbar = Snackbar
+                                .make(toplevellayout, "Failed to Connect! User Settings not pulled from Server.", Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+
+                    @Override
+                    public void onRetry(int retryNo) {
+                        Log.d("spock", "got to onRetry()");
+                    }
+
+                    @Override
+                    public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
+                        Log.d("spock", "got to onSuccess()");
+                        String thingtochew = response.toString();
+
+                        Snackbar snackbar = Snackbar
+                                .make(toplevellayout, "Settings pulled from Server!", Snackbar.LENGTH_LONG);
+                        snackbar.show();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         //clean up escape characters and payload separators
         if (thingtochew.contains("\\n"))
@@ -396,9 +449,12 @@ public class user_settings_puller {
             else if (words[i].equals("am_heating_element"))
                 mApp.am_heating_element = Integer.parseInt(words[i + 1]);
 
-
-
             Log.d("spock","Item Number " + i + " is " + words[i]);
         }
+
+
+        }
+    });
     }
 }
+
