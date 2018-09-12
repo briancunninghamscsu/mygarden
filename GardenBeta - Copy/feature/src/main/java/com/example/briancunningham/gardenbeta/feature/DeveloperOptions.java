@@ -1,39 +1,20 @@
 package com.example.briancunningham.gardenbeta.feature;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
-import android.app.DialogFragment;
-import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.app.TimePickerDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
-import android.widget.TimePicker;
 
 import com.loopj.android.http.*;
 
 import org.json.JSONObject;
-
-import java.io.FileDescriptor;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStreamWriter;
-import java.io.PrintWriter;
-import java.util.Calendar;
-import java.util.List;
 
 @SuppressWarnings("ALL")
 public class DeveloperOptions extends AppCompatActivity {
@@ -45,6 +26,8 @@ public class DeveloperOptions extends AppCompatActivity {
         final MyAppApplication mApp = (MyAppApplication) getApplicationContext();
         MyLoopjTask myLoopjTask = new MyLoopjTask();
         final ConstraintLayout devtp = findViewById(R.id.devcontrols_toplvl);
+
+
 
         final CheckBox am_checkbox = findViewById(R.id.actuator_mode_checkbox);
         final RadioButton pump1butt = findViewById(R.id.butt_pump1);
@@ -509,6 +492,7 @@ public class DeveloperOptions extends AppCompatActivity {
                 RequestParams params = new RequestParams();
                 params.put("whatiwant", "testdata");
                 AsyncHttpClient client = new AsyncHttpClient();
+
                 client.get("http://192.168.1.13/mygarden/api.php", params, new JsonHttpResponseHandler() {
                     @Override
                     public void onStart() {
@@ -521,6 +505,13 @@ public class DeveloperOptions extends AppCompatActivity {
                         String test1 = response.toString();
                         Log.d("july", test1);
                         parsemystringplease a = new parsemystringplease(test1, mApp);
+                    }
+
+                    @Override
+                    public void onFinish(){
+                        Snackbar snackbar = Snackbar
+                                .make(devtp, "Could not connect to server!", Snackbar.LENGTH_LONG);
+                        snackbar.show();
                     }
 
                     @Override
@@ -554,10 +545,13 @@ public class DeveloperOptions extends AppCompatActivity {
         pull_user_settings_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /*Log.d("spock","you got to the on click listen");
+
+
+                Log.d("spock","you got to the on click listen");
                 RequestParams params = new RequestParams();
                 params.put("whatiwant", "pull_settings");
                 AsyncHttpClient client = new AsyncHttpClient();
+                client.setMaxRetriesAndTimeout(2,10000);
                 client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
                     @Override
                     public void onStart() {
@@ -569,19 +563,30 @@ public class DeveloperOptions extends AppCompatActivity {
                         Log.d("spock", "got to onSuccess()");
                         String test2 = response.toString();
                         Log.d("spock", test2);
-                        parse_for_user_settings b = new parse_for_user_settings(test2, mApp);
+                        user_settings_puller b = new user_settings_puller(test2, mApp);
+                        Snackbar snackbar = Snackbar
+                                .make(devtp, "Settings pulled from Server!", Snackbar.LENGTH_LONG);
+                        snackbar.show();
                     }
+
+                    @Override
+                    public void onFinish(){
+                        Snackbar snackbar = Snackbar
+                                .make(devtp, "Could not connect to server!", Snackbar.LENGTH_LONG);
+                        snackbar.show();
+                    }
+
+
 
                     @Override
                     public void onRetry(int retryNo) {
                         Log.d("spock", "got to onRetry()");
                     }
-                });
+                }
+                );
             }
-        }*/
-            //user_settings_pusher USP1 = new user_settings_pusher();
+                //user_settings_pusher USP1 = new user_settings_pusher();
             }
-        }
         );
 
 

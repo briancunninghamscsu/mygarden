@@ -4,9 +4,9 @@ import android.util.Log;
 
 import static java.lang.Double.valueOf;
 
-public class parse_for_user_settings {
+public class user_settings_puller {
 
-    parse_for_user_settings(String thingtochew,MyAppApplication mApp){
+    user_settings_puller(String thingtochew, MyAppApplication mApp){
 
         //clean up escape characters and payload separators
         if (thingtochew.contains("\\n"))
@@ -71,7 +71,39 @@ public class parse_for_user_settings {
                 mApp.air_temp_lower_turn_on_space_heater_day_time = valueOf(words[i + 1]);
 
 
-            // humidity
+            //air temperature
+            if (words[i].equals("air_temp_upper_threshold_night_time"))
+                mApp.air_temp_upper_threshold_night_time =valueOf(words[i+1]);
+
+            else if (words[i].equals("air_temp_upper_pushnotification_night_time"))
+                mApp.air_temp_upper_pushnotification_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("air_temp_upper_turn_on_fans_night_time"))
+                mApp.air_temp_upper_turn_on_fans_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("air_temp_upper_turn_off_heating_element_night_time"))
+                mApp.air_temp_upper_turn_off_heating_element_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("air_temp_upper_turn_off_space_heater_night_time"))
+                mApp.air_temp_upper_turn_off_space_heater_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("air_temp_lower_threshold_night_time"))
+                mApp.air_temp_lower_threshold_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("air_temp_lower_pushnotification_night_time"))
+                mApp.air_temp_lower_pushnotification_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("air_temp_lower_turn_off_fans_night_time"))
+                mApp.air_temp_lower_turn_off_fans_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("air_temp_lower_turn_on_heating_element_night_time"))
+                mApp.air_temp_lower_turn_on_heating_element_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("air_temp_lower_turn_on_space_heater_night_time"))
+                mApp.air_temp_lower_turn_on_space_heater_night_time = valueOf(words[i + 1]);
+
+
+                // humidity
 
             else if (words[i].equals("humidity_upper_threshold_day_time"))
                 mApp.humidity_upper_threshold_day_time = valueOf(words[i + 1]);
@@ -103,8 +135,38 @@ public class parse_for_user_settings {
             else if (words[i].equals("humidity_lower_turn_on_fogger_day_time"))
                 mApp.humidity_lower_turn_on_fogger_day_time = valueOf(words[i + 1]);
 
+            else if (words[i].equals("humidity_upper_threshold_night_time"))
+                mApp.humidity_upper_threshold_night_time = valueOf(words[i + 1]);
 
-            //TVOCS
+            else if (words[i].equals("humidity_upper_pushnotification_night_time"))
+                mApp.humidity_upper_pushnotification_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("humidity_upper_turn_on_extra_fans_night_time"))
+                mApp.humidity_upper_turn_on_extra_fans_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("humidity_upper_turn_off_fogger_night_time"))
+                mApp.humidity_upper_turn_off_fogger_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("humidity_upper_turn_on_space_heater_night_time"))
+                mApp.humidity_upper_turn_on_space_heater_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("humidity_lower_threshold_night_time"))
+                mApp.humidity_lower_threshold_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("humidity_lower_pushnotification_night_time"))
+                mApp.humidity_lower_pushnotification_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("humidity_lower_turn_off_extra_fans_night_time"))
+                mApp.humidity_lower_turn_off_extra_fans_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("humidity_lower_turn_off_space_heater_night_time"))
+                mApp.humidity_lower_turn_off_space_heater_night_time = valueOf(words[i + 1]);
+
+            else if (words[i].equals("humidity_lower_turn_on_fogger_night_time"))
+                mApp.humidity_lower_turn_on_fogger_night_time = valueOf(words[i + 1]);
+
+
+                //TVOCS
 
             else if (words[i].equals("TVOC_upper_threshold"))
                 mApp.TVOC_upper_threshold = valueOf(words[i + 1]);
@@ -118,7 +180,7 @@ public class parse_for_user_settings {
             else if (words[i].equals("TVOC_lower_pushnotification"))
                 mApp.TVOC_lower_pushnotification = valueOf(words[i + 1]);
 
-            //CO2
+                //CO2
 
             else if (words[i].equals("CO2_upper_threshold"))
                 mApp.CO2_upper_threshold = valueOf(words[i + 1]);
@@ -132,7 +194,7 @@ public class parse_for_user_settings {
             else if (words[i].equals("CO2_lower_pushnotification"))
                 mApp.CO2_lower_pushnotification = valueOf(words[i + 1]);
 
-            // solution temp
+                // solution temp
 
             /*else if (words[i].equals("slntemp_upper_threshold"))
                 mApp.slntemp_upper_threshold = valueOf(words[i + 1]);
@@ -159,7 +221,7 @@ public class parse_for_user_settings {
                 mApp.slntemp_lower_turn_on_heating_element = valueOf(words[i + 1]);*/
 
 
-            // TDS
+                // TDS
 
             else if (words[i].equals("tds_upper_threshold"))
                 mApp.tds_upper_threshold = valueOf(words[i + 1]);
@@ -185,7 +247,7 @@ public class parse_for_user_settings {
             else if (words[i].equals("tds_add_floramicro"))
                 mApp.tds_add_floramicro = valueOf(words[i + 1]);
 
-            // DO
+                // DO
 
             else if (words[i].equals("do_upper_threshold"))
                 mApp.do_upper_threshold = valueOf(words[i + 1]);
@@ -212,7 +274,7 @@ public class parse_for_user_settings {
                 mApp.do_lower_add_hydrogen_peroxide = valueOf(words[i + 1]);
 
 
-            // ORP
+                // ORP
 
             else if (words[i].equals("orp_upper_threshold"))
                 mApp.orp_upper_threshold = valueOf(words[i + 1]);
@@ -239,7 +301,7 @@ public class parse_for_user_settings {
                 mApp.orp_lower_add_base = valueOf(words[i + 1]);
 
 
-            // pH
+                // pH
 
             else if (words[i].equals("pH_lower_threshold"))
                 mApp.pH_lower_threshold = valueOf(words[i + 1]);
@@ -259,7 +321,7 @@ public class parse_for_user_settings {
             else if (words[i].equals("pH_upper_add_acid"))
                 mApp.pH_upper_add_acid = valueOf(words[i + 1]);
 
-            // reservoirs
+                // reservoirs
 
             /*else if (words[i].equals("reservoirs_need_refilling"))
                 mApp.reservoirs_need_refilling = valueOf(words[i + 1]);
@@ -276,6 +338,63 @@ public class parse_for_user_settings {
 
             else if (words[i].equals("light_height_target"))
                 mApp.light_height_target = valueOf(words[i + 1]);*/
+
+
+                // actuator settings
+
+            else if (words[i].equals("am_enable"))
+                mApp.am_enable = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_pump1"))
+                mApp.am_pump1 = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_pump2"))
+                mApp.am_pump2 = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_pump3"))
+                mApp.am_pump3 = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_pump4"))
+                mApp.am_pump4 = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_pump5"))
+                mApp.am_pump5 = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_pump6"))
+                mApp.am_pump6 = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_pump7"))
+                mApp.am_pump7 = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_pump8"))
+                mApp.am_pump8 = Integer.parseInt(words[i + 1]);
+
+
+                // non pump actuators
+
+            else if (words[i].equals("am_enable"))
+                mApp.am_enable = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_space_heater"))
+                mApp.am_space_heater = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_grow_light"))
+                mApp.am_grow_light = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_fogger"))
+                mApp.am_fogger = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_dc_motor"))
+                mApp.am_dc_motor = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_extra_fans"))
+                mApp.am_extra_fans = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_extra_air_pump"))
+                mApp.am_extra_air_pump = Integer.parseInt(words[i + 1]);
+
+            else if (words[i].equals("am_heating_element"))
+                mApp.am_heating_element = Integer.parseInt(words[i + 1]);
 
 
 

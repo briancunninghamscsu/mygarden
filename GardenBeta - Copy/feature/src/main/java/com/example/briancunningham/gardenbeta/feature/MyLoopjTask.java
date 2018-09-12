@@ -9,6 +9,7 @@ class MyLoopjTask {
 
     public MyLoopjTask() {
         AsyncHttpClient asyncHttpClient = new AsyncHttpClient();
+        //asyncHttpClient.setMaxRetriesAndTimeout(2,10000);
         RequestParams requestParams = new RequestParams();
     }
 

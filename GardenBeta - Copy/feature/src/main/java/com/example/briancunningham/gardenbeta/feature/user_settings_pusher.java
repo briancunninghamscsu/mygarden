@@ -153,19 +153,12 @@ public class user_settings_pusher {
 
 
 
-
-
-
-
-
-
-
-
         AsyncHttpClient client = new AsyncHttpClient();
-
+        //client.setMaxRetriesAndTimeout(2,10000);
         client.get("http://192.168.1.13/mygarden/api.php", params,new JsonHttpResponseHandler() {
                     @Override
                     public void onStart(){
+                        Log.d("kirk","got to onstart");
                     }
 
                     @Override
@@ -179,12 +172,13 @@ public class user_settings_pusher {
 
                     }
 
+
                     @Override
                     public void onFinish(){
                         Log.d("kirk","got to onfinish");
                         Snackbar snackbar = Snackbar
                                 .make(constrainty, "Failed to Connect! Changes from " + stringy + " not saved.", Snackbar.LENGTH_LONG);
-                        //snackbar.show();
+                        snackbar.show();
                     }
                     @Override
                     public void onRetry(int retryNo) {
