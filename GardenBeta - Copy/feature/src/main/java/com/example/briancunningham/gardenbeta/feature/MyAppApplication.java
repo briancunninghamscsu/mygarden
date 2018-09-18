@@ -13,140 +13,140 @@ public class MyAppApplication extends Application {
     private final ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
 
 
-    public String day_time_starts_at="8:00 AM";
-    public String night_time_starts_at="8:00 PM";
+    public String day_time_starts_at="8000";
+    public String night_time_starts_at="9000";
 
-    public double air_temp_upper_threshold_day_time =0;
-    public double air_temp_upper_pushnotification_day_time =0;
-    public double air_temp_upper_turn_on_fans_day_time=0;
-    public double air_temp_upper_turn_off_heating_element_day_time =0;
-    public double air_temp_upper_turn_off_space_heater_day_time =0;
+    public double air_temp_upper_threshold_day_time =0.0;
+    public double air_temp_upper_pushnotification_day_time =0.0;
+    public double air_temp_upper_turn_on_fans_day_time=0.0;
+    public double air_temp_upper_turn_off_heating_element_day_time =0.0;
+    public double air_temp_upper_turn_off_space_heater_day_time =0.0;
 
-    public double air_temp_lower_threshold_day_time =0;
-    public double air_temp_lower_pushnotification_day_time =0;
-    public double air_temp_lower_turn_off_fans_day_time =0;
-    public double air_temp_lower_turn_on_heating_element_day_time =0;
-    public double air_temp_lower_turn_on_space_heater_day_time =0;
+    public double air_temp_lower_threshold_day_time =0.0;
+    public double air_temp_lower_pushnotification_day_time =0.0;
+    public double air_temp_lower_turn_off_fans_day_time =0.0;
+    public double air_temp_lower_turn_on_heating_element_day_time =0.0;
+    public double air_temp_lower_turn_on_space_heater_day_time =0.0;
 
-    public double air_temp_upper_threshold_night_time =0;
-    public double air_temp_upper_pushnotification_night_time =0;
-    public double air_temp_upper_turn_on_fans_night_time=0;
-    public double air_temp_upper_turn_off_heating_element_night_time =0;
-    public double air_temp_upper_turn_off_space_heater_night_time =0;
+    public double air_temp_upper_threshold_night_time =0.0;
+    public double air_temp_upper_pushnotification_night_time =0.0;
+    public double air_temp_upper_turn_on_fans_night_time=0.0;
+    public double air_temp_upper_turn_off_heating_element_night_time =0.0;
+    public double air_temp_upper_turn_off_space_heater_night_time =0.0;
 
-    public double air_temp_lower_threshold_night_time =0;
-    public double air_temp_lower_pushnotification_night_time =0;
-    public double air_temp_lower_turn_off_fans_night_time =0;
-    public double air_temp_lower_turn_on_heating_element_night_time =0;
-    public double air_temp_lower_turn_on_space_heater_night_time =0;
-
-
-
-    public double humidity_upper_threshold_day_time =0;
-    public double humidity_upper_pushnotification_day_time =0;
-    public double humidity_upper_turn_on_extra_fans_day_time =0;
-    public double humidity_upper_turn_off_fogger_day_time =0;
-    public double humidity_upper_turn_on_space_heater_day_time =0;
-
-    public double humidity_lower_threshold_day_time =0;
-    public double humidity_lower_pushnotification_day_time =0;
-    public double humidity_lower_turn_off_extra_fans_day_time =0;
-    public double humidity_lower_turn_off_space_heater_day_time =0;
-    public double humidity_lower_turn_on_fogger_day_time =0;
-
-    public double humidity_upper_threshold_night_time =0;
-    public double humidity_upper_pushnotification_night_time =0;
-    public double humidity_upper_turn_on_extra_fans_night_time =0;
-    public double humidity_upper_turn_off_fogger_night_time =0;
-    public double humidity_upper_turn_on_space_heater_night_time =0;
-
-    public double humidity_lower_threshold_night_time =0;
-    public double humidity_lower_pushnotification_night_time =0;
-    public double humidity_lower_turn_off_extra_fans_night_time =0;
-    public double humidity_lower_turn_off_space_heater_night_time =0;
-    public double humidity_lower_turn_on_fogger_night_time =0;
-
-    public double TVOC_upper_threshold=0;
-    public double TVOC_upper_pushnotifications=0;
-
-    public double TVOC_lower_pushnotification=0;
-    public double TVOC_lower_threshold=0;
-
-    public double CO2_upper_threshold=0;
-    public double CO2_upper_pushnotifications=0;
-
-    public double CO2_lower_threshold=0;
-    public double CO2_lower_pushnotification=0;
+    public double air_temp_lower_threshold_night_time =0.0;
+    public double air_temp_lower_pushnotification_night_time =0.0;
+    public double air_temp_lower_turn_off_fans_night_time =0.0;
+    public double air_temp_lower_turn_on_heating_element_night_time =0.0;
+    public double air_temp_lower_turn_on_space_heater_night_time =0.0;
 
 
 
-    public double tds_upper_threshold=0;
-    public double tds_upper_push_notification=0;
-    public double tds_upper_add_water=0;
+    public double humidity_upper_threshold_day_time =0.0;
+    public double humidity_upper_pushnotification_day_time =0.0;
+    public double humidity_upper_turn_on_extra_fans_day_time =0.0;
+    public double humidity_upper_turn_off_fogger_day_time =0.0;
+    public double humidity_upper_turn_on_space_heater_day_time =0.0;
 
-    public double tds_lower_threshold=0;
-    public double tds_lower_pushnotification=0;
-    public double tds_add_florabloom=0;
-    public double tds_add_floragro=0;
-    public double tds_add_floramicro=0;
+    public double humidity_lower_threshold_day_time =0.0;
+    public double humidity_lower_pushnotification_day_time =0.0;
+    public double humidity_lower_turn_off_extra_fans_day_time =0.0;
+    public double humidity_lower_turn_off_space_heater_day_time =0.0;
+    public double humidity_lower_turn_on_fogger_day_time =0.0;
 
-    public double do_upper_threshold=0;
-    public double do_upper_push_notification=0;
-    public double do_upper_add_water=0;
-    public double do_upper_turn_off_extra_pump=0;
+    public double humidity_upper_threshold_night_time =0.0;
+    public double humidity_upper_pushnotification_night_time =0.0;
+    public double humidity_upper_turn_on_extra_fans_night_time =0.0;
+    public double humidity_upper_turn_off_fogger_night_time =0.0;
+    public double humidity_upper_turn_on_space_heater_night_time =0.0;
 
-    public double do_lower_threshold=0;
-    public double do_lower_push_notification=0;
-    public double do_lower_add_hypochloric_acid=0;
-    public double do_lower_add_hydrogen_peroxide=0;
-    public double do_lower_turn_on_extra_pump=0;
+    public double humidity_lower_threshold_night_time =0.0;
+    public double humidity_lower_pushnotification_night_time =0.0;
+    public double humidity_lower_turn_off_extra_fans_night_time =0.0;
+    public double humidity_lower_turn_off_space_heater_night_time =0.0;
+    public double humidity_lower_turn_on_fogger_night_time =0.0;
 
-    public double orp_upper_threshold=0;
-    public double orp_upper_push_notification=0;
-    public double orp_upper_add_water=0;
+    public double TVOC_upper_threshold=0.0;
+    public double TVOC_upper_pushnotifications=0.0;
 
-    public double orp_lower_threshold=0;
-    public double orp_lower_push_notification=0;
-    public double orp_lower_add_hydrogen_peroxide=0;
-    public double orp_lower_add_hypochloric_acid=0;
-    public double orp_lower_add_base=0;
+    public double TVOC_lower_pushnotification=0.0;
+    public double TVOC_lower_threshold=0.0;
 
-    public double pH_upper_threshold=0;
-    public double pH_lower_threshold=0;
-    public double pH_upper_add_acid=0;
-    public double pH_lower_add_base=0;
-    public double pH_upper_push_notification=0;
-    public double pH_lower_push_notification=0;
+    public double CO2_upper_threshold=0.0;
+    public double CO2_upper_pushnotifications=0.0;
+
+    public double CO2_lower_threshold=0.0;
+    public double CO2_lower_pushnotification=0.0;
 
 
-    public int am_enable=0;
-    public int am_pump1=0;
-    public int am_pump2=0;
-    public int am_pump3=0;
-    public int am_pump4=0;
-    public int am_pump5=0;
-    public int am_pump6=0;
-    public int am_pump7=0;
-    public int am_pump8=0;
-    public int am_space_heater=0;
-    public int am_grow_light=0;
-    public int am_fogger=0;
-    public int am_dc_motor=0;
-    public int am_extra_fans=0;
-    public int am_extra_air_pump=0;
-    public int am_heating_element=0;
 
-    /*public double reservoirs_need_refilling=0;
-    public double canopy_height_checkpoint=0;
+    public double tds_upper_threshold=0.0;
+    public double tds_upper_push_notification=0.0;
+    public double tds_upper_add_water=0.0;
+
+    public double tds_lower_threshold=0.0;
+    public double tds_lower_pushnotification=0.0;
+    public double tds_add_florabloom=0.0;
+    public double tds_add_floragro=0.0;
+    public double tds_add_floramicro=0.0;
+
+    public double do_upper_threshold=0.0;
+    public double do_upper_push_notification=0.0;
+    public double do_upper_add_water=0.0;
+    public double do_upper_turn_off_extra_pump=0.0;
+
+    public double do_lower_threshold=0.0;
+    public double do_lower_push_notification=0.0;
+    public double do_lower_add_hypochloric_acid=0.0;
+    public double do_lower_add_hydrogen_peroxide=0.0;
+    public double do_lower_turn_on_extra_pump=0.0;
+
+    public double orp_upper_threshold=0.0;
+    public double orp_upper_push_notification=0.0;
+    public double orp_upper_add_water=0.0;
+
+    public double orp_lower_threshold=0.0;
+    public double orp_lower_push_notification=0.0;
+    public double orp_lower_add_hydrogen_peroxide=0.0;
+    public double orp_lower_add_hypochloric_acid=0.0;
+    public double orp_lower_add_base=0.0;
+
+    public double pH_upper_threshold=0.0;
+    public double pH_lower_threshold=0.0;
+    public double pH_upper_add_acid=0.0;
+    public double pH_lower_add_base=0.0;
+    public double pH_upper_push_notification=0.0;
+    public double pH_lower_push_notification=0.0;
+
+
+    public double am_enable=0.0;
+    public double am_pump1=0.0;
+    public double am_pump2=0.0;
+    public double am_pump3=0.0;
+    public double am_pump4=0.0;
+    public double am_pump5=0.0;
+    public double am_pump6=0.0;
+    public double am_pump7=0.0;
+    public double am_pump8=0.0;
+    public double am_space_heater=0.0;
+    public double am_grow_light=0.0;
+    public double am_fogger=0.0;
+    public double am_dc_motor=0.0;
+    public double am_extra_fans=0.0;
+    public double am_extra_air_pump=0.0;
+    public double am_heating_element=0.0;
+
+    /*public double reservoirs_need_refilling=0.0;
+    public double canopy_height_checkpoint=0.0;
     public double canopy_height_push_notification=1;
-    public double light_height_target=0;
-    public double light_height_adjustment_push_notification=0;*/
+    public double light_height_target=0.0;
+    public double light_height_adjustment_push_notification=0.0;*/
 
-// --Commented out by Inspection START (5/19/2018 11:17 AM):
+// --Commented out by Inspection START (5/19/20.018 11:17 AM):
 //        public void testingmessage(){
 //            Log.d("consoleprinting","scroopy doopers");
 //        }
-// --Commented out by Inspection STOP (5/19/2018 11:17 AM)
+// --Commented out by Inspection STOP (5/19/20.018 11:17 AM)
 
     public int size(){
             return recordedData.size();

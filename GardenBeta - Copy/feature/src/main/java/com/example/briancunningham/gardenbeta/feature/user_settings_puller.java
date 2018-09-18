@@ -21,17 +21,20 @@ public class user_settings_puller {
         params.put("whatiwant", "pull_settings");
         AsyncHttpClient client = new AsyncHttpClient();
         client.setTimeout(1500);
-        client.get("http://24.197.216.190/mygarden/api.php", params, new JsonHttpResponseHandler() {
+        client.get("http://71.37.5.18/mygarden/api.php", params, new JsonHttpResponseHandler() {
+            Boolean succ_flag = false;
                     @Override
                     public void onStart() {
                         //Log.d("spock", "got to onStart()");
                     }
 
                     @Override
-                    public void onFinish(){
-                        Snackbar snackbar = Snackbar
-                                .make(toplevellayout, "Failed to Connect! User Settings not pulled from Server.", Snackbar.LENGTH_LONG);
-                        snackbar.show();
+                    public void onFinish() {
+                        if (!succ_flag) {
+                            Snackbar snackbar = Snackbar
+                                    .make(toplevellayout, "Failed to Connect! User Settings not pulled from Server.", Snackbar.LENGTH_LONG);
+                            snackbar.show();
+                        }
                     }
 
                     @Override
@@ -43,7 +46,7 @@ public class user_settings_puller {
                     public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
                         Log.d("spock", "got to onSuccess()");
                         String thingtochew = response.toString();
-
+                        succ_flag = true;
                         Snackbar snackbar = Snackbar
                                 .make(toplevellayout, "Settings pulled from Server!", Snackbar.LENGTH_LONG);
                         snackbar.show();
