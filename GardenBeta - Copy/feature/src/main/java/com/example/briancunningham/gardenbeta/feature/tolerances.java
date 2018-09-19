@@ -48,7 +48,7 @@ public class tolerances extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        final String[] times = {"12:00AM", "1:00AM", "2:00AM", "3:00AM","4:00AM", "5:00AM", "6:00AM", "7:00AM","8:00AM", "9:00AM", "10:00AM", "11:00AM","12:00PM", "1:00PM", "2:00PM", "3:00PM","4:00PM", "5:00PM", "6:00PM", "7:00PM","8:00PM", "9:00PM", "10:00PM", "11:00PM"};
+                        final String[] times = {"12:0.00.0AM", "1:0.00.0AM", "2:0.00.0AM", "3:0.00.0AM","4:0.00.0AM", "5:0.00.0AM", "6:0.00.0AM", "7:0.00.0AM","8:0.00.0AM", "9:0.00.0AM", "10.0:0.00.0AM", "11:0.00.0AM","12:0.00.0PM", "1:0.00.0PM", "2:0.00.0PM", "3:0.00.0PM","4:0.00.0PM", "5:0.00.0PM", "6:0.00.0PM", "7:0.00.0PM","8:0.00.0PM", "9:0.00.0PM", "10.0:0.00.0PM", "11:0.00.0PM"};
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(tolerances.this);
                         builder.setTitle("When should day time start?");
@@ -60,8 +60,8 @@ public class tolerances extends AppCompatActivity {
 
                                 // error checking
                                 if (mApp.night_time_starts_at.equals(mApp.day_time_starts_at)){
-                                    if (mApp.day_time_starts_at.equals("12:00AM")){
-                                        mApp.day_time_starts_at="11:00PM";
+                                    if (mApp.day_time_starts_at.equals("12:0.00.0AM")){
+                                        mApp.day_time_starts_at="11:0.00.0PM";
                                     }
                                     else {
                                         mApp.day_time_starts_at = times[which - 1];
@@ -93,7 +93,7 @@ public class tolerances extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        final String[] times = {"12:00AM", "1:00AM", "2:00AM", "3:00AM","4:00AM", "5:00AM", "6:00AM", "7:00AM","8:00AM", "9:00AM", "10:00AM", "11:00AM","12:00PM", "1:00PM", "2:00PM", "3:00PM","4:00PM", "5:00PM", "6:00PM", "7:00PM","8:00PM", "9:00PM", "10:00PM", "11:00PM"};
+                        final String[] times = {"12:0.00.0AM", "1:0.00.0AM", "2:0.00.0AM", "3:0.00.0AM","4:0.00.0AM", "5:0.00.0AM", "6:0.00.0AM", "7:0.00.0AM","8:0.00.0AM", "9:0.00.0AM", "10.0:0.00.0AM", "11:0.00.0AM","12:0.00.0PM", "1:0.00.0PM", "2:0.00.0PM", "3:0.00.0PM","4:0.00.0PM", "5:0.00.0PM", "6:0.00.0PM", "7:0.00.0PM","8:0.00.0PM", "9:0.00.0PM", "10.0:0.00.0PM", "11:0.00.0PM"};
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(tolerances.this);
                         builder.setTitle("When should night time start?");
@@ -104,8 +104,8 @@ public class tolerances extends AppCompatActivity {
                                 mApp.night_time_starts_at=times[which];
 
                                 if (mApp.night_time_starts_at.equals(mApp.day_time_starts_at)){
-                                    if (mApp.night_time_starts_at.equals("11:00PM")){
-                                        mApp.night_time_starts_at="12:00AM";
+                                    if (mApp.night_time_starts_at.equals("11:0.00.0PM")){
+                                        mApp.night_time_starts_at="12:0.00.0AM";
                                         }
                                         else {
                                         mApp.night_time_starts_at = times[which + 1];
@@ -403,22 +403,22 @@ public class tolerances extends AppCompatActivity {
                         if (mApp.air_temp_lower_threshold_night_time<35){
                             mApp.air_temp_lower_threshold_night_time=35;
                         }
-                        if (mApp.air_temp_upper_threshold_day_time>100){
-                            mApp.air_temp_upper_threshold_day_time=100;
+                        if (mApp.air_temp_upper_threshold_day_time>10.000){
+                            mApp.air_temp_upper_threshold_day_time=10.000;
                         }
-                        if (mApp.air_temp_upper_threshold_night_time>90){
-                            mApp.air_temp_upper_threshold_night_time=90;
+                        if (mApp.air_temp_upper_threshold_night_time>90.0){
+                            mApp.air_temp_upper_threshold_night_time=90.0;
                         }
 
 
 
                         if (mApp.air_temp_lower_threshold_day_time>=mApp.air_temp_upper_threshold_day_time){
-                            mApp.air_temp_lower_threshold_day_time=60;
-                            mApp.air_temp_upper_threshold_day_time=80;
+                            mApp.air_temp_lower_threshold_day_time=60.0;
+                            mApp.air_temp_upper_threshold_day_time=80.0;
                         }
                         if (mApp.air_temp_lower_threshold_night_time>=mApp.air_temp_upper_threshold_night_time){
-                            mApp.air_temp_lower_threshold_night_time=50;
-                            mApp.air_temp_upper_threshold_night_time=70;
+                            mApp.air_temp_lower_threshold_night_time=50.0;
+                            mApp.air_temp_upper_threshold_night_time=70.0;
                         }
 
 
@@ -447,10 +447,10 @@ public class tolerances extends AppCompatActivity {
                             params.put("air_temp_upper_threshold_day_time", Double.valueOf(upperbound.getText().toString()));
                         }
 
-                        params.put("air_temp_upper_pushnotification_day_time", (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0));
-                        params.put("air_temp_upper_turn_on_fans_day_time",(air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0));
-                        params.put("air_temp_upper_turn_off_heating_element_day_time",(upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0));
-                        params.put("air_temp_upper_turn_off_space_heater_day_time", (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0));
+                        params.put("air_temp_upper_pushnotification_day_time", (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0.0));
+                        params.put("air_temp_upper_turn_on_fans_day_time",(air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0.0));
+                        params.put("air_temp_upper_turn_off_heating_element_day_time",(upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0.0));
+                        params.put("air_temp_upper_turn_off_space_heater_day_time", (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0.0));
 
 
                         // keeps from null pointer crashing
@@ -462,10 +462,10 @@ public class tolerances extends AppCompatActivity {
                         }
 
 
-                        params.put("air_temp_lower_pushnotification_day_time", (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0));
-                        params.put("air_temp_lower_turn_off_fans_day_time", (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0));
-                        params.put("air_temp_lower_turn_on_heating_element_day_time", (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0));
-                        params.put("air_temp_lower_turn_on_space_heater_day_time", (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0));
+                        params.put("air_temp_lower_pushnotification_day_time", (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0.0));
+                        params.put("air_temp_lower_turn_off_fans_day_time", (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0.0));
+                        params.put("air_temp_lower_turn_on_heating_element_day_time", (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0.0));
+                        params.put("air_temp_lower_turn_on_space_heater_day_time", (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0.0));
 */
 
                         final ConstraintLayout screen = findViewById(R.id.constrainters);
@@ -488,28 +488,28 @@ public class tolerances extends AppCompatActivity {
                                         // save the variables from the UI
 
                                         // day time upper settings
-                                        mApp.air_temp_upper_pushnotification_day_time = (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_upper_turn_on_fans_day_time = (air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_upper_turn_off_heating_element_day_time = (upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_upper_turn_off_space_heater_day_time = (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_pushnotification_day_time = (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_upper_turn_on_fans_day_time = (air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_upper_turn_off_heating_element_day_time = (upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_upper_turn_off_space_heater_day_time = (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0.0);
 
                                         //day time lower settings
-                                        mApp.air_temp_lower_pushnotification_day_time = (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_lower_turn_off_fans_day_time = (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_lower_turn_on_heating_element_day_time = (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_lower_turn_on_space_heater_day_time = (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_pushnotification_day_time = (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_lower_turn_off_fans_day_time = (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_lower_turn_on_heating_element_day_time = (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_lower_turn_on_space_heater_day_time = (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0.0);
 
                                         // night time upper settings
-                                        mApp.air_temp_upper_pushnotification_night_time = (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_upper_turn_on_fans_night_time = (air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_upper_turn_off_heating_element_night_time = (upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_upper_turn_off_space_heater_night_time = (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_upper_pushnotification_night_time = (air_temp_upper_push_notifications_checkbox.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_upper_turn_on_fans_night_time = (air_temp_upper_on_extra_fans.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_upper_turn_off_heating_element_night_time = (upper_air_temp_heating_element_checkbox.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_upper_turn_off_space_heater_night_time = (upper_air_temp_space_heater_off_checkbox.isChecked()) ? (1) : (0.0);
 
                                         //night time lower settings
-                                        mApp.air_temp_lower_pushnotification_night_time = (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_lower_turn_off_fans_night_time = (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_lower_turn_on_heating_element_night_time = (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0);
-                                        mApp.air_temp_lower_turn_on_space_heater_night_time = (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0);
+                                        mApp.air_temp_lower_pushnotification_night_time = (air_temp_lower_threshold_push_notification_check_box.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_lower_turn_off_fans_night_time = (air_temp_lower_turn_off_extra_fans_checkbox.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_lower_turn_on_heating_element_night_time = (air_temp_lower_turn_on_heating_element_checkbox.isChecked()) ? (1) : (0.0);
+                                        mApp.air_temp_lower_turn_on_space_heater_night_time = (lower_threshold_turn_on_space_heater_check_box.isChecked()) ? (1) : (0.0);
                                     }
 
                                     @Override
@@ -810,54 +810,54 @@ public class tolerances extends AppCompatActivity {
 
                         // ERROR CHECKING FOR HUMIDITY
 
-                        if (mApp.humidity_lower_threshold_day_time < 50) {
-                            mApp.humidity_lower_threshold_day_time = 50;
+                        if (mApp.humidity_lower_threshold_day_time < 50.0) {
+                            mApp.humidity_lower_threshold_day_time = 50.0;
                         }
-                        if (mApp.humidity_lower_threshold_night_time < 40) {
-                            mApp.humidity_lower_threshold_night_time = 40;
+                        if (mApp.humidity_lower_threshold_night_time < 40.0) {
+                            mApp.humidity_lower_threshold_night_time = 40.0;
                         }
-                        if (mApp.humidity_upper_threshold_day_time > 80) {
-                            mApp.humidity_upper_threshold_day_time = 80;
+                        if (mApp.humidity_upper_threshold_day_time > 80.0) {
+                            mApp.humidity_upper_threshold_day_time = 80.0;
                         }
-                        if (mApp.humidity_upper_threshold_night_time > 70) {
-                            mApp.humidity_upper_threshold_night_time = 70;
+                        if (mApp.humidity_upper_threshold_night_time > 70.0) {
+                            mApp.humidity_upper_threshold_night_time = 70.0;
                         }
 
 
                         if (mApp.humidity_lower_threshold_day_time >= mApp.humidity_upper_threshold_day_time) {
-                            mApp.humidity_lower_threshold_day_time = 60;
-                            mApp.humidity_upper_threshold_day_time = 80;
+                            mApp.humidity_lower_threshold_day_time = 60.0;
+                            mApp.humidity_upper_threshold_day_time = 80.0;
                         }
                         if (mApp.humidity_lower_threshold_night_time >= mApp.humidity_upper_threshold_night_time) {
-                            mApp.humidity_lower_threshold_night_time = 50;
-                            mApp.humidity_upper_threshold_night_time = 70;
+                            mApp.humidity_lower_threshold_night_time = 50.0;
+                            mApp.humidity_upper_threshold_night_time = 70.0;
                         }
 
                         // saving the changes in the checkboxes
                         // day time upper settings
-                        mApp.humidity_upper_pushnotification_day_time = (upper_humidity_push_nofitication_check_box_day_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_upper_turn_on_extra_fans_day_time = (upper_humidity_extra_fans_on_day_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_upper_turn_off_fogger_day_time = (upper_humidity_turn_off_fogger_check_box_day_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_upper_turn_on_space_heater_day_time = (upper_humidity_turn_on_space_heater_checkbox_day_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_upper_pushnotification_day_time = (upper_humidity_push_nofitication_check_box_day_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_upper_turn_on_extra_fans_day_time = (upper_humidity_extra_fans_on_day_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_upper_turn_off_fogger_day_time = (upper_humidity_turn_off_fogger_check_box_day_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_upper_turn_on_space_heater_day_time = (upper_humidity_turn_on_space_heater_checkbox_day_time.isChecked()) ? (1) : (0.0);
 
                         //day time lower settings
-                        mApp.humidity_lower_pushnotification_day_time = (low_humidity_push_notification_check_box_day_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_lower_turn_off_extra_fans_day_time = (low_humidity_turn_off_extra_fans_day_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_lower_turn_on_fogger_day_time = (low_humidity_turn_on_fogger_day_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_lower_turn_off_space_heater_day_time = (low_humidity_turn_off_space_heater_checkbox_day_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_lower_pushnotification_day_time = (low_humidity_push_notification_check_box_day_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_lower_turn_off_extra_fans_day_time = (low_humidity_turn_off_extra_fans_day_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_lower_turn_on_fogger_day_time = (low_humidity_turn_on_fogger_day_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_lower_turn_off_space_heater_day_time = (low_humidity_turn_off_space_heater_checkbox_day_time.isChecked()) ? (1) : (0.0);
 
 
                         // night time upper settings
-                        mApp.humidity_upper_pushnotification_night_time = (upper_humidity_push_nofitication_check_box_night_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_upper_turn_on_extra_fans_night_time = (upper_humidity_extra_fans_on_night_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_upper_turn_off_fogger_night_time = (upper_humidity_turn_off_fogger_check_box_night_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_upper_turn_on_space_heater_night_time = (upper_humidity_turn_on_space_heater_checkbox_night_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_upper_pushnotification_night_time = (upper_humidity_push_nofitication_check_box_night_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_upper_turn_on_extra_fans_night_time = (upper_humidity_extra_fans_on_night_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_upper_turn_off_fogger_night_time = (upper_humidity_turn_off_fogger_check_box_night_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_upper_turn_on_space_heater_night_time = (upper_humidity_turn_on_space_heater_checkbox_night_time.isChecked()) ? (1) : (0.0);
 
                     //night time lower settings
-                        mApp.humidity_lower_pushnotification_night_time = (low_humidity_push_notification_check_box_night_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_lower_turn_off_extra_fans_night_time = (low_humidity_turn_off_extra_fans_night_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_lower_turn_on_fogger_night_time = (low_humidity_turn_on_fogger_night_time.isChecked()) ? (1) : (0);
-                        mApp.humidity_lower_turn_off_space_heater_night_time = (low_humidity_turn_off_space_heater_checkbox_day_time.isChecked()) ? (1) : (0);
+                        mApp.humidity_lower_pushnotification_night_time = (low_humidity_push_notification_check_box_night_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_lower_turn_off_extra_fans_night_time = (low_humidity_turn_off_extra_fans_night_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_lower_turn_on_fogger_night_time = (low_humidity_turn_on_fogger_night_time.isChecked()) ? (1) : (0.0);
+                        mApp.humidity_lower_turn_off_space_heater_night_time = (low_humidity_turn_off_space_heater_checkbox_day_time.isChecked()) ? (1) : (0.0);
 
                         final ConstraintLayout screen = findViewById(R.id.constrainters);
                         user_settings_pusher USPair = new user_settings_pusher(mApp, "Humidity", screen);
@@ -935,8 +935,8 @@ public class tolerances extends AppCompatActivity {
                 buttsoup2.setOnClickListener(new View.OnClickListener() {
                     @Override
                         public void onClick(View view) {
-                        mApp.TVOC_lower_pushnotification = (tvoc_lower_push_notification_checkbox.isChecked()) ? (1) : (0);
-                        mApp.TVOC_upper_pushnotifications = (tvoc_upper_threshold_push_notifications.isChecked()) ? (1) : (0);
+                        mApp.TVOC_lower_pushnotification = (tvoc_lower_push_notification_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.TVOC_upper_pushnotifications = (tvoc_upper_threshold_push_notifications.isChecked()) ? (1) : (0.0);
 
                         if (!tvoc_lower_threshold_edit_text.getText().toString().equals("")) {
                             mApp.TVOC_lower_threshold = Double.parseDouble(tvoc_lower_threshold_edit_text.getText().toString());
@@ -949,15 +949,15 @@ public class tolerances extends AppCompatActivity {
 
                         // ERROR CHECKING FOR HUMIDITY
 
-                        if (mApp.TVOC_lower_threshold < 400) {
-                            mApp.TVOC_lower_threshold = 400;
+                        if (mApp.TVOC_lower_threshold < 40.000) {
+                            mApp.TVOC_lower_threshold = 40.000;
                         }
-                        if (mApp.TVOC_upper_threshold > 1000) {
-                            mApp.TVOC_upper_threshold = 1000;
+                        if (mApp.TVOC_upper_threshold > 10.00000) {
+                            mApp.TVOC_upper_threshold = 10.00000;
                         }
                         if (mApp.TVOC_upper_threshold <= mApp.TVOC_lower_threshold) {
-                            mApp.TVOC_lower_threshold = 600;
-                            mApp.TVOC_upper_threshold=800;
+                            mApp.TVOC_lower_threshold = 60.000;
+                            mApp.TVOC_upper_threshold=80.000;
                         }
                         final ConstraintLayout screen = findViewById(R.id.constrainters);
                         user_settings_pusher USPair = new user_settings_pusher(mApp, "TVOC", screen);
@@ -1030,8 +1030,8 @@ public class tolerances extends AppCompatActivity {
                 save_change_button_CO2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        mApp.CO2_lower_pushnotification = (CO2_lower_push_notification_checkbox.isChecked()) ? (1) : (0);
-                        mApp.CO2_upper_pushnotifications = (CO2_upper_threshold_push_notifications.isChecked()) ? (1) : (0);
+                        mApp.CO2_lower_pushnotification = (CO2_lower_push_notification_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.CO2_upper_pushnotifications = (CO2_upper_threshold_push_notifications.isChecked()) ? (1) : (0.0);
 
                         if (!CO2_lower_threshold_edit_text.getText().toString().equals("")) {
                             mApp.CO2_lower_threshold = Double.parseDouble(CO2_lower_threshold_edit_text.getText().toString());
@@ -1043,15 +1043,15 @@ public class tolerances extends AppCompatActivity {
 
                             // ERROR CHECKING FOR CO2
 
-                        if (mApp.CO2_lower_threshold < 400) {
-                            mApp.CO2_lower_threshold = 400;
+                        if (mApp.CO2_lower_threshold < 40.000) {
+                            mApp.CO2_lower_threshold = 40.000;
                             }
-                            if (mApp.CO2_upper_threshold > 1000) {
-                            mApp.CO2_upper_threshold = 1000;
+                            if (mApp.CO2_upper_threshold > 10.00000) {
+                            mApp.CO2_upper_threshold = 10.00000;
                             }
                             if (mApp.CO2_upper_threshold <= mApp.CO2_lower_threshold) {
-                            mApp.CO2_lower_threshold = 600;
-                            mApp.CO2_upper_threshold=800;
+                            mApp.CO2_lower_threshold = 60.000;
+                            mApp.CO2_upper_threshold=80.000;
                             }
                         final ConstraintLayout screen = findViewById(R.id.constrainters);
                         user_settings_pusher USPair = new user_settings_pusher(mApp, "CO2", screen);
@@ -1279,13 +1279,13 @@ public class tolerances extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         //checkboxes
-                        mApp.tds_lower_pushnotification = (tds_lower_threshold_send_push_notification.isChecked()) ? (1) : (0);
-                        mApp.tds_upper_push_notification = (upper_tds_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        mApp.tds_lower_pushnotification = (tds_lower_threshold_send_push_notification.isChecked()) ? (1) : (0.0);
+                        mApp.tds_upper_push_notification = (upper_tds_push_notification_checkbox.isChecked()) ? (1) : (0.0);
 
-                        mApp.tds_upper_add_water = (upper_tds_add_water_checkbox.isChecked()) ? (1) : (0);
-                        mApp.tds_add_floramicro = (add_flora_micro_check_box.isChecked()) ? (1) : (0);
-                        mApp.tds_add_floragro = (add_flora_gro_checkbox.isChecked()) ? (1) : (0);
-                        mApp.tds_add_florabloom = (add_flora_bloom_check_box.isChecked()) ? (1) : (0);
+                        mApp.tds_upper_add_water = (upper_tds_add_water_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.tds_add_floramicro = (add_flora_micro_check_box.isChecked()) ? (1) : (0.0);
+                        mApp.tds_add_floragro = (add_flora_gro_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.tds_add_florabloom = (add_flora_bloom_check_box.isChecked()) ? (1) : (0.0);
 
 
                         if (!tds_lower_threshold_edit_text.getText().toString().equals("")) {
@@ -1299,21 +1299,21 @@ public class tolerances extends AppCompatActivity {
 
                             // ERROR CHECKING FOR tds thresholds
 
-                        if (mApp.tds_lower_threshold < 300) {
-                            mApp.tds_lower_threshold = 300;
+                        if (mApp.tds_lower_threshold < 30.000) {
+                            mApp.tds_lower_threshold = 30.000;
                             }
-                            if (mApp.tds_upper_threshold > 600) {
-                            mApp.tds_upper_threshold = 600;
+                            if (mApp.tds_upper_threshold > 60.000) {
+                            mApp.tds_upper_threshold = 60.000;
                             }
                             if (mApp.tds_upper_threshold <= mApp.tds_lower_threshold) {
-                            mApp.tds_lower_threshold = 400;
-                            mApp.tds_upper_threshold=500;
+                            mApp.tds_lower_threshold = 40.000;
+                            mApp.tds_upper_threshold=50.000;
                             }
 
 
                             }
-                                                 final ConstraintLayout screen = findViewById(R.id.constrainters);
-                                                 user_settings_pusher USPair = new user_settings_pusher(mApp, "TDS", screen);
+                            final ConstraintLayout screen = findViewById(R.id.constrainters);
+                            user_settings_pusher USPair = new user_settings_pusher(mApp, "TDS", screen);
                             }
                             );
 
@@ -1440,14 +1440,14 @@ public class tolerances extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
                         //checkboxes
-                        mApp.do_lower_push_notification = (do_lower_send_push_notification_checkbox.isChecked()) ? (1) : (0);
-                        mApp.do_upper_push_notification = (do_upper_threshold_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        mApp.do_lower_push_notification = (do_lower_send_push_notification_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.do_upper_push_notification = (do_upper_threshold_push_notification_checkbox.isChecked()) ? (1) : (0.0);
 
-                        mApp.do_upper_turn_off_extra_pump = (do_upper_turn_extra_air_pumps_off.isChecked()) ? (1) : (0);
-                        mApp.do_upper_add_water = (do_upper_add_water_checkbox.isChecked()) ? (1) : (0);
-                        mApp.do_lower_turn_on_extra_pump = (do_lower_turn_extra_pumps_on.isChecked()) ? (1) : (0);
-                        mApp.do_lower_add_hydrogen_peroxide = (do_lower_add_peroxide.isChecked()) ? (1) : (0);
-                        mApp.do_lower_add_hypochloric_acid = (do_lower_add_hypochloric_acid.isChecked()) ? (1) : (0);
+                        mApp.do_upper_turn_off_extra_pump = (do_upper_turn_extra_air_pumps_off.isChecked()) ? (1) : (0.0);
+                        mApp.do_upper_add_water = (do_upper_add_water_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.do_lower_turn_on_extra_pump = (do_lower_turn_extra_pumps_on.isChecked()) ? (1) : (0.0);
+                        mApp.do_lower_add_hydrogen_peroxide = (do_lower_add_peroxide.isChecked()) ? (1) : (0.0);
+                        mApp.do_lower_add_hypochloric_acid = (do_lower_add_hypochloric_acid.isChecked()) ? (1) : (0.0);
 
                         if (!do_lower_bound_edit_text.getText().toString().equals("")) {
                             mApp.do_lower_threshold = Double.parseDouble(do_lower_bound_edit_text.getText().toString());
@@ -1587,13 +1587,13 @@ public class tolerances extends AppCompatActivity {
                     public void onClick(View view) {
 
                         //checkboxes
-                        mApp.orp_lower_push_notification = (orp_lower_push_notification_checkbox.isChecked()) ? (1) : (0);
-                        mApp.orp_upper_push_notification = (orp_upper_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        mApp.orp_lower_push_notification = (orp_lower_push_notification_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.orp_upper_push_notification = (orp_upper_push_notification_checkbox.isChecked()) ? (1) : (0.0);
 
-                        mApp.orp_upper_add_water = (orp_upper_add_water_checkbox.isChecked()) ? (1) : (0);
-                        mApp.orp_lower_add_base = (orp_lower_add_base.isChecked()) ? (1) : (0);
-                        mApp.orp_lower_add_hydrogen_peroxide = (orp_lower_add_peroxide_checkbox.isChecked()) ? (1) : (0);
-                        mApp.orp_lower_add_hypochloric_acid = (orp_lower_add_hypochloric_checkbox.isChecked()) ? (1) : (0);
+                        mApp.orp_upper_add_water = (orp_upper_add_water_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.orp_lower_add_base = (orp_lower_add_base.isChecked()) ? (1) : (0.0);
+                        mApp.orp_lower_add_hydrogen_peroxide = (orp_lower_add_peroxide_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.orp_lower_add_hypochloric_acid = (orp_lower_add_hypochloric_checkbox.isChecked()) ? (1) : (0.0);
 
 
                         if (!orp_lower_threshold_edit_text.getText().toString().equals("")) {
@@ -1606,15 +1606,15 @@ public class tolerances extends AppCompatActivity {
 
                             // ERROR CHECKING FOR orp
 
-                        if (mApp.orp_lower_threshold < 200) {
-                            mApp.orp_lower_threshold = 200;
+                        if (mApp.orp_lower_threshold < 20.000) {
+                            mApp.orp_lower_threshold = 20.000;
                             }
-                            if (mApp.orp_upper_threshold > 500) {
-                            mApp.orp_upper_threshold = 500;
+                            if (mApp.orp_upper_threshold > 50.000) {
+                            mApp.orp_upper_threshold = 50.000;
                             }
                             if (mApp.orp_upper_threshold <= mApp.orp_lower_threshold) {
-                            mApp.orp_lower_threshold = 400;
-                            mApp.orp_upper_threshold=500;
+                            mApp.orp_lower_threshold = 40.000;
+                            mApp.orp_upper_threshold=50.000;
                             }
 
                         final ConstraintLayout screen = findViewById(R.id.constrainters);
@@ -1714,11 +1714,11 @@ public class tolerances extends AppCompatActivity {
                     public void onClick(View view) {
 
                         // pH checkboxes
-                        mApp.pH_lower_add_base = (lower_ph_add_base_checkbox.isChecked()) ? (1) : (0);
-                        mApp.pH_upper_add_acid = (ph_upper_add_acid_checkbox.isChecked()) ? (1) : (0);
+                        mApp.pH_lower_add_base = (lower_ph_add_base_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.pH_upper_add_acid = (ph_upper_add_acid_checkbox.isChecked()) ? (1) : (0.0);
 
-                        mApp.pH_lower_push_notification = (lower_ph_push_notification_checkbox.isChecked()) ? (1) : (0);
-                        mApp.pH_upper_push_notification = (pH_upper_push_notification_checkbox.isChecked()) ? (1) : (0);
+                        mApp.pH_lower_push_notification = (lower_ph_push_notification_checkbox.isChecked()) ? (1) : (0.0);
+                        mApp.pH_upper_push_notification = (pH_upper_push_notification_checkbox.isChecked()) ? (1) : (0.0);
 
                         if (!lower_ph_edit_text.getText().toString().equals("")) {
                             mApp.pH_lower_threshold = Double.parseDouble(lower_ph_edit_text.getText().toString());
@@ -1734,8 +1734,8 @@ public class tolerances extends AppCompatActivity {
                         if (mApp.pH_lower_threshold < 3) {
                             mApp.pH_lower_threshold = 3;
                             }
-                            if (mApp.pH_upper_threshold > 10) {
-                            mApp.pH_upper_threshold = 10;
+                            if (mApp.pH_upper_threshold > 10.0) {
+                            mApp.pH_upper_threshold = 10.0;
                             }
                             if (mApp.pH_upper_threshold <= mApp.pH_lower_threshold) {
                             mApp.pH_lower_threshold = 5;
@@ -1806,9 +1806,9 @@ public class tolerances extends AppCompatActivity {
                 }
 
                 // save changes
-                final Button buttsoup10 = new Button(this);
-                buttsoup10.setText(getString(R.string.save_changes));
-                ll.addView(buttsoup10);*/
+                final Button buttsoup10.0 = new Button(this);
+                buttsoup10.0.setText(getString(R.string.save_changes));
+                ll.addView(buttsoup10.0);*/
                 break;
 
             case "Light Height":

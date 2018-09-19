@@ -2,6 +2,7 @@ package com.example.briancunningham.gardenbeta.feature;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -24,6 +25,13 @@ public class home_activity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         MyAppApplication mApp = (MyAppApplication) getApplicationContext();
+
+        //update data points and pull user settings
+        //ConstraintLayout cnstrs = findViewById(R.id.constrainters);
+        //user_settings_puller USPhome = new user_settings_puller(cnstrs,mApp,"home");
+
+
+
 
         TextView tvairtemp = findViewById(R.id.textView_airtemp);
         TextView tvambhum = findViewById(R.id.textView_ambhum);

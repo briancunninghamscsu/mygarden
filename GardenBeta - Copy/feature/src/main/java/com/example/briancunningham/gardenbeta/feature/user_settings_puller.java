@@ -92,7 +92,8 @@ public class user_settings_puller {
 
 
         String words[] = thingtochew.split(" ");
-        for (int i = 1; i < words.length; i++) {
+
+        for (int i = 1; i < words.length-1; i++) {
 
 
             //air temperature
@@ -399,58 +400,58 @@ public class user_settings_puller {
                 // actuator settings
 
             else if (words[i].equals("am_enable"))
-                mApp.am_enable = Integer.parseInt(words[i + 1]);
+                mApp.am_enable = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_pump1"))
-                mApp.am_pump1 = Integer.parseInt(words[i + 1]);
+                mApp.am_pump1 = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_pump2"))
-                mApp.am_pump2 = Integer.parseInt(words[i + 1]);
+                mApp.am_pump2 = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_pump3"))
-                mApp.am_pump3 = Integer.parseInt(words[i + 1]);
+                mApp.am_pump3 = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_pump4"))
-                mApp.am_pump4 = Integer.parseInt(words[i + 1]);
+                mApp.am_pump4 = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_pump5"))
-                mApp.am_pump5 = Integer.parseInt(words[i + 1]);
+                mApp.am_pump5 = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_pump6"))
-                mApp.am_pump6 = Integer.parseInt(words[i + 1]);
+                mApp.am_pump6 = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_pump7"))
-                mApp.am_pump7 = Integer.parseInt(words[i + 1]);
+                mApp.am_pump7 = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_pump8"))
-                mApp.am_pump8 = Integer.parseInt(words[i + 1]);
+                mApp.am_pump8 = Double.parseDouble(words[i + 1]);
 
 
                 // non pump actuators
 
             else if (words[i].equals("am_enable"))
-                mApp.am_enable = Integer.parseInt(words[i + 1]);
+                mApp.am_enable = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_space_heater"))
-                mApp.am_space_heater = Integer.parseInt(words[i + 1]);
+                mApp.am_space_heater = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_grow_light"))
-                mApp.am_grow_light = Integer.parseInt(words[i + 1]);
+                mApp.am_grow_light = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_fogger"))
-                mApp.am_fogger = Integer.parseInt(words[i + 1]);
+                mApp.am_fogger = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_dc_motor"))
-                mApp.am_dc_motor = Integer.parseInt(words[i + 1]);
+                mApp.am_dc_motor = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_extra_fans"))
-                mApp.am_extra_fans = Integer.parseInt(words[i + 1]);
+                mApp.am_extra_fans = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_extra_air_pump"))
-                mApp.am_extra_air_pump = Integer.parseInt(words[i + 1]);
+                mApp.am_extra_air_pump = Double.parseDouble(words[i + 1]);
 
             else if (words[i].equals("am_heating_element"))
-                mApp.am_heating_element = Integer.parseInt(words[i + 1]);
+                mApp.am_heating_element = Double.parseDouble(words[i + 1]);
 
             Log.d("spock","Item Number " + i + " is " + words[i]);
         }
@@ -459,5 +460,10 @@ public class user_settings_puller {
         }
     });
     }
+
+
+
+
+
 }
 
