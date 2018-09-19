@@ -28,7 +28,7 @@ public class home_activity extends AppCompatActivity {
 
         //update data points and pull user settings
         //ConstraintLayout cnstrs = findViewById(R.id.constrainters);
-        //user_settings_puller USPhome = new user_settings_puller(cnstrs,mApp,"home");
+        user_settings_puller USPhome = new user_settings_puller(mApp);
 
 
 
