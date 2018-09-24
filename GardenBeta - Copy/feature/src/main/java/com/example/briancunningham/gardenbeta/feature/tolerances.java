@@ -48,7 +48,7 @@ public class tolerances extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        final String[] times = {"12:0.00.0AM", "1:0.00.0AM", "2:0.00.0AM", "3:0.00.0AM","4:0.00.0AM", "5:0.00.0AM", "6:0.00.0AM", "7:0.00.0AM","8:0.00.0AM", "9:0.00.0AM", "10.0:0.00.0AM", "11:0.00.0AM","12:0.00.0PM", "1:0.00.0PM", "2:0.00.0PM", "3:0.00.0PM","4:0.00.0PM", "5:0.00.0PM", "6:0.00.0PM", "7:0.00.0PM","8:0.00.0PM", "9:0.00.0PM", "10.0:0.00.0PM", "11:0.00.0PM"};
+                        final String[] times = {"0000", "0100", "0200", "0300","0400", "0500", "0600", "0700","0800", "0900", "1000", "1100","1200", "1300", "1400", "1500","1600", "1700", "1800", "1900","2000", "2100", "2200", "2300"};
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(tolerances.this);
                         builder.setTitle("When should day time start?");
@@ -60,8 +60,8 @@ public class tolerances extends AppCompatActivity {
 
                                 // error checking
                                 if (mApp.night_time_starts_at.equals(mApp.day_time_starts_at)){
-                                    if (mApp.day_time_starts_at.equals("12:0.00.0AM")){
-                                        mApp.day_time_starts_at="11:0.00.0PM";
+                                    if (mApp.day_time_starts_at.equals("0000")){
+                                        mApp.day_time_starts_at="2300";
                                     }
                                     else {
                                         mApp.day_time_starts_at = times[which - 1];
@@ -93,7 +93,7 @@ public class tolerances extends AppCompatActivity {
                     @Override
                     public void onClick(View view) {
 
-                        final String[] times = {"12:0.00.0AM", "1:0.00.0AM", "2:0.00.0AM", "3:0.00.0AM","4:0.00.0AM", "5:0.00.0AM", "6:0.00.0AM", "7:0.00.0AM","8:0.00.0AM", "9:0.00.0AM", "10.0:0.00.0AM", "11:0.00.0AM","12:0.00.0PM", "1:0.00.0PM", "2:0.00.0PM", "3:0.00.0PM","4:0.00.0PM", "5:0.00.0PM", "6:0.00.0PM", "7:0.00.0PM","8:0.00.0PM", "9:0.00.0PM", "10.0:0.00.0PM", "11:0.00.0PM"};
+                        final String[] times = {"0000", "0100", "0200", "0300","0400", "0500", "0600", "0700","0800", "0900", "1000", "1100","1200", "1300", "1400", "1500","1600", "1700", "1800", "1900","2000", "2100", "2200", "2300"};
 
                         AlertDialog.Builder builder = new AlertDialog.Builder(tolerances.this);
                         builder.setTitle("When should night time start?");
@@ -104,8 +104,8 @@ public class tolerances extends AppCompatActivity {
                                 mApp.night_time_starts_at=times[which];
 
                                 if (mApp.night_time_starts_at.equals(mApp.day_time_starts_at)){
-                                    if (mApp.night_time_starts_at.equals("11:0.00.0PM")){
-                                        mApp.night_time_starts_at="12:0.00.0AM";
+                                    if (mApp.night_time_starts_at.equals("2300")){
+                                        mApp.night_time_starts_at="0000";
                                         }
                                         else {
                                         mApp.night_time_starts_at = times[which + 1];
