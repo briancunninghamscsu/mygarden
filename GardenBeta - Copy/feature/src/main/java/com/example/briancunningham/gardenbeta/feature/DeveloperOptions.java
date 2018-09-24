@@ -503,20 +503,19 @@ public class DeveloperOptions extends AppCompatActivity {
 
                     @Override
                     public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
-                        Log.d("july", "got to onSuccess()");
-                        succ_flag = true;
+                        //Log.d("july", "got to onSuccess()");
+                        //succ_flag = true;
                         String test1 = response.toString();
-                        Log.d("july", test1);
+                        //Log.d("july", test1);
                         parsemystringplease a = new parsemystringplease(test1, mApp);
+                        Snackbar snackbar = Snackbar
+                                .make(devtp, "Data Points pulled from server!", Snackbar.LENGTH_LONG);
+                        snackbar.show();
                     }
 
                     @Override
                     public void onFinish(){
-                        if (!succ_flag){
-                        Snackbar snackbar = Snackbar
-                                .make(devtp, "Could not connect to server!", Snackbar.LENGTH_LONG);
-                        snackbar.show();
-                    }
+
                     }
 
                     @Override

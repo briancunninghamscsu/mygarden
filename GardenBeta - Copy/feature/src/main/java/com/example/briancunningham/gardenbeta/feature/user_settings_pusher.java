@@ -156,7 +156,7 @@ public class user_settings_pusher {
         AsyncHttpClient client = new AsyncHttpClient();
         client.setTimeout(1500);
         client.get("http://71.37.5.18/mygarden/api.php", params,new JsonHttpResponseHandler() {
-            Boolean succ_flag = false;
+            //Boolean succ_flag = false;
                     @Override
                     public void onStart(){
                         Log.d("kirk","got to onstart");
@@ -164,7 +164,7 @@ public class user_settings_pusher {
 
                     @Override
                     public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
-                        succ_flag = true;
+                        //succ_flag = true;
                         Snackbar snackbar = Snackbar
                                 .make(constrainty, "Changes Saved from " + stringy +  "!", Snackbar.LENGTH_LONG);
                         snackbar.show();
@@ -178,12 +178,12 @@ public class user_settings_pusher {
                     @Override
                     public void onFinish(){
                         Log.d("kirk","got to onfinish");
-                        if (!succ_flag){
+                        /*if (!succ_flag){
                         Snackbar snackbar = Snackbar
                                 .make(constrainty, "Failed to Connect! Changes from " + stringy + " not saved.", Snackbar.LENGTH_LONG);
-                        snackbar.show();
+                        snackbar.show();*/
                     }
-                    }
+
                     @Override
                     public void onRetry(int retryNo) {
                         Log.d("kirk", "got to onRetry()");

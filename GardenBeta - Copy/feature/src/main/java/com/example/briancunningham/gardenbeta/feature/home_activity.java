@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -12,6 +13,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TableRow;
 import android.widget.TextView;
+
+import com.loopj.android.http.AsyncHttpClient;
+import com.loopj.android.http.JsonHttpResponseHandler;
+import com.loopj.android.http.RequestParams;
+
+import org.json.JSONObject;
 
 import java.util.Objects;
 
@@ -27,6 +34,44 @@ public class home_activity extends AppCompatActivity {
         MyAppApplication mApp = (MyAppApplication) getApplicationContext();
 
         //update data points and pull user settings
+        /*RequestParams params = new RequestParams();
+        params.put("whatiwant", "testdata");
+        AsyncHttpClient client = new AsyncHttpClient();
+
+        client.get("http://71.37.5.18/mygarden/api.php", params, new JsonHttpResponseHandler() {
+
+            boolean succ_flag = false;
+            @Override
+            public void onStart() {
+                Log.d("july", "got to onStart()");
+            }
+
+            @Override
+            public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
+                Log.d("july", "got to onSuccess()");
+                succ_flag = true;
+                String test1 = response.toString();
+                Log.d("july", test1);
+                parsemystringplease a = new parsemystringplease(test1, mApp);
+            }
+
+            @Override
+            public void onFinish(){
+                if (!succ_flag){
+                    *//*Snackbar snackbar = Snackbar
+                            .make(devtp, "Could not connect to server!", Snackbar.LENGTH_LONG);
+                    snackbar.show();*//*
+                }
+            }
+
+            @Override
+            public void onRetry(int retryNo) {
+                Log.d("july", "got to onRetry()");
+            }
+        });*/
+
+
+
         //ConstraintLayout cnstrs = findViewById(R.id.constrainters);
         user_settings_puller USPhome = new user_settings_puller(mApp);
 
