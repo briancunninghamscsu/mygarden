@@ -346,6 +346,10 @@ public class user_settings_puller {
 
                 // pH
 
+
+            else if (words[i].equals("pH_upper_threshold"))
+                mApp.pH_upper_threshold = valueOf(words[i + 1]);
+
             else if (words[i].equals("pH_lower_threshold"))
                 mApp.pH_lower_threshold = valueOf(words[i + 1]);
 
@@ -755,6 +759,9 @@ public class user_settings_puller {
 
 
                         // pH
+
+                    else if (words[i].equals("pH_upper_threshold"))
+                        mApp.pH_upper_threshold = valueOf(words[i + 1]);
 
                     else if (words[i].equals("pH_lower_threshold"))
                         mApp.pH_lower_threshold = valueOf(words[i + 1]);

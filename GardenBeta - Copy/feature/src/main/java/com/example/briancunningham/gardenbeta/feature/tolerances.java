@@ -405,24 +405,30 @@ public class tolerances extends AppCompatActivity {
                             Log.d("deelon","at line 405 the values of mapp.airtempupperhtreshold and lower are " + mApp.air_temp_upper_threshold_day_time + " " + mApp.air_temp_lower_threshold_day_time);
                             // ERROR CHECKING FOR AIR TEMP
 
-                        if (mApp.air_temp_lower_threshold_day_time<45){
+                            if (mApp.air_temp_lower_threshold_day_time<45){
                             mApp.air_temp_lower_threshold_day_time=45;
                             }
                             if (mApp.air_temp_lower_threshold_night_time<35){
                             mApp.air_temp_lower_threshold_night_time=35;
                             }
-                            if (mApp.air_temp_upper_threshold_day_time>10.000){
-                            mApp.air_temp_upper_threshold_day_time=10.000;
+                            if (mApp.air_temp_upper_threshold_day_time>110.00){
+                            mApp.air_temp_upper_threshold_day_time=110.000;
                             }
                             if (mApp.air_temp_upper_threshold_night_time>90.0){
                             mApp.air_temp_upper_threshold_night_time=90.0;
                             }
 
                             // fix with java.lang.Double.compare() method?
-                            if (mApp.air_temp_lower_threshold_day_time>=mApp.air_temp_upper_threshold_day_time){
-                            mApp.air_temp_lower_threshold_day_time=60.0;
-                            mApp.air_temp_upper_threshold_day_time=80.0;
+                        Log.d("deelon","at line 422 the values of mapp.airtempupperhtreshold and lower are " + mApp.air_temp_upper_threshold_day_time + " " + mApp.air_temp_lower_threshold_day_time);
+                        Log.d("deelon","the value of the compare function is "+ java.lang.Double.compare(mApp.air_temp_upper_threshold_day_time,mApp.air_temp_lower_threshold_day_time) );
+                        //Log.d("deelon","OPPOSITE ORDER CMPR FUNCTION IS "+ java.lang.Double.compare(mApp.air_temp_upper_threshold_day_time,mApp.air_temp_lower_threshold_day_time) );
+                        //Log.d("deelon","CMPR FN 2 UPPERS IS  "+ java.lang.Double.compare(mApp.air_temp_upper_threshold_day_time,mApp.air_temp_upper_threshold_day_time) );
+
+                        if (java.lang.Double.compare(mApp.air_temp_upper_threshold_day_time,mApp.air_temp_lower_threshold_day_time)<0){ // documentation says this should be greater than sign, but testing shows it should be less than sign
+                               mApp.air_temp_lower_threshold_day_time=60.0;
+                                mApp.air_temp_upper_threshold_day_time=80.0;
                             }
+
                             if (mApp.air_temp_lower_threshold_night_time>=mApp.air_temp_upper_threshold_night_time){
                             mApp.air_temp_lower_threshold_night_time=50.0;
                             mApp.air_temp_upper_threshold_night_time=70.0;
@@ -872,8 +878,8 @@ public class tolerances extends AppCompatActivity {
                 buttsoup2.setOnClickListener(new View.OnClickListener() {
                                                  @Override
                                                  public void onClick(View view) {
-                                                     mApp.TVOC_lower_pushnotification = (tvoc_lower_push_notification_checkbox.isChecked()) ? (1) : (0.0);
-                                                     mApp.TVOC_upper_pushnotifications = (tvoc_upper_threshold_push_notifications.isChecked()) ? (1) : (0.0);
+                                                     mApp.TVOC_lower_pushnotification = (tvoc_lower_push_notification_checkbox.isChecked()) ? (1.0) : (0.0);
+                                                     mApp.TVOC_upper_pushnotifications = (tvoc_upper_threshold_push_notifications.isChecked()) ? (1.0) : (0.0);
 
                                                      if (!tvoc_lower_threshold_edit_text.getText().toString().equals("")) {
                                                          mApp.TVOC_lower_threshold = Double.parseDouble(tvoc_lower_threshold_edit_text.getText().toString());
@@ -889,12 +895,12 @@ public class tolerances extends AppCompatActivity {
                                                      if (mApp.TVOC_lower_threshold < 40.000) {
                                                          mApp.TVOC_lower_threshold = 40.000;
                                                      }
-                                                     if (mApp.TVOC_upper_threshold > 10.00000) {
-                                                         mApp.TVOC_upper_threshold = 10.00000;
+                                                     if (mApp.TVOC_upper_threshold > 1000.00) {
+                                                         mApp.TVOC_upper_threshold = 1000.00;
                                                      }
                                                      if (mApp.TVOC_upper_threshold <= mApp.TVOC_lower_threshold) {
                                                          mApp.TVOC_lower_threshold = 60.000;
-                                                         mApp.TVOC_upper_threshold=80.000;
+                                                         mApp.TVOC_upper_threshold= 80.000;
                                                      }
                                                      final ConstraintLayout screen = findViewById(R.id.constrainters);
                                                      user_settings_pusher USPair = new user_settings_pusher(mApp, "TVOC", screen);
@@ -983,12 +989,12 @@ public class tolerances extends AppCompatActivity {
                                                                   if (mApp.CO2_lower_threshold < 40.000) {
                                                                       mApp.CO2_lower_threshold = 40.000;
                                                                   }
-                                                                  if (mApp.CO2_upper_threshold > 10.00000) {
-                                                                      mApp.CO2_upper_threshold = 10.00000;
+                                                                  if (mApp.CO2_upper_threshold > 1000.00) {
+                                                                      mApp.CO2_upper_threshold = 1000.00;
                                                                   }
                                                                   if (mApp.CO2_upper_threshold <= mApp.CO2_lower_threshold) {
                                                                       mApp.CO2_lower_threshold = 60.000;
-                                                                      mApp.CO2_upper_threshold=80.000;
+                                                                      mApp.CO2_upper_threshold= 800.00;
                                                                   }
                                                                   final ConstraintLayout screen = findViewById(R.id.constrainters);
                                                                   user_settings_pusher USPair = new user_settings_pusher(mApp, "CO2", screen);
@@ -1216,13 +1222,13 @@ public class tolerances extends AppCompatActivity {
                                                  @Override
                                                  public void onClick(View view) {
                                                      //checkboxes
-                                                     mApp.tds_lower_pushnotification = (tds_lower_threshold_send_push_notification.isChecked()) ? (1) : (0.0);
-                                                     mApp.tds_upper_push_notification = (upper_tds_push_notification_checkbox.isChecked()) ? (1) : (0.0);
+                                                     mApp.tds_lower_pushnotification = (tds_lower_threshold_send_push_notification.isChecked()) ? (1.0) : (0.0);
+                                                     mApp.tds_upper_push_notification = (upper_tds_push_notification_checkbox.isChecked()) ? (1.0) : (0.0);
 
-                                                     mApp.tds_upper_add_water = (upper_tds_add_water_checkbox.isChecked()) ? (1) : (0.0);
-                                                     mApp.tds_add_floramicro = (add_flora_micro_check_box.isChecked()) ? (1) : (0.0);
-                                                     mApp.tds_add_floragro = (add_flora_gro_checkbox.isChecked()) ? (1) : (0.0);
-                                                     mApp.tds_add_florabloom = (add_flora_bloom_check_box.isChecked()) ? (1) : (0.0);
+                                                     mApp.tds_upper_add_water = (upper_tds_add_water_checkbox.isChecked()) ? (1.0) : (0.0);
+                                                     mApp.tds_add_floramicro = (add_flora_micro_check_box.isChecked()) ? (1.0) : (0.0);
+                                                     mApp.tds_add_floragro = (add_flora_gro_checkbox.isChecked()) ? (1.0) : (0.0);
+                                                     mApp.tds_add_florabloom = (add_flora_bloom_check_box.isChecked()) ? (1.0) : (0.0);
 
 
                                                      if (!tds_lower_threshold_edit_text.getText().toString().equals("")) {
@@ -1236,22 +1242,23 @@ public class tolerances extends AppCompatActivity {
 
                                                      // ERROR CHECKING FOR tds thresholds
 
-                                                     if (mApp.tds_lower_threshold < 30.000) {
-                                                         mApp.tds_lower_threshold = 30.000;
+                                                     if (mApp.tds_lower_threshold < 3.000) {
+                                                         mApp.tds_lower_threshold = 3.000;
                                                      }
-                                                     if (mApp.tds_upper_threshold > 60.000) {
-                                                         mApp.tds_upper_threshold = 60.000;
+                                                     if (mApp.tds_upper_threshold > 6.000) {
+                                                         mApp.tds_upper_threshold = 6.000;
                                                      }
                                                      if (mApp.tds_upper_threshold <= mApp.tds_lower_threshold) {
-                                                         mApp.tds_lower_threshold = 40.000;
-                                                         mApp.tds_upper_threshold=50.000;
+                                                         mApp.tds_lower_threshold = 4.000;
+                                                         mApp.tds_upper_threshold= 5.000;
                                                      }
 
 
-                                                 }
+
                                                  final ConstraintLayout screen = findViewById(R.id.constrainters);
                                                  user_settings_pusher USPair = new user_settings_pusher(mApp, "TDS", screen);
-                                             }
+                                             }}
+
                 );
 
                 break;
@@ -1374,45 +1381,47 @@ public class tolerances extends AppCompatActivity {
                 save_changes_button_do.setText(getString(R.string.save_changes));
                 ll.addView(save_changes_button_do);
                 save_changes_button_do.setOnClickListener(new View.OnClickListener() {
-                                                              @Override
-                                                              public void onClick(View view) {
-                                                                  //checkboxes
-                                                                  mApp.do_lower_push_notification = (do_lower_send_push_notification_checkbox.isChecked()) ? (1) : (0.0);
-                                                                  mApp.do_upper_push_notification = (do_upper_threshold_push_notification_checkbox.isChecked()) ? (1) : (0.0);
+                    @Override
+                    public void onClick(View view) {
+                        //checkboxes
+                        mApp.do_lower_push_notification = (do_lower_send_push_notification_checkbox.isChecked()) ? (1.0) : (0.0);
+                        mApp.do_upper_push_notification = (do_upper_threshold_push_notification_checkbox.isChecked()) ? (1.0) : (0.0);
 
-                                                                  mApp.do_upper_turn_off_extra_pump = (do_upper_turn_extra_air_pumps_off.isChecked()) ? (1) : (0.0);
-                                                                  mApp.do_upper_add_water = (do_upper_add_water_checkbox.isChecked()) ? (1) : (0.0);
-                                                                  mApp.do_lower_turn_on_extra_pump = (do_lower_turn_extra_pumps_on.isChecked()) ? (1) : (0.0);
-                                                                  mApp.do_lower_add_hydrogen_peroxide = (do_lower_add_peroxide.isChecked()) ? (1) : (0.0);
-                                                                  mApp.do_lower_add_hypochloric_acid = (do_lower_add_hypochloric_acid.isChecked()) ? (1) : (0.0);
+                        mApp.do_upper_turn_off_extra_pump = (do_upper_turn_extra_air_pumps_off.isChecked()) ? (1.0) : (0.0);
+                        mApp.do_upper_add_water = (do_upper_add_water_checkbox.isChecked()) ? (1.0) : (0.0);
+                        mApp.do_lower_turn_on_extra_pump = (do_lower_turn_extra_pumps_on.isChecked()) ? (1.0) : (0.0);
+                        mApp.do_lower_add_hydrogen_peroxide = (do_lower_add_peroxide.isChecked()) ? (1.0) : (0.0);
+                        mApp.do_lower_add_hypochloric_acid = (do_lower_add_hypochloric_acid.isChecked()) ? (1.0) : (0.0);
 
-                                                                  if (!do_lower_bound_edit_text.getText().toString().equals("")) {
-                                                                      mApp.do_lower_threshold = Double.parseDouble(do_lower_bound_edit_text.getText().toString());
-                                                                  }
+                        if (!do_lower_bound_edit_text.getText().toString().equals("")) {
+                            mApp.do_lower_threshold = Double.parseDouble(do_lower_bound_edit_text.getText().toString());
+                        }
 
-                                                                  if (!do_upper_threshold_edit_text.getText().toString().equals("")) {
-                                                                      mApp.do_upper_threshold = Double.parseDouble(do_upper_threshold_edit_text.getText().toString());
-                                                                  }
-
-
-                                                                  // ERROR CHECKING FOR do
-
-                                                                  if (mApp.do_lower_threshold < 5) {
-                                                                      mApp.do_lower_threshold = 5;
-                                                                  }
-                                                                  if (mApp.do_upper_threshold > 12) {
-                                                                      mApp.do_upper_threshold = 12;
-                                                                  }
-                                                                  if (mApp.do_upper_threshold <= mApp.do_lower_threshold) {
-                                                                      mApp.do_lower_threshold = 7;
-                                                                      mApp.do_upper_threshold=9;
-                                                                  }
+                        if (!do_upper_threshold_edit_text.getText().toString().equals("")) {
+                            mApp.do_upper_threshold = Double.parseDouble(do_upper_threshold_edit_text.getText().toString());
+                        }
 
 
-                                                              }
-                                                              final ConstraintLayout screen = findViewById(R.id.constrainters);
-                                                              user_settings_pusher USPair = new user_settings_pusher(mApp, "Air Temp", screen);
-                                                          }
+                        // ERROR CHECKING FOR do
+
+                        if (mApp.do_lower_threshold < 5) {
+                            mApp.do_lower_threshold = 5;
+                        }
+                        if (mApp.do_upper_threshold > 12) {
+                            mApp.do_upper_threshold = 12;
+                        }
+                        if (mApp.do_upper_threshold <= mApp.do_lower_threshold) {
+                            mApp.do_lower_threshold = 7;
+                            mApp.do_upper_threshold = 9;
+                        }
+
+
+
+
+                    final ConstraintLayout screen = findViewById(R.id.constrainters);
+                    user_settings_pusher USPair = new user_settings_pusher(mApp, "Dissolved Oxygen", screen);
+                }
+                }
                 );
                 break;
 
@@ -1524,13 +1533,13 @@ public class tolerances extends AppCompatActivity {
                                                                public void onClick(View view) {
 
                                                                    //checkboxes
-                                                                   mApp.orp_lower_push_notification = (orp_lower_push_notification_checkbox.isChecked()) ? (1) : (0.0);
-                                                                   mApp.orp_upper_push_notification = (orp_upper_push_notification_checkbox.isChecked()) ? (1) : (0.0);
+                                                                   mApp.orp_lower_push_notification = (orp_lower_push_notification_checkbox.isChecked()) ? (1.0) : (0.0);
+                                                                   mApp.orp_upper_push_notification = (orp_upper_push_notification_checkbox.isChecked()) ? (1.0) : (0.0);
 
-                                                                   mApp.orp_upper_add_water = (orp_upper_add_water_checkbox.isChecked()) ? (1) : (0.0);
-                                                                   mApp.orp_lower_add_base = (orp_lower_add_base.isChecked()) ? (1) : (0.0);
-                                                                   mApp.orp_lower_add_hydrogen_peroxide = (orp_lower_add_peroxide_checkbox.isChecked()) ? (1) : (0.0);
-                                                                   mApp.orp_lower_add_hypochloric_acid = (orp_lower_add_hypochloric_checkbox.isChecked()) ? (1) : (0.0);
+                                                                   mApp.orp_upper_add_water = (orp_upper_add_water_checkbox.isChecked()) ? (1.0) : (0.0);
+                                                                   mApp.orp_lower_add_base = (orp_lower_add_base.isChecked()) ? (1.0) : (0.0);
+                                                                   mApp.orp_lower_add_hydrogen_peroxide = (orp_lower_add_peroxide_checkbox.isChecked()) ? (1.0) : (0.0);
+                                                                   mApp.orp_lower_add_hypochloric_acid = (orp_lower_add_hypochloric_checkbox.isChecked()) ? (1.0) : (0.0);
 
 
                                                                    if (!orp_lower_threshold_edit_text.getText().toString().equals("")) {
@@ -1543,15 +1552,15 @@ public class tolerances extends AppCompatActivity {
 
                                                                    // ERROR CHECKING FOR orp
 
-                                                                   if (mApp.orp_lower_threshold < 20.000) {
-                                                                       mApp.orp_lower_threshold = 20.000;
+                                                                   if (mApp.orp_lower_threshold < 200.00) {
+                                                                       mApp.orp_lower_threshold = 200.00;
                                                                    }
-                                                                   if (mApp.orp_upper_threshold > 50.000) {
-                                                                       mApp.orp_upper_threshold = 50.000;
+                                                                   if (mApp.orp_upper_threshold > 500.00) {
+                                                                       mApp.orp_upper_threshold = 500.00;
                                                                    }
                                                                    if (mApp.orp_upper_threshold <= mApp.orp_lower_threshold) {
-                                                                       mApp.orp_lower_threshold = 40.000;
-                                                                       mApp.orp_upper_threshold=50.000;
+                                                                       mApp.orp_lower_threshold = 400.0;
+                                                                       mApp.orp_upper_threshold=500.00;
                                                                    }
 
                                                                    final ConstraintLayout screen = findViewById(R.id.constrainters);
@@ -1651,11 +1660,11 @@ public class tolerances extends AppCompatActivity {
                                                               public void onClick(View view) {
 
                                                                   // pH checkboxes
-                                                                  mApp.pH_lower_add_base = (lower_ph_add_base_checkbox.isChecked()) ? (1) : (0.0);
-                                                                  mApp.pH_upper_add_acid = (ph_upper_add_acid_checkbox.isChecked()) ? (1) : (0.0);
+                                                                  mApp.pH_lower_add_base = (lower_ph_add_base_checkbox.isChecked()) ? (1.0) : (0.0);
+                                                                  mApp.pH_upper_add_acid = (ph_upper_add_acid_checkbox.isChecked()) ? (1.0) : (0.0);
 
-                                                                  mApp.pH_lower_push_notification = (lower_ph_push_notification_checkbox.isChecked()) ? (1) : (0.0);
-                                                                  mApp.pH_upper_push_notification = (pH_upper_push_notification_checkbox.isChecked()) ? (1) : (0.0);
+                                                                  mApp.pH_lower_push_notification = (lower_ph_push_notification_checkbox.isChecked()) ? (1.0) : (0.0);
+                                                                  mApp.pH_upper_push_notification = (pH_upper_push_notification_checkbox.isChecked()) ? (1.0) : (0.0);
 
                                                                   if (!lower_ph_edit_text.getText().toString().equals("")) {
                                                                       mApp.pH_lower_threshold = Double.parseDouble(lower_ph_edit_text.getText().toString());
@@ -1668,15 +1677,15 @@ public class tolerances extends AppCompatActivity {
 
                                                                   // ERROR CHECKING FOR ph
 
-                                                                  if (mApp.pH_lower_threshold < 3) {
-                                                                      mApp.pH_lower_threshold = 3;
+                                                                  if (mApp.pH_lower_threshold < 3.0) {
+                                                                      mApp.pH_lower_threshold = 3.0;
                                                                   }
                                                                   if (mApp.pH_upper_threshold > 10.0) {
                                                                       mApp.pH_upper_threshold = 10.0;
                                                                   }
                                                                   if (mApp.pH_upper_threshold <= mApp.pH_lower_threshold) {
-                                                                      mApp.pH_lower_threshold = 5;
-                                                                      mApp.pH_upper_threshold=7;
+                                                                      mApp.pH_lower_threshold = 5.0;
+                                                                      mApp.pH_upper_threshold=7.0;
                                                                   }
                                                                   final ConstraintLayout screen = findViewById(R.id.constrainters);
                                                                   user_settings_pusher USPair = new user_settings_pusher(mApp, "pH", screen);
