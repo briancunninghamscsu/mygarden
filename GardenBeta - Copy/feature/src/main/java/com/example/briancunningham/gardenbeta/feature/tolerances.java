@@ -366,6 +366,28 @@ public class tolerances extends AppCompatActivity {
                     public void onClick(View view) {
 
 
+                        /*if (belowtext_night.getText().toString().isEmpty())
+                            mApp.air_temp_lower_threshold_night_time = mApp.air_temp_lower_threshold_night_time;
+                        else
+                            mApp.air_temp_lower_threshold_night_time = Double.parseDouble(belowtext_night.getText().toString());
+                        if (uppertext_night.getText().toString().isEmpty())
+                            mApp.air_temp_upper_threshold_night_time = mApp.air_temp_upper_threshold_night_time;
+                        else
+                            mApp.air_temp_upper_threshold_night_time = Double.parseDouble(uppertext_night.getText().toString());
+                        if (belowtext.getText().toString().isEmpty())
+                            mApp.air_temp_lower_threshold_day_time = mApp.air_temp_lower_threshold_day_time;
+                        else
+                            mApp.air_temp_lower_threshold_day_time = Double.parseDouble(belowtext.getText().toString());
+                        if (uppertext.getText().toString().isEmpty())
+                            mApp.air_temp_upper_threshold_day_time = mApp.air_temp_upper_threshold_day_time;
+                        else
+                            mApp.air_temp_upper_threshold_day_time = Double.parseDouble(uppertext.getText().toString());*/
+
+
+
+
+
+
                         if (!lowerbound.getText().toString().equals("")) {
                             mApp.air_temp_lower_threshold_day_time = Double.parseDouble(lowerbound.getText().toString());
                             }
@@ -380,7 +402,7 @@ public class tolerances extends AppCompatActivity {
                             mApp.air_temp_upper_threshold_night_time = Double.parseDouble(upperbound_night.getText().toString());
                             }
 
-
+                            Log.d("deelon","at line 405 the values of mapp.airtempupperhtreshold and lower are " + mApp.air_temp_upper_threshold_day_time + " " + mApp.air_temp_lower_threshold_day_time);
                             // ERROR CHECKING FOR AIR TEMP
 
                         if (mApp.air_temp_lower_threshold_day_time<45){
@@ -396,7 +418,7 @@ public class tolerances extends AppCompatActivity {
                             mApp.air_temp_upper_threshold_night_time=90.0;
                             }
 
-
+                            // fix with java.lang.Double.compare() method?
                             if (mApp.air_temp_lower_threshold_day_time>=mApp.air_temp_upper_threshold_day_time){
                             mApp.air_temp_lower_threshold_day_time=60.0;
                             mApp.air_temp_upper_threshold_day_time=80.0;
@@ -407,6 +429,7 @@ public class tolerances extends AppCompatActivity {
                             }
 
                         // saving the changes in the checkboxes
+                        Log.d("deelon","at line 432 the values of mapp.airtempupperhtreshold and lower are " + mApp.air_temp_upper_threshold_day_time + " " + mApp.air_temp_lower_threshold_day_time);
 
 
                         // time o clock settings

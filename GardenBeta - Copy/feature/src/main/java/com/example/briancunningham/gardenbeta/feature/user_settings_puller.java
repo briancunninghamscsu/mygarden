@@ -102,6 +102,20 @@ public class user_settings_puller {
             else if (words[i].equals("air_temp_upper_pushnotification_day_time"))
                 mApp.air_temp_upper_pushnotification_day_time = valueOf(words[i + 1]);
 
+
+            // day and night
+
+            else if (words[i].equals("day_time_starts_at"))
+                mApp.day_time_starts_at = (words[i + 1]);
+
+            else if (words[i].equals("night_time_starts_at"))
+                mApp.night_time_starts_at = (words[i + 1]);
+
+
+
+
+
+
             else if (words[i].equals("air_temp_upper_turn_on_fans_day_time"))
                 mApp.air_temp_upper_turn_on_fans_day_time = valueOf(words[i + 1]);
 
@@ -499,6 +513,15 @@ public class user_settings_puller {
                     //air temperature
                     if (words[i].equals("air_temp_upper_threshold_day_time"))
                         mApp.air_temp_upper_threshold_day_time =valueOf(words[i+1]);
+
+                        // day and night
+
+                    else if (words[i].equals("day_time_starts_at"))
+                        mApp.day_time_starts_at = (words[i + 1]);
+
+                    else if (words[i].equals("night_time_starts_at"))
+                        mApp.night_time_starts_at = (words[i + 1]);
+
 
                     else if (words[i].equals("air_temp_upper_pushnotification_day_time"))
                         mApp.air_temp_upper_pushnotification_day_time = valueOf(words[i + 1]);
