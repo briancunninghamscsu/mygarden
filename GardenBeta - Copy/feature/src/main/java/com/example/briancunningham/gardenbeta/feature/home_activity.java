@@ -138,49 +138,49 @@ public class home_activity extends AppCompatActivity {
 
 
                     // Reservoirs
-                    if ((Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "1")))) {
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "1.0")))) {
                         tvres1.setText(getString(R.string.full));
                     } else {
                         tvres1.setText(getString(R.string.notfull));
                     }
 
-                    if ((Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "1")))) {
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "1.0")))) {
                         tvres2.setText(getString(R.string.full));
                     } else {
                         tvres2.setText(getString(R.string.notfull));
                     }
 
-                    if ((Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "1")))) {
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "1.0")))) {
                         tvres3.setText(getString(R.string.full));
                     } else {
                         tvres3.setText(getString(R.string.notfull));
                     }
 
-                    if ((Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "1")))) {
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "1.0")))) {
                         tvres4.setText(getString(R.string.full));
                     } else {
                         tvres4.setText(getString(R.string.notfull));
                     }
 
-                    if ((Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "1")))) {
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "1.0")))) {
                         tvres5.setText(getString(R.string.full));
                     } else {
                         tvres5.setText(getString(R.string.notfull));
                     }
 
-                    if ((Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "1")))) {
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "1.0")))) {
                         tvres6.setText(getString(R.string.full));
                     } else {
                         tvres6.setText(getString(R.string.notfull));
                     }
 
-                    if ((Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "1")))) {
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "1.0")))) {
                         tvres7.setText(getString(R.string.full));
                     } else {
                         tvres7.setText(getString(R.string.notfull));
                     }
 
-                    if ((Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "1")))) {
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "1.0")))) {
                         tvres8.setText(getString(R.string.full));
                     } else {
                         tvres8.setText(getString(R.string.notfull));
@@ -295,49 +295,49 @@ public class home_activity extends AppCompatActivity {
 
 
             // Reservoirs
-            if ((Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "1")))) {
+            if ((Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "1.0")))) {
                 tvres1.setText(getString(R.string.full));
             } else {
                 tvres1.setText(getString(R.string.notfull));
             }
 
-            if ((Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "1")))) {
+            if ((Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "1.0")))) {
                 tvres2.setText(getString(R.string.full));
             } else {
                 tvres2.setText(getString(R.string.notfull));
             }
 
-            if ((Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "1")))) {
+            if ((Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "1.0")))) {
                 tvres3.setText(getString(R.string.full));
             } else {
                 tvres3.setText(getString(R.string.notfull));
             }
 
-            if ((Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "1")))) {
+            if ((Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "1.0")))) {
                 tvres4.setText(getString(R.string.full));
             } else {
                 tvres4.setText(getString(R.string.notfull));
             }
 
-            if ((Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "1")))) {
+            if ((Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "1.0")))) {
                 tvres5.setText(getString(R.string.full));
             } else {
                 tvres5.setText(getString(R.string.notfull));
             }
 
-            if ((Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "1")))) {
+            if ((Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "1.0")))) {
                 tvres6.setText(getString(R.string.full));
             } else {
                 tvres6.setText(getString(R.string.notfull));
             }
 
-            if ((Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "1")))) {
+            if ((Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "1.0")))) {
                 tvres7.setText(getString(R.string.full));
             } else {
                 tvres7.setText(getString(R.string.notfull));
             }
 
-            if ((Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "1")))) {
+            if ((Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "1.0")))) {
                 tvres8.setText(getString(R.string.full));
             } else {
                 tvres8.setText(getString(R.string.notfull));

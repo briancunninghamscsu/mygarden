@@ -238,14 +238,17 @@ public class data_activity extends AppCompatActivity {
             LineGraphSeries<DataPoint> series = new LineGraphSeries<>(values); //put the data points into the array used for graphing
             graph.addSeries(series);
 
+
             //setting graph parameters
             graph.getViewport().setScalable(true);
             graph.getViewport().setScrollable(true);
             graph.getViewport().setScalableY(true);
             graph.getViewport().setScrollableY(true);
+
             graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
             graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext())); // this line makes it display dates instead of numbers.
-
+            /*
+            */
 
 
             for (int i = mApp.size() - 1; i >= 0; i--) {    // decrementing loop, so that it goes from most recent to oldest
