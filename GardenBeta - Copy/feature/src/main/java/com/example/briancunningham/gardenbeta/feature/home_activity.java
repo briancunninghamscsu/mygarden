@@ -31,10 +31,10 @@ public class home_activity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        MyAppApplication mApp = (MyAppApplication) getApplicationContext();
+        final MyAppApplication mApp = (MyAppApplication) getApplicationContext();
 
         //update data points and pull user settings
-        /*RequestParams params = new RequestParams();
+        RequestParams params = new RequestParams();
         params.put("whatiwant", "testdata");
         AsyncHttpClient client = new AsyncHttpClient();
 
@@ -48,27 +48,164 @@ public class home_activity extends AppCompatActivity {
 
             @Override
             public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
-                Log.d("july", "got to onSuccess()");
-                succ_flag = true;
+                //Log.d("july", "got to onSuccess()");
+                //succ_flag = true;
                 String test1 = response.toString();
-                Log.d("july", test1);
+                //Log.d("july", test1);
                 parsemystringplease a = new parsemystringplease(test1, mApp);
+                /*Snackbar snackbar = Snackbar
+                        .make(devtp, "Data Points pulled from server!", Snackbar.LENGTH_LONG);*/
+               //snackbar.show();
+
+                //updating the elements
+                TextView tvairtemp = findViewById(R.id.textView_airtemp);
+                TextView tvambhum = findViewById(R.id.textView_ambhum);
+                TextView tvco2 = findViewById(R.id.textView_co2);
+                TextView tvcanhop = findViewById(R.id.textView_canhei);
+                TextView tvdo = findViewById(R.id.textView_do);
+                TextView tvLH = findViewById(R.id.textView_LH);
+                TextView tvo2 = findViewById(R.id.textView_o2);
+                TextView tvorp = findViewById(R.id.textView_orp);
+                TextView tvph = findViewById(R.id.textView_ph);
+                TextView tvtds = findViewById(R.id.textView_nuttds);
+                //TextView tvres = findViewById(R.id.textView_res);
+                TextView tvslntemp = findViewById(R.id.textView_soltemp);
+
+                //reservoir numbers
+                TextView tvres1 = findViewById(R.id.textView_res1);
+                TextView tvres2 = findViewById(R.id.textView_res2);
+                TextView tvres3 = findViewById(R.id.textView_res3);
+                TextView tvres4 = findViewById(R.id.textView_res4);
+                TextView tvres5 = findViewById(R.id.textView_res5);
+                TextView tvres6 = findViewById(R.id.textView_res6);
+                TextView tvres7 = findViewById(R.id.textView_res7);
+                TextView tvres8 = findViewById(R.id.textView_res8);
+
+
+
+                // assigning java to xml assignments - tablerows for activity linking
+                TableRow tblrowairtemp = findViewById(R.id.tblrow_airtemp);
+                TableRow tblrowambhum = findViewById(R.id.tblrow_ambhum);
+                TableRow tblrowco2 = findViewById(R.id.tblrow_co2);
+                TableRow tblrowDO = findViewById(R.id.tblrow_DO);
+                TableRow tblrowLH = findViewById(R.id.tblrow_lighei);
+                TableRow tblrowo2 = findViewById(R.id.tblrow_o2);
+                TableRow tblroworp = findViewById(R.id.tblrow_nutorp);
+                TableRow tblrowph = findViewById(R.id.tblrow_ph);
+                TableRow tblrowslntemp = findViewById(R.id.tblrow_slntemp);
+                //TableRow tblrowres = findViewById(R.id.tblrow_reservoirs);
+                TableRow tblrowtds = findViewById(R.id.tblrow_nuttds);
+                TableRow tblrowcanhei = findViewById(R.id.tblrow_canhei);
+
+
+
+
+                // updating the main activity with the most recently-indexed array list
+                int mrtesty = mApp.size();
+                if (mApp.size() != 0) {
+
+                    String unit_adder = String.valueOf(mApp.getAirtemplevel(mrtesty - 1) + getString(R.string.degreef));
+                    tvairtemp.setText(unit_adder);
+
+                    unit_adder = String.valueOf(mApp.getAmbienthumiditylevel(mrtesty - 1) + getString(R.string.percentsign));
+                    tvambhum.setText(String.valueOf(unit_adder));
+
+                    unit_adder = String.valueOf(mApp.getCanopyheightlevel(mrtesty - 1)) + getString(R.string.centimeters);
+                    tvcanhop.setText(unit_adder);
+
+                    unit_adder = String.valueOf(mApp.getCo2level(mrtesty - 1) + getString(R.string.ppm));
+                    tvco2.setText(unit_adder);
+
+                    unit_adder = String.valueOf(mApp.getDolevel(mrtesty - 1) + getString(R.string.ppm));
+                    tvdo.setText(unit_adder);
+
+                    unit_adder = String.valueOf(mApp.getLightheight(mrtesty - 1)) + getString(R.string.centimeters);
+                    tvLH.setText(unit_adder);
+
+                    unit_adder = String.valueOf(mApp.getO2level(mrtesty - 1)) + getString(R.string.ppm);
+                    tvo2.setText(unit_adder);
+
+                    unit_adder = String.valueOf(mApp.getO2level(mrtesty - 1)) + getString(R.string.mv);
+                    tvorp.setText(unit_adder);
+
+                    tvph.setText(String.valueOf(mApp.getPhlevel(mrtesty - 1)));
+
+                    unit_adder = String.valueOf(mApp.getSolutiontemplevel(mrtesty - 1)) + getString(R.string.degreef);
+                    tvslntemp.setText(unit_adder);
+
+                    unit_adder = String.valueOf(mApp.getTdslevel(mrtesty - 1)) + getString(R.string.ppm);
+                    tvtds.setText(unit_adder);
+
+
+                    // Reservoirs
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir1(mrtesty - 1)), "1")))) {
+                        tvres1.setText(getString(R.string.full));
+                    } else {
+                        tvres1.setText(getString(R.string.notfull));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir2(mrtesty - 1)), "1")))) {
+                        tvres2.setText(getString(R.string.full));
+                    } else {
+                        tvres2.setText(getString(R.string.notfull));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir3(mrtesty - 1)), "1")))) {
+                        tvres3.setText(getString(R.string.full));
+                    } else {
+                        tvres3.setText(getString(R.string.notfull));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir4(mrtesty - 1)), "1")))) {
+                        tvres4.setText(getString(R.string.full));
+                    } else {
+                        tvres4.setText(getString(R.string.notfull));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir5(mrtesty - 1)), "1")))) {
+                        tvres5.setText(getString(R.string.full));
+                    } else {
+                        tvres5.setText(getString(R.string.notfull));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir6(mrtesty - 1)), "1")))) {
+                        tvres6.setText(getString(R.string.full));
+                    } else {
+                        tvres6.setText(getString(R.string.notfull));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir7(mrtesty - 1)), "1")))) {
+                        tvres7.setText(getString(R.string.full));
+                    } else {
+                        tvres7.setText(getString(R.string.notfull));
+                    }
+
+                    if ((Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "true") || (Objects.equals(String.valueOf(mApp.getReservoir8(mrtesty - 1)), "1")))) {
+                        tvres8.setText(getString(R.string.full));
+                    } else {
+                        tvres8.setText(getString(R.string.notfull));
+                    }
+                }
+
+
+
+
+
             }
 
             @Override
             public void onFinish(){
-                if (!succ_flag){
-                    *//*Snackbar snackbar = Snackbar
-                            .make(devtp, "Could not connect to server!", Snackbar.LENGTH_LONG);
-                    snackbar.show();*//*
-                }
+
             }
 
             @Override
             public void onRetry(int retryNo) {
                 Log.d("july", "got to onRetry()");
             }
-        });*/
+        });
+
+
+
 
 
 
