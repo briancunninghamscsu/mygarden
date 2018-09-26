@@ -53,6 +53,8 @@ public class data_activity extends AppCompatActivity {
 
         GraphView graph = findViewById(R.id.graph);
 
+
+
         TextView temperature_temp = findViewById(R.id.measurement_header);
         TextView time_temp = findViewById(R.id.time_header);
 
@@ -239,14 +241,16 @@ public class data_activity extends AppCompatActivity {
             graph.addSeries(series);
 
 
+
+
             //setting graph parameters
             graph.getViewport().setScalable(true);
             graph.getViewport().setScrollable(true);
             graph.getViewport().setScalableY(true);
             graph.getViewport().setScrollableY(true);
 
-            graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
-            graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext())); // this line makes it display dates instead of numbers.
+            /*graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
+            graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));*/ // this line makes it display dates instead of numbers.
             /*
             */
 
@@ -313,6 +317,9 @@ public class data_activity extends AppCompatActivity {
                         aNewTableRow.addView(rowTextViewB); // adding the second column element to the new row
                         tbllay.addView(aNewTableRow);   // adding the new row to the table layout
                 }
+
+            graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
+            graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));
 
 
         }

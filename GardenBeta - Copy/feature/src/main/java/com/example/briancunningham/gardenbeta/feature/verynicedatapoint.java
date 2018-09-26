@@ -35,7 +35,7 @@ public class verynicedatapoint {
         private float reservoir8;
         private float reservoir9;
         private String datapointdatetime;
-        private Date datapointinDateFormat;
+        private Long datapointinDateFormat;
 
     /*private verynicedatapoint(Parcel input){
             airtemplevel = input.readFloat();
@@ -123,10 +123,15 @@ public class verynicedatapoint {
             this.reservoir9 = reservoir9;
 
             //gotta have it in SDF format if you want to plot the points
-            String string = date + " AD at " + time;
-            DateFormat format = new SimpleDateFormat("yyyy.MM.dd G 'at' HH:mm:ss", Locale.ENGLISH);
+            String string = date + " " + time;
+            Log.d("sept","the value of string is " + string);
+            DateFormat format = new SimpleDateFormat("MM.dd.yy HH:mm:ss", Locale.ENGLISH);
+            Log.d("sept","the value of format is " + format.toString());
+
             try {
-                this.datapointinDateFormat = format.parse(string);
+                Date place_holder= format.parse(string);
+                this.datapointinDateFormat = place_holder.getTime();
+                //Log.d("sept","the value of this.datapointindateformat is " + this.datapointinDateFormat.getTime());
                 datapointdatetime = string;
             } catch (ParseException e) {
                 e.printStackTrace();
@@ -190,7 +195,8 @@ public class verynicedatapoint {
             Log.e("Subtroutine", "yougottothe end");
 
 
-            this.datapointinDateFormat = Calendar.getInstance().getTime();
+            Date dt = Calendar.getInstance().getTime();
+            this.datapointinDateFormat = dt.getTime();
             //SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance();
             //this.datapointdatetime = sdf.format(c);
 
@@ -303,6 +309,6 @@ public class verynicedatapoint {
             }
 
 
-            public Date getDatapointinDateFormat(){ return datapointinDateFormat;}
+            public Long getDatapointinDateFormat(){ return datapointinDateFormat;}
             public String getDatapointdatetime() {return datapointdatetime;}
 }
