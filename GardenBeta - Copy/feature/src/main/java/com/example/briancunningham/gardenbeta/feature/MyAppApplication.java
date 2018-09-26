@@ -10,7 +10,7 @@ import java.util.Date;
 @SuppressWarnings("WeakerAccess")
 public class MyAppApplication extends Application {
 
-    private final ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
+    public final ArrayList<verynicedatapoint> recordedData = new ArrayList<>();
 
 
     public String day_time_starts_at="800";

@@ -505,6 +505,10 @@ public class DeveloperOptions extends AppCompatActivity {
                     public void onSuccess(int statusCode, cz.msebera.android.httpclient.Header[] headers, JSONObject response) {
                         //Log.d("july", "got to onSuccess()");
                         //succ_flag = true;
+                        // DEELTE EXISTING DATER POINTS
+
+                        mApp.recordedData.clear();
+
                         String test1 = response.toString();
                         //Log.d("july", test1);
                         parsemystringplease a = new parsemystringplease(test1, mApp);
