@@ -52,7 +52,7 @@ public class data_activity extends AppCompatActivity {
         MyAppApplication mApp = (MyAppApplication) getApplicationContext(); //get global variables
 
         GraphView graph = findViewById(R.id.graph);
-
+        graph.getViewport().setYAxisBoundsManual(true);
 
 
         TextView temperature_temp = findViewById(R.id.measurement_header);
@@ -75,6 +75,8 @@ public class data_activity extends AppCompatActivity {
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Air Temperature " + getString(R.string.degreef));
 
+                        graph.getViewport().setMinY(-5);
+                        graph.getViewport().setMaxY(130);
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getAirtemplevel(mApp.size() - 1)), getString(R.string.degreef)));
                         time_temp.setText(mApp.getDatapointdatetime(mApp.size() - 1));
@@ -88,6 +90,9 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Humidity %");
+                        graph.getViewport().setMinY(0);
+                        graph.getViewport().setMaxY(100);
+
 
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getAmbienthumiditylevel(mApp.size() - 1)), getString(R.string.percentsign)));
@@ -101,6 +106,9 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("TVOC in PPM");
+                        graph.getViewport().setMinY(0);
+                        graph.getViewport().setMaxY(100);
+
 
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getCo2level(mApp.size() - 1)), getString(R.string.ppm)));
@@ -115,6 +123,10 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Temperature in " + getString(R.string.degreef));
+                        graph.getGridLabelRenderer().setVerticalAxisTitle("Total Dissolved Solids in PPM");
+                        graph.getViewport().setMinY(0);
+                        graph.getViewport().setMaxY(100);
+
 
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getSolutiontemplevel(mApp.size() - 1)), getString(R.string.degreef)));
@@ -129,6 +141,8 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Total Dissolved Solids in PPM");
+                        graph.getViewport().setMinY(0);
+                        graph.getViewport().setMaxY(1000);
 
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getTdslevel(mApp.size() - 1)), getString(R.string.ppm)));
@@ -143,6 +157,9 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Dissolved Oxygen in PPM");
+                        graph.getViewport().setMinY(0);
+                        graph.getViewport().setMaxY(500);
+
 
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getDolevel(mApp.size() - 1)), getString(R.string.ppm)));
@@ -157,6 +174,9 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("ORP in mV");
+                        graph.getViewport().setMinY(220);
+                        graph.getViewport().setMaxY(500);
+
 
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getOrplevel(mApp.size() - 1)), getString(R.string.mv)));
@@ -171,6 +191,9 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("pH");
+                        graph.getViewport().setMinY(1);
+                        graph.getViewport().setMaxY(14);
+
 
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getPhlevel(mApp.size() - 1)), getString(R.string.blank)));
@@ -178,7 +201,7 @@ public class data_activity extends AppCompatActivity {
 
                         break;
 
-                    case "Reservoirs":
+                    /*case "Reservoirs":
 
                         // add the data point to the graph
                         v = new DataPoint(mApp.getDatapointinDateFormat(a), 0);
@@ -186,7 +209,7 @@ public class data_activity extends AppCompatActivity {
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Tank Fullness");
 
-                        break;
+                        break;*/
 
                     case "Canopy Height":
 
@@ -195,6 +218,8 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Canopy Height in cm");
+                        graph.getViewport().setMinY(0);
+                        graph.getViewport().setMaxY(100);
 
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getCanopyheightlevel(mApp.size() - 1)), getString(R.string.centimeters)));
@@ -209,6 +234,9 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("Light Height in cm");
+                        graph.getViewport().setMinY(0);
+                        graph.getViewport().setMaxY(100);
+
 
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getLightheight(mApp.size() - 1)), getString(R.string.centimeters)));
@@ -221,6 +249,9 @@ public class data_activity extends AppCompatActivity {
 
                         // adjust the y-axis
                         graph.getGridLabelRenderer().setVerticalAxisTitle("CO2 Level in PPM");
+                        graph.getViewport().setMinY(0.0);
+                        graph.getViewport().setMaxY(100);
+
 
                         //update the header
                         temperature_temp.setText(getString(R.string.dubs,String.valueOf(mApp.getCo2level(mApp.size() - 1)), getString(R.string.ppm)));
@@ -250,7 +281,7 @@ public class data_activity extends AppCompatActivity {
             graph.getViewport().setScrollableY(true);
 
             /*graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
-            graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));*/ // this line makes it display dates instead of numbers.
+            */ // this line makes it display dates instead of numbers.
             /*
             */
 
@@ -320,7 +351,7 @@ public class data_activity extends AppCompatActivity {
 
             graph.getGridLabelRenderer().setHorizontalAxisTitle("Date/Time");
             graph.getGridLabelRenderer().setLabelFormatter(new DateAsXAxisLabelFormatter(getApplicationContext()));
-
+            graph.getGridLabelRenderer().setNumHorizontalLabels(3);
 
         }
 
